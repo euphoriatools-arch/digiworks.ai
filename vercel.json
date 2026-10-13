@@ -1,0 +1,1261 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "digiworks-ashy.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-readiness",
+      "destination": "/ai-readiness.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-readiness/",
+      "destination": "/ai-readiness.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit",
+      "destination": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit/",
+      "destination": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ab-testing-machine-learning-models",
+      "destination": "/blog/ab-testing-machine-learning-models.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ab-testing-machine-learning-models/",
+      "destination": "/blog/ab-testing-machine-learning-models.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agent-memory-explained",
+      "destination": "/blog/ai-agent-memory-explained.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agent-memory-explained/",
+      "destination": "/blog/ai-agent-memory-explained.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-and-robotics-advancing-automation",
+      "destination": "/blog/ai-and-robotics-advancing-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-and-robotics-advancing-automation/",
+      "destination": "/blog/ai-and-robotics-advancing-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-customer-support-deflection",
+      "destination": "/blog/ai-customer-support-deflection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-customer-support-deflection/",
+      "destination": "/blog/ai-customer-support-deflection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-fintech-fraud-detection",
+      "destination": "/blog/ai-fintech-fraud-detection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-fintech-fraud-detection/",
+      "destination": "/blog/ai-fintech-fraud-detection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-insurance-claims-automation",
+      "destination": "/blog/ai-for-insurance-claims-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-insurance-claims-automation/",
+      "destination": "/blog/ai-for-insurance-claims-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-legal-contract-review",
+      "destination": "/blog/ai-for-legal-contract-review.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-legal-contract-review/",
+      "destination": "/blog/ai-for-legal-contract-review.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-recruiting-candidate-screening",
+      "destination": "/blog/ai-for-recruiting-candidate-screening.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-recruiting-candidate-screening/",
+      "destination": "/blog/ai-for-recruiting-candidate-screening.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-supply-chain-demand-sensing",
+      "destination": "/blog/ai-for-supply-chain-demand-sensing.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-for-supply-chain-demand-sensing/",
+      "destination": "/blog/ai-for-supply-chain-demand-sensing.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-governance-eu-ai-act-guide",
+      "destination": "/blog/ai-governance-eu-ai-act-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-governance-eu-ai-act-guide/",
+      "destination": "/blog/ai-governance-eu-ai-act-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-healthcare-production-use-cases",
+      "destination": "/blog/ai-healthcare-production-use-cases.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-healthcare-production-use-cases/",
+      "destination": "/blog/ai-healthcare-production-use-cases.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-manufacturing-predictive-maintenance-guide",
+      "destination": "/blog/ai-manufacturing-predictive-maintenance-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-manufacturing-predictive-maintenance-guide/",
+      "destination": "/blog/ai-manufacturing-predictive-maintenance-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-red-teaming-stress-test",
+      "destination": "/blog/ai-red-teaming-stress-test.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-red-teaming-stress-test/",
+      "destination": "/blog/ai-red-teaming-stress-test.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-retail-personalization-engine",
+      "destination": "/blog/ai-retail-personalization-engine.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-retail-personalization-engine/",
+      "destination": "/blog/ai-retail-personalization-engine.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-vendor-selection-checklist",
+      "destination": "/blog/ai-vendor-selection-checklist.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-vendor-selection-checklist/",
+      "destination": "/blog/ai-vendor-selection-checklist.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/anomaly-detection-for-operations",
+      "destination": "/blog/anomaly-detection-for-operations.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/anomaly-detection-for-operations/",
+      "destination": "/blog/anomaly-detection-for-operations.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/build-vs-buy-ai-decision-matrix",
+      "destination": "/blog/build-vs-buy-ai-decision-matrix.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/build-vs-buy-ai-decision-matrix/",
+      "destination": "/blog/build-vs-buy-ai-decision-matrix.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-a-feature-store",
+      "destination": "/blog/building-a-feature-store.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-a-feature-store/",
+      "destination": "/blog/building-a-feature-store.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-voice-ai-agents",
+      "destination": "/blog/building-voice-ai-agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-voice-ai-agents/",
+      "destination": "/blog/building-voice-ai-agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/calculating-ai-roi-cfo-framework",
+      "destination": "/blog/calculating-ai-roi-cfo-framework.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/calculating-ai-roi-cfo-framework/",
+      "destination": "/blog/calculating-ai-roi-cfo-framework.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/change-management-for-ai-adoption",
+      "destination": "/blog/change-management-for-ai-adoption.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/change-management-for-ai-adoption/",
+      "destination": "/blog/change-management-for-ai-adoption.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/choosing-right-llm-business",
+      "destination": "/blog/choosing-right-llm-business.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/choosing-right-llm-business/",
+      "destination": "/blog/choosing-right-llm-business.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/computer-vision-quality-inspection",
+      "destination": "/blog/computer-vision-quality-inspection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/computer-vision-quality-inspection/",
+      "destination": "/blog/computer-vision-quality-inspection.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/customer-churn-prediction-tutorial",
+      "destination": "/blog/customer-churn-prediction-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/customer-churn-prediction-tutorial/",
+      "destination": "/blog/customer-churn-prediction-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cut-cloud-costs-for-ai-workloads",
+      "destination": "/blog/cut-cloud-costs-for-ai-workloads.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cut-cloud-costs-for-ai-workloads/",
+      "destination": "/blog/cut-cloud-costs-for-ai-workloads.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-lakehouse-architecture",
+      "destination": "/blog/data-lakehouse-architecture.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-lakehouse-architecture/",
+      "destination": "/blog/data-lakehouse-architecture.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/embeddings-infrastructure-vector-search-scale",
+      "destination": "/blog/embeddings-infrastructure-vector-search-scale.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/embeddings-infrastructure-vector-search-scale/",
+      "destination": "/blog/embeddings-infrastructure-vector-search-scale.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enterprise-ai-implementation-mistakes",
+      "destination": "/blog/enterprise-ai-implementation-mistakes.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enterprise-ai-implementation-mistakes/",
+      "destination": "/blog/enterprise-ai-implementation-mistakes.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enterprise-ai-maturity-stages",
+      "destination": "/blog/enterprise-ai-maturity-stages.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enterprise-ai-maturity-stages/",
+      "destination": "/blog/enterprise-ai-maturity-stages.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feature-engineering-techniques",
+      "destination": "/blog/feature-engineering-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feature-engineering-techniques/",
+      "destination": "/blog/feature-engineering-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fine-tuning-llms-enterprise-tutorial",
+      "destination": "/blog/fine-tuning-llms-enterprise-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fine-tuning-llms-enterprise-tutorial/",
+      "destination": "/blog/fine-tuning-llms-enterprise-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/getting-started-with-artificial-intelligence",
+      "destination": "/blog/getting-started-with-artificial-intelligence.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/getting-started-with-artificial-intelligence/",
+      "destination": "/blog/getting-started-with-artificial-intelligence.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-build-ai-agent-2026",
+      "destination": "/blog/how-to-build-ai-agent-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-build-ai-agent-2026/",
+      "destination": "/blog/how-to-build-ai-agent-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-evaluate-llm-applications",
+      "destination": "/blog/how-to-evaluate-llm-applications.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-evaluate-llm-applications/",
+      "destination": "/blog/how-to-evaluate-llm-applications.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/intelligent-document-processing-guide",
+      "destination": "/blog/intelligent-document-processing-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/intelligent-document-processing-guide/",
+      "destination": "/blog/intelligent-document-processing-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/internal-knowledge-assistant-enterprise-rag",
+      "destination": "/blog/internal-knowledge-assistant-enterprise-rag.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/internal-knowledge-assistant-enterprise-rag/",
+      "destination": "/blog/internal-knowledge-assistant-enterprise-rag.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/llm-observability-monitoring-ai-quality",
+      "destination": "/blog/llm-observability-monitoring-ai-quality.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/llm-observability-monitoring-ai-quality/",
+      "destination": "/blog/llm-observability-monitoring-ai-quality.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mlops-from-scratch-deploy",
+      "destination": "/blog/mlops-from-scratch-deploy.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mlops-from-scratch-deploy/",
+      "destination": "/blog/mlops-from-scratch-deploy.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/model-context-protocol-mcp-explained",
+      "destination": "/blog/model-context-protocol-mcp-explained.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/model-context-protocol-mcp-explained/",
+      "destination": "/blog/model-context-protocol-mcp-explained.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/multi-agent-ai-systems-patterns",
+      "destination": "/blog/multi-agent-ai-systems-patterns.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/multi-agent-ai-systems-patterns/",
+      "destination": "/blog/multi-agent-ai-systems-patterns.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nlp-revolutionizing-text-analysis",
+      "destination": "/blog/nlp-revolutionizing-text-analysis.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/nlp-revolutionizing-text-analysis/",
+      "destination": "/blog/nlp-revolutionizing-text-analysis.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/predictive-maintenance-ml-tutorial",
+      "destination": "/blog/predictive-maintenance-ml-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/predictive-maintenance-ml-tutorial/",
+      "destination": "/blog/predictive-maintenance-ml-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/privacy-preserving-ai-techniques",
+      "destination": "/blog/privacy-preserving-ai-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/privacy-preserving-ai-techniques/",
+      "destination": "/blog/privacy-preserving-ai-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/production-chatbot-custom-nlp",
+      "destination": "/blog/production-chatbot-custom-nlp.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/production-chatbot-custom-nlp/",
+      "destination": "/blog/production-chatbot-custom-nlp.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/prompt-engineering-production-patterns",
+      "destination": "/blog/prompt-engineering-production-patterns.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/prompt-engineering-production-patterns/",
+      "destination": "/blog/prompt-engineering-production-patterns.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rag-architecture-production-guide",
+      "destination": "/blog/rag-architecture-production-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rag-architecture-production-guide/",
+      "destination": "/blog/rag-architecture-production-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/real-time-streaming-kafka-flink-spark",
+      "destination": "/blog/real-time-streaming-kafka-flink-spark.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/real-time-streaming-kafka-flink-spark/",
+      "destination": "/blog/real-time-streaming-kafka-flink-spark.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/reduce-llm-hallucinations-techniques",
+      "destination": "/blog/reduce-llm-hallucinations-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/reduce-llm-hallucinations-techniques/",
+      "destination": "/blog/reduce-llm-hallucinations-techniques.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/securing-llm-applications-owasp-top-10",
+      "destination": "/blog/securing-llm-applications-owasp-top-10.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/securing-llm-applications-owasp-top-10/",
+      "destination": "/blog/securing-llm-applications-owasp-top-10.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sentiment-analysis-tutorial",
+      "destination": "/blog/sentiment-analysis-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sentiment-analysis-tutorial/",
+      "destination": "/blog/sentiment-analysis-tutorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/structured-outputs-llm-json-mode",
+      "destination": "/blog/structured-outputs-llm-json-mode.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/structured-outputs-llm-json-mode/",
+      "destination": "/blog/structured-outputs-llm-json-mode.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/synthetic-data-for-machine-learning",
+      "destination": "/blog/synthetic-data-for-machine-learning.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/synthetic-data-for-machine-learning/",
+      "destination": "/blog/synthetic-data-for-machine-learning.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/time-series-forecasting-demand-planning",
+      "destination": "/blog/time-series-forecasting-demand-planning.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/time-series-forecasting-demand-planning/",
+      "destination": "/blog/time-series-forecasting-demand-planning.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vector-databases-compared",
+      "destination": "/blog/vector-databases-compared.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vector-databases-compared/",
+      "destination": "/blog/vector-databases-compared.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/addiction-world",
+      "destination": "/case-studies/addiction-world.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/addiction-world/",
+      "destination": "/case-studies/addiction-world.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/arc-viva",
+      "destination": "/case-studies/arc-viva.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/arc-viva/",
+      "destination": "/case-studies/arc-viva.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/bay-world",
+      "destination": "/case-studies/bay-world.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/bay-world/",
+      "destination": "/case-studies/bay-world.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/coachd",
+      "destination": "/case-studies/coachd.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/coachd/",
+      "destination": "/case-studies/coachd.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/curb-cream",
+      "destination": "/case-studies/curb-cream.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/curb-cream/",
+      "destination": "/case-studies/curb-cream.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/do-costa",
+      "destination": "/case-studies/do-costa.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/do-costa/",
+      "destination": "/case-studies/do-costa.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/draft-day",
+      "destination": "/case-studies/draft-day.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/draft-day/",
+      "destination": "/case-studies/draft-day.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/drive-guard",
+      "destination": "/case-studies/drive-guard.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/drive-guard/",
+      "destination": "/case-studies/drive-guard.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/gas-on-the-go",
+      "destination": "/case-studies/gas-on-the-go.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/gas-on-the-go/",
+      "destination": "/case-studies/gas-on-the-go.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/live-muse",
+      "destination": "/case-studies/live-muse.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/live-muse/",
+      "destination": "/case-studies/live-muse.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/memor",
+      "destination": "/case-studies/memor.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/memor/",
+      "destination": "/case-studies/memor.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/milestone-truck",
+      "destination": "/case-studies/milestone-truck.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/milestone-truck/",
+      "destination": "/case-studies/milestone-truck.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/mvpedits",
+      "destination": "/case-studies/mvpedits.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/mvpedits/",
+      "destination": "/case-studies/mvpedits.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/niro",
+      "destination": "/case-studies/niro.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/niro/",
+      "destination": "/case-studies/niro.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/siteiq",
+      "destination": "/case-studies/siteiq.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/siteiq/",
+      "destination": "/case-studies/siteiq.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/thrive-city",
+      "destination": "/case-studies/thrive-city.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/thrive-city/",
+      "destination": "/case-studies/thrive-city.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/yum-runner",
+      "destination": "/case-studies/yum-runner.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/yum-runner/",
+      "destination": "/case-studies/yum-runner.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/",
+      "destination": "/case-studies.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/custom-app-development-meta",
+      "destination": "/custom-app-development-meta.html",
+      "permanent": true
+    },
+    {
+      "source": "/custom-app-development-meta/",
+      "destination": "/custom-app-development-meta.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/dedicated-ai-pods",
+      "destination": "/hire/dedicated-ai-pods.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/dedicated-ai-pods/",
+      "destination": "/hire/dedicated-ai-pods.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-ai-engineers",
+      "destination": "/hire/hire-ai-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-ai-engineers/",
+      "destination": "/hire/hire-ai-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-computer-vision-developers",
+      "destination": "/hire/hire-computer-vision-developers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-computer-vision-developers/",
+      "destination": "/hire/hire-computer-vision-developers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-data-scientists",
+      "destination": "/hire/hire-data-scientists.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-data-scientists/",
+      "destination": "/hire/hire-data-scientists.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-ml-engineers",
+      "destination": "/hire/hire-ml-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-ml-engineers/",
+      "destination": "/hire/hire-ml-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-nlp-engineers",
+      "destination": "/hire/hire-nlp-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/hire/hire-nlp-engineers/",
+      "destination": "/hire/hire-nlp-engineers.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-education",
+      "destination": "/industries/ai-for-education.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-education/",
+      "destination": "/industries/ai-for-education.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-fintech",
+      "destination": "/industries/ai-for-fintech.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-fintech/",
+      "destination": "/industries/ai-for-fintech.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-healthcare",
+      "destination": "/industries/ai-for-healthcare.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-healthcare/",
+      "destination": "/industries/ai-for-healthcare.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-logistics-and-supply-chain",
+      "destination": "/industries/ai-for-logistics-and-supply-chain.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-logistics-and-supply-chain/",
+      "destination": "/industries/ai-for-logistics-and-supply-chain.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-manufacturing",
+      "destination": "/industries/ai-for-manufacturing.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-manufacturing/",
+      "destination": "/industries/ai-for-manufacturing.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-real-estate",
+      "destination": "/industries/ai-for-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-real-estate/",
+      "destination": "/industries/ai-for-real-estate.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-retail-and-ecommerce",
+      "destination": "/industries/ai-for-retail-and-ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ai-for-retail-and-ecommerce/",
+      "destination": "/industries/ai-for-retail-and-ecommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-agent-development",
+      "destination": "/services/ai-agent-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-agent-development/",
+      "destination": "/services/ai-agent-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-chatbot-development",
+      "destination": "/services/ai-chatbot-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-chatbot-development/",
+      "destination": "/services/ai-chatbot-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-red-teaming",
+      "destination": "/services/ai-red-teaming.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-red-teaming/",
+      "destination": "/services/ai-red-teaming.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-security",
+      "destination": "/services/ai-security.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-security/",
+      "destination": "/services/ai-security.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-training-and-support",
+      "destination": "/services/ai-training-and-support.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-training-and-support/",
+      "destination": "/services/ai-training-and-support.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/artificial-intelligence",
+      "destination": "/services/artificial-intelligence.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/artificial-intelligence/",
+      "destination": "/services/artificial-intelligence.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/automation-and-integration",
+      "destination": "/services/automation-and-integration.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/automation-and-integration/",
+      "destination": "/services/automation-and-integration.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/autonomous-ai-agents",
+      "destination": "/services/autonomous-ai-agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/autonomous-ai-agents/",
+      "destination": "/services/autonomous-ai-agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-and-devops",
+      "destination": "/services/cloud-and-devops.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-and-devops/",
+      "destination": "/services/cloud-and-devops.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-architecture-and-deployment",
+      "destination": "/services/cloud-architecture-and-deployment.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-architecture-and-deployment/",
+      "destination": "/services/cloud-architecture-and-deployment.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-and-cloud",
+      "destination": "/services/data-and-cloud.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-and-cloud/",
+      "destination": "/services/data-and-cloud.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-engineering",
+      "destination": "/services/data-engineering.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/data-engineering/",
+      "destination": "/services/data-engineering.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/generative-ai-development",
+      "destination": "/services/generative-ai-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/generative-ai-development/",
+      "destination": "/services/generative-ai-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/intelligent-automation",
+      "destination": "/services/intelligent-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/intelligent-automation/",
+      "destination": "/services/intelligent-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/intelligent-document-processing",
+      "destination": "/services/intelligent-document-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/intelligent-document-processing/",
+      "destination": "/services/intelligent-document-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/machine-learning-development",
+      "destination": "/services/machine-learning-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/machine-learning-development/",
+      "destination": "/services/machine-learning-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/machine-learning",
+      "destination": "/services/machine-learning.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/machine-learning/",
+      "destination": "/services/machine-learning.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/mlops-setup",
+      "destination": "/services/mlops-setup.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/mlops-setup/",
+      "destination": "/services/mlops-setup.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/mobile-app-development",
+      "destination": "/services/mobile-app-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/mobile-app-development/",
+      "destination": "/services/mobile-app-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/natural-language-processing",
+      "destination": "/services/natural-language-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/natural-language-processing/",
+      "destination": "/services/natural-language-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/predictive-modeling",
+      "destination": "/services/predictive-modeling.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/predictive-modeling/",
+      "destination": "/services/predictive-modeling.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/privacy-preserving-ai",
+      "destination": "/services/privacy-preserving-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/privacy-preserving-ai/",
+      "destination": "/services/privacy-preserving-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/real-time-data-streaming",
+      "destination": "/services/real-time-data-streaming.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/real-time-data-streaming/",
+      "destination": "/services/real-time-data-streaming.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/security-and-compliance",
+      "destination": "/services/security-and-compliance.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/security-and-compliance/",
+      "destination": "/services/security-and-compliance.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-automation",
+      "destination": "/solutions/ai-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-automation/",
+      "destination": "/solutions/ai-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-for-cybersecurity",
+      "destination": "/solutions/ai-for-cybersecurity.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-for-cybersecurity/",
+      "destination": "/solutions/ai-for-cybersecurity.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/computer-vision-image-recognition",
+      "destination": "/solutions/computer-vision-image-recognition.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/computer-vision-image-recognition/",
+      "destination": "/solutions/computer-vision-image-recognition.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/conversational-ai",
+      "destination": "/solutions/conversational-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/conversational-ai/",
+      "destination": "/solutions/conversational-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/generative-ai",
+      "destination": "/solutions/generative-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/generative-ai/",
+      "destination": "/solutions/generative-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/predictive-analytics",
+      "destination": "/solutions/predictive-analytics.html",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/predictive-analytics/",
+      "destination": "/solutions/predictive-analytics.html",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/team/",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/terms-of-use.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use/",
+      "destination": "/terms-of-use.html",
+      "permanent": true
+    }
+  ]
+}

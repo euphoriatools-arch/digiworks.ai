@@ -1,0 +1,1002 @@
+[
+  {
+    "path": "about.html",
+    "url": "/about.html",
+    "url_display": "/about.html",
+    "title": "About DigiWorks AI | Enterprise AI Company in Austin, USA",
+    "h1": "We engineer intelligence that ships",
+    "purpose": "About the company"
+  },
+  {
+    "path": "ai-readiness.html",
+    "url": "/ai-readiness.html",
+    "url_display": "/ai-readiness.html",
+    "title": "Free AI Readiness Assessment | Score Your Business | DigiWorks AI",
+    "h1": "How ready is your business for AI?",
+    "purpose": "AI readiness assessment"
+  },
+  {
+    "path": "blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit.html",
+    "url": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit.html",
+    "url_display": "/blog/10-claude-prompts-that-replace-your-entire-seo-audit-toolkit.html",
+    "title": "10 Claude Prompts That Replace Your Entire SEO Audit Toolkit | DigiWorks AI",
+    "h1": "10 Claude Prompts That Replace Your Entire SEO Audit Toolkit",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ab-testing-machine-learning-models.html",
+    "url": "/blog/ab-testing-machine-learning-models.html",
+    "url_display": "/blog/ab-testing-machine-learning-models.html",
+    "title": "A/B Testing Machine Learning Models: Online\u2026 | DigiWorks AI",
+    "h1": "A/B Testing Machine Learning Models: Online Experimentation Done Right",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-agent-memory-explained.html",
+    "url": "/blog/ai-agent-memory-explained.html",
+    "url_display": "/blog/ai-agent-memory-explained.html",
+    "title": "AI Agent Memory: Short-Term, Long-Term, and Vector Memory\u2026 | DigiWorks AI",
+    "h1": "AI Agent Memory: Short-Term, Long-Term, and Vector Memory Explained",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-and-robotics-advancing-automation.html",
+    "url": "/blog/ai-and-robotics-advancing-automation.html",
+    "url_display": "/blog/ai-and-robotics-advancing-automation.html",
+    "title": "AI and Robotics: Advancing Automation and Human-Robot\u2026 | DigiWorks AI",
+    "h1": "AI and Robotics: Advancing Automation and Human-Robot Collaboration",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-customer-support-deflection.html",
+    "url": "/blog/ai-customer-support-deflection.html",
+    "url_display": "/blog/ai-customer-support-deflection.html",
+    "title": "AI Customer Support: Cutting Ticket Volume Without Hurting\u2026 | DigiWorks AI",
+    "h1": "AI Customer Support: Cutting Ticket Volume Without Hurting CSAT",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-fintech-fraud-detection.html",
+    "url": "/blog/ai-fintech-fraud-detection.html",
+    "url_display": "/blog/ai-fintech-fraud-detection.html",
+    "title": "AI for Fintech: Building Real-Time Fraud Detection Systems | DigiWorks AI",
+    "h1": "AI for Fintech: Building Real-Time Fraud Detection Systems",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-for-insurance-claims-automation.html",
+    "url": "/blog/ai-for-insurance-claims-automation.html",
+    "url_display": "/blog/ai-for-insurance-claims-automation.html",
+    "title": "AI for Insurance: Automating Claims From FNOL to Settlement | DigiWorks AI",
+    "h1": "AI for Insurance: Automating Claims From FNOL to Settlement",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-for-legal-contract-review.html",
+    "url": "/blog/ai-for-legal-contract-review.html",
+    "url_display": "/blog/ai-for-legal-contract-review.html",
+    "title": "AI for Legal Teams: Contract Review and Intake Automation | DigiWorks AI",
+    "h1": "AI for Legal Teams: Contract Review and Intake Automation",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-for-recruiting-candidate-screening.html",
+    "url": "/blog/ai-for-recruiting-candidate-screening.html",
+    "url_display": "/blog/ai-for-recruiting-candidate-screening.html",
+    "title": "AI for Recruiting: Screening Candidates Fairly and Faster | DigiWorks AI",
+    "h1": "AI for Recruiting: Screening Candidates Fairly and Faster",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-for-supply-chain-demand-sensing.html",
+    "url": "/blog/ai-for-supply-chain-demand-sensing.html",
+    "url_display": "/blog/ai-for-supply-chain-demand-sensing.html",
+    "title": "AI for Supply Chain: Demand Sensing and Inventory\u2026 | DigiWorks AI",
+    "h1": "AI for Supply Chain: Demand Sensing and Inventory Optimization",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-governance-eu-ai-act-guide.html",
+    "url": "/blog/ai-governance-eu-ai-act-guide.html",
+    "url_display": "/blog/ai-governance-eu-ai-act-guide.html",
+    "title": "AI Governance and the EU AI Act: A Compliance Field Guide | DigiWorks AI",
+    "h1": "AI Governance and the EU AI Act: A Compliance Field Guide",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-healthcare-production-use-cases.html",
+    "url": "/blog/ai-healthcare-production-use-cases.html",
+    "url_display": "/blog/ai-healthcare-production-use-cases.html",
+    "title": "AI in Healthcare: 10 Production Use Cases That Actually Work | DigiWorks AI",
+    "h1": "AI in Healthcare: 10 Production Use Cases That Actually Work",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-manufacturing-predictive-maintenance-guide.html",
+    "url": "/blog/ai-manufacturing-predictive-maintenance-guide.html",
+    "url_display": "/blog/ai-manufacturing-predictive-maintenance-guide.html",
+    "title": "AI for Manufacturing: Predictive Maintenance\u2026 | DigiWorks AI",
+    "h1": "AI for Manufacturing: Predictive Maintenance Implementation Guide",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-red-teaming-stress-test.html",
+    "url": "/blog/ai-red-teaming-stress-test.html",
+    "url_display": "/blog/ai-red-teaming-stress-test.html",
+    "title": "AI Red Teaming: How to Stress-Test Your AI Models Before\u2026 | DigiWorks AI",
+    "h1": "AI Red Teaming: How to Stress-Test Your AI Models Before They Ship",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-retail-personalization-engine.html",
+    "url": "/blog/ai-retail-personalization-engine.html",
+    "url_display": "/blog/ai-retail-personalization-engine.html",
+    "title": "AI for Retail: Personalization Engine Tutorial | DigiWorks AI",
+    "h1": "AI for Retail: Personalization Engine Tutorial",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/ai-vendor-selection-checklist.html",
+    "url": "/blog/ai-vendor-selection-checklist.html",
+    "url_display": "/blog/ai-vendor-selection-checklist.html",
+    "title": "AI Vendor Selection: The 25-Point Evaluation Checklist | DigiWorks AI",
+    "h1": "AI Vendor Selection: The 25-Point Evaluation Checklist",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/anomaly-detection-for-operations.html",
+    "url": "/blog/anomaly-detection-for-operations.html",
+    "url_display": "/blog/anomaly-detection-for-operations.html",
+    "title": "Anomaly Detection for Operations: Catch Problems Before\u2026 | DigiWorks AI",
+    "h1": "Anomaly Detection for Operations: Catch Problems Before They Cost You",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/build-vs-buy-ai-decision-matrix.html",
+    "url": "/blog/build-vs-buy-ai-decision-matrix.html",
+    "url_display": "/blog/build-vs-buy-ai-decision-matrix.html",
+    "title": "Build vs Buy AI: A Decision Matrix for CTOs | DigiWorks AI",
+    "h1": "Build vs Buy AI: A Decision Matrix for CTOs",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/building-a-feature-store.html",
+    "url": "/blog/building-a-feature-store.html",
+    "url_display": "/blog/building-a-feature-store.html",
+    "title": "Building a Feature Store: The Backbone of Production ML | DigiWorks AI",
+    "h1": "Building a Feature Store: The Backbone of Production ML",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/building-voice-ai-agents.html",
+    "url": "/blog/building-voice-ai-agents.html",
+    "url_display": "/blog/building-voice-ai-agents.html",
+    "title": "Building Voice AI Agents: Real-Time Speech-to-Speech Systems | DigiWorks AI",
+    "h1": "Building Voice AI Agents: Real-Time Speech-to-Speech Systems",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/calculating-ai-roi-cfo-framework.html",
+    "url": "/blog/calculating-ai-roi-cfo-framework.html",
+    "url_display": "/blog/calculating-ai-roi-cfo-framework.html",
+    "title": "Calculating AI ROI: A CFO-Approved Framework | DigiWorks AI",
+    "h1": "Calculating AI ROI: A CFO-Approved Framework",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/change-management-for-ai-adoption.html",
+    "url": "/blog/change-management-for-ai-adoption.html",
+    "url_display": "/blog/change-management-for-ai-adoption.html",
+    "title": "Change Management for AI Adoption: Getting Your Team to\u2026 | DigiWorks AI",
+    "h1": "Change Management for AI Adoption: Getting Your Team to Use It",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/choosing-right-llm-business.html",
+    "url": "/blog/choosing-right-llm-business.html",
+    "url_display": "/blog/choosing-right-llm-business.html",
+    "title": "How to Choose the Right LLM for Your Business: A Decision\u2026 | DigiWorks AI",
+    "h1": "How to Choose the Right LLM for Your Business: A Decision Framework",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/computer-vision-quality-inspection.html",
+    "url": "/blog/computer-vision-quality-inspection.html",
+    "url_display": "/blog/computer-vision-quality-inspection.html",
+    "title": "Computer Vision for Quality Inspection: Implementation Guide | DigiWorks AI",
+    "h1": "Computer Vision for Quality Inspection: Implementation Guide",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/customer-churn-prediction-tutorial.html",
+    "url": "/blog/customer-churn-prediction-tutorial.html",
+    "url_display": "/blog/customer-churn-prediction-tutorial.html",
+    "title": "Customer Churn Prediction: A Hands-On Machine Learning\u2026 | DigiWorks AI",
+    "h1": "Customer Churn Prediction: A Hands-On Machine Learning Tutorial",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/cut-cloud-costs-for-ai-workloads.html",
+    "url": "/blog/cut-cloud-costs-for-ai-workloads.html",
+    "url_display": "/blog/cut-cloud-costs-for-ai-workloads.html",
+    "title": "Cutting Cloud Costs for AI Workloads: A 12-Point Playbook | DigiWorks AI",
+    "h1": "Cutting Cloud Costs for AI Workloads: A 12-Point Playbook",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/data-lakehouse-architecture.html",
+    "url": "/blog/data-lakehouse-architecture.html",
+    "url_display": "/blog/data-lakehouse-architecture.html",
+    "title": "Data Lakehouse Architecture: Delta, Iceberg, and the\u2026 | DigiWorks AI",
+    "h1": "Data Lakehouse Architecture: Delta, Iceberg, and the Modern Stack",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/embeddings-infrastructure-vector-search-scale.html",
+    "url": "/blog/embeddings-infrastructure-vector-search-scale.html",
+    "url_display": "/blog/embeddings-infrastructure-vector-search-scale.html",
+    "title": "Embeddings Infrastructure: Vector Search at Enterprise Scale | DigiWorks AI",
+    "h1": "Embeddings Infrastructure: Vector Search at Enterprise Scale",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/enterprise-ai-implementation-mistakes.html",
+    "url": "/blog/enterprise-ai-implementation-mistakes.html",
+    "url_display": "/blog/enterprise-ai-implementation-mistakes.html",
+    "title": "5 Enterprise AI Implementation Mistakes and the Real Cost\u2026 | DigiWorks AI",
+    "h1": "5 Enterprise AI Implementation Mistakes and the Real Cost of Each One",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/enterprise-ai-maturity-stages.html",
+    "url": "/blog/enterprise-ai-maturity-stages.html",
+    "url_display": "/blog/enterprise-ai-maturity-stages.html",
+    "title": "From Pilot to Production: The 8 Stages of Enterprise AI\u2026 | DigiWorks AI",
+    "h1": "From Pilot to Production: The 8 Stages of Enterprise AI Maturity",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/feature-engineering-techniques.html",
+    "url": "/blog/feature-engineering-techniques.html",
+    "url_display": "/blog/feature-engineering-techniques.html",
+    "title": "Feature Engineering Mastery: 12 Techniques That Boost\u2026 | DigiWorks AI",
+    "h1": "Feature Engineering Mastery: 12 Techniques That Boost Model Accuracy",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/fine-tuning-llms-enterprise-tutorial.html",
+    "url": "/blog/fine-tuning-llms-enterprise-tutorial.html",
+    "url_display": "/blog/fine-tuning-llms-enterprise-tutorial.html",
+    "title": "The Complete Guide to Fine-Tuning LLMs for Enterprise Use\u2026 | DigiWorks AI",
+    "h1": "The Complete Guide to Fine-Tuning LLMs for Enterprise Use Cases",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/getting-started-with-artificial-intelligence.html",
+    "url": "/blog/getting-started-with-artificial-intelligence.html",
+    "url_display": "/blog/getting-started-with-artificial-intelligence.html",
+    "title": "How Can I Get Started with Artificial Intelligence for My\u2026 | DigiWorks AI",
+    "h1": "How Can I Get Started with Artificial Intelligence for My Business?",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/how-to-build-ai-agent-2026.html",
+    "url": "/blog/how-to-build-ai-agent-2026.html",
+    "url_display": "/blog/how-to-build-ai-agent-2026.html",
+    "title": "How to Build Your First AI Agent in 2026: A 7-Step Tutorial | DigiWorks AI",
+    "h1": "How to Build Your First AI Agent in 2026: A 7-Step Tutorial",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/how-to-evaluate-llm-applications.html",
+    "url": "/blog/how-to-evaluate-llm-applications.html",
+    "url_display": "/blog/how-to-evaluate-llm-applications.html",
+    "title": "How to Evaluate LLM Applications: Building an Eval Harness | DigiWorks AI",
+    "h1": "How to Evaluate LLM Applications: Building an Eval Harness",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/intelligent-document-processing-guide.html",
+    "url": "/blog/intelligent-document-processing-guide.html",
+    "url_display": "/blog/intelligent-document-processing-guide.html",
+    "title": "Intelligent Document Processing: Automate 80% of Manual\u2026 | DigiWorks AI",
+    "h1": "Intelligent Document Processing: Automate 80% of Manual Reviews",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/internal-knowledge-assistant-enterprise-rag.html",
+    "url": "/blog/internal-knowledge-assistant-enterprise-rag.html",
+    "url_display": "/blog/internal-knowledge-assistant-enterprise-rag.html",
+    "title": "Building an Internal Knowledge Assistant: Enterprise RAG\u2026 | DigiWorks AI",
+    "h1": "Building an Internal Knowledge Assistant: Enterprise RAG Done Right",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/llm-observability-monitoring-ai-quality.html",
+    "url": "/blog/llm-observability-monitoring-ai-quality.html",
+    "url_display": "/blog/llm-observability-monitoring-ai-quality.html",
+    "title": "LLM Observability: Monitoring AI Quality in Production | DigiWorks AI",
+    "h1": "LLM Observability: Monitoring AI Quality in Production",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/mlops-from-scratch-deploy.html",
+    "url": "/blog/mlops-from-scratch-deploy.html",
+    "url_display": "/blog/mlops-from-scratch-deploy.html",
+    "title": "MLOps from Scratch: Deploying Your First ML Model to\u2026 | DigiWorks AI",
+    "h1": "MLOps from Scratch: Deploying Your First ML Model to Production",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/model-context-protocol-mcp-explained.html",
+    "url": "/blog/model-context-protocol-mcp-explained.html",
+    "url_display": "/blog/model-context-protocol-mcp-explained.html",
+    "title": "The Model Context Protocol (MCP): Giving AI Agents Safe\u2026 | DigiWorks AI",
+    "h1": "The Model Context Protocol (MCP): Giving AI Agents Safe Tool Access",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/multi-agent-ai-systems-patterns.html",
+    "url": "/blog/multi-agent-ai-systems-patterns.html",
+    "url_display": "/blog/multi-agent-ai-systems-patterns.html",
+    "title": "Building Multi-Agent AI Systems: Patterns, Pitfalls, and\u2026 | DigiWorks AI",
+    "h1": "Building Multi-Agent AI Systems: Patterns, Pitfalls, and Production",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/nlp-revolutionizing-text-analysis.html",
+    "url": "/blog/nlp-revolutionizing-text-analysis.html",
+    "url_display": "/blog/nlp-revolutionizing-text-analysis.html",
+    "title": "How Natural Language Processing is Revolutionizing Text\u2026 | DigiWorks AI",
+    "h1": "How Natural Language Processing is Revolutionizing Text Analysis",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/predictive-maintenance-ml-tutorial.html",
+    "url": "/blog/predictive-maintenance-ml-tutorial.html",
+    "url_display": "/blog/predictive-maintenance-ml-tutorial.html",
+    "title": "Predictive Maintenance with Machine Learning: A Hands-On\u2026 | DigiWorks AI",
+    "h1": "Predictive Maintenance with Machine Learning: A Hands-On Tutorial",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/privacy-preserving-ai-techniques.html",
+    "url": "/blog/privacy-preserving-ai-techniques.html",
+    "url_display": "/blog/privacy-preserving-ai-techniques.html",
+    "title": "Privacy-Preserving AI Techniques: Differential Privacy in\u2026 | DigiWorks AI",
+    "h1": "Privacy-Preserving AI Techniques: Differential Privacy in Practice",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/production-chatbot-custom-nlp.html",
+    "url": "/blog/production-chatbot-custom-nlp.html",
+    "url_display": "/blog/production-chatbot-custom-nlp.html",
+    "title": "How to Build a Production Chatbot with Custom NLP in 8 Weeks | DigiWorks AI",
+    "h1": "How to Build a Production Chatbot with Custom NLP in 8 Weeks",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/prompt-engineering-production-patterns.html",
+    "url": "/blog/prompt-engineering-production-patterns.html",
+    "url_display": "/blog/prompt-engineering-production-patterns.html",
+    "title": "Prompt Engineering for Production: 15 Patterns That Work | DigiWorks AI",
+    "h1": "Prompt Engineering for Production: 15 Patterns That Work",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/rag-architecture-production-guide.html",
+    "url": "/blog/rag-architecture-production-guide.html",
+    "url_display": "/blog/rag-architecture-production-guide.html",
+    "title": "RAG Architecture Explained: Build a Production-Grade\u2026 | DigiWorks AI",
+    "h1": "RAG Architecture Explained: Build a Production-Grade Retrieval System",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/real-time-streaming-kafka-flink-spark.html",
+    "url": "/blog/real-time-streaming-kafka-flink-spark.html",
+    "url_display": "/blog/real-time-streaming-kafka-flink-spark.html",
+    "title": "Real-Time Data Streaming: Kafka vs Flink vs Spark\u2026 | DigiWorks AI",
+    "h1": "Real-Time Data Streaming: Kafka vs Flink vs Spark Streaming Compared",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/reduce-llm-hallucinations-techniques.html",
+    "url": "/blog/reduce-llm-hallucinations-techniques.html",
+    "url_display": "/blog/reduce-llm-hallucinations-techniques.html",
+    "title": "Reducing LLM Hallucinations: 9 Techniques That Actually Work | DigiWorks AI",
+    "h1": "Reducing LLM Hallucinations: 9 Techniques That Actually Work",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/securing-llm-applications-owasp-top-10.html",
+    "url": "/blog/securing-llm-applications-owasp-top-10.html",
+    "url_display": "/blog/securing-llm-applications-owasp-top-10.html",
+    "title": "Securing LLM Applications: The OWASP LLM Top 10 Explained | DigiWorks AI",
+    "h1": "Securing LLM Applications: The OWASP LLM Top 10 Explained",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/sentiment-analysis-tutorial.html",
+    "url": "/blog/sentiment-analysis-tutorial.html",
+    "url_display": "/blog/sentiment-analysis-tutorial.html",
+    "title": "Sentiment Analysis Tutorial: From Raw Text to Business\u2026 | DigiWorks AI",
+    "h1": "Sentiment Analysis Tutorial: From Raw Text to Business Insights",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/structured-outputs-llm-json-mode.html",
+    "url": "/blog/structured-outputs-llm-json-mode.html",
+    "url_display": "/blog/structured-outputs-llm-json-mode.html",
+    "title": "Structured Outputs from LLMs: JSON Mode, Schemas, and\u2026 | DigiWorks AI",
+    "h1": "Structured Outputs from LLMs: JSON Mode, Schemas, and Reliability",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/synthetic-data-for-machine-learning.html",
+    "url": "/blog/synthetic-data-for-machine-learning.html",
+    "url_display": "/blog/synthetic-data-for-machine-learning.html",
+    "title": "Synthetic Data for Machine Learning: When and How to Use It | DigiWorks AI",
+    "h1": "Synthetic Data for Machine Learning: When and How to Use It",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/time-series-forecasting-demand-planning.html",
+    "url": "/blog/time-series-forecasting-demand-planning.html",
+    "url_display": "/blog/time-series-forecasting-demand-planning.html",
+    "title": "Time-Series Forecasting for Demand Planning: A Practical\u2026 | DigiWorks AI",
+    "h1": "Time-Series Forecasting for Demand Planning: A Practical Guide",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog/vector-databases-compared.html",
+    "url": "/blog/vector-databases-compared.html",
+    "url_display": "/blog/vector-databases-compared.html",
+    "title": "Vector Databases Compared: Pinecone vs Weaviate vs Qdrant\u2026 | DigiWorks AI",
+    "h1": "Vector Databases Compared: Pinecone vs Weaviate vs Qdrant vs Milvus",
+    "purpose": "Blog article"
+  },
+  {
+    "path": "blog.html",
+    "url": "/blog.html",
+    "url_display": "/blog.html",
+    "title": "DigiWorks AI Blog | Enterprise AI Insights & Guides",
+    "h1": "Fueling Growth through Innovation and Creativity",
+    "purpose": "Blog index"
+  },
+  {
+    "path": "case-studies/addiction-world.html",
+    "url": "/case-studies/addiction-world.html",
+    "url_display": "/case-studies/addiction-world.html",
+    "title": "Addiction World Case Study | DigiWorks AI",
+    "h1": "Addiction World",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/arc-viva.html",
+    "url": "/case-studies/arc-viva.html",
+    "url_display": "/case-studies/arc-viva.html",
+    "title": "Arc Viva Case Study | DigiWorks AI",
+    "h1": "Arc Viva",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/bay-world.html",
+    "url": "/case-studies/bay-world.html",
+    "url_display": "/case-studies/bay-world.html",
+    "title": "Bay World Case Study | DigiWorks AI",
+    "h1": "Bay World",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/coachd.html",
+    "url": "/case-studies/coachd.html",
+    "url_display": "/case-studies/coachd.html",
+    "title": "Coachd App Case Study | DigiWorks AI",
+    "h1": "Coachd App",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/curb-cream.html",
+    "url": "/case-studies/curb-cream.html",
+    "url_display": "/case-studies/curb-cream.html",
+    "title": "Curb Cream Case Study | DigiWorks AI",
+    "h1": "Curb Cream",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/do-costa.html",
+    "url": "/case-studies/do-costa.html",
+    "url_display": "/case-studies/do-costa.html",
+    "title": "TCMS Case Study | DigiWorks AI",
+    "h1": "TCMS",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/draft-day.html",
+    "url": "/case-studies/draft-day.html",
+    "url_display": "/case-studies/draft-day.html",
+    "title": "Draft Day Case Study | DigiWorks AI",
+    "h1": "Draft Day",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/drive-guard.html",
+    "url": "/case-studies/drive-guard.html",
+    "url_display": "/case-studies/drive-guard.html",
+    "title": "Drive Guard Case Study | DigiWorks AI",
+    "h1": "Drive Guard",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/gas-on-the-go.html",
+    "url": "/case-studies/gas-on-the-go.html",
+    "url_display": "/case-studies/gas-on-the-go.html",
+    "title": "Gas on the Go Case Study | DigiWorks AI",
+    "h1": "Gas on the Go",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/live-muse.html",
+    "url": "/case-studies/live-muse.html",
+    "url_display": "/case-studies/live-muse.html",
+    "title": "Live Muse App Case Study | DigiWorks AI",
+    "h1": "Live Muse App",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/memor.html",
+    "url": "/case-studies/memor.html",
+    "url_display": "/case-studies/memor.html",
+    "title": "Memor Case Study | DigiWorks AI",
+    "h1": "Memor",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/milestone-truck.html",
+    "url": "/case-studies/milestone-truck.html",
+    "url_display": "/case-studies/milestone-truck.html",
+    "title": "Milestone Truck Case Study | DigiWorks AI",
+    "h1": "Milestone Truck",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/mvpedits.html",
+    "url": "/case-studies/mvpedits.html",
+    "url_display": "/case-studies/mvpedits.html",
+    "title": "MVP Edits Case Study | DigiWorks AI",
+    "h1": "MVP Edits",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/niro.html",
+    "url": "/case-studies/niro.html",
+    "url_display": "/case-studies/niro.html",
+    "title": "Niro App Case Study | DigiWorks AI",
+    "h1": "Niro App",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/siteiq.html",
+    "url": "/case-studies/siteiq.html",
+    "url_display": "/case-studies/siteiq.html",
+    "title": "SiteIq Case Study | DigiWorks AI",
+    "h1": "SiteIq",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/thrive-city.html",
+    "url": "/case-studies/thrive-city.html",
+    "url_display": "/case-studies/thrive-city.html",
+    "title": "Thrive City Case Study | DigiWorks AI",
+    "h1": "Thrive City",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies/yum-runner.html",
+    "url": "/case-studies/yum-runner.html",
+    "url_display": "/case-studies/yum-runner.html",
+    "title": "Yum Runner Case Study | DigiWorks AI",
+    "h1": "Yum Runner",
+    "purpose": "Case study detail"
+  },
+  {
+    "path": "case-studies.html",
+    "url": "/case-studies.html",
+    "url_display": "/case-studies.html",
+    "title": "Case Studies | AI Projects by DigiWorks AI | USA",
+    "h1": "Real products.Real outcomes.",
+    "purpose": "Case studies index"
+  },
+  {
+    "path": "contact.html",
+    "url": "/contact.html",
+    "url_display": "/contact.html",
+    "title": "Contact DigiWorks AI | Talk to Enterprise AI Experts",
+    "h1": "Let's Talk About Your AI Project",
+    "purpose": "Contact / lead form"
+  },
+  {
+    "path": "custom-app-development-meta.html",
+    "url": "/custom-app-development-meta.html",
+    "url_display": "/custom-app-development-meta.html",
+    "title": "Custom Mobile App Development | DigiWorks AI",
+    "h1": "Idea or Prototype. We\n                    \n                    Design, Build and\n                    Launch It.",
+    "purpose": "Custom app development landing (meta/campaign)"
+  },
+  {
+    "path": "hire/dedicated-ai-pods.html",
+    "url": "/hire/dedicated-ai-pods.html",
+    "url_display": "/hire/dedicated-ai-pods.html",
+    "title": "Hire Dedicated AI Pods in the USA | DigiWorks AI",
+    "h1": "Accelerate Product Delivery With Dedicated AI Pods",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "hire/hire-ai-engineers.html",
+    "url": "/hire/hire-ai-engineers.html",
+    "url_display": "/hire/hire-ai-engineers.html",
+    "title": "Hire AI Engineers in the USA | DigiWorks AI",
+    "h1": "Hire AI Engineers Who Integrate Seamlessly with Your Team",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "hire/hire-computer-vision-developers.html",
+    "url": "/hire/hire-computer-vision-developers.html",
+    "url_display": "/hire/hire-computer-vision-developers.html",
+    "title": "Hire Computer Vision Engineers in the USA | DigiWorks AI",
+    "h1": "Hire Computer Vision Developers to Automate Visual Intelligence",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "hire/hire-data-scientists.html",
+    "url": "/hire/hire-data-scientists.html",
+    "url_display": "/hire/hire-data-scientists.html",
+    "title": "Hire Data Scientists in the USA | DigiWorks AI",
+    "h1": "Hire Data Scientists to Expand Your Technical & Analytical Capacity",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "hire/hire-ml-engineers.html",
+    "url": "/hire/hire-ml-engineers.html",
+    "url_display": "/hire/hire-ml-engineers.html",
+    "title": "Hire ML Engineers in the USA | DigiWorks AI",
+    "h1": "Hire ML Experts to Expand Your Technical Team Quickly",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "hire/hire-nlp-engineers.html",
+    "url": "/hire/hire-nlp-engineers.html",
+    "url_display": "/hire/hire-nlp-engineers.html",
+    "title": "Hire NLP Engineers in the USA | DigiWorks AI",
+    "h1": "Hire NLP Engineers Who Strengthen Your Language AI Capabilities",
+    "purpose": "Hire developers / AI pod page"
+  },
+  {
+    "path": "index.html",
+    "url": "/index.html",
+    "url_display": "/",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Home / marketing landing"
+  },
+  {
+    "path": "industries/ai-for-education.html",
+    "url": "/industries/ai-for-education.html",
+    "url_display": "/industries/ai-for-education.html",
+    "title": "AI for Education | DigiWorks AI",
+    "h1": "Personalized Learning at Scale Enabled by AI",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-fintech.html",
+    "url": "/industries/ai-for-fintech.html",
+    "url_display": "/industries/ai-for-fintech.html",
+    "title": "AI for Fintech | DigiWorks AI",
+    "h1": "Transform Fintech Operations with Applied AI Intelligence",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-healthcare.html",
+    "url": "/industries/ai-for-healthcare.html",
+    "url_display": "/industries/ai-for-healthcare.html",
+    "title": "AI for Healthcare | DigiWorks AI",
+    "h1": "Intelligent AI Solutions for Modern Healthcare Systems",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-logistics-and-supply-chain.html",
+    "url": "/industries/ai-for-logistics-and-supply-chain.html",
+    "url_display": "/industries/ai-for-logistics-and-supply-chain.html",
+    "title": "AI for Logistics & Supply Chain | DigiWorks AI",
+    "h1": "AI That Powers Agile Logistics and Supply Chains",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-manufacturing.html",
+    "url": "/industries/ai-for-manufacturing.html",
+    "url_display": "/industries/ai-for-manufacturing.html",
+    "title": "AI for Manufacturing | DigiWorks AI",
+    "h1": "Smarter Manufacturing Powered by Applied AI",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-real-estate.html",
+    "url": "/industries/ai-for-real-estate.html",
+    "url_display": "/industries/ai-for-real-estate.html",
+    "title": "AI for Real Estate | DigiWorks AI",
+    "h1": "Transform Property Management with Intelligent AI Solutions",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "industries/ai-for-retail-and-ecommerce.html",
+    "url": "/industries/ai-for-retail-and-ecommerce.html",
+    "url_display": "/industries/ai-for-retail-and-ecommerce.html",
+    "title": "AI for Retail & E-commerce | DigiWorks AI",
+    "h1": "AI for Retail and Ecommerce That Enhances Customer Experiences",
+    "purpose": "Industry vertical page"
+  },
+  {
+    "path": "privacy-policy.html",
+    "url": "/privacy-policy.html",
+    "url_display": "/privacy-policy.html",
+    "title": "Privacy Policy | DigiWorks AI",
+    "h1": "Privacy Policy",
+    "purpose": "Privacy policy (legal)"
+  },
+  {
+    "path": "services/ai-agent-development.html",
+    "url": "/services/ai-agent-development.html",
+    "url_display": "/services/ai-agent-development.html",
+    "title": "AI Agent Development Services USA | DigiWorks AI",
+    "h1": "AI Agent Development Services that Drive Automation",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/ai-chatbot-development.html",
+    "url": "/services/ai-chatbot-development.html",
+    "url_display": "/services/ai-chatbot-development.html",
+    "title": "AI Chatbot Development Company USA | DigiWorks AI",
+    "h1": "AI Chatbot Services that Enhance Customer Experience",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/ai-red-teaming.html",
+    "url": "/services/ai-red-teaming.html",
+    "url_display": "/services/ai-red-teaming.html",
+    "title": "AI Red Teaming Services USA | DigiWorks AI",
+    "h1": "AI Red Teaming Services That Protect Enterprise Models",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/ai-security.html",
+    "url": "/services/ai-security.html",
+    "url_display": "/services/ai-security.html",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/ai-training-and-support.html",
+    "url": "/services/ai-training-and-support.html",
+    "url_display": "/services/ai-training-and-support.html",
+    "title": "Enterprise AI Training & Support USA | DigiWorks AI",
+    "h1": "AI Training and Support Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/artificial-intelligence.html",
+    "url": "/services/artificial-intelligence.html",
+    "url_display": "/services/artificial-intelligence.html",
+    "title": "AI Development Company USA | Custom AI Solutions | DigiWorks AI",
+    "h1": "Artificial Intelligence Development Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/automation-and-integration.html",
+    "url": "/services/automation-and-integration.html",
+    "url_display": "/services/automation-and-integration.html",
+    "title": "AI Automation & Integration Services USA | DigiWorks AI",
+    "h1": "Automation and Integration Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/autonomous-ai-agents.html",
+    "url": "/services/autonomous-ai-agents.html",
+    "url_display": "/services/autonomous-ai-agents.html",
+    "title": "Autonomous AI Agents Development USA | DigiWorks AI",
+    "h1": "Autonomous AI Agent Development That Advances Enterprise Agility",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/cloud-and-devops.html",
+    "url": "/services/cloud-and-devops.html",
+    "url_display": "/services/cloud-and-devops.html",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/cloud-architecture-and-deployment.html",
+    "url": "/services/cloud-architecture-and-deployment.html",
+    "url_display": "/services/cloud-architecture-and-deployment.html",
+    "title": "AI Cloud Architecture & Deployment USA | DigiWorks AI",
+    "h1": "Next-Gen Cloud Architecture and Deployment Services",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/data-and-cloud.html",
+    "url": "/services/data-and-cloud.html",
+    "url_display": "/services/data-and-cloud.html",
+    "title": "Enterprise Data & Cloud Services USA | DigiWorks AI",
+    "h1": "Data and Cloud Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/data-engineering.html",
+    "url": "/services/data-engineering.html",
+    "url_display": "/services/data-engineering.html",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/generative-ai-development.html",
+    "url": "/services/generative-ai-development.html",
+    "url_display": "/services/generative-ai-development.html",
+    "title": "Generative AI Development Company USA | DigiWorks AI",
+    "h1": "Generative AI Services that Redefine Enterprise Innovation",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/intelligent-automation.html",
+    "url": "/services/intelligent-automation.html",
+    "url_display": "/services/intelligent-automation.html",
+    "title": "Intelligent Automation Services USA | DigiWorks AI",
+    "h1": "Intelligent Automation Services That Unlock Enterprise Potential",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/intelligent-document-processing.html",
+    "url": "/services/intelligent-document-processing.html",
+    "url_display": "/services/intelligent-document-processing.html",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/machine-learning-development.html",
+    "url": "/services/machine-learning-development.html",
+    "url_display": "/services/machine-learning-development.html",
+    "title": "Enterprise AI & ML Development Company USA | DigiWorks AI",
+    "h1": "We\u00a0Empower\u00a0Enterprises\u00a0WithIntelligence\u00a0EngineeredFor\u00a0The\u00a0Future",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/machine-learning.html",
+    "url": "/services/machine-learning.html",
+    "url_display": "/services/machine-learning.html",
+    "title": "Machine Learning Development Services USA | DigiWorks AI",
+    "h1": "Machine Learning Development Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/mlops-setup.html",
+    "url": "/services/mlops-setup.html",
+    "url_display": "/services/mlops-setup.html",
+    "title": "MLOps Setup & Consulting Services USA | DigiWorks AI",
+    "h1": "MLOps Services That Standardize Model Workflows",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/mobile-app-development.html",
+    "url": "/services/mobile-app-development.html",
+    "url_display": "/services/mobile-app-development.html",
+    "title": "Custom Mobile App Development Company USA | DigiWorks AI",
+    "h1": "Custom Mobile App Development Company in USA",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/natural-language-processing.html",
+    "url": "/services/natural-language-processing.html",
+    "url_display": "/services/natural-language-processing.html",
+    "title": "NLP Development Services USA | DigiWorks AI",
+    "h1": "Custom NLP Development Services for Modern Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/predictive-modeling.html",
+    "url": "/services/predictive-modeling.html",
+    "url_display": "/services/predictive-modeling.html",
+    "title": "Predictive Modeling Services USA | DigiWorks AI",
+    "h1": "Predictive Modeling Services that Drive Smarter Decisions",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/privacy-preserving-ai.html",
+    "url": "/services/privacy-preserving-ai.html",
+    "url_display": "/services/privacy-preserving-ai.html",
+    "title": "Privacy-Preserving AI Development USA | DigiWorks AI",
+    "h1": "Privacy-Preserving AI That Empowers Confidential Intelligence",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/real-time-data-streaming.html",
+    "url": "/services/real-time-data-streaming.html",
+    "url_display": "/services/real-time-data-streaming.html",
+    "title": "Real-Time Data Streaming Services USA | DigiWorks AI",
+    "h1": "Real-Time Data Streaming Services That Strengthen Data Agility",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "services/security-and-compliance.html",
+    "url": "/services/security-and-compliance.html",
+    "url_display": "/services/security-and-compliance.html",
+    "title": "AI Security & Compliance Services USA | DigiWorks AI",
+    "h1": "Security and Compliance Company for Enterprises",
+    "purpose": "Service offering page"
+  },
+  {
+    "path": "solutions/ai-automation.html",
+    "url": "/solutions/ai-automation.html",
+    "url_display": "/solutions/ai-automation.html",
+    "title": "AI Automation Solutions USA | DigiWorks AI",
+    "h1": "AI Automation That Reduces Manual Bottlenecks",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "solutions/ai-for-cybersecurity.html",
+    "url": "/solutions/ai-for-cybersecurity.html",
+    "url_display": "/solutions/ai-for-cybersecurity.html",
+    "title": "AI in Cybersecurity Solutions USA | DigiWorks AI",
+    "h1": "AI-Driven Cybersecurity That Detects Threats Faster",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "solutions/computer-vision-image-recognition.html",
+    "url": "/solutions/computer-vision-image-recognition.html",
+    "url_display": "/solutions/computer-vision-image-recognition.html",
+    "title": "Image Intelligence Solutions USA | DigiWorks AI",
+    "h1": "AI-Powered Image Intelligence and Computer Vision Solutions",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "solutions/conversational-ai.html",
+    "url": "/solutions/conversational-ai.html",
+    "url_display": "/solutions/conversational-ai.html",
+    "title": "Conversational AI Solutions USA | DigiWorks AI",
+    "h1": "Conversational AI Solutions That Automate Smart Interactions",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "solutions/generative-ai.html",
+    "url": "/solutions/generative-ai.html",
+    "url_display": "/solutions/generative-ai.html",
+    "title": "Generative AI Solutions USA | DigiWorks AI",
+    "h1": "Generative AI That Transforms Creative Workflows",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "solutions/predictive-analytics.html",
+    "url": "/solutions/predictive-analytics.html",
+    "url_display": "/solutions/predictive-analytics.html",
+    "title": "Predictive Analytics Solutions USA | DigiWorks AI",
+    "h1": "Predictive Analytics Solutions Powered by AI",
+    "purpose": "Solution / capability page"
+  },
+  {
+    "path": "team.html",
+    "url": "/team.html",
+    "url_display": "/team.html",
+    "title": "Meet the DigiWorks AI Team | AI Engineers, Data Scientists",
+    "h1": "The minds engineering what comes next",
+    "purpose": "Team roster"
+  },
+  {
+    "path": "terms-of-use.html",
+    "url": "/terms-of-use.html",
+    "url_display": "/terms-of-use.html",
+    "title": "Terms of Use | DigiWorks AI",
+    "h1": "Terms of Use",
+    "purpose": "Terms of use (legal)"
+  }
+]

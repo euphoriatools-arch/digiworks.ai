@@ -1,0 +1,35 @@
+---
+import { buildJsonLd, kindFromPath, type PageKind } from '../lib/jsonld';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  kind?: PageKind;
+  datePublished?: string;
+  dateModified?: string;
+  faqs?: { q: string; a: string }[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  kind = kindFromPath(canonicalPath),
+  datePublished,
+  dateModified,
+  faqs,
+} = Astro.props;
+
+const json = buildJsonLd({
+  kind,
+  title,
+  description,
+  canonicalPath,
+  datePublished,
+  dateModified,
+  faqs,
+});
+---
+
+<script type="application/ld+json" set:html={json} />

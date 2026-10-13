@@ -1,0 +1,30 @@
+# DigiWorks AI
+
+> DigiWorks AI is an Austin, Texas-based AI development company that helps US businesses design, build, and scale production AI, including AI agents, generative AI, predictive analytics, and intelligent automation, along with the web, mobile, and cloud software around it.
+
+- HQ: 716 Congress Ave #200, Austin, TX 78701, USA
+- Phone: +1 737 394 5488
+- Typical delivery: 8–20 weeks
+- Also: Dubai, Karachi, Canada, Guangzhou
+
+## Primary pages
+
+- [Home](https://digiworksai.com/): Production AI and software for US businesses
+- [About](https://digiworksai.com/about.html)
+- [Contact](https://digiworksai.com/contact.html)
+- [Blog](https://digiworksai.com/blog.html)
+- [AI readiness](https://digiworksai.com/ai-readiness.html)
+- [AI services](https://digiworksai.com/services/artificial-intelligence.html)
+- [AI automation solutions](https://digiworksai.com/solutions/ai-automation.html)
+- [AI for healthcare](https://digiworksai.com/industries/ai-for-healthcare.html)
+- [Hire AI engineers](https://digiworksai.com/hire/hire-ai-engineers.html)
+- [Dedicated AI pods](https://digiworksai.com/hire/dedicated-ai-pods.html)
+- [Case studies](https://digiworksai.com/case-studies.html)
+- [Team](https://digiworksai.com/team.html)
+- [Privacy policy](https://digiworksai.com/privacy-policy.html)
+- [Terms of use](https://digiworksai.com/terms-of-use.html)
+
+## Optional
+
+- [Full URL list](https://digiworksai.com/llms-full.txt)
+- [Sitemap](https://digiworksai.com/sitemap-index.xml)

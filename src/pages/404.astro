@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Page not found | DigiWorks AI"
+  description="This page is not on digiworksai.com. Open Home, Services, Case Studies, or Contact to keep going."
+  canonicalPath="/404.html"
+  robots="noindex, follow"
+  entryScript={null}
+>
+  <div class="noise relative min-h-screen overflow-x-clip">
+    <a
+      href="#main"
+      class="sr-only z-[95] rounded-full bg-gradient-to-r from-coral to-violet px-5 py-2.5 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >Skip to content</a
+    >
+    <Header />
+    <main id="main" class="relative z-10 px-5 pb-8 pt-40 sm:px-8">
+      <section class="mx-auto max-w-3xl text-center">
+        <p class="chip mx-auto w-max"><span class="h-1.5 w-1.5 animate-pulse rounded-full bg-coral"></span>404</p>
+        <h1 class="mt-6 font-display text-4xl font-bold leading-[1.12] text-dusk sm:text-5xl">
+          This page is not on the map
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-dusk/70 md:text-lg">
+          The URL you opened is not a live DigiWorks AI page. Use a main hub below, or tell us what you were trying to
+          build.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a class="btn-primary" href="/">Home</a>
+          <a class="btn-ghost" href="/services/artificial-intelligence.html">AI services</a>
+          <a class="btn-ghost" href="/case-studies.html">Case studies</a>
+          <a class="btn-ghost" href="/contact.html">Contact</a>
+        </div>
+        <ul class="mx-auto mt-12 max-w-md space-y-2 text-left text-sm text-dusk/70">
+          <li><a class="hover:text-dusk" href="/solutions/ai-automation.html">AI automation solutions</a></li>
+          <li><a class="hover:text-dusk" href="/hire/hire-ai-engineers.html">Hire AI engineers</a></li>
+          <li><a class="hover:text-dusk" href="/blog.html">Enterprise AI blog</a></li>
+          <li><a class="hover:text-dusk" href="/about.html">About DigiWorks AI</a></li>
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+/**
+ * Full-page navigation to frozen .html URLs + SPA boot helpers.
+ * dw-boot.js (classic) must run before app-digi.js (module).
+ * Do NOT wrap history.pushState/replaceState — that breaks React Router menus.
+ */
+---
+<script is:inline src="/assets/dw-boot.js"></script>
+<script is:inline>
+  (function () {
+    function toClean(pathname) {
+      var p = pathname || '/';
+      if (p === '/' || p === '') return '/';
+      if (p.endsWith('/index.html')) p = p.slice(0, -11) || '/';
+      if (p.endsWith('.html')) p = p.slice(0, -5) || '/';
+      if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+      return p || '/';
+    }
+    function toFile(pathname) {
+      var p = toClean(pathname);
+      if (p === '/') return '/';
+      return p + '.html';
+    }
+    function samePage(url) {
+      try {
+        var u = new URL(url, location.origin);
+        return (
+          toFile(u.pathname) === toFile(location.pathname) &&
+          u.search === location.search &&
+          u.hash === location.hash
+        );
+      } catch (e) {
+        return false;
+      }
+    }
+    function hardNav(url) {
+      try {
+        var abs;
+        if (/^https?:\/\//i.test(url) || url.charAt(0) === '/' || url.charAt(0) === '#') {
+          abs = new URL(url, location.href);
+        } else {
+          var stripped = url.replace(/^(\.\/)+/, '');
+          while (stripped.indexOf('../') === 0) stripped = stripped.slice(3);
+          abs = new URL('/' + stripped, location.origin);
+        }
+        if (abs.origin !== location.origin) return false;
+        var target = toFile(abs.pathname) + abs.search + abs.hash;
+        if (samePage(target)) return true;
+        location.assign(target);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function rewriteRenderedHrefs(root) {
+      if (!root || !root.querySelectorAll) return;
+      root.querySelectorAll('a[href]').forEach(function (a) {
+        var raw = a.getAttribute('href');
+        if (!raw || raw.charAt(0) !== '/') return;
+        if (raw === '/') return;
+        var hash = '';
+        var search = '';
+        var path = raw;
+        var qi = path.indexOf('?');
+        var hi = path.indexOf('#');
+        if (hi >= 0) {
+          hash = path.slice(hi);
+          path = path.slice(0, hi);
+        }
+        if (qi >= 0) {
+          search = path.slice(qi);
+          path = path.slice(0, qi);
+        }
+        if (!path || path === '/') return;
+        if (/\.[a-zA-Z0-9]+$/.test(path)) return;
+        if (/^\/(assets|photos|team|mark|favicon)/.test(path)) return;
+        a.setAttribute('href', path + '.html' + search + hash);
+      });
+    }
+    function startHrefSync() {
+      rewriteRenderedHrefs(document);
+      try {
+        new MutationObserver(function () {
+          rewriteRenderedHrefs(document);
+        }).observe(document.documentElement, { childList: true, subtree: true });
+      } catch (e) {}
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startHrefSync);
+    } else {
+      startHrefSync();
+    }
+
+    document.addEventListener(
+      'click',
+      function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var a = e.target && e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var raw = a.getAttribute('href');
+        if (
+          !raw ||
+          raw.charAt(0) === '#' ||
+          raw.indexOf('mailto:') === 0 ||
+          raw.indexOf('tel:') === 0 ||
+          raw.indexOf('javascript:') === 0
+        )
+          return;
+        if (hardNav(raw)) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      },
+      true
+    );
+  })();
+</script>

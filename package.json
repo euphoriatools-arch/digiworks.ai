@@ -1,0 +1,23 @@
+{
+  "name": "digiworks-ai",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node --experimental-strip-types scripts/sync-spa-copy.mjs && astro dev",
+    "build": "node --experimental-strip-types scripts/sync-spa-copy.mjs && astro build && node scripts/rewrite-internal-hrefs.mjs && node --experimental-strip-types scripts/check-dist-copy.mjs",
+    "preview": "astro preview",
+    "test:hydration": "playwright test",
+    "convert": "node scripts/convert-html-to-astro.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.2",
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

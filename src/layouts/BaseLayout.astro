@@ -1,0 +1,118 @@
+---
+/**
+ * Shared page shell. Loads original app CSS + module graph with absolute paths.
+ * SPA entry (app-digi.js) restored for animations and mega-menus.
+ */
+import { site } from '../data/site';
+import Analytics from '../components/Analytics.astro';
+import NavFix from '../components/NavFix.astro';
+import Preloader from '../components/Preloader.astro';
+import SEO from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
+import { kindFromPath, type PageKind } from '../lib/jsonld';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath: string;
+  ogImage?: string;
+  robots?: string;
+  modulePreloads?: string[];
+  stylesheets?: string[];
+  entryScript?: string | null;
+  skipAppCss?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+  schemaKind?: PageKind;
+  preserveSsr?: boolean;
+  faqs?: { q: string; a: string }[];
+}
+
+const {
+  title,
+  description = site.description,
+  canonicalPath,
+  ogImage = site.ogImage,
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  modulePreloads = [],
+  stylesheets = [],
+  entryScript = '/assets/app-digi.js',
+  skipAppCss = false,
+  datePublished,
+  dateModified,
+  schemaKind,
+  preserveSsr = false,
+  faqs,
+} = Astro.props;
+
+const kind = schemaKind ?? kindFromPath(canonicalPath);
+const ogType = kind === 'blogPost' || kind === 'caseStudy' ? 'article' : 'website';
+const script = preserveSsr ? null : entryScript;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      ogImage={ogImage}
+      robots={robots}
+      ogType={ogType}
+    />
+    <Schema
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      kind={kind}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      faqs={faqs}
+    />
+    <Analytics />
+    <NavFix />
+
+    {!skipAppCss && <link rel="stylesheet" crossorigin href="/assets/app-K_eQ08L-.css" />}
+    {stylesheets.map((href) => <link rel="stylesheet" href={href.startsWith('/') || href.startsWith('http') ? href : `/${href}`} />)}
+
+    {preserveSsr && (
+      <style is:inline>
+        #root [style*='opacity:0'] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    )}
+    {!preserveSsr &&
+      modulePreloads.map((href) => (
+        <link rel="modulepreload" crossorigin href={href.startsWith('/') ? href : `/${href}`} />
+      ))}
+  </head>
+  <body>
+    <Preloader />
+    <slot />
+    {
+      script && (
+        <>
+          <script is:inline>
+            (function () {
+              try {
+                delete window.__staticRouterHydrationData;
+                var rootEl = document.getElementById('root');
+                if (rootEl) {
+                  rootEl.removeAttribute('data-server-rendered');
+                  rootEl.innerHTML = '';
+                }
+              } catch (e) {}
+            })();
+          </script>
+          <script is:inline type="module" async crossorigin src={script}></script>
+          <script is:inline>
+            window.__VITE_REACT_SSG_HASH__ = window.__VITE_REACT_SSG_HASH__ || 'zs0xfzfmg5';
+          </script>
+        </>
+      )
+    }
+  </body>
+</html>

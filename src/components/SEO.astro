@@ -1,0 +1,69 @@
+---
+import { site, absoluteUrl } from '../data/site';
+import { isOwnerSkipIndex, isStagingBuild } from '../lib/jsonld';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath: string;
+  ogImage?: string;
+  robots?: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title,
+  description = site.description,
+  canonicalPath,
+  ogImage = site.ogImage,
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  ogType = 'website',
+} = Astro.props;
+
+const staging = isStagingBuild();
+const skipIndex = isOwnerSkipIndex(canonicalPath);
+const robotsFinal = staging
+  ? 'noindex, nofollow'
+  : skipIndex
+    ? 'noindex, follow'
+    : robots;
+const canonical = absoluteUrl(canonicalPath === '/' ? '/' : canonicalPath);
+const ogImageAbs = ogImage.startsWith('http') ? ogImage : absoluteUrl(ogImage);
+const ogDescription = description.length > 125 ? `${description.slice(0, 122)}…` : description;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="theme-color" content={site.themeColor} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={site.name} />
+<meta name="robots" content={robotsFinal} />
+<meta name="googlebot" content={robotsFinal} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="en" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+<meta property="og:title" content={title.length > 60 ? `${title.slice(0, 57)}…` : title} />
+<meta property="og:description" content={ogDescription} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageAbs} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:locale" content={site.locale} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title.length > 60 ? `${title.slice(0, 57)}…` : title} />
+<meta name="twitter:description" content={ogDescription} />
+<meta name="twitter:image" content={ogImageAbs} />
+
+<link rel="icon" type="image/svg+xml" href={site.faviconSvg} />
+<link rel="icon" type="image/png" href={site.faviconPng} />
+<link rel="apple-touch-icon" href={site.appleTouchIcon} />
+<link rel="manifest" href={site.manifest} />
+
+<link rel="preload" href="/fonts/f04.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/f08.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/fonts/fonts.css" />

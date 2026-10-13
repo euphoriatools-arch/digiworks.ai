@@ -1,0 +1,11 @@
+---
+/**
+ * Shared CTA bands remain in prerendered page HTML in Phase 2 (design freeze).
+ * This stub marks the component slot for Phase 5+ content work.
+ */
+interface Props { class?: string }
+const { class: className = '' } = Astro.props;
+---
+<div class:list={['dw-cta-band', className]} data-component="CtaBand">
+  <slot />
+</div>

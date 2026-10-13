@@ -1,0 +1,134 @@
+---
+/**
+ * Original intro overlay (app-digi `ut()`): 900ms hold, then 0.7s slide up.
+ * Mounted outside #root so BaseLayout's innerHTML wipe cannot remove first paint.
+ */
+---
+
+<noscript>
+  <style>
+    #dw-intro {
+      display: none !important;
+    }
+  </style>
+</noscript>
+<div
+  id="dw-intro"
+  data-preloader
+  hidden
+  aria-hidden="true"
+  class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-void"
+>
+  <div class="dw-intro-logo relative">
+    <div class="absolute inset-0 scale-150 rounded-full bg-electric/30 blur-3xl"></div>
+    <img src="/logo-white.png" alt="DigiWorks AI" class="relative h-14 w-auto" width="280" height="46" draggable="false" />
+  </div>
+  <div class="dw-intro-track mt-8 h-0.5 w-44 overflow-hidden rounded-full bg-dusk/10">
+    <div class="dw-intro-bar h-full bg-gradient-to-r from-cyan via-electric to-violet"></div>
+  </div>
+</div>
+<style is:inline>
+  #dw-intro[hidden] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  @keyframes dw-intro-logo {
+    from {
+      transform: scale(0.6) rotate(-12deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes dw-intro-track-in {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes dw-intro-bar {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes dw-intro-exit {
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  #dw-intro.dw-intro-on {
+    display: flex;
+  }
+  #dw-intro.dw-intro-on .dw-intro-logo {
+    animation: dw-intro-logo 0.6s cubic-bezier(0.21, 0.65, 0.36, 1) both;
+  }
+  #dw-intro.dw-intro-on .dw-intro-track {
+    opacity: 0;
+    animation: dw-intro-track-in 0.01s linear 0.5s forwards;
+  }
+  #dw-intro.dw-intro-on .dw-intro-bar {
+    transform: translateX(-100%);
+    animation: dw-intro-bar 0.9s ease-in-out 0.55s forwards;
+  }
+  #dw-intro.dw-intro-exit {
+    animation: dw-intro-exit 0.7s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+  }
+</style>
+<script is:inline>
+  (function () {
+    var el = document.getElementById('dw-intro');
+    if (!el) return;
+    function lowPower() {
+      try {
+        if (new URLSearchParams(window.location.search).get('lowpower') === '1') return true;
+        var ua = navigator.userAgent;
+        var mobile =
+          /iPhone|Android.*Mobile|Mobile.*Android/i.test(ua) ||
+          (window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 768);
+        if (!mobile) return false;
+        var ios = ua.match(/(?:iPhone|CPU) OS (\d+)[_.]/);
+        if (ios) return parseInt(ios[1], 10) < 12;
+        var and = ua.match(/Android (\d+)/);
+        if (and) return parseInt(and[1], 10) < 9;
+      } catch (e) {}
+      return false;
+    }
+    try {
+      if (sessionStorage.getItem('digiworks-intro') || lowPower()) return;
+    } catch (e) {
+      return;
+    }
+    el.hidden = false;
+    el.style.display = '';
+    el.classList.add('dw-intro-on');
+    document.body.style.overflow = 'hidden';
+    try {
+      sessionStorage.setItem('digiworks-intro', '1');
+    } catch (e) {}
+    var started = Date.now();
+    function finish() {
+      var wait = Math.max(0, 900 - (Date.now() - started));
+      setTimeout(function () {
+        el.classList.add('dw-intro-exit');
+        setTimeout(function () {
+          el.hidden = true;
+          el.style.display = 'none';
+          el.classList.remove('dw-intro-on', 'dw-intro-exit');
+          document.body.style.overflow = '';
+        }, 700);
+      }, wait);
+    }
+    var fonts = document.fonts && document.fonts.ready
+      ? document.fonts.ready.catch(function () {})
+      : Promise.resolve();
+    var cap = new Promise(function (resolve) {
+      setTimeout(resolve, 3000);
+    });
+    Promise.race([fonts, cap]).then(finish);
+  })();
+</script>

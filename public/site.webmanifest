@@ -1,0 +1,17 @@
+{
+  "name": "DigiWorks AI",
+  "short_name": "DigiWorks AI",
+  "description": "Austin-based AI development company. Production AI, agents, and software for US businesses.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060a14",
+  "theme_color": "#060a14",
+  "lang": "en",
+  "icons": [
+    { "src": "/mark5e1f.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/mark.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/logo.png", "sizes": "180x46", "type": "image/png" },
+    { "src": "/favicon5e1f.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
