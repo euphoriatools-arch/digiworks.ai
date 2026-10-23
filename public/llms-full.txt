@@ -20,6 +20,10 @@ Take a free AI readiness assessment: five questions, a graded score, and the nex
 https://digiworksai.com/blog.html
 Enterprise AI blog from DigiWorks AI: production lessons on shipping, review, and named owners. Guides that feed the service catalog, not trend recaps.
 
+## AI Restaurant Ordering Platform Case Study | DigiWorks AI
+https://digiworksai.com/case-studies/checkmate.html
+Checkmate doubled peak-hour phone-order capacity for restaurants. See how DigiWorks AI sent those calls into the POS, then book a free discovery call.
+
 ## Contact DigiWorks AI | Book a Discovery Call Today
 https://digiworksai.com/contact.html
 Contact DigiWorks AI for a production AI quote. Austin HQ, five offices, reply within 1 business day. Call +1 737 394 5488 to book a path.

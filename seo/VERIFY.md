@@ -1,5 +1,18 @@
 # Owner fill list
 
+## Checkmate case study (`/case-studies/checkmate.html`)
+
+| Item | Notes |
+|---|---|
+| `public/case/checkmate/checkmate-logo.webp` | Missing. Logo slot is a neutral placeholder. |
+| `public/case/checkmate/checkmate-01.webp` | Missing. Hero slot (1200×900) is a neutral placeholder. |
+| `public/case/checkmate/checkmate-02.webp` | Missing. Solution slot (1000×1000) is a neutral placeholder. |
+| `public/case/checkmate/checkmate-03.webp` | Missing. Business-results slot (1200×900) is a neutral placeholder. |
+| `checkmate-04.webp` and later | No gallery files. “Every Checkmate Screen, Crafted” is hidden. |
+| Platform: Phone AI | Shown as “Web dashboard · Phone AI”. Confirm the phone channel. |
+| Timeline | Unknown. The Timeline cell is hidden. |
+| Custom software development services | No matching service URL, so that phrase is not linked. |
+
 Fill the right column. When done, send: **Apply /seo/VERIFY.md**
 
 ## Remove noindex after rewrite
@@ -52,7 +65,7 @@ Hubs `/blog.html` and `/case-studies.html` stay indexable.
 | Named certifications (HIPAA, ISO, GDPR, etc.) — currently not claimed | |
 | HIPAA-aligned / FERPA-aligned industry language (not certification) | |
 | Hire CV **engineers** vs URL `hire-computer-vision-developers` | |
-| Case-studies hub count of 17 products (not “20+”) | |
+| Case-studies hub count of 18 products (not “20+”) | |
 
 ## Legal
 

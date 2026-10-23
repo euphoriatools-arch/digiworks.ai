@@ -18,7 +18,8 @@ function walk(dir, acc = []) {
 
 function isSkipped(url) {
   if (url === '/team.html') return true;
-  if (url === '/case-studies.html' || url.startsWith('/case-studies/')) return true;
+  if (url === '/case-studies.html') return true;
+  if (url.startsWith('/case-studies/') && url !== '/case-studies/checkmate.html') return true;
   if (url.startsWith('/blog/') && url !== '/blog.html') return true;
   return false;
 }

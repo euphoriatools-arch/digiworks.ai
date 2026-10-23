@@ -12,7 +12,7 @@ export const caseStudiesCopy: CopyPage & {
   h1Line1: 'AI development',
   h1Line2: 'case studies.',
   hero:
-    'Seventeen platforms in this library that we designed and engineered through launch, each a real product like Drive Guard, not a deck of invented metrics.',
+    'Eighteen platforms in this library that we designed and engineered through launch, each a real product like Drive Guard, not a deck of invented metrics.',
   bodyLinks: [
     { phrase: 'like Drive Guard', href: '/case-studies/drive-guard' },
     { phrase: 'invented metrics', href: '/contact' },

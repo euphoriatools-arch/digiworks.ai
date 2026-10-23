@@ -53,6 +53,7 @@ import { hireComputerVisionCopy } from '../src/data/copy/hire-computer-vision-de
 import { aboutCopy } from '../src/data/copy/about.ts';
 import { teamCopy } from '../src/data/copy/team.ts';
 import { caseStudiesCopy } from '../src/data/copy/case-studies.ts';
+import { checkmateSectionsHtml } from '../src/lib/renderCheckmate.ts';
 import { aiReadinessCopy } from '../src/data/copy/ai-readiness.ts';
 import { contactCopy } from '../src/data/copy/contact.ts';
 import { blogCopy } from '../src/data/copy/blog.ts';
@@ -849,6 +850,41 @@ function sync() {
     writeFileSync(join(destDir, name), text);
   }
   writeFileSync(join(destDir, 'assets', FILES.seo), out[FILES.seo]);
+
+  const dataPath = join(destDir, 'caseStudies-3DQGQmTb.js');
+  let data = readFileSync(dataPath, 'utf8');
+  const dataMarker = '],r=[{phase:`Discovery & Alignment`';
+  if (!data.includes('slug:`checkmate`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`checkmate`,name:`Checkmate`,tagline:`Doubled Peak-Hour Order Capacity`,category:`AI Restaurant Ordering Platform`,group:`Restaurants`,accent:`from-cyan to-electric`,brandBlue:`#29a3dc`,brandNavy:`#0d2745`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+    writeFileSync(dataPath, data);
+  }
+
+  writeFileSync(
+    join(destDir, 'checkmate-body.js'),
+    `export const html = ${JSON.stringify(checkmateSectionsHtml())};\n`,
+  );
+
+  const detailPath = join(destDir, 'CaseStudyDetail-r_3xQvln.js');
+  let detailFile = readFileSync(detailPath, 'utf8');
+  if (!detailFile.includes('checkmate-body.js')) {
+    const importAt = detailFile.indexOf('import b from"./NotFound-Z1KVdJMv.js";');
+    if (importAt < 0) throw new Error('SPA copy sync: CaseStudyDetail import anchor missing');
+    const importEnd = importAt + 'import b from"./NotFound-Z1KVdJMv.js";'.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as CHECKMATE_HTML}from"./checkmate-body.js";' +
+      detailFile.slice(importEnd);
+    const branchFrom = '!t)return(0,S.jsx)(b,{});let i=h(t)';
+    const branchTo =
+      '!t)return(0,S.jsx)(b,{});if(t.slug===`checkmate`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:CHECKMATE_HTML}});let i=h(t)';
+    if (!detailFile.includes(branchFrom)) throw new Error('SPA copy sync: CaseStudyDetail branch anchor missing');
+    detailFile = detailFile.replace(branchFrom, branchTo);
+    writeFileSync(detailPath, detailFile);
+  }
 
   console.log('SPA copy sync: ok');
 }

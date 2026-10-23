@@ -20,6 +20,7 @@
 - [Hire AI engineers](https://digiworksai.com/hire/hire-ai-engineers.html)
 - [Dedicated AI pods](https://digiworksai.com/hire/dedicated-ai-pods.html)
 - [Case studies](https://digiworksai.com/case-studies.html)
+- [Checkmate case study](https://digiworksai.com/case-studies/checkmate.html): AI restaurant ordering platform that doubled peak-hour phone-order capacity
 - [Team](https://digiworksai.com/team.html)
 - [Privacy policy](https://digiworksai.com/privacy-policy.html)
 - [Terms of use](https://digiworksai.com/terms-of-use.html)

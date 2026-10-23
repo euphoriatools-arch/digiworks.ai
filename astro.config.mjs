@@ -27,7 +27,7 @@ export default defineConfig({
         const p = pathname.replace(/\/$/, '').replace(/\.html$/, '');
         if (p === '/team') return false;
         if (p.startsWith('/blog/')) return false;
-        if (p.startsWith('/case-studies/')) return false;
+        if (p.startsWith('/case-studies/') && p !== '/case-studies/checkmate') return false;
         return true;
       },
       serialize(item) {

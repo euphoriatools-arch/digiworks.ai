@@ -20,7 +20,7 @@ export function isOwnerSkipIndex(canonicalPath: string): boolean {
   const p = canonicalPath === '/' ? '/' : canonicalPath.replace(/\.html$/, '');
   if (p === '/team') return true;
   if (p.startsWith('/blog/')) return true;
-  if (p.startsWith('/case-studies/')) return true;
+  if (p.startsWith('/case-studies/') && p !== '/case-studies/checkmate') return true;
   return false;
 }
 
