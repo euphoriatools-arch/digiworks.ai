@@ -43,10 +43,12 @@ function figure(opts: {
   alt: string;
   eager?: boolean;
   frame?: string;
+  imgClass?: string;
 }): string {
   const src = checkmateImageFile(opts.file) ?? placeholderSvg(opts.width, opts.height);
   const loading = opts.eager ? '' : ' loading="lazy"';
-  const img = `<img width="${opts.width}" height="${opts.height}" src="${src}" alt="${esc(opts.alt)}"${loading} decoding="async" class="block h-auto w-full max-w-full bg-[#101826] object-contain">`;
+  const imgClass = opts.imgClass ?? 'block h-auto w-full max-w-full bg-[#101826] object-contain';
+  const img = `<img width="${opts.width}" height="${opts.height}" src="${src}" alt="${esc(opts.alt)}"${loading} decoding="async" class="${imgClass}">`;
   const frame =
     opts.frame ??
     'overflow-hidden rounded-3xl border border-dusk/10 bg-[#101826] shadow-[0_30px_70px_rgba(0,0,0,0.45)]';
@@ -90,12 +92,7 @@ const solutionSteps: [string, string][] = [
   ['Multi-Location Visibility', 'Operators see each location’s calls and orders as they happen.'],
 ];
 
-const flow: [string, string][] = [
-  ['Customer Call', 'The phone rings during the shift.'],
-  ['AI Order Capture', 'Checkmate takes the order on the call.'],
-  ['POS', 'The order is sent into the existing POS.'],
-  ['Restaurant Workflow', 'The kitchen picks it up from the system the team already uses.'],
-];
+const flow = ['Customer Call', 'AI Order Capture', 'POS', 'Restaurant Workflow'];
 
 const chips = [
   'AI-powered phone ordering',
@@ -124,18 +121,21 @@ const whyCards: [string, string][] = [
 
 const rush = [
   'Roughly twice the phone orders at peak without doubling call staff.',
-  'Weekly missed calls fell from about 22 to 12 at a representative location.',
+  'Weekly missed calls from about 22 to 12.',
   'POS integration cut repetitive data entry.',
-  'Order flow got faster and more accurate.',
+  'Faster, more accurate order flow.',
 ];
 
 function gallerySection(): string {
   const files = checkmateGalleryFiles();
   if (!files.length) return '';
+  const alts: Record<string, string> = {
+    'checkmate-04.webp': 'Checkmate catering and kiosk pages shown on a laptop',
+  };
   const slides = files
     .map((name, i) => {
-      const alt = `Checkmate product screen ${i + 1} from the restaurant ordering dashboard`;
-      return `<div class="snap-center shrink-0"><div class="relative w-full max-w-[210px]"><div class="overflow-hidden rounded-[2.1rem] border-[6px] border-[#0a121e] bg-[#0a121e] shadow-[0_30px_70px_rgba(0,0,0,0.55)]"><img width="1000" height="1000" src="/case/checkmate/${name}" alt="${esc(alt)}" loading="lazy" decoding="async" class="block h-auto w-full max-w-full object-contain"></div></div></div>`;
+      const alt = alts[name] ?? `Checkmate product screen ${i + 1} from the restaurant ordering dashboard`;
+      return `<div class="snap-center shrink-0" style="width:min(100%,36rem)"><div class="overflow-hidden rounded-3xl border border-dusk/10 bg-[#101826]"><img width="1024" height="576" src="/case/checkmate/${name}" alt="${esc(alt)}" loading="lazy" decoding="async" class="block h-auto w-full max-w-full object-contain"></div></div>`;
     })
     .join('');
   return `<section class="relative py-16"><div class="mx-auto max-w-7xl px-5 sm:px-8">${h2('Every Checkmate Screen, Crafted')}</div><div class="mt-10 flex snap-x gap-5 overflow-x-auto px-5 pb-6 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">${slides}</div></section>`;
@@ -159,23 +159,24 @@ function related(): string {
 export function checkmateSectionsHtml(): string {
   const logo = figure({
     file: 'checkmate-logo.webp',
-    width: 160,
-    height: 32,
+    width: 410,
+    height: 123,
     alt: 'Checkmate logo for the AI restaurant ordering platform',
     frame: 'inline-flex items-center',
+    imgClass: 'block h-10 w-auto max-w-[220px] object-contain',
   });
   const hero = figure({
     file: 'checkmate-01.webp',
-    width: 1200,
-    height: 900,
-    alt: 'Checkmate hero of the restaurant phone order dashboard',
+    width: 1024,
+    height: 576,
+    alt: 'Checkmate ordering homepage on a laptop for busy restaurants',
     eager: true,
   });
   const solutionImg = figure({
     file: 'checkmate-02.webp',
-    width: 1000,
-    height: 1000,
-    alt: 'Checkmate solution view of phone orders reaching the POS',
+    width: 1024,
+    height: 576,
+    alt: 'Two Checkmate phones showing AI restaurant phone ordering',
   });
   const rushImg = figure({
     file: 'checkmate-03.webp',
@@ -206,10 +207,11 @@ export function checkmateSectionsHtml(): string {
     .join('');
 
   const flowHtml = flow
-    .map(
-      ([title, sentence], i) =>
-        `<div class="glass relative h-full p-6"><span class="font-display text-3xl font-extrabold text-cyan/30">${String(i + 1).padStart(2, '0')}</span><h3 class="mt-2 font-display text-base font-bold text-dusk">${esc(title)}</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">${esc(sentence)}</p></div>`,
-    )
+    .map((title, i) => {
+      const card = `<div class="glass flex min-w-0 flex-1 items-center gap-3 px-4 py-4"><span class="font-display text-2xl font-extrabold text-cyan/40">${String(i + 1).padStart(2, '0')}</span><h3 class="font-display text-sm font-bold text-dusk sm:text-base">${esc(title)}</h3></div>`;
+      const arrow = i < flow.length - 1 ? `<span class="hidden shrink-0 text-lg text-cyan/50 md:block" aria-hidden="true">→</span>` : '';
+      return card + arrow;
+    })
     .join('');
 
   return `<style>@keyframes dw-rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}@keyframes dw-bar{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}.dw-rise{animation:dw-rise .7s cubic-bezier(.21,.65,.36,1) both}.dw-bar{transform-origin:left;animation:dw-bar .7s cubic-bezier(.21,.65,.36,1) .12s both}@media (prefers-reduced-motion:reduce){.dw-rise,.dw-bar{animation:none;opacity:1;transform:none}}</style><section class="relative overflow-hidden px-5 pb-16 pt-36 sm:px-8 md:pt-44"><div class="pointer-events-none absolute -right-32 -top-24 h-[480px] w-[480px] rounded-full bg-cyan/10 blur-[140px]" aria-hidden="true"></div><div class="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full bg-electric/10 blur-[120px]" aria-hidden="true"></div><div class="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2"><div class="min-w-0"><nav class="mb-6 flex flex-wrap items-center gap-2 text-xs text-dusk/55" aria-label="Breadcrumb"><a class="hover:text-cyan" href="/">Home</a><span>/</span><a class="hover:text-cyan" href="/case-studies">Case Studies</a><span>/</span><span class="text-dusk/75">Checkmate</span></nav><div class="mb-6 inline-flex rounded-2xl bg-white px-5 py-3 shadow-lg">${logo}</div><span class="inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span> ${esc(checkmateCopy.label)}</span><h1 class="mt-5 font-display text-4xl font-extrabold leading-[1.05] text-dusk sm:text-5xl">${esc(checkmateCopy.h1Line1)}<br><span class="text-gradient">${esc(checkmateCopy.h1Line2)}</span></h1><p class="mt-6 max-w-xl text-base leading-relaxed text-dusk/75">${esc(checkmateCopy.intro)}</p><div class="mt-8 flex flex-wrap gap-4"><a class="btn-primary !px-8 !py-3.5" href="/contact">${esc(checkmateCopy.primaryCta)} <span aria-hidden="true">→</span></a><a class="btn-ghost !px-8 !py-3.5" href="/case-studies">${esc(checkmateCopy.secondaryCta)}</a></div><p class="mt-3 text-xs text-dusk/55">${esc(checkmateCopy.microcopy)}</p></div><div class="relative min-w-0">${hero}</div></div></section><section class="relative px-5 sm:px-8"><div class="dw-rise mx-auto max-w-7xl"><div class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-dusk/10 bg-dusk/10 md:grid-cols-4">${snapshot
@@ -217,12 +219,12 @@ export function checkmateSectionsHtml(): string {
       ([k, v]) =>
         `<div class="min-w-0 bg-ink/80 p-5"><p class="text-[10px] font-bold uppercase tracking-[0.2em] text-dusk/45">${esc(k)}</p><p class="mt-1.5 text-sm font-semibold text-dusk">${esc(v)}</p></div>`,
     )
-    .join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('What Checkmate Changed for Restaurant Teams')}</div><div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">${results.map((row) => resultCard(...row)).join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="mb-10">${h2('Before vs. After Checkmate')}</div><div class="overflow-x-auto"><table class="w-full min-w-[44rem] border-collapse text-left text-sm"><thead><tr class="text-[10px] font-bold uppercase tracking-[0.18em] text-dusk/45"><th scope="col" class="px-4 py-3">Area</th><th scope="col" class="px-4 py-3">Before</th><th scope="col" class="px-4 py-3">After</th><th scope="col" class="px-4 py-3">Business Impact</th></tr></thead><tbody>${tableRows}</tbody></table></div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-3xl">${h2('The Restaurant Ordering Problem Was Fragmentation')}<p class="mt-6 text-base leading-relaxed text-dusk/75">Restaurants already had POS, online ordering, kitchen workflows, and trained staff, but phone orders sat outside that flow. During rushes the phone rang while staff served guests and took payments. At one representative location roughly 22 calls a week went unanswered, and answered calls still had to be re-typed into the POS.</p></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-3xl">${h2('Why Another Ordering Tool Was Not Enough')}<p class="mt-6 text-base leading-relaxed text-dusk/75">Replacing the POS would disrupt the restaurant. A standalone dashboard adds one more screen. The answer was to put AI inside the existing workflow through <a class="font-medium text-dusk underline decoration-coral/40 underline-offset-2 hover:text-coral" href="/services/automation-and-integration">AI integration services</a>.</p></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('From Customer Call to Restaurant Order')}</div><div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">${flowHtml}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${h2('The AI Restaurant Ordering Solution')}<div class="mt-10 space-y-8">${steps}</div></div><div class="min-w-0">${solutionImg}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl">${h2('What DigiWorks AI Custom Built')}<p class="mt-6 max-w-3xl text-base leading-relaxed text-dusk/75">Checkmate is not a generic ordering tool. DigiWorks AI built it with custom software development services shaped around phone ordering, POS connectivity, and peak-hour demand.</p><div class="mt-8 flex flex-wrap gap-2.5">${chips.map((chip) => `<span class="rounded-full border border-cyan/30 bg-cyan/10 px-4 py-2 text-sm font-medium text-dusk/85">${esc(chip)}</span>`).join('')}</div><div class="mt-10 grid gap-6 md:grid-cols-3">${builtCards
+    .join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('What Checkmate Changed for Restaurant Teams')}</div><div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">${results.map((row) => resultCard(...row)).join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="mb-10">${h2('Before vs. After Checkmate')}</div><div class="overflow-x-auto"><table class="w-full min-w-[44rem] border-collapse text-left text-sm"><thead><tr class="text-[10px] font-bold uppercase tracking-[0.18em] text-dusk/45"><th scope="col" class="px-4 py-3">Area</th><th scope="col" class="px-4 py-3">Before</th><th scope="col" class="px-4 py-3">After</th><th scope="col" class="px-4 py-3">Business Impact</th></tr></thead><tbody>${tableRows}</tbody></table></div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2"><div class="min-w-0">${h2('The Restaurant Ordering Problem Was Fragmentation')}<p class="mt-6 text-base leading-relaxed text-dusk/75">Restaurants already had POS, online ordering, kitchen workflows, and trained staff, but phone orders sat outside that flow. During rushes the phone rang while staff served guests and took payments. At one representative location roughly 22 calls a week went unanswered, and answered calls still had to be re-typed into the POS.</p></div><div class="min-w-0">${h2('Why Another Ordering Tool Was Not Enough')}<p class="mt-6 text-base leading-relaxed text-dusk/75">Replacing the POS would disrupt the restaurant. A standalone dashboard adds one more screen. The answer was to put AI inside the existing workflow through <a class="font-medium text-dusk underline decoration-coral/40 underline-offset-2 hover:text-coral" href="/services/automation-and-integration">AI integration services</a>.</p></div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('From Customer Call to Restaurant Order')}</div><div class="mt-12 flex flex-col items-center gap-3 md:flex-row">${flowHtml}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${h2('The AI Restaurant Ordering Solution')}<div class="mt-10 space-y-8">${steps}</div></div><div class="min-w-0">${solutionImg}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl">${h2('What DigiWorks AI Custom Built')}<p class="mt-6 max-w-3xl text-base leading-relaxed text-dusk/75">Checkmate is not a generic ordering tool. DigiWorks AI built it with custom software development services shaped around phone ordering, POS connectivity, and peak-hour demand.</p><div class="mt-8 flex flex-wrap gap-2.5">${chips.map((chip) => `<span class="rounded-full border border-cyan/30 bg-cyan/10 px-4 py-2 text-sm font-medium text-dusk/85">${esc(chip)}</span>`).join('')}</div><div class="mt-10 grid gap-6 md:grid-cols-3">${builtCards
     .map(
       ([title, desc]) =>
         `<div class="dw-rise h-full"><div class="glass glare relative h-full p-7"><h3 class="font-display text-xl font-bold text-dusk">${esc(title)}</h3><p class="mt-3 text-sm leading-relaxed text-dusk/70">${esc(desc)}</p></div></div>`,
     )
-    .join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${rushImg}</div><div class="min-w-0">${h2('Built for the Dinner Rush')}<ul class="mt-8 space-y-4">${rush.map((item) => `<li class="flex gap-3 text-base leading-relaxed text-dusk/75"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span><span>${esc(item)}</span></li>`).join('')}</ul></div></div></section>${gallerySection()}<section class="relative px-5 py-16 sm:px-8"><div class="dw-rise mx-auto max-w-4xl"><div class="glass-strong relative overflow-hidden p-10 text-center md:p-14"><p class="relative font-display text-xl font-bold leading-relaxed text-dusk md:text-2xl">“${esc(checkmateCopy.quote)}”</p><p class="relative mt-6 text-sm font-semibold text-dusk/70">${esc(checkmateCopy.quoteBy)}</p></div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('Why This Project Worked')}</div><div class="mt-12 grid gap-6 md:grid-cols-3">${whyCards
+    .join('')}</div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${rushImg}</div><div class="min-w-0">${h2('Built for the Dinner Rush')}<ul class="mt-8 space-y-4">${rush.map((item) => `<li class="flex gap-3 text-base leading-relaxed text-dusk/75"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span><span>${esc(item)}</span></li>`).join('')}</ul></div></div></section>${gallerySection()}<section class="relative px-5 py-16 sm:px-8"><div class="dw-rise mx-auto max-w-4xl"><div class="glass-strong relative overflow-hidden p-10 text-center md:p-14"><p class="text-[10px] font-bold uppercase tracking-[0.2em] text-dusk/45">Client feedback</p><p class="relative mt-4 font-display text-xl font-bold leading-relaxed text-dusk md:text-2xl">“${esc(checkmateCopy.quote)}”</p><p class="relative mt-6 text-sm font-semibold text-dusk/70">${esc(checkmateCopy.quoteBy)}</p></div></div></section><section class="section-pad relative !py-14"><div class="relative mx-auto max-w-6xl"><div class="text-center">${h2('Why This Project Worked')}</div><div class="mt-12 grid gap-6 md:grid-cols-3">${whyCards
     .map(
       ([title, desc]) =>
         `<div class="dw-rise h-full"><div class="glass glare relative h-full p-7"><h3 class="font-display text-xl font-bold text-dusk">${esc(title)}</h3><p class="mt-3 text-sm leading-relaxed text-dusk/70">${esc(desc)}</p></div></div>`,
