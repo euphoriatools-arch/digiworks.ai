@@ -14,6 +14,69 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*-[A-Za-z0-9_-]{8}.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/app-digi.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/checkmate-body.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/dw-boot.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/AICore-digi.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -625,6 +688,16 @@
     {
       "source": "/case-studies/bay-world/",
       "destination": "/case-studies/bay-world.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/checkmate",
+      "destination": "/case-studies/checkmate.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/checkmate/",
+      "destination": "/case-studies/checkmate.html",
       "permanent": true
     },
     {
