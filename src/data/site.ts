@@ -19,6 +19,8 @@ export const site = {
   locale: 'en_US',
   language: 'en',
   themeColor: '#060a14',
+  /** Exit-intent / timed "Get in touch" modal in app-digi.js. Set true to restore it. */
+  popupEnabled: false,
   email: '',
   phone: '+1-737-394-5488',
   phoneDisplay: '+1 737 394 5488',

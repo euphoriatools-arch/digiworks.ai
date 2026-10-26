@@ -95,8 +95,9 @@ const script = preserveSsr ? null : entryScript;
     {
       script && (
         <>
-          <script is:inline>
+          <script is:inline define:vars={{ popupEnabled: site.popupEnabled }}>
             (function () {
+              if (!popupEnabled) window.__DW_POPUP_ENABLED = false;
               try {
                 delete window.__staticRouterHydrationData;
                 var rootEl = document.getElementById('root');

@@ -886,6 +886,16 @@ function sync() {
     writeFileSync(detailPath, detailFile);
   }
 
+  const appPath = join(destDir, FILES.app);
+  let appJs = readFileSync(appPath, 'utf8');
+  const popupFrom = 'function Re(){let[e,t]=(0,S.useState)(!1)';
+  const popupTo = 'function Re(){if(window.__DW_POPUP_ENABLED===false)return null;let[e,t]=(0,S.useState)(!1)';
+  if (!appJs.includes(popupTo)) {
+    if (!appJs.includes(popupFrom)) throw new Error('SPA copy sync: Get in touch popup anchor missing');
+    appJs = appJs.replace(popupFrom, popupTo);
+    writeFileSync(appPath, appJs);
+  }
+
   console.log('SPA copy sync: ok');
 }
 
