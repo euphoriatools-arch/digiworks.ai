@@ -21,6 +21,11 @@ export const site = {
   themeColor: '#060a14',
   /** Exit-intent / timed "Get in touch" modal in app-digi.js. Set true to restore it. */
   popupEnabled: false,
+  /**
+   * Case-study cards and in-page links. Add a slug to show that study again.
+   * Older studies stay noindex and out of the sitemap until their pages are rewritten.
+   */
+  visibleCaseStudies: ['checkmate', 'lead-scout'],
   email: '',
   phone: '+1-737-394-5488',
   phoneDisplay: '+1 737 394 5488',

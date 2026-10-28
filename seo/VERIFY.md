@@ -1,5 +1,15 @@
 # Owner fill list
 
+## Lead Scout case study (`/case-studies/lead-scout.html`)
+
+| Item | Notes |
+|---|---|
+| Client company | The quote attribution is “B2B Software, USA”. No separate legal company name was in the source. |
+| Named stack | The source says “SaaS-based workflow architecture” and “scalable cloud infrastructure”. No product names for the cloud or app framework. |
+| Qualified lead rate before | The source says “Previous baseline”, not a number. |
+| Custom software development services | No matching service URL, so that phrase is not linked. AI integration services links to `/services/automation-and-integration`. |
+| Product screens | The supplied images show a door-to-door tracking product UI. The written study does not use that phrase. Slots follow the file order: 01 hero, 02 solution, 03 results, 04 gallery. |
+
 ## Checkmate case study (`/case-studies/checkmate.html`)
 
 | Item | Notes |

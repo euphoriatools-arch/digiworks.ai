@@ -61,6 +61,15 @@
       ]
     },
     {
+      "source": "/assets/lead-scout-body.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/assets/dw-boot.js",
       "headers": [
         {
@@ -698,6 +707,16 @@
     {
       "source": "/case-studies/checkmate/",
       "destination": "/case-studies/checkmate.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/lead-scout",
+      "destination": "/case-studies/lead-scout.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/lead-scout/",
+      "destination": "/case-studies/lead-scout.html",
       "permanent": true
     },
     {

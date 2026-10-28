@@ -54,6 +54,8 @@ import { aboutCopy } from '../src/data/copy/about.ts';
 import { teamCopy } from '../src/data/copy/team.ts';
 import { caseStudiesCopy } from '../src/data/copy/case-studies.ts';
 import { checkmateSectionsHtml } from '../src/lib/renderCheckmate.ts';
+import { leadScoutSectionsHtml } from '../src/lib/renderLeadScout.ts';
+import { site } from '../src/data/site.ts';
 import { aiReadinessCopy } from '../src/data/copy/ai-readiness.ts';
 import { contactCopy } from '../src/data/copy/contact.ts';
 import { blogCopy } from '../src/data/copy/blog.ts';
@@ -769,6 +771,26 @@ function sync() {
     'terms intro',
   );
 
+  const visibleJs = site.visibleCaseStudies.map((slug) => '`' + slug + '`').join(',');
+  home = mustReplace(
+    home,
+    'u.slice(0,3).map((e,t)=>',
+    `[${visibleJs}].map(s=>u.find(e=>e.slug===s)).filter(Boolean).map((e,t)=>`,
+    'home visible case studies',
+  );
+  caseStudies = mustReplace(
+    caseStudies,
+    'function _(){let[e,t]=(0,m.useState)(`All`),n=[`All`,...g.filter(e=>i.some(t=>t.group===e))],_=e===`All`?i:i.filter(t=>t.group===e);',
+    `function _(){let[e,t]=(0,m.useState)(\`All\`),VIS=new Set([${visibleJs}]),ii=i.filter(e=>VIS.has(e.slug)),n=[\`All\`,...g.filter(e=>ii.some(t=>t.group===e))],_=e===\`All\`?ii:ii.filter(t=>t.group===e);`,
+    'case study grid filter',
+  );
+  app = mustReplace(
+    app,
+    '...i.caseStudies.map(e=>({to:`/case-studies/${e.slug}`',
+    `...i.caseStudies.filter(e=>[${visibleJs}].includes(e.slug)).map(e=>({to:\`/case-studies/\${e.slug}\``,
+    'search case studies',
+  );
+
   const out = {
     [FILES.home]: home,
     [FILES.app]: app,
@@ -860,12 +882,23 @@ function sync() {
     const entry =
       ',{slug:`checkmate`,name:`Checkmate`,tagline:`Doubled Peak-Hour Order Capacity`,category:`AI Restaurant Ordering Platform`,group:`Restaurants`,accent:`from-cyan to-electric`,brandBlue:`#29a3dc`,brandNavy:`#0d2745`,layout:`metrics`}';
     data = data.slice(0, at) + entry + data.slice(at);
-    writeFileSync(dataPath, data);
   }
+  if (!data.includes('slug:`lead-scout`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`lead-scout`,name:`Lead Scout`,tagline:`About 35–40% Less Research Time`,category:`AI Lead Generation Platform`,group:`Sales`,cover:`/case/lead-scout/lead-scout-01.webp`,accent:`from-electric to-cyan`,brandBlue:`#308eff`,brandNavy:`#0d2745`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+  }
+  writeFileSync(dataPath, data);
 
   writeFileSync(
     join(destDir, 'checkmate-body.js'),
     `export const html = ${JSON.stringify(checkmateSectionsHtml())};\n`,
+  );
+  writeFileSync(
+    join(destDir, 'lead-scout-body.js'),
+    `export const html = ${JSON.stringify(leadScoutSectionsHtml())};\n`,
   );
 
   const detailPath = join(destDir, 'CaseStudyDetail-r_3xQvln.js');
@@ -884,6 +917,66 @@ function sync() {
     if (!detailFile.includes(branchFrom)) throw new Error('SPA copy sync: CaseStudyDetail branch anchor missing');
     detailFile = detailFile.replace(branchFrom, branchTo);
     writeFileSync(detailPath, detailFile);
+  }
+  if (!detailFile.includes('lead-scout-body.js')) {
+    detailFile = readFileSync(detailPath, 'utf8');
+    const importMark = 'import{html as CHECKMATE_HTML}from"./checkmate-body.js";';
+    const importAt = detailFile.indexOf(importMark);
+    if (importAt < 0) throw new Error('SPA copy sync: Checkmate import anchor missing');
+    const importEnd = importAt + importMark.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as LEAD_SCOUT_HTML}from"./lead-scout-body.js";' +
+      detailFile.slice(importEnd);
+    const leadFrom =
+      'if(t.slug===`checkmate`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:CHECKMATE_HTML}});let i=h(t)';
+    const leadTo =
+      'if(t.slug===`checkmate`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:CHECKMATE_HTML}});if(t.slug===`lead-scout`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:LEAD_SCOUT_HTML}});let i=h(t)';
+    if (!detailFile.includes(leadFrom)) throw new Error('SPA copy sync: Lead Scout branch anchor missing');
+    detailFile = detailFile.replace(leadFrom, leadTo);
+    writeFileSync(detailPath, detailFile);
+  }
+  detailFile = readFileSync(detailPath, 'utf8');
+  const exploreFrom = 'let n=s.filter(t=>t.slug!==e).slice(0,3);';
+  const exploreTo = `let n=s.filter(t=>t.slug!==e&&[${visibleJs}].includes(t.slug)).slice(0,3);`;
+  if (!detailFile.includes(exploreTo)) {
+    if (!detailFile.includes(exploreFrom)) throw new Error('SPA copy sync: Keep exploring anchor missing');
+    detailFile = detailFile.replace(exploreFrom, exploreTo);
+    writeFileSync(detailPath, detailFile);
+  }
+
+  for (const file of ['CustomAppDevelopment-SQouYROq.js', 'CustomMobileAppDevelopment-lMpXbLO8.js']) {
+    const showcasePath = join(destDir, file);
+    let showcase = readFileSync(showcasePath, 'utf8');
+    const start = showcase.indexOf('[{img:`driveguard-img1.png`');
+    if (start >= 0) {
+      const end = showcase.indexOf('];function', start);
+      if (end < 0) throw new Error(`SPA copy sync: showcase end missing in ${file}`);
+      const items = site.visibleCaseStudies
+        .map((slug) => {
+          const card =
+            slug === 'lead-scout'
+              ? {
+                  img: '/case/lead-scout/lead-scout-01.webp',
+                  alt: 'Lead Scout',
+                  title: 'Lead Scout',
+                  desc: 'About 35–40% Less Research Time',
+                }
+              : {
+                  img: '/case/checkmate/checkmate-01.webp',
+                  alt: 'Checkmate',
+                  title: 'Checkmate',
+                  desc: 'Doubled Peak-Hour Order Capacity',
+                };
+          return `{img:\`${card.img}\`,alt:\`${card.alt}\`,title:\`${card.title}\`,desc:\`${card.desc}\`,slug:\`${slug}\`}`;
+        })
+        .join(',');
+      showcase = showcase.slice(0, start) + '[' + items + ']' + showcase.slice(end + 1);
+    }
+    const srcFrom = 'src:`/cad/${e.img}`';
+    const srcTo = 'src:String(e.img).startsWith(`/`)?e.img:`/cad/${e.img}`';
+    if (showcase.includes(srcFrom)) showcase = showcase.replaceAll(srcFrom, srcTo);
+    writeFileSync(showcasePath, showcase);
   }
 
   const appPath = join(destDir, FILES.app);

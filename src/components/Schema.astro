@@ -9,6 +9,7 @@ interface Props {
   datePublished?: string;
   dateModified?: string;
   faqs?: { q: string; a: string }[];
+  image?: string;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   datePublished,
   dateModified,
   faqs,
+  image,
 } = Astro.props;
 
 const json = buildJsonLd({
@@ -29,6 +31,7 @@ const json = buildJsonLd({
   datePublished,
   dateModified,
   faqs,
+  image,
 });
 ---
 

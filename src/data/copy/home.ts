@@ -23,7 +23,7 @@ export const homeCopy: CopyPage & {
   hero:
     'DigiWorks AI is an Austin AI development company that builds agents, generative AI, predictive models, and automation for US businesses.',
   featuredSub: 'Four services we are asked for first, with 150+ production AI deployments.',
-  casesSub: 'Three case studies from 150+ production AI deployments, not invented metrics.',
+  casesSub: 'Checkmate and Lead Scout, from 150+ production AI deployments, not invented metrics.',
   roiCopy:
     'Move the sliders for a directional estimate. Typical DigiWorks production delivery is 8–20 weeks. We confirm the real number in discovery first.',
   blogSub: 'Engineering notes from production LLM and ML work, plus how US teams ship and operate systems.',

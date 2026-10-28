@@ -1,6 +1,7 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { checkmateCopy } from '../data/copy/checkmate.ts';
+import { visibleExploreHtml } from './visibleCaseStudies.ts';
 
 const DIR = join(process.cwd(), 'public', 'case', 'checkmate');
 
@@ -139,18 +140,7 @@ function gallerySection(): string {
 }
 
 function related(): string {
-  const cards = [
-    ['/case-studies/mvpedits', '/case/mvpedits/cover.webp', 'MVP Edits', 'A Smarter Way to Showcase Your Game', 'from-electric to-cyan'],
-    ['/case-studies/thrive-city', '/case/thrive-city/cover.webp', 'Thrive City', 'Build a city, learn real skills', 'from-cyan to-electric'],
-    ['/case-studies/arc-viva', '/case/arc-viva/cover.webp', 'Arc Viva', 'Play, compete, and win', 'from-violet to-neon'],
-  ];
-  const html = cards
-    .map(
-      ([href, src, name, tagline, accent]) =>
-        `<div class="dw-rise"><a class="group block" href="${href}"><div class="glass h-full overflow-hidden transition-colors hover:!border-cyan/40"><div class="relative h-36 overflow-hidden"><img width="1200" height="675" src="${src}" alt="${esc(name)}" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t ${accent} opacity-25 mix-blend-multiply"></div></div><div class="p-6"><div class="h-1 w-12 rounded-full bg-gradient-to-r ${accent}"></div><h3 class="cm-lg mt-3 font-display font-bold text-white">${esc(name)}</h3><p class="mt-1 text-sm text-white/70">${esc(tagline)}</p></div></div></a></div>`,
-    )
-    .join('');
-  return `<section class="relative w-full py-16"><div class="relative mx-auto w-full max-w-6xl px-6 sm:px-10"><div class="mx-auto max-w-3xl text-center">${h2('Keep exploring')}</div><div class="mt-12 grid gap-6 md:grid-cols-3">${html}</div></div></section>`;
+  return visibleExploreHtml('checkmate');
 }
 
 export function checkmateSectionsHtml(): string {

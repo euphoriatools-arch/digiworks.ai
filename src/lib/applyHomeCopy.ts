@@ -6,6 +6,7 @@ import { aiChatbotDevelopmentCopy } from '../data/copy/ai-chatbot-development';
 import { aiAutomationCopy } from '../data/copy/ai-automation';
 import { applyCtas } from './applyCtas';
 import { fileHrefs, injectBodyLinks, mustReplace, replaceFaqBlock, replaceOnce } from './ssrCopy';
+import { visibleListingCards } from './visibleCaseStudies';
 
 export { homeCopy };
 
@@ -127,5 +128,10 @@ export function applyHomeCopy(html: string): string {
   );
 
   out = injectBodyLinks(out, homeCopy.bodyLinks);
+  const gridClass = '<div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">';
+  const gridAt = out.indexOf(gridClass);
+  const after = gridAt < 0 ? -1 : out.indexOf('<div class="mt-10 text-center"', gridAt);
+  if (gridAt < 0 || after < 0) throw new Error('SSR copy: home case-study grid missing');
+  out = out.slice(0, gridAt + gridClass.length) + visibleListingCards() + '</div>' + out.slice(after);
   return applyCtas(fileHrefs(out));
 }

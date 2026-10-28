@@ -20,7 +20,13 @@ export function isOwnerSkipIndex(canonicalPath: string): boolean {
   const p = canonicalPath === '/' ? '/' : canonicalPath.replace(/\.html$/, '');
   if (p === '/team') return true;
   if (p.startsWith('/blog/')) return true;
-  if (p.startsWith('/case-studies/') && p !== '/case-studies/checkmate') return true;
+  if (
+    p.startsWith('/case-studies/') &&
+    p !== '/case-studies/checkmate' &&
+    p !== '/case-studies/lead-scout'
+  ) {
+    return true;
+  }
   return false;
 }
 
@@ -157,6 +163,7 @@ export function buildJsonLd(opts: {
   datePublished?: string;
   dateModified?: string;
   faqs?: { q: string; a: string }[];
+  image?: string;
 }): string {
   const canonical = absoluteUrl(opts.canonicalPath === '/' ? '/' : opts.canonicalPath);
   const graph: Record<string, unknown>[] = [organizationNode()];
@@ -194,7 +201,7 @@ export function buildJsonLd(opts: {
       headline: opts.title.replace(/\s*\|\s*DigiWorks AI\s*$/, ''),
       description: opts.description,
       url: canonical,
-      image: absoluteUrl(site.ogImage),
+      image: absoluteUrl(opts.image || site.ogImage),
       author: { '@type': 'Person', name: site.name },
       publisher: { '@id': ORG_ID },
       mainEntityOfPage: canonical,
@@ -211,7 +218,7 @@ export function buildJsonLd(opts: {
       headline: opts.title.replace(/\s*\|\s*DigiWorks AI\s*$/, ''),
       description: opts.description,
       url: canonical,
-      image: absoluteUrl(site.ogImage),
+      image: absoluteUrl(opts.image || site.ogImage),
       publisher: { '@id': ORG_ID },
       inLanguage: 'en-US',
     });

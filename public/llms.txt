@@ -21,6 +21,7 @@
 - [Dedicated AI pods](https://digiworksai.com/hire/dedicated-ai-pods.html)
 - [Case studies](https://digiworksai.com/case-studies.html)
 - [Checkmate case study](https://digiworksai.com/case-studies/checkmate.html): AI restaurant ordering platform that doubled peak-hour phone-order capacity
+- [Lead Scout case study](https://digiworksai.com/case-studies/lead-scout.html): AI lead generation platform that cut B2B prospect research about 35–40%
 - [Team](https://digiworksai.com/team.html)
 - [Privacy policy](https://digiworksai.com/privacy-policy.html)
 - [Terms of use](https://digiworksai.com/terms-of-use.html)
