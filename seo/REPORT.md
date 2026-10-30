@@ -1,5 +1,9 @@
 # DigiWorks AI — SEO / AEO / GEO report (Phase 8)
 
+## Company facts
+
+Since 2017. 2 offices: USA and UK. HQ is 716 Congress Ave #200, Austin, TX 78701, USA. The UK office is London, United Kingdom. A London street is not on file.
+
 Production domain: `https://digiworksai.com`. Do not push until you deploy.
 
 ## Decisions this phase

@@ -8,13 +8,32 @@
 | Named stack | The source says “SaaS-based workflow architecture” and “scalable cloud infrastructure”. No product names for the cloud or app framework. |
 | Qualified lead rate before | The source says “Previous baseline”, not a number. |
 | Custom software development services | No matching service URL, so that phrase is not linked. AI integration services links to `/services/automation-and-integration`. |
-| Product screens | The supplied images show a door-to-door tracking product UI. The written study does not use that phrase. Slots follow the file order: 01 hero, 02 solution, 03 results, 04 gallery. |
+| Product screens | The supplied images show a door-to-door tracking product UI. The written study does not use that phrase. Slots follow the file order: 01 hero, 02 solution (right of the heading), 03 results. The “Lead Scout in the Field” gallery is removed. `lead-scout-04.webp` stays on disk and is not shown. |
+
+## Orange Ruler case study (`/case-studies/orange-ruler.html`)
+
+| Item | Notes |
+|---|---|
+| Custom software development services | No matching service URL, so that phrase is not linked. |
+| Participant engagement before | The source says “Previous baseline”, not a number. |
+| Timeline | The source does not give a build duration. |
+| Product screens | 01 hero (laptop, tablet, phone), 02 solution (phones, right of the heading), 03 results (laptop). Logo is `orange-ruler-logo.webp`. |
+
+## Person Care case study (`/case-studies/person-care.html`)
+
+| Item | Notes |
+|---|---|
+| Client quote | The source has no client quote, so the page has no quote block. |
+| Market | The source does not name a country. |
+| Timeline | The source does not give a build duration. |
+| Custom software development services | No matching service URL, so that phrase is not linked. MLOps links to `/services/mlops-setup`. |
+| Product screens | 01 hero (tablet, laptop, phone), 02 solution (right of the heading), 03 results (desk mockup). Logo is `person-care-logo.webp`. |
 
 ## Checkmate case study (`/case-studies/checkmate.html`)
 
 | Item | Notes |
 |---|---|
-| `public/case/checkmate/checkmate-03.webp` | Missing. No multi-location or reports screen was provided. The slot beside Built for the Dinner Rush stays a neutral 1200×900 placeholder. |
+| `public/case/checkmate/checkmate-03.webp` | Still not provided. The dinner-rush box uses `checkmate-04.webp` (the laptop screen). The “Every Checkmate Screen, Crafted” gallery is removed. |
 | Platform: Phone AI | Shown as “Web dashboard · Phone AI”. Confirm the phone channel. |
 | Timeline | Unknown. The Timeline cell is hidden. |
 | Custom software development services | No matching service URL, so that phrase is not linked. |
@@ -44,8 +63,7 @@ Hubs `/blog.html` and `/case-studies.html` stay indexable.
 | Facebook URL | |
 | YouTube URL | |
 | Threads URL | |
-| Canada street address | |
-| Guangzhou street address | |
+| London street address | London, United Kingdom only. No street on file. |
 | Google Analytics ID | |
 | Google Tag Manager ID | |
 | Microsoft Clarity ID | |
@@ -60,7 +78,8 @@ Hubs `/blog.html` and `/case-studies.html` stay indexable.
 |---|---|
 | 150+ production AI deployments | |
 | 7+ sectors served | |
-| 5 global offices | |
+| Since 2017 | Confirmed. Copyright and schema foundingDate. |
+| 2 offices: USA, UK | Confirmed. Austin HQ and London. |
 | 8–20 weeks to first production AI | |
 | Dedicated AI pods ready in 2–3 weeks | |
 | Embedded talent onboard in 1–2 weeks | |

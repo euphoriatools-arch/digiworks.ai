@@ -14,7 +14,7 @@ export const homeCopy: CopyPage & {
   title: 'Enterprise AI & ML Development Company | DigiWorks AI',
   description:
     'DigiWorks AI builds production AI in 8–20 weeks: agents, generative AI, predictive modeling, and automation for US businesses. Book a free discovery call.',
-  kicker: 'Austin HQ · production AI for US businesses',
+  kicker: 'Austin HQ · Production AI for US Businesses',
   h1Lines: [
     { words: ['The', 'AI'] },
     { words: ['Development', 'Company'], className: 'text-gradient' },
@@ -23,7 +23,7 @@ export const homeCopy: CopyPage & {
   hero:
     'DigiWorks AI is an Austin AI development company that builds agents, generative AI, predictive models, and automation for US businesses.',
   featuredSub: 'Four services we are asked for first, with 150+ production AI deployments.',
-  casesSub: 'Checkmate and Lead Scout, from 150+ production AI deployments, not invented metrics.',
+  casesSub: 'Checkmate, Lead Scout, Orange Ruler, and Person Care, from 150+ production AI deployments, not invented metrics.',
   roiCopy:
     'Move the sliders for a directional estimate. Typical DigiWorks production delivery is 8–20 weeks. We confirm the real number in discovery first.',
   blogSub: 'Engineering notes from production LLM and ML work, plus how US teams ship and operate systems.',
@@ -58,7 +58,7 @@ export const homeCopy: CopyPage & {
     },
     {
       q: 'How do you handle data privacy and security?',
-      a: 'Access control, logging, and data-handling follow what you specify for the system. Named certifications (HIPAA, ISO, and similar) are confirmed in scoping—not assumed on this page. Application-path guards live on AI Application Security. Policy programs live on Security and Compliance. We work in the accounts and vendors you already run. If you cannot grant access, we stop. Austin HQ, five offices, US buyers. Book a free discovery session to walk the data path. See the privacy policy and terms of use.',
+      a: 'Access control, logging, and data-handling follow what you specify for the system. Named certifications (HIPAA, ISO, and similar) are confirmed in scoping—not assumed on this page. Application-path guards live on AI Application Security. Policy programs live on Security and Compliance. We work in the accounts and vendors you already run. If you cannot grant access, we stop. Austin HQ, an office in London, US buyers. Book a free discovery session to walk the data path. See the privacy policy and terms of use.',
     },
     {
       q: 'What does it cost to work with DigiWorks?',

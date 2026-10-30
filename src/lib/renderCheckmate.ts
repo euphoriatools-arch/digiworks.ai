@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { checkmateCopy } from '../data/copy/checkmate.ts';
 import { visibleExploreHtml } from './visibleCaseStudies.ts';
@@ -18,18 +18,9 @@ export function checkmateImageFile(name: string): string | null {
   return existsSync(abs) ? `/case/checkmate/${name}` : null;
 }
 
-export function checkmateGalleryFiles(): string[] {
-  if (!existsSync(DIR)) return [];
-  return readdirSync(DIR)
-    .filter((name) => /^checkmate-(0[4-9]|[1-9]\d)\.webp$/i.test(name))
-    .sort();
-}
-
 export function missingCheckmateImages(): string[] {
-  const required = ['checkmate-logo.webp', 'checkmate-01.webp', 'checkmate-02.webp', 'checkmate-03.webp'];
-  const missing = required.filter((name) => !checkmateImageFile(name));
-  if (checkmateGalleryFiles().length === 0) missing.push('checkmate-04.webp and later gallery files');
-  return missing;
+  const required = ['checkmate-logo.webp', 'checkmate-01.webp', 'checkmate-02.webp', 'checkmate-04.webp'];
+  return required.filter((name) => !checkmateImageFile(name));
 }
 
 function placeholderBox(w: number, h: number, alt: string): string {
@@ -124,21 +115,6 @@ const rush = [
   'Faster, more accurate order flow.',
 ];
 
-function gallerySection(): string {
-  const files = checkmateGalleryFiles();
-  if (!files.length) return '';
-  const alts: Record<string, string> = {
-    'checkmate-04.webp': 'Checkmate catering and kiosk pages shown on a laptop',
-  };
-  const slides = files
-    .map((name, i) => {
-      const alt = alts[name] ?? `Checkmate product screen ${i + 1} from the restaurant ordering dashboard`;
-      return `<div class="snap-center shrink-0" style="width:min(100%,36rem)"><div class="overflow-hidden rounded-3xl border border-white/10 bg-ink"><img width="1024" height="576" src="/case/checkmate/${name}" alt="${esc(alt)}" loading="lazy" decoding="async" class="block h-auto w-full max-w-full object-contain"></div></div>`;
-    })
-    .join('');
-  return `<section class="relative py-16"><div class="mx-auto w-full max-w-6xl px-6 sm:px-10">${h2('Every Checkmate Screen, Crafted')}</div><div class="mt-10 flex snap-x gap-5 overflow-x-auto px-6 pb-6 sm:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">${slides}</div></section>`;
-}
-
 function related(): string {
   return visibleExploreHtml('checkmate');
 }
@@ -166,10 +142,10 @@ export function checkmateSectionsHtml(): string {
     alt: 'Two Checkmate phones showing AI restaurant phone ordering',
   });
   const rushImg = figure({
-    file: 'checkmate-03.webp',
-    width: 1200,
-    height: 900,
-    alt: 'Checkmate results across restaurant locations at peak hour',
+    file: 'checkmate-04.webp',
+    width: 1024,
+    height: 576,
+    alt: 'Checkmate catering and kiosk pages shown on a laptop',
   });
 
   const snapshot: [string, string][] = [
@@ -211,7 +187,7 @@ export function checkmateSectionsHtml(): string {
       ([title, desc]) =>
         `<div class="dw-rise h-full"><div class="glass glare relative h-full p-7"><h3 class="cm-xl font-display font-bold text-white">${esc(title)}</h3><p class="mt-3 text-sm leading-relaxed text-white/70">${esc(desc)}</p></div></div>`,
     )
-    .join('')}</div></div></section><section class="relative w-full py-16"><div class="relative mx-auto grid w-full max-w-6xl px-6 sm:px-10 items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${rushImg}</div><div class="min-w-0">${h2('Built for the Dinner Rush')}<ul class="mt-6 space-y-3.5">${rush.map((item) => `<li class="relative pl-7 text-[15px] leading-relaxed text-white/70"><span class="absolute left-0 top-[9px] h-2 w-2 rounded-sm bg-cyan" aria-hidden="true"></span>${esc(item)}</li>`).join('')}</ul></div></div></section>${gallerySection()}<section class="relative px-6 py-16 sm:px-10"><div class="dw-rise mx-auto max-w-4xl"><div class="glass-strong relative overflow-hidden p-10 text-center md:p-14"><p class="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70">Client feedback</p><p class="relative mt-4 font-display text-xl font-bold leading-relaxed text-white">“${esc(checkmateCopy.quote)}”</p><p class="relative mt-6 text-sm font-semibold text-white/70">${esc(checkmateCopy.quoteBy)}</p></div></div></section><section class="relative w-full py-16"><div class="relative mx-auto w-full max-w-6xl px-6 sm:px-10"><div class="text-center">${h2('Why This Project Worked')}</div><div class="mt-12 grid gap-6 md:grid-cols-3">${whyCards
+    .join('')}</div></div></section><section class="relative w-full py-16"><div class="relative mx-auto grid w-full max-w-6xl px-6 sm:px-10 items-center gap-12 lg:grid-cols-2"><div class="min-w-0">${rushImg}</div><div class="min-w-0">${h2('Built for the Dinner Rush')}<ul class="mt-6 space-y-3.5">${rush.map((item) => `<li class="relative pl-7 text-[15px] leading-relaxed text-white/70"><span class="absolute left-0 top-[9px] h-2 w-2 rounded-sm bg-cyan" aria-hidden="true"></span>${esc(item)}</li>`).join('')}</ul></div></div></section><section class="relative px-6 py-16 sm:px-10"><div class="dw-rise mx-auto max-w-4xl"><div class="glass-strong relative overflow-hidden p-10 text-center md:p-14"><p class="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70">Client feedback</p><p class="relative mt-4 font-display text-xl font-bold leading-relaxed text-white">“${esc(checkmateCopy.quote)}”</p><p class="relative mt-6 text-sm font-semibold text-white/70">${esc(checkmateCopy.quoteBy)}</p></div></div></section><section class="relative w-full py-16"><div class="relative mx-auto w-full max-w-6xl px-6 sm:px-10"><div class="text-center">${h2('Why This Project Worked')}</div><div class="mt-12 grid gap-6 md:grid-cols-3">${whyCards
     .map(
       ([title, desc]) =>
         `<div class="dw-rise h-full"><div class="glass glare relative h-full p-7"><h3 class="cm-xl font-display font-bold text-white">${esc(title)}</h3><p class="mt-3 text-sm leading-relaxed text-white/70">${esc(desc)}</p></div></div>`,

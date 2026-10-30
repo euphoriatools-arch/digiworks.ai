@@ -25,7 +25,7 @@ export const site = {
    * Case-study cards and in-page links. Add a slug to show that study again.
    * Older studies stay noindex and out of the sitemap until their pages are rewritten.
    */
-  visibleCaseStudies: ['checkmate', 'lead-scout'],
+  visibleCaseStudies: ['checkmate', 'lead-scout', 'orange-ruler', 'person-care'],
   email: '',
   phone: '+1-737-394-5488',
   phoneDisplay: '+1 737 394 5488',
@@ -39,10 +39,11 @@ export const site = {
   appleTouchIcon: '/mark5e1f.png?v=2',
   ogImage: '/og-image.png',
   manifest: '/site.webmanifest',
+  foundingYear: '2017',
   verified: {
     deployments: '150+',
     sectors: '7+',
-    offices: '5',
+    offices: '2',
     newsletterReaders: '2,000+',
     productionWeeks: '8-20 weeks',
     projectDelivery: '8-20 week delivery',
@@ -52,7 +53,7 @@ export const site = {
   heroCounters: [
     { value: 150, suffix: '+', label: 'Production AI deployments' },
     { value: 7, suffix: '+', label: 'Sectors served' },
-    { value: 5, suffix: '', label: 'Global offices' },
+    { value: 2, suffix: '', label: 'Offices in the USA and UK' },
     { value: 8, suffix: '–20 weeks', label: 'To production AI' },
   ],
   offices: [
@@ -67,22 +68,11 @@ export const site = {
       formatted: '716 Congress Ave #200, Austin, TX 78701, USA',
     },
     {
-      name: 'Dubai',
-      streetAddress: 'Building A1, Dubai Digital Park, Dubai Silicon Oasis',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
-      formatted: 'Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai',
+      name: 'London',
+      addressLocality: 'London',
+      addressCountry: 'GB',
+      formatted: 'London, United Kingdom',
     },
-    {
-      name: 'Karachi',
-      streetAddress: 'Suite No. 108, 1st Floor, Park Avenue, Shahra-e-Faisal, Block 6 PECHS',
-      addressLocality: 'Karachi',
-      postalCode: '75350',
-      addressCountry: 'PK',
-      formatted: 'Suite No. 108, 1st Floor, Park Avenue, Shahra-e-Faisal, Block 6 PECHS, Karachi 75350',
-    },
-    { name: 'Canada', addressLocality: 'Canada', addressCountry: 'CA', formatted: '' },
-    { name: 'Guangzhou', addressLocality: 'Guangzhou', addressCountry: 'CN', formatted: '' },
   ],
   address: {
     streetAddress: '716 Congress Ave #200',

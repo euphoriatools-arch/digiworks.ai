@@ -1,0 +1,43 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { orangeRulerCopy } from '../../data/copy/orange-ruler';
+import { applyCtas } from '../../lib/applyCtas';
+import { orangeRulerSectionsHtml } from '../../lib/renderOrangeRuler';
+import { fileHrefs } from '../../lib/ssrCopy';
+
+const hub = readFileSync(join(process.cwd(), 'src/pages/case-studies.astro'), 'utf8');
+const startTok = 'const bodyHtml = applyCaseStudiesCopy(`';
+const start = hub.indexOf(startTok);
+const end = hub.indexOf('`);', start);
+if (start < 0 || end < 0) throw new Error('orange-ruler: case-studies shell missing');
+const shell = hub.slice(start + startTok.length, end);
+const main = shell.indexOf('<main id="main"');
+const firstSection = shell.indexOf('<section', main);
+const footer = shell.indexOf('<footer', main);
+if (firstSection < 0 || footer < 0) throw new Error('orange-ruler: shell markers missing');
+
+const dg = readFileSync(join(process.cwd(), 'src/pages/case-studies/drive-guard.astro'), 'utf8');
+const preloadMatch = dg.match(/const modulePreloads = (\[[\s\S]*?\]) as string\[\]/);
+if (!preloadMatch) throw new Error('orange-ruler: drive-guard preloads missing');
+const modulePreloads = JSON.parse(preloadMatch[1]) as string[];
+
+const title = orangeRulerCopy.title;
+const description = orangeRulerCopy.description;
+const robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+const bodyHtml = applyCtas(
+  fileHrefs(shell.slice(0, firstSection) + orangeRulerSectionsHtml() + shell.slice(footer)),
+);
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath="/case-studies/orange-ruler.html"
+  ogImage="/case/orange-ruler/orange-ruler-01.webp"
+  robots={robots}
+  modulePreloads={modulePreloads}
+  entryScript="/assets/app-digi.js"
+>
+  <Fragment set:html={bodyHtml} />
+</BaseLayout>

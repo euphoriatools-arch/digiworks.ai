@@ -70,6 +70,24 @@
       ]
     },
     {
+      "source": "/assets/orange-ruler-body.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/person-care-body.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/assets/dw-boot.js",
       "headers": [
         {
@@ -717,6 +735,26 @@
     {
       "source": "/case-studies/lead-scout/",
       "destination": "/case-studies/lead-scout.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/orange-ruler",
+      "destination": "/case-studies/orange-ruler.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/orange-ruler/",
+      "destination": "/case-studies/orange-ruler.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/person-care",
+      "destination": "/case-studies/person-care.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/person-care/",
+      "destination": "/case-studies/person-care.html",
       "permanent": true
     },
     {

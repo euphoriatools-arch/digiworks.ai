@@ -13,7 +13,7 @@ export const contactCopy: CopyPage & {
 } = {
   title: 'Contact DigiWorks AI | Book a Discovery Call Today',
   description:
-    'Contact DigiWorks AI for a production AI quote. Austin HQ, five offices, reply within 1 business day. Call +1 737 394 5488 to book a path.',
+    'Contact DigiWorks AI for a production AI quote. Austin HQ and London, reply within 1 business day. Call +1 737 394 5488 to book a path.',
   h1: 'Contact DigiWorks AI for your quote',
   h1Lead: 'Contact DigiWorks AI',
   h1Gradient: 'for your quote',
@@ -21,7 +21,7 @@ export const contactCopy: CopyPage & {
     'Contact DigiWorks AI with the owner and the system. We reply within 1 business day and map first production AI in 8–20 weeks. Privacy policy and terms of use apply to the form.',
   formCta: 'Book a Free Discovery Call',
   formMicro: 'Free discovery session - Reply within 1 business day',
-  officesSub: 'Present across 5 cities, one team, built to support you wherever you are.',
+  officesSub: 'Austin and London. One team, two offices.',
   capabilitiesSub: 'Whatever you are building, start on the Enterprise AI blog or AI Readiness Assessment.',
   bodyLinks: [
     { phrase: '1 business day', href: '/about' },

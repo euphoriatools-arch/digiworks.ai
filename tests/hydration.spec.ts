@@ -51,6 +51,8 @@ const pages = [
   { path: '/case-studies.html', name: 'case-studies', h1Max: [2, 2], skipFaq: true },
   { path: '/case-studies/checkmate.html', name: 'checkmate', h1Max: [3, 5], skipFaq: true },
   { path: '/case-studies/lead-scout.html', name: 'lead-scout', h1Max: [3, 5], skipFaq: true },
+  { path: '/case-studies/orange-ruler.html', name: 'orange-ruler', h1Max: [3, 5], skipFaq: true },
+  { path: '/case-studies/person-care.html', name: 'person-care', h1Max: [3, 5], skipFaq: true },
   { path: '/ai-readiness.html', name: 'ai-readiness', h1Max: [2, 3], skipFaq: true },
   { path: '/contact.html', name: 'contact', h1Max: [2, 3], skipFaq: true },
   { path: '/blog.html', name: 'blog', h1Max: [2, 4], skipFaq: true },

@@ -12,18 +12,18 @@ export const aboutCopy: CopyPage & {
 } = {
   title: 'DigiWorks AI Company in Austin, Texas | DigiWorks AI',
   description:
-    'DigiWorks AI is an Austin company that ships production AI for US teams: 150+ deployments, 5 offices. Not a demo shop. Book a free discovery call.',
+    'DigiWorks AI is an Austin company that ships production AI for US teams: 150+ deployments, 2 offices. Not a demo shop. Book a free discovery call.',
   h1: 'DigiWorks AI Company in Austin',
   h1Lead: 'DigiWorks AI',
   h1Gradient: 'Company in Austin',
   hero:
-    'DigiWorks AI is an Austin, Texas-based AI development company that ships production AI for US businesses from Austin HQ. 150+ deployments across five offices—not demo-only systems you cannot run on a Friday.',
+    'DigiWorks AI is an Austin, Texas-based AI development company that ships production AI for US businesses from Austin HQ. 150+ deployments, with offices in Austin and London, since 2017—not demo-only systems you cannot run on a Friday.',
   mission:
     'Help people and businesses ship production AI they can actually run. We combine engineering, review, and the systems you already own so named owners keep the work after we leave the room.',
   decade:
     '150+ production AI deployments mean your system is built on shipped work, not a slide deck or a weekend demo.',
   growth:
-    'Five offices and 150+ production AI deployments across 7+ sectors, from Austin HQ, with typical first production inside 8–20 weeks for named work.',
+    '150+ production AI deployments across 7+ sectors, from Austin HQ and London, with typical first production inside 8–20 weeks for named work.',
   bodyLinks: [
     { phrase: '150+ production AI deployments', href: '/case-studies' },
     { phrase: 'typical first production inside 8–20 weeks', href: '/contact' },
@@ -40,7 +40,7 @@ export const aboutCopy: CopyPage & {
   faqs: [
     {
       q: 'Who is DigiWorks AI and where is the company based?',
-      a: 'DigiWorks AI is an Austin, Texas-based AI development company that helps US businesses design, build, and scale production AI. Headquarters is 716 Congress Ave #200, Austin, TX 78701. We also operate offices in Dubai, Karachi, Guangzhou, and Canada. 150+ production AI deployments across 7+ sectors. Typical delivery is 8–20 weeks after scope is agreed. Book a free discovery session if you can name the owner and the system.',
+      a: 'DigiWorks AI is an Austin, Texas-based AI development company that helps US businesses design, build, and scale production AI. Headquarters is 716 Congress Ave #200, Austin, TX 78701. The second office is in London, United Kingdom. DigiWorks AI has been working since 2017. 150+ production AI deployments across 7+ sectors. Typical delivery is 8–20 weeks after scope is agreed. Book a free discovery session if you can name the owner and the system.',
     },
     {
       q: 'How is the company different from the hire and service pages?',
@@ -48,7 +48,7 @@ export const aboutCopy: CopyPage & {
     },
     {
       q: 'What numbers can you actually stand behind?',
-      a: '150+ production AI deployments, 7+ sectors, 5 offices, typical 8–20 weeks to production, pods ready in 2–3 weeks, embedded talent onboard in 1–2 weeks. We do not print peak headcount, app counts, or years in market that are not on the fact sheet. Canada and Guangzhou street lines are still missing. Bark, Trustpilot, and Clutch quotes stay word-for-word from the original page.',
+      a: '150+ production AI deployments, 7+ sectors, 2 offices in the USA and UK, building software since 2017, typical 8–20 weeks to production, pods ready in 2–3 weeks, embedded talent onboard in 1–2 weeks. We do not print peak headcount or app counts that are not on the fact sheet. Bark, Trustpilot, and Clutch quotes stay word-for-word from the original page.',
     },
     {
       q: 'How do you work after we book a call?',
@@ -56,7 +56,7 @@ export const aboutCopy: CopyPage & {
     },
     {
       q: 'Do you keep leadership and offices on this page?',
-      a: 'Yes. Leadership cards stay the people already listed, with LinkedIn as published. Full bios live on the team page. Office addresses stay as written: Austin, Dubai, and Karachi streets are in the HTML. Canada and Guangzhou streets are still missing. We do not invent titles. Book a free discovery call if you want those people in the room.',
+      a: 'Yes. Leadership cards stay the people already listed, with LinkedIn as published. Full bios live on the team page. Offices are Austin HQ at 716 Congress Ave #200, Austin, TX 78701, and London, United Kingdom. We do not invent titles. Book a free discovery call if you want those people in the room.',
     },
     {
       q: 'When is DigiWorks AI the wrong fit?',

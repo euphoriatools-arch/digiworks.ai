@@ -3,7 +3,7 @@
  * Fails the process if any source string is missing.
  * Do not hand-edit public/assets/{Home,app-digi,Seo,sections,DetailRoutes}*.js
  */
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cloudAndDevopsCopy } from '../src/data/copy/cloud-and-devops.ts';
@@ -13,6 +13,7 @@ import { mlDevelopmentCopy } from '../src/data/copy/machine-learning-development
 import { agentCopy } from '../src/data/copy/ai-agent-development.ts';
 import { aiSecurityCopy } from '../src/data/copy/ai-security.ts';
 import { homeCopy } from '../src/data/copy/home.ts';
+import { homeHeroInnerHtml } from '../src/lib/homeHero.ts';
 import { artificialIntelligenceCopy } from '../src/data/copy/artificial-intelligence.ts';
 import { machineLearningCopy } from '../src/data/copy/machine-learning.ts';
 import { autonomousAiAgentsCopy } from '../src/data/copy/autonomous-ai-agents.ts';
@@ -55,6 +56,8 @@ import { teamCopy } from '../src/data/copy/team.ts';
 import { caseStudiesCopy } from '../src/data/copy/case-studies.ts';
 import { checkmateSectionsHtml } from '../src/lib/renderCheckmate.ts';
 import { leadScoutSectionsHtml } from '../src/lib/renderLeadScout.ts';
+import { orangeRulerSectionsHtml } from '../src/lib/renderOrangeRuler.ts';
+import { personCareSectionsHtml } from '../src/lib/renderPersonCare.ts';
 import { site } from '../src/data/site.ts';
 import { aiReadinessCopy } from '../src/data/copy/ai-readiness.ts';
 import { contactCopy } from '../src/data/copy/contact.ts';
@@ -168,6 +171,143 @@ function replaceLastCatalogPage(app, slug, copy, label) {
     throw new Error(`SPA copy sync: last catalog slice missing (${label}) start=${start} end=${end}`);
   }
   return app.slice(0, start) + catalogObject(copy) + endMarker + app.slice(end + endMarker.length);
+}
+
+function patchCompanyFacts({ app, about, contact, home }) {
+  const feStart = app.indexOf('fe=[{city:`Austin`');
+  const feEnd = app.indexOf('],pe=', feStart);
+  if (feStart < 0 || feEnd < 0) throw new Error('SPA copy sync: office list missing');
+  const feNext =
+    'fe=[{city:`Austin`,country:`United States`,flag:`US`,address:`716 Congress Ave #200, Austin, TX 78701, USA`,footerAddress:`716 Congress Ave #200, Austin, TX 78701, USA`,hq:!0,lat:30.2692,lng:-97.7424},{city:`London`,country:`United Kingdom`,flag:`GB`,address:`London, United Kingdom`,footerAddress:`London, United Kingdom`,lat:51.5074,lng:-0.1278}]';
+  app = app.slice(0, feStart) + feNext + app.slice(feEnd + 1);
+
+  const etStart = app.indexOf('var et={');
+  const etEnd = app.indexOf('},tt=', etStart);
+  if (etStart < 0 || etEnd < 0) throw new Error('SPA copy sync: office photos missing');
+  app =
+    app.slice(0, etStart) +
+    'var et={Austin:`https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=600&q=70&auto=format&fit=crop`,London:`https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=70&auto=format&fit=crop`}' +
+    app.slice(etEnd + 1);
+
+  app = mustReplace(
+    app,
+    'tt={US:`🇺🇸`,AE:`🇦🇪`,CA:`🇨🇦`,CN:`🇨🇳`,PK:`🇵🇰`}',
+    'tt={US:`🇺🇸`,GB:`🇬🇧`,AE:`🇦🇪`,CA:`🇨🇦`,CN:`🇨🇳`,PK:`🇵🇰`}',
+    'office flags',
+  );
+  app = mustReplace(
+    app,
+    '{year:`2017`,title:`It begins in Karachi`,desc:`DigiWorks is founded on one conviction: most projects fail in the gap between what clients ask for and what their business actually needs. Closing that gap is the whole idea.`}',
+    '{year:`2017`,title:`Building software since 2017`,desc:`DigiWorks is founded on one conviction: most projects fail in the gap between what clients ask for and what their business actually needs. Closing that gap is the whole idea.`}',
+    'about timeline start',
+  );
+  app = mustReplace(
+    app,
+    '{year:`2019`,title:`Across the globe`,desc:`Expansion beyond Pakistan into the USA (Austin HQ), the UAE, and Canada, registered and operating across four countries.`}',
+    '{year:`Now`,title:`Two offices`,desc:`Headquarters in Austin, Texas, and an office in London, United Kingdom.`}',
+    'about timeline offices',
+  );
+  app = mustReplace(app, 'Our Global Offices', 'Our Offices', 'footer offices heading');
+  app = mustReplace(app, '· Since 2025', '· Since 2017', 'footer since');
+  app = mustReplace(
+    app,
+    'grid gap-4 sm:grid-cols-2 lg:grid-cols-5',
+    'grid gap-4 sm:grid-cols-2 lg:grid-cols-2',
+    'footer office grid',
+  );
+  app = mustReplace(
+    app,
+    '{value:5,suffix:``,label:`Global offices`}',
+    '{value:2,suffix:``,label:`Offices in the USA and UK`}',
+    'office counter',
+  );
+
+  about = mustReplace(
+    about,
+    'M={Austin:{cx:39,cy:52},Canada:{cx:49,cy:43},Dubai:{cx:122,cy:56},Karachi:{cx:128,cy:56},Guangzhou:{cx:153,cy:57}}',
+    'M={Austin:{cx:39,cy:52},London:{cx:92,cy:40}}',
+    'about map dots',
+  );
+  about = mustReplace(about, 'Five time zones.', 'Two offices.', 'about offices heading');
+  about = mustReplace(
+    about,
+    'Five offices across the globe, engineering around the clock so your momentum never stops.',
+    'Offices in Austin and London, engineering around the clock so your momentum never stops.',
+    'about offices sub',
+  );
+  about = mustReplace(
+    about,
+    'mx-auto mt-7 grid w-full max-w-5xl grid-cols-2 justify-center gap-3.5 sm:grid-cols-3 lg:grid-cols-5',
+    'mx-auto mt-7 grid w-full max-w-5xl grid-cols-2 justify-center gap-3.5 sm:grid-cols-2 lg:grid-cols-2',
+    'about office cards',
+  );
+
+  contact = mustReplace(contact, 'Our Global Offices', 'Our Offices', 'contact offices heading');
+  contact = mustReplace(contact, '`Worldwide`', '`Two offices`', 'contact offices chip');
+  contact = mustReplace(
+    contact,
+    'mx-auto grid max-w-[80rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5',
+    'mx-auto grid max-w-[80rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2',
+    'contact office grid',
+  );
+  contact = mustReplace(
+    contact,
+    '{v:`5`,l:`Global offices`}',
+    '{v:`2`,l:`Offices in the USA and UK`}',
+    'contact office counter',
+  );
+  const contactPhotos =
+    'b={Austin:`https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1400&q=85&auto=format&fit=crop`,London:`https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1400&q=85&auto=format&fit=crop`}';
+  const photoStart = contact.indexOf('b={Austin:`https://images.unsplash.com/photo-1531218150217');
+  const photoEnd = contact.indexOf('},x=', photoStart);
+  if (photoStart < 0 || photoEnd < 0) throw new Error('SPA copy sync: contact office photos missing');
+  contact = contact.slice(0, photoStart) + contactPhotos + contact.slice(photoEnd + 1);
+  contact = mustReplace(
+    contact,
+    'x={Austin:`#0e59b3`,Dubai:`#00c8ff`,Canada:`#7c3aed`,Guangzhou:`#22c55e`,Karachi:`#e11d48`}',
+    'x={Austin:`#0e59b3`,London:`#1d4ed8`}',
+    'contact office colors',
+  );
+  contact = mustReplace(
+    contact,
+    'S={US:`🇺🇸`,AE:`🇦🇪`,CA:`🇨🇦`,CN:`🇨🇳`,PK:`🇵🇰`}',
+    'S={US:`🇺🇸`,GB:`🇬🇧`}',
+    'contact office flags',
+  );
+
+  home = mustReplace(
+    home,
+    'children:`5`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`global offices`})',
+    'children:`2`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`offices in the USA and UK`})',
+    'home office counter',
+  );
+
+  return { app, about, contact, home };
+}
+
+function patchHomeHero(source) {
+  const marker = 'function Q(){';
+  const start = source.indexOf(marker);
+  if (start < 0) throw new Error('SPA copy sync: home hero function missing');
+  if (source.includes('id:`dw-hero`')) return source;
+  let depth = 0;
+  const brace = source.indexOf('{', start);
+  let end = -1;
+  for (let j = brace; j < source.length; j += 1) {
+    const c = source[j];
+    if (c === '{') depth += 1;
+    else if (c === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        end = j;
+        break;
+      }
+    }
+  }
+  if (end < 0) throw new Error('SPA copy sync: home hero function end missing');
+  const html = JSON.stringify(homeHeroInnerHtml);
+  const fn = `function Q(){let e=(0,I.useRef)(null);(0,I.useEffect)(()=>{let t=e.current;if(!t)return;let n=t.querySelector(\`[data-dw-scroll]\`);function r(){let e=window.innerHeight-8;window.__lenis?window.__lenis.scrollTo(e,{duration:1.2}):window.scrollTo({top:e,behavior:\`smooth\`})}n&&n.addEventListener(\`click\`,r);if(window.matchMedia(\`(prefers-reduced-motion: reduce)\`).matches)return()=>{n&&n.removeEventListener(\`click\`,r)};let i=t.querySelector(\`.dw-cursor\`),a=[...t.querySelectorAll(\`[data-depth]\`)],o=t.querySelector(\`[data-depth-el]\`),s=0,c=0,l=0,u=0,d=0,f=0,p=0,m=0,h=0;function g(e){let n=t.getBoundingClientRect(),r=e.clientX-n.left,i=e.clientY-n.top;s=r/n.width*2-1;c=i/n.height*2-1;d=r;f=i;t.classList.add(\`is-active\`);h||(h=requestAnimationFrame(v))}function y(){s=0;c=0;t.classList.remove(\`is-active\`);h||(h=requestAnimationFrame(v))}function v(){l+=(s-l)*.06;u+=(c-u)*.06;p+=(d-p)*.12;m+=(f-m)*.12;for(let e of a){let t=parseFloat(e.dataset.depth)||0;e.style.transform=\`translate(\${(l*t).toFixed(2)}px, \${(u*t).toFixed(2)}px)\`}if(o){let e=parseFloat(o.dataset.depthEl)||0;o.style.transform=\`translate(\${(l*e).toFixed(2)}px, \${(u*e).toFixed(2)}px)\`}if(i){i.style.left=p+\`px\`;i.style.top=m+\`px\`}let e=Math.abs(s-l)<.001&&Math.abs(c-u)<.001&&Math.abs(d-p)<.5&&Math.abs(f-m)<.5;h=e?0:requestAnimationFrame(v)}t.addEventListener(\`mousemove\`,g);t.addEventListener(\`mouseleave\`,y);return()=>{t.removeEventListener(\`mousemove\`,g);t.removeEventListener(\`mouseleave\`,y);n&&n.removeEventListener(\`click\`,r);h&&cancelAnimationFrame(h)}},[]);return(0,L.jsx)(\`section\`,{ref:e,id:\`dw-hero\`,className:\`dw-hero\`,dangerouslySetInnerHTML:{__html:${html}}})}`;
+  return source.slice(0, start) + fn + source.slice(end + 1);
 }
 
 function sync() {
@@ -740,6 +880,12 @@ function sync() {
     contactCopy.capabilitiesSub,
     'contact capabilities sub',
   );
+  contact = mustReplace(
+    contact,
+    'Present across 5 cities, one team, built to support you wherever you are.',
+    contactCopy.officesSub,
+    'contact offices sub',
+  );
 
   let blog = buffers[FILES.blog];
   blog = mustReplace(blog, 'Fueling Growth through Innovation and Creativity', blogCopy.h1, 'blog h1');
@@ -790,6 +936,9 @@ function sync() {
     `...i.caseStudies.filter(e=>[${visibleJs}].includes(e.slug)).map(e=>({to:\`/case-studies/\${e.slug}\``,
     'search case studies',
   );
+
+  home = patchHomeHero(home);
+  ({ app, about, contact, home } = patchCompanyFacts({ app, about, contact, home }));
 
   const out = {
     [FILES.home]: home,
@@ -890,6 +1039,20 @@ function sync() {
       ',{slug:`lead-scout`,name:`Lead Scout`,tagline:`About 35–40% Less Research Time`,category:`AI Lead Generation Platform`,group:`Sales`,cover:`/case/lead-scout/lead-scout-01.webp`,accent:`from-electric to-cyan`,brandBlue:`#308eff`,brandNavy:`#0d2745`,layout:`metrics`}';
     data = data.slice(0, at) + entry + data.slice(at);
   }
+  if (!data.includes('slug:`orange-ruler`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`orange-ruler`,name:`Orange Ruler`,tagline:`About 80% Faster Campaign Setup`,category:`School Fundraising Software`,group:`Education`,cover:`/case/orange-ruler/orange-ruler-01.webp`,accent:`from-coral to-violet`,brandBlue:`#f5a623`,brandNavy:`#1a2744`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+  }
+  if (!data.includes('slug:`person-care`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`person-care`,name:`Person Care`,tagline:`About 25–35% Less Admin Work`,category:`Digital Health Platform`,group:`Healthcare`,cover:`/case/person-care/person-care-01.webp`,accent:`from-coral to-electric`,brandBlue:`#f47b20`,brandNavy:`#1a2744`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+  }
   writeFileSync(dataPath, data);
 
   writeFileSync(
@@ -899,6 +1062,14 @@ function sync() {
   writeFileSync(
     join(destDir, 'lead-scout-body.js'),
     `export const html = ${JSON.stringify(leadScoutSectionsHtml())};\n`,
+  );
+  writeFileSync(
+    join(destDir, 'orange-ruler-body.js'),
+    `export const html = ${JSON.stringify(orangeRulerSectionsHtml())};\n`,
+  );
+  writeFileSync(
+    join(destDir, 'person-care-body.js'),
+    `export const html = ${JSON.stringify(personCareSectionsHtml())};\n`,
   );
 
   const detailPath = join(destDir, 'CaseStudyDetail-r_3xQvln.js');
@@ -936,12 +1107,48 @@ function sync() {
     detailFile = detailFile.replace(leadFrom, leadTo);
     writeFileSync(detailPath, detailFile);
   }
+  if (!detailFile.includes('orange-ruler-body.js')) {
+    detailFile = readFileSync(detailPath, 'utf8');
+    const importMark = 'import{html as LEAD_SCOUT_HTML}from"./lead-scout-body.js";';
+    const importAt = detailFile.indexOf(importMark);
+    if (importAt < 0) throw new Error('SPA copy sync: Lead Scout import anchor missing');
+    const importEnd = importAt + importMark.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as ORANGE_RULER_HTML}from"./orange-ruler-body.js";' +
+      detailFile.slice(importEnd);
+    const orangeFrom =
+      'if(t.slug===`lead-scout`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:LEAD_SCOUT_HTML}});let i=h(t)';
+    const orangeTo =
+      'if(t.slug===`lead-scout`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:LEAD_SCOUT_HTML}});if(t.slug===`orange-ruler`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:ORANGE_RULER_HTML}});let i=h(t)';
+    if (!detailFile.includes(orangeFrom)) throw new Error('SPA copy sync: Orange Ruler branch anchor missing');
+    detailFile = detailFile.replace(orangeFrom, orangeTo);
+    writeFileSync(detailPath, detailFile);
+  }
+  if (!detailFile.includes('person-care-body.js')) {
+    detailFile = readFileSync(detailPath, 'utf8');
+    const importMark = 'import{html as ORANGE_RULER_HTML}from"./orange-ruler-body.js";';
+    const importAt = detailFile.indexOf(importMark);
+    if (importAt < 0) throw new Error('SPA copy sync: Orange Ruler import anchor missing');
+    const importEnd = importAt + importMark.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as PERSON_CARE_HTML}from"./person-care-body.js";' +
+      detailFile.slice(importEnd);
+    const personFrom =
+      'if(t.slug===`orange-ruler`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:ORANGE_RULER_HTML}});let i=h(t)';
+    const personTo =
+      'if(t.slug===`orange-ruler`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:ORANGE_RULER_HTML}});if(t.slug===`person-care`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:PERSON_CARE_HTML}});let i=h(t)';
+    if (!detailFile.includes(personFrom)) throw new Error('SPA copy sync: Person Care branch anchor missing');
+    detailFile = detailFile.replace(personFrom, personTo);
+    writeFileSync(detailPath, detailFile);
+  }
   detailFile = readFileSync(detailPath, 'utf8');
-  const exploreFrom = 'let n=s.filter(t=>t.slug!==e).slice(0,3);';
   const exploreTo = `let n=s.filter(t=>t.slug!==e&&[${visibleJs}].includes(t.slug)).slice(0,3);`;
+  const exploreRe = /let n=s\.filter\(t=>t\.slug!==e(?:&&\[[^\]]*\]\.includes\(t\.slug\))?\)\.slice\(0,3\);/;
   if (!detailFile.includes(exploreTo)) {
-    if (!detailFile.includes(exploreFrom)) throw new Error('SPA copy sync: Keep exploring anchor missing');
-    detailFile = detailFile.replace(exploreFrom, exploreTo);
+    if (!exploreRe.test(detailFile)) throw new Error('SPA copy sync: Keep exploring anchor missing');
+    detailFile = detailFile.replace(exploreRe, exploreTo);
     writeFileSync(detailPath, detailFile);
   }
 
@@ -952,22 +1159,36 @@ function sync() {
     if (start >= 0) {
       const end = showcase.indexOf('];function', start);
       if (end < 0) throw new Error(`SPA copy sync: showcase end missing in ${file}`);
+      const showcaseCards = {
+        checkmate: {
+          img: '/case/checkmate/checkmate-01.webp',
+          alt: 'Checkmate',
+          title: 'Checkmate',
+          desc: 'Doubled Peak-Hour Order Capacity',
+        },
+        'lead-scout': {
+          img: '/case/lead-scout/lead-scout-01.webp',
+          alt: 'Lead Scout',
+          title: 'Lead Scout',
+          desc: 'About 35–40% Less Research Time',
+        },
+        'orange-ruler': {
+          img: '/case/orange-ruler/orange-ruler-01.webp',
+          alt: 'Orange Ruler',
+          title: 'Orange Ruler',
+          desc: 'About 80% Faster Campaign Setup',
+        },
+        'person-care': {
+          img: '/case/person-care/person-care-01.webp',
+          alt: 'Person Care',
+          title: 'Person Care',
+          desc: 'About 25–35% Less Admin Work',
+        },
+      };
       const items = site.visibleCaseStudies
         .map((slug) => {
-          const card =
-            slug === 'lead-scout'
-              ? {
-                  img: '/case/lead-scout/lead-scout-01.webp',
-                  alt: 'Lead Scout',
-                  title: 'Lead Scout',
-                  desc: 'About 35–40% Less Research Time',
-                }
-              : {
-                  img: '/case/checkmate/checkmate-01.webp',
-                  alt: 'Checkmate',
-                  title: 'Checkmate',
-                  desc: 'Doubled Peak-Hour Order Capacity',
-                };
+          const card = showcaseCards[slug];
+          if (!card) throw new Error(`SPA copy sync: showcase card missing for ${slug}`);
           return `{img:\`${card.img}\`,alt:\`${card.alt}\`,title:\`${card.title}\`,desc:\`${card.desc}\`,slug:\`${slug}\`}`;
         })
         .join(',');
@@ -986,7 +1207,90 @@ function sync() {
   if (!appJs.includes(popupTo)) {
     if (!appJs.includes(popupFrom)) throw new Error('SPA copy sync: Get in touch popup anchor missing');
     appJs = appJs.replace(popupFrom, popupTo);
-    writeFileSync(appPath, appJs);
+  }
+
+  // Keep the header on screen while scrolling. The solid state is a full-width
+  // bar (inline style beats the floating-pill utilities, which are not all in the CSS bundle).
+  const scrollFrom =
+    'g.pathname===`/`)f(!n&&t>r*.82),h(t>24);else if(e){let e=t>r*.85;f(!n&&e),h(!1)}else t<80?f(!1):!n&&i>4?f(!0):i<-4&&f(!1),h(t>24);';
+  const scrollTo =
+    'g.pathname===`/`)f(!1),h(t>24);else if(e){let e=t>r*.85;f(!n&&e),h(!1)}else f(!1),h(t>24);';
+  if (!appJs.includes(scrollTo)) {
+    if (!appJs.includes(scrollFrom)) throw new Error('SPA copy sync: header scroll anchor missing');
+    appJs = appJs.replace(scrollFrom, scrollTo);
+  }
+  const barFrom = 'bg-transparent`}`,onMouseLeave:()=>t(null)';
+  const barTo = 'bg-transparent`}`,style:p?{margin:0,maxWidth:`100%`,width:`100%`,borderRadius:0}:void 0,onMouseLeave:()=>t(null)';
+  if (!appJs.includes(barTo)) {
+    if (!appJs.includes(barFrom)) throw new Error('SPA copy sync: header bar anchor missing');
+    appJs = appJs.replace(barFrom, barTo);
+  }
+  const standardsCall =
+    '(0,D.jsx)(`div`,{className:`mt-10 border-t border-dusk/10 pt-8`,children:(0,D.jsx)($e,{})}),';
+  if (appJs.includes(standardsCall)) appJs = appJs.replace(standardsCall, '');
+  const standardsFn = 'function $e({className:e=``}){';
+  if (!appJs.includes('function $e(){return null}')) {
+    const fnStart = appJs.indexOf(standardsFn);
+    const fnEnd = appJs.indexOf('var et=', fnStart);
+    if (fnStart < 0 || fnEnd < 0) throw new Error('SPA copy sync: standards footer missing');
+    appJs = appJs.slice(0, fnStart) + 'function $e(){return null}' + appJs.slice(fnEnd);
+  }
+  writeFileSync(appPath, appJs);
+
+  const cardPath = join(destDir, 'CaseCard-Dxe-8ojB.js');
+  let cardJs = readFileSync(cardPath, 'utf8');
+  const webFrom = 's={"thrive-city":`web`,"draft-day":`web`,"milestone-truck":`web`}';
+  const webTo =
+    's={"thrive-city":`web`,"draft-day":`web`,"milestone-truck":`web`,checkmate:`web`,"lead-scout":`web`,"orange-ruler":`web`,"person-care":`web`}';
+  if (!cardJs.includes(webTo)) {
+    if (!cardJs.includes(webFrom)) throw new Error('SPA copy sync: CaseCard web-frame map missing');
+    cardJs = cardJs.replace(webFrom, webTo);
+  }
+  const imgFrom = '"addiction-world":`/case/addiction-world/aw-customer-interface-splash.webp`}';
+  const imgTo =
+    '"addiction-world":`/case/addiction-world/aw-customer-interface-splash.webp`,checkmate:`/case/checkmate/checkmate-01.webp`,"lead-scout":`/case/lead-scout/lead-scout-01.webp`,"orange-ruler":`/case/orange-ruler/orange-ruler-01.webp`,"person-care":`/case/person-care/person-care-01.webp`}';
+  if (!cardJs.includes('checkmate:`/case/checkmate/checkmate-01.webp`')) {
+    if (!cardJs.includes(imgFrom)) throw new Error('SPA copy sync: CaseCard image map missing');
+    cardJs = cardJs.replace(imgFrom, imgTo);
+  }
+  writeFileSync(cardPath, cardJs);
+
+  const fridayPath = join(destDir, 'Friday-DI4w5Yvh.js');
+  if (existsSync(fridayPath)) {
+    let friday = readFileSync(fridayPath, 'utf8');
+    const fridayFrom =
+      'DigiWorks is headquartered in Austin, Texas, with engineering teams in Karachi, Dubai and Guangzhou, and that spread is exactly why five days is possible. When the US team signs off a screen at the end of the day, the next shift is already at their desks, so your build moves while you sleep. ';
+    const fridayTo =
+      'DigiWorks AI is headquartered in Austin, Texas, with an office in London, United Kingdom, and has been building software since 2017. ';
+    if (friday.includes(fridayFrom)) friday = friday.replace(fridayFrom, fridayTo);
+    writeFileSync(fridayPath, friday);
+  }
+
+  for (const file of ['CustomAppDevelopment-SQouYROq.js', 'CustomMobileAppDevelopment-lMpXbLO8.js']) {
+    const extraPath = join(destDir, file);
+    if (!existsSync(extraPath)) continue;
+    let extra = readFileSync(extraPath, 'utf8');
+    extra = extra.replaceAll('· Since 2025', '· Since 2017');
+    extra = extra.replaceAll('{iso:`CA`,dial:`+1`,country:`Canada`,label:`CA +1`,flag:`ca`},', '');
+    extra = extra.replaceAll('{iso:`CA`,dial:`+1`,country:`Canada`,label:`🇨🇦 +1`},', '');
+    writeFileSync(extraPath, extra);
+  }
+
+  const staleApp = join(destDir, 'app-D-hvFJBY.js');
+  if (existsSync(staleApp)) {
+    let stale = readFileSync(staleApp, 'utf8');
+    if (stale.includes('city:`Dubai`')) {
+      const patched = patchCompanyFacts({
+        app: stale,
+        about:
+          'M={Austin:{cx:39,cy:52},Canada:{cx:49,cy:43},Dubai:{cx:122,cy:56},Karachi:{cx:128,cy:56},Guangzhou:{cx:153,cy:57}}Five time zones.Five offices across the globe, engineering around the clock so your momentum never stops.mx-auto mt-7 grid w-full max-w-5xl grid-cols-2 justify-center gap-3.5 sm:grid-cols-3 lg:grid-cols-5',
+        contact:
+          'Our Global Offices`Worldwide`mx-auto grid max-w-[80rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5{v:`5`,l:`Global offices`}b={Austin:`https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1400&q=85&auto=format&fit=crop`,Dubai:`https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=85&auto=format&fit=crop`,Canada:`https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1400&q=85&auto=format&fit=crop`,Guangzhou:`https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=1400&q=85&auto=format&fit=crop`,Karachi:`https://images.unsplash.com/photo-1611068661807-c850d6a24f62?w=1400&q=85&auto=format&fit=crop`},x={Austin:`#0e59b3`,Dubai:`#00c8ff`,Canada:`#7c3aed`,Guangzhou:`#22c55e`,Karachi:`#e11d48`}S={US:`🇺🇸`,AE:`🇦🇪`,CA:`🇨🇦`,CN:`🇨🇳`,PK:`🇵🇰`}',
+        home: 'children:`5`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`global offices`})',
+      });
+      stale = patched.app;
+      writeFileSync(staleApp, stale);
+    }
   }
 
   console.log('SPA copy sync: ok');

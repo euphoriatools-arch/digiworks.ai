@@ -7,6 +7,7 @@ import { aiAutomationCopy } from '../data/copy/ai-automation';
 import { applyCtas } from './applyCtas';
 import { fileHrefs, injectBodyLinks, mustReplace, replaceFaqBlock, replaceOnce } from './ssrCopy';
 import { visibleListingCards } from './visibleCaseStudies';
+import { homeHeroSectionHtml } from './homeHero';
 
 export { homeCopy };
 
@@ -133,5 +134,9 @@ export function applyHomeCopy(html: string): string {
   const after = gridAt < 0 ? -1 : out.indexOf('<div class="mt-10 text-center"', gridAt);
   if (gridAt < 0 || after < 0) throw new Error('SSR copy: home case-study grid missing');
   out = out.slice(0, gridAt + gridClass.length) + visibleListingCards() + '</div>' + out.slice(after);
-  return applyCtas(fileHrefs(out));
+  out = applyCtas(fileHrefs(out));
+  const heroStart = out.indexOf('<section class="relative flex min-h-screen items-center overflow-hidden');
+  const heroNext = out.indexOf('<section class="relative px-5 py-10 sm:px-8" aria-label="Client brands">', heroStart);
+  if (heroStart < 0 || heroNext < 0) throw new Error('SSR copy: home hero section missing');
+  return out.slice(0, heroStart) + homeHeroSectionHtml() + out.slice(heroNext);
 }

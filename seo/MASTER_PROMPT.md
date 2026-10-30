@@ -143,13 +143,10 @@ Engagement models:
 - Embedded Talent: senior AI/ML/data engineers, onboard in 1-2 weeks, scale up
   or down anytime
 
+Since 2017.
 HQ: 716 Congress Ave #200, Austin, TX 78701, USA
-Other offices:
-- Dubai: Building A1, Dubai Digital Park, Dubai Silicon Oasis
-- Karachi: Suite No. 108, 1st Floor, Park Avenue, Shahra-e-Faisal, Block 6
-  PECHS, Karachi 75350
-- Canada: [VERIFY address]
-- Guangzhou: [VERIFY address]
+UK office: London, United Kingdom
+2 offices: USA, UK
 Phone: +1 737 394 5488
 WhatsApp: +1 346 829 1047
 Email: [VERIFY]
@@ -159,9 +156,9 @@ Standards (write "built to" or "aligned with" unless a certification is
 verified): GDPR, ISO 27001, NIST, HIPAA-aligned, CCPA
 Cloud platforms: AWS, Microsoft Azure, Google Cloud
 
-Verified numbers: 150+ deployments, 7+ sectors served, 5 global offices,
-2,000+ newsletter readers, 8-20 weeks to production AI
-Unverified numbers (never guess): years in business, number of specialists,
+Verified numbers: 150+ deployments, 7+ sectors served, 2 offices (USA and UK),
+Since 2017, 2,000+ newsletter readers, 8-20 weeks to production AI
+Unverified numbers (never guess): number of specialists,
 apps launched, web experiences delivered -> [VERIFY]
 
 Clients / case studies: Drive Guard (fleet safety), MVP Edits (sports tech),

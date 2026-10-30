@@ -40,6 +40,11 @@ export function applyContactCopy(html: string): string {
   );
   out = mustReplace(
     out,
+    'Present across 5 cities, one team, built to support you wherever you are.',
+    contactCopy.officesSub,
+  );
+  out = mustReplace(
+    out,
     'hover:bg-violet/10 hover:text-dusk">Artificial Intelligence</a>',
     `hover:bg-violet/10 hover:text-dusk">${artificialIntelligenceCopy.name}</a>`,
   );

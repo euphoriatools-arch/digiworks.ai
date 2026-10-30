@@ -1,6 +1,6 @@
 # DigiWorks AI — Phase 6 page summaries
 
-Austin HQ. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. 150+ production AI deployments, 7+ sectors, 5 offices.
+Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2017. 150+ production AI deployments, 7+ sectors, 2 offices: USA and UK.
 
 Skipped pages (team, case studies, individual blog posts) are omitted here until the owner updates them.
 
@@ -10,7 +10,7 @@ DigiWorks AI builds production AI in 8–20 weeks: agents, generative AI, predic
 
 ## DigiWorks AI Company in Austin, Texas | DigiWorks AI
 https://digiworksai.com/about.html
-DigiWorks AI is an Austin company that ships production AI for US teams: 150+ deployments, 5 offices. Not a demo shop. Book a free discovery call.
+DigiWorks AI is an Austin company that ships production AI for US teams: 150+ deployments, 2 offices. Not a demo shop. Book a free discovery call.
 
 ## AI Readiness Assessment | Graded Scores, Next Plan
 https://digiworksai.com/ai-readiness.html
@@ -28,9 +28,17 @@ Checkmate doubled peak-hour phone-order capacity for restaurants. See how DigiWo
 https://digiworksai.com/case-studies/lead-scout.html
 Lead Scout cut B2B prospect research about 35–40% and raised weekly lead volume. See how DigiWorks AI built the workflow, then book a call.
 
+## Orange Ruler School Fundraising Case Study | DigiWorks AI
+https://digiworksai.com/case-studies/orange-ruler.html
+Orange Ruler cut campaign setup from about 2 days to 3–4 hours. See how DigiWorks AI built the school fundraising platform, then book a call.
+
+## Person Care Health Platform Case Study | DigiWorks AI
+https://digiworksai.com/case-studies/person-care.html
+Person Care cut admin work about 25–35% and supported up to 3x more workflows. See how DigiWorks AI built the platform, then book a call.
+
 ## Contact DigiWorks AI | Book a Discovery Call Today
 https://digiworksai.com/contact.html
-Contact DigiWorks AI for a production AI quote. Austin HQ, five offices, reply within 1 business day. Call +1 737 394 5488 to book a path.
+Contact DigiWorks AI for a production AI quote. Austin HQ and London, reply within 1 business day. Call +1 737 394 5488 to book a path.
 
 ## Hire a Dedicated AI Development Team | DigiWorks AI
 https://digiworksai.com/hire/dedicated-ai-pods.html

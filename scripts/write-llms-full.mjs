@@ -22,7 +22,9 @@ function isSkipped(url) {
   if (
     url.startsWith('/case-studies/') &&
     url !== '/case-studies/checkmate.html' &&
-    url !== '/case-studies/lead-scout.html'
+    url !== '/case-studies/lead-scout.html' &&
+    url !== '/case-studies/orange-ruler.html' &&
+    url !== '/case-studies/person-care.html'
   ) {
     return true;
   }
@@ -59,7 +61,7 @@ for (const name of readdirSync(copyDir)) {
 const lines = [
   '# DigiWorks AI — Phase 6 page summaries',
   '',
-  'Austin HQ. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. 150+ production AI deployments, 7+ sectors, 5 offices.',
+  'Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2017. 150+ production AI deployments, 7+ sectors, 2 offices: USA and UK.',
   '',
   'Skipped pages (team, case studies, individual blog posts) are omitted here until the owner updates them.',
   '',

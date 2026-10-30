@@ -23,7 +23,9 @@ export function isOwnerSkipIndex(canonicalPath: string): boolean {
   if (
     p.startsWith('/case-studies/') &&
     p !== '/case-studies/checkmate' &&
-    p !== '/case-studies/lead-scout'
+    p !== '/case-studies/lead-scout' &&
+    p !== '/case-studies/orange-ruler' &&
+    p !== '/case-studies/person-care'
   ) {
     return true;
   }
@@ -101,6 +103,7 @@ export function organizationNode() {
     logo: absoluteUrl(site.logo),
     description: site.entityStatement,
     telephone: site.phone,
+    foundingDate: site.foundingYear,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.streetAddress,
@@ -109,6 +112,21 @@ export function organizationNode() {
       postalCode: site.address.postalCode,
       addressCountry: site.address.addressCountry,
     },
+    location: site.offices.map((office) => {
+      const address: Record<string, unknown> = {
+        '@type': 'PostalAddress',
+        addressLocality: office.addressLocality,
+        addressCountry: office.addressCountry,
+      };
+      if ('streetAddress' in office && office.streetAddress) address.streetAddress = office.streetAddress;
+      if ('addressRegion' in office && office.addressRegion) address.addressRegion = office.addressRegion;
+      if ('postalCode' in office && office.postalCode) address.postalCode = office.postalCode;
+      return {
+        '@type': 'Place',
+        name: 'isHq' in office && office.isHq ? `${office.name} HQ` : office.name,
+        address,
+      };
+    }),
     areaServed: ['United States', 'Worldwide'],
     contactPoint: {
       '@type': 'ContactPoint',
