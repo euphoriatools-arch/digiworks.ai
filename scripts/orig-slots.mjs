@@ -26,7 +26,7 @@ export const HOME_SLOTS = {
   casesSub: 13,
   roi: 24,
   blogSub: 17,
-  sectorsSub: 20,
+  sectorsSub: 84,
   featuredDescs: [14, 12, 13, 10],
 };
 

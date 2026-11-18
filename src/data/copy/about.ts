@@ -10,7 +10,7 @@ export const aboutCopy: CopyPage & {
   growth: string;
   bodyLinks: BodyLink[];
 } = {
-  title: 'About DigiWorks AI | AI Development Company',
+  title: 'About DigiWorks AI | Austin AI Development Company',
   description:
     'We develop production-ready AI solutions, intelligent automation, and custom software that help businesses streamline operations and scale.',
   h1: 'We Build AI That Businesses Can Actually Run',
