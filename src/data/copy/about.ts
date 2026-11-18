@@ -10,57 +10,49 @@ export const aboutCopy: CopyPage & {
   growth: string;
   bodyLinks: BodyLink[];
 } = {
-  title: 'DigiWorks AI Company in Austin, Texas | DigiWorks AI',
+  title: 'About DigiWorks AI | AI Development Company',
   description:
-    'DigiWorks AI is an Austin company that ships production AI for US teams: 150+ deployments, 2 offices. Not a demo shop. Book a free discovery call.',
-  h1: 'DigiWorks AI Company in Austin',
-  h1Lead: 'DigiWorks AI',
-  h1Gradient: 'Company in Austin',
+    'We develop production-ready AI solutions, intelligent automation, and custom software that help businesses streamline operations and scale.',
+  h1: 'We Build AI That Businesses Can Actually Run',
+  h1Lead: 'We Build AI That Businesses',
+  h1Gradient: 'Can Actually Run',
   hero:
-    'DigiWorks AI is an Austin, Texas-based AI development company that ships production AI for US businesses from Austin HQ. 150+ deployments, with offices in Austin and London, since 2017—not demo-only systems you cannot run on a Friday.',
+    'DigiWorks AI is an Austin, Texas-based AI development company helping businesses turn complex challenges into production-ready AI solutions. With a presence in Austin and London, we combine technical expertise, practical engineering, and a business-first approach to build AI systems that deliver value beyond the initial launch.',
   mission:
-    'Help people and businesses ship production AI they can actually run. We combine engineering, review, and the systems you already own so named owners keep the work after we leave the room.',
+    'Our mission is to make AI practical, reliable, and valuable for businesses. We combine engineering expertise with a clear understanding of business processes to develop solutions that fit existing workflows, solve real problems, and remain useful long after deployment.',
   decade:
     '150+ production AI deployments mean your system is built on shipped work, not a slide deck or a weekend demo.',
   growth:
     '150+ production AI deployments across 7+ sectors, from Austin HQ and London, with typical first production inside 8–20 weeks for named work.',
   bodyLinks: [
-    { phrase: '150+ production AI deployments', href: '/case-studies' },
-    { phrase: 'typical first production inside 8–20 weeks', href: '/contact' },
-    { phrase: 'Meet the full team', href: '/team' },
-    { phrase: 'Machine Learning for the practice URL', href: '/services/machine-learning' },
-    { phrase: 'Intelligent Automation is the outcome URL', href: '/services/intelligent-automation' },
-    { phrase: 'Hire AI Engineers', href: '/hire/hire-ai-engineers' },
-    { phrase: 'Dedicated AI Pods', href: '/hire/dedicated-ai-pods' },
-    { phrase: 'the team page', href: '/team' },
-    { phrase: 'Enterprise AI blog', href: '/blog' },
-    { phrase: 'AI Readiness Assessment', href: '/ai-readiness' },
-    { phrase: 'privacy policy', href: '/privacy-policy' },
+    { phrase: 'production-ready AI solutions', href: '/services/artificial-intelligence' },
+    { phrase: 'intelligent automation', href: '/services/intelligent-automation' },
+    { phrase: 'machine learning', href: '/services/machine-learning' },
   ],
   faqs: [
     {
-      q: 'Who is DigiWorks AI and where is the company based?',
-      a: 'DigiWorks AI is an Austin, Texas-based AI development company that helps US businesses design, build, and scale production AI. Headquarters is 716 Congress Ave #200, Austin, TX 78701. The second office is in London, United Kingdom. DigiWorks AI has been working since 2017. 150+ production AI deployments across 7+ sectors. Typical delivery is 8–20 weeks after scope is agreed. Book a free discovery session if you can name the owner and the system.',
+      q: 'What makes DigiWorks AI different from other AI development companies?',
+      a: 'At DigiWorks AI, we focus on what happens after development. Our approach goes beyond building AI models or prototypes to creating production-ready solutions that integrate with existing business systems and workflows. We begin by understanding your operational challenges, technical requirements, and business objectives. This allows us to recommend solutions that are practical to implement, maintain, and scale as your needs evolve.',
     },
     {
-      q: 'How is the company different from the hire and service pages?',
-      a: 'This page is the company story. Artificial Intelligence is the build catalog. Hire AI Engineers is one role. Dedicated AI Pods is a full team in 2–3 weeks. The Enterprise AI blog is shipped notes. The AI Readiness Assessment is the graded quiz. The privacy policy covers form data. DigiWorks AI will not hide a statement of work inside About. US teams get Austin hours.',
+      q: 'Can DigiWorks AI integrate AI into our existing business systems?',
+      a: 'Yes. We develop AI solutions designed to work with existing software, databases, APIs, and enterprise applications. Whether you want to automate internal processes, introduce AI-powered assistants, or improve how your teams access and use information, we assess your current technology environment before designing an integration approach. Our goal is to make AI a functional part of your operations rather than introduce another disconnected system.',
     },
     {
-      q: 'What numbers can you actually stand behind?',
-      a: '150+ production AI deployments, 7+ sectors, 2 offices in the USA and UK, building software since 2017, typical 8–20 weeks to production, pods ready in 2–3 weeks, embedded talent onboard in 1–2 weeks. We do not print peak headcount or app counts that are not on the fact sheet. Bark, Trustpilot, and Clutch quotes stay word-for-word from the original page.',
+      q: 'How long does it take to develop and deploy a custom AI solution?',
+      a: "Development timelines depend on the project's complexity, data availability, integration requirements, and expected functionality. For projects with a clearly defined scope, our typical timeline for initial production deployment is 8–20 weeks. During the discovery phase, we evaluate your requirements, identify technical dependencies, and establish a realistic development roadmap before work begins.",
     },
     {
-      q: 'How do you work after we book a call?',
-      a: 'A free discovery session maps the workflow, access, and who reviews. If we cannot name those, we stop. Then we staff a scoped build, a pod, or a seat. Typical first production sits in 8–20 weeks. You manage the work you already run; we do not invent an unnamed department. Reply within 1 business day is the verified promise on the form.',
+      q: 'How does DigiWorks AI approach data security and confidentiality?',
+      a: "Data protection is an important consideration throughout AI development, particularly when solutions involve sensitive business information or existing enterprise systems. We assess data access requirements, integration points, and security considerations during project planning. Depending on the engagement, we can discuss confidentiality agreements, access controls, and applicable regulatory requirements. Our objective is to develop AI solutions that account for your organization's security and operational responsibilities.",
     },
     {
-      q: 'Do you keep leadership and offices on this page?',
-      a: 'Yes. Leadership cards stay the people already listed, with LinkedIn as published. Full bios live on the team page. Offices are Austin HQ at 716 Congress Ave #200, Austin, TX 78701, and London, United Kingdom. We do not invent titles. Book a free discovery call if you want those people in the room.',
+      q: 'Which industries does DigiWorks AI work with?',
+      a: "DigiWorks AI has experience delivering production AI solutions across more than seven industry sectors. Our capabilities support businesses looking to automate repetitive workflows, improve information processing, introduce intelligent customer interactions, and develop custom AI applications. Rather than applying the same solution to every industry, we evaluate each organization's processes, technical environment, and business requirements to determine the most suitable approach.",
     },
     {
-      q: 'When is DigiWorks AI the wrong fit?',
-      a: 'You need a rate card with no owner, a demo with no system, or a rewrite of reviews we did not publish. DigiWorks AI will say that before you sign. Work spans 7+ sectors when a person still reviews the hard cases. Austin-based DigiWorks AI keeps first production inside 8–20 weeks. Meet the team if you need names, not a slogan.',
+      q: 'What happens after an AI solution is deployed?',
+      a: 'Deployment is an important milestone, but it is not the only measure of a successful AI project. We consider how the solution will operate within your business, who will manage it, and what will be required to maintain its effectiveness over time. Support, monitoring, updates, and further optimization can be discussed as part of the project scope, depending on your operational needs and the nature of the solution.',
     },
   ] satisfies FaqItem[],
 };

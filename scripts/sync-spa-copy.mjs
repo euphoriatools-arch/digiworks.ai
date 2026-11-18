@@ -14,6 +14,9 @@ import { agentCopy } from '../src/data/copy/ai-agent-development.ts';
 import { aiSecurityCopy } from '../src/data/copy/ai-security.ts';
 import { homeCopy } from '../src/data/copy/home.ts';
 import { homeHeroInnerHtml } from '../src/lib/homeHero.ts';
+import { homeIndustryInnerHtml } from '../src/lib/homeIndustrySection.ts';
+import { homeExpertiseInnerHtml } from '../src/lib/homeExpertiseSection.ts';
+import { homeSectorPillsSpaArrayLiteral } from '../src/lib/homeSectorsPills.ts';
 import { artificialIntelligenceCopy } from '../src/data/copy/artificial-intelligence.ts';
 import { machineLearningCopy } from '../src/data/copy/machine-learning.ts';
 import { autonomousAiAgentsCopy } from '../src/data/copy/autonomous-ai-agents.ts';
@@ -58,6 +61,8 @@ import { checkmateSectionsHtml } from '../src/lib/renderCheckmate.ts';
 import { leadScoutSectionsHtml } from '../src/lib/renderLeadScout.ts';
 import { orangeRulerSectionsHtml } from '../src/lib/renderOrangeRuler.ts';
 import { personCareSectionsHtml } from '../src/lib/renderPersonCare.ts';
+import { heyeveSectionsHtml } from '../src/lib/renderHeyeve.ts';
+import { kallidusSectionsHtml } from '../src/lib/renderKallidus.ts';
 import { site } from '../src/data/site.ts';
 import { aiReadinessCopy } from '../src/data/copy/ai-readiness.ts';
 import { contactCopy } from '../src/data/copy/contact.ts';
@@ -218,9 +223,12 @@ function patchCompanyFacts({ app, about, contact, home }) {
   app = mustReplace(
     app,
     '{value:5,suffix:``,label:`Global offices`}',
-    '{value:2,suffix:``,label:`Offices in the USA and UK`}',
+    '{value:2,suffix:``,label:`Offices Across the USA & UK`}',
     'office counter',
   );
+  app = mustReplace(app, 'label:`Production AI deployments`', 'label:`Production AI Deployments`', 'counter deployments');
+  app = mustReplace(app, 'label:`Sectors served`', 'label:`Industry Sectors Served`', 'counter sectors');
+  app = mustReplace(app, 'label:`To production AI`', 'label:`Typical Initial Production Timeline`', 'counter timeline');
 
   about = mustReplace(
     about,
@@ -228,11 +236,11 @@ function patchCompanyFacts({ app, about, contact, home }) {
     'M={Austin:{cx:39,cy:52},London:{cx:92,cy:40}}',
     'about map dots',
   );
-  about = mustReplace(about, 'Five time zones.', 'Two offices.', 'about offices heading');
+  about = mustReplace(about, 'Five time zones.', 'Two Offices.', 'about offices heading');
   about = mustReplace(
     about,
     'Five offices across the globe, engineering around the clock so your momentum never stops.',
-    'Offices in Austin and London, engineering around the clock so your momentum never stops.',
+    'With offices in Austin and London, DigiWorks AI brings together technical expertise across two major business and technology markets. Our teams collaborate across locations to support businesses through planning, development, deployment, and continuous improvement.',
     'about offices sub',
   );
   about = mustReplace(
@@ -283,6 +291,92 @@ function patchCompanyFacts({ app, about, contact, home }) {
   );
 
   return { app, about, contact, home };
+}
+
+function patchHomeSectors(source) {
+  let home = source;
+  home = mustReplace(
+    home,
+    'className:`mt-4 max-w-md text-dusk/70`',
+    'className:`mt-4 max-w-xl text-dusk/70 leading-relaxed`',
+    'home sectors sub width',
+  );
+  home = mustReplace(
+    home,
+    'children:`7+`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`sectors served`})',
+    'children:`15`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`sectors served`})',
+    'home sectors counter',
+  );
+  home = mustReplace(
+    home,
+    'children:_.map((e,t)=>(0,L.jsx)(o.div,{initial:{opacity:0,scale:.8},whileInView:{opacity:1,scale:1},viewport:{once:!0},transition:{delay:t*.06},children:(0,L.jsx)(c,{to:`/industries/${e.slug}`,className:`block rounded-full border border-dusk/15 bg-dusk/[0.04] px-5 py-3 text-sm text-dusk/70 transition-all duration-300 hover:scale-105 hover:border-cyan/50 hover:bg-cyan/10 hover:text-dusk hover:shadow-[0_0_28px_rgba(92,166,255,0.3)]`,children:e.name})},e.slug))',
+    `children:${homeSectorPillsSpaArrayLiteral()}.map((e,t)=>(0,L.jsx)(o.div,{initial:{opacity:0,scale:.8},whileInView:{opacity:1,scale:1},viewport:{once:!0},transition:{delay:t*.06},children:(0,L.jsx)(c,{to:e.to,className:\`block rounded-full border border-dusk/15 bg-dusk/[0.04] px-5 py-3 text-sm text-dusk/70 transition-all duration-300 hover:scale-105 hover:border-cyan/50 hover:bg-cyan/10 hover:text-dusk hover:shadow-[0_0_28px_rgba(92,166,255,0.3)]\`,children:e.name})},e.name))`,
+    'home sectors pills',
+  );
+  return home;
+}
+
+function patchServicesMegaMenu(app) {
+  const menuFn = readFileSync(join(root, 'src/lib/servicesMegaMenu.spa.js'), 'utf8').trim();
+  if (!app.includes('function dwSvcMenu(')) {
+    app = app.replace('function Ue(){', `${menuFn}function Ue(){`);
+  }
+  return mustReplace(
+    app,
+    'J.map((n,r)=>(0,D.jsxs)(`div`,{className:`relative`,onMouseEnter:()=>t(r),children:[',
+    'J.map((n,r)=>n.label===`Services`?dwSvcMenu(e,t,r):(0,D.jsxs)(`div`,{className:`relative`,onMouseEnter:()=>t(r),children:[',
+    'services mega menu',
+  );
+}
+
+function patchHomeExpertise(source) {
+  const marker = 'function ee(){';
+  const start = source.indexOf(marker);
+  if (start < 0) throw new Error('SPA copy sync: home expertise function missing');
+  if (source.includes('dw-ex-grid')) return source;
+  let depth = 0;
+  const brace = source.indexOf('{', start);
+  let end = -1;
+  for (let j = brace; j < source.length; j += 1) {
+    const c = source[j];
+    if (c === '{') depth += 1;
+    else if (c === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        end = j;
+        break;
+      }
+    }
+  }
+  if (end < 0) throw new Error('SPA copy sync: home expertise function end missing');
+  const html = JSON.stringify(homeExpertiseInnerHtml);
+  const fn = `function ee(){return(0,L.jsx)(\`section\`,{className:\`dw-ex\`,"aria-label":\`Our Expertise\`,dangerouslySetInnerHTML:{__html:${html}}})}`;
+  return source.slice(0, start) + fn + source.slice(end + 1);
+}
+
+function patchSectionsIndustry(source) {
+  const marker = 'function C(){';
+  const start = source.indexOf(marker);
+  if (start < 0) throw new Error('SPA copy sync: sections stats function missing');
+  if (source.includes('dw-ix')) return source;
+  let depth = 0;
+  const brace = source.indexOf('{', start);
+  let end = -1;
+  for (let j = brace; j < source.length; j += 1) {
+    const c = source[j];
+    if (c === '{') depth += 1;
+    else if (c === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        end = j;
+        break;
+      }
+    }
+  }
+  if (end < 0) throw new Error('SPA copy sync: sections stats function end missing');
+  const html = JSON.stringify(homeIndustryInnerHtml);
+  const fn = `function C(){return(0,y.jsx)(\`section\`,{className:\`dw-ix\`,"aria-label":\`Industry recognition\`,dangerouslySetInnerHTML:{__html:${html}}})}`;
+  return source.slice(0, start) + fn + source.slice(end + 1);
 }
 
 function patchHomeHero(source) {
@@ -401,6 +495,46 @@ function sync() {
   );
 
   let app = buffers[FILES.app];
+  app = mustReplace(app, ',(0,D.jsx)(ot,{})', '', 'footer newsletter');
+  app = mustReplace(
+    app,
+    'Shape a future where innovation and intelligence converge to redefine possibility. We aim to create extraordinary digital experiences that inspire progress, spark creativity, and drive meaningful change through the power of AI and human ingenuity.',
+    'Our vision is to shape a future where AI is an essential part of how businesses operate, innovate, and grow. We envision organizations using intelligent technologies to make better decisions, simplify complex processes, and create lasting value for their people and customers.',
+    'about vision',
+  );
+  app = mustReplace(
+    app,
+    'DigiWorks AI advances intelligent technologies to shape the future of business, driving innovation through smarter systems, data-driven strategies, and purposeful digital transformation.',
+    'DigiWorks AI helps businesses design, develop, and deploy AI solutions that address real operational challenges. Through AI engineering, intelligent automation, and custom software development, we turn complex business requirements into practical technology solutions.',
+    'footer company description',
+  );
+  app = mustReplace(
+    app,
+    "Tell us what you're building. We'll map the fastest path from idea to production AI, typically in 8 to 20 weeks.",
+    "Tell us about your business, the challenge you're facing, and what you're looking to build. We'll help you explore the right approach to move from your initial idea to a practical AI solution.",
+    'footer cta body',
+  );
+  const hideOnHome =
+    '.filter(t=>!(window.location.pathname===`/`&&(t.to===`/team`||t.to===`/ai-readiness`)))';
+  app = mustReplace(
+    app,
+    'n.items.map(e=>(0,D.jsx)(d,{to:e.to',
+    `n.items${hideOnHome}.map(e=>(0,D.jsx)(d,{to:e.to`,
+    'home header hide team and readiness',
+  );
+  app = mustReplace(
+    app,
+    'e.items.map(e=>(0,D.jsx)(m,{to:e.to,className:`block rounded-lg px-3 py-2',
+    `e.items${hideOnHome}.map(e=>(0,D.jsx)(m,{to:e.to,className:\`block rounded-lg px-3 py-2`,
+    'home mobile nav hide team and readiness',
+  );
+  app = mustReplace(
+    app,
+    'e.links.map(e=>(0,D.jsx)(`li`',
+    `e.links${hideOnHome}.map(e=>(0,D.jsx)(\`li\``,
+    'home footer hide team and readiness',
+  );
+  app = mustReplace(app, '[...dt,', `[...dt${hideOnHome},`, 'home search hide team and readiness');
   const homeFaqStart = app.indexOf('_e=[{q:`What types of AI solutions do you develop?`');
   const homeFaqEnd = app.indexOf('],ve=[{title:`Integrity`', homeFaqStart) + 1;
   const homeFaqFrom = app.slice(homeFaqStart, homeFaqEnd);
@@ -733,11 +867,24 @@ function sync() {
   }
 
   let sections = buffers[FILES.sections];
+  sections = patchSectionsIndustry(sections);
   sections = mustReplace(
     sections,
     'i===t&&(0,y.jsx)(a.div,{initial:{height:0,opacity:0},animate:{height:`auto`,opacity:1},exit:{height:0,opacity:0},transition:{duration:.35,ease:[.21,.65,.36,1]},children:(0,y.jsx)(`p`,{className:`px-6 pb-6 pl-[4.2rem] text-sm leading-relaxed text-dusk/70 md:text-base`,children:e.a})})',
     '(0,y.jsx)(`div`,{style:i===t?{height:`auto`,opacity:1}:{display:`none`},children:(0,y.jsx)(`p`,{className:`px-6 pb-6 pl-[4.2rem] text-sm leading-relaxed text-dusk/70 md:text-base`,children:e.a})})',
     'faq answers always in DOM',
+  );
+  sections = mustReplace(
+    sections,
+    'function S(){let e=[...s,...s],t=[...s.slice(3),...s.slice(0,3)];',
+    'function S({title:n=`Trusted by teams who ship`,sub:r=`Real reviews from Bark, Trustpilot, and Clutch. Hover to pause.`}={}){let e=[...s,...s],t=[...s.slice(3),...s.slice(0,3)];',
+    'reviews props',
+  );
+  sections = mustReplace(
+    sections,
+    'title:`Trusted by teams who ship`,sub:`Real reviews from Bark, Trustpilot, and Clutch. Hover to pause.`',
+    'title:n,sub:r',
+    'reviews title binding',
   );
 
   seo = mustReplace(seo, 'About DigiWorks AI | Enterprise AI Company in Austin, USA', aboutCopy.title, 'seo about title');
@@ -805,7 +952,45 @@ function sync() {
     aboutCopy.hero,
     'about hero',
   );
+  about = mustReplace(
+    about,
+    ',(0,A.jsx)(g,{items:[`DigiWorks`,`Shaping the Future of Technology with AI`]})',
+    '',
+    'about shaping marquee',
+  );
   about = mustReplace(about, '(0,A.jsx)(D,{faqs:i})', `(0,A.jsx)(D,{faqs:[${faqJs(aboutCopy.faqs)}]})`, 'about faqs');
+  about = mustReplace(
+    about,
+    '(0,A.jsx)(N,{}),(0,A.jsx)(R,{}),(0,A.jsx)(B,{}),(0,A.jsx)(w,{image:C(`about`),kicker:`Inside DigiWorks`,caption:`One global team, engineering intelligence`}),(0,A.jsx)(E,{}),(0,A.jsx)(z,{}),(0,A.jsx)(H,{}),(0,A.jsx)(P,{}),(0,A.jsx)(F,{}),(0,A.jsx)(L,{})',
+    '(0,A.jsx)(N,{}),(0,A.jsx)(E,{}),(0,A.jsx)(Q,{}),(0,A.jsx)(R,{}),(0,A.jsx)(X,{}),(0,A.jsx)(w,{image:C(`about`),kicker:`Inside DigiWorks`,caption:`One global team, engineering intelligence`}),(0,A.jsx)(g,{items:[`Health Insurance Portability and Accountability Act (HIPAA) Compliant`,`General Data Protection Regulation (GDPR) Compliant`,`ISO/IEC 42001:2023 Certified`,`ISO/IEC 27001:2022 Certified`,`SOC 2 Type II Certified`]}),(0,A.jsx)(L,{})',
+    'about removed sections',
+  );
+  about = mustReplace(about, 'export{U as default};', 'export{U as default,L as aboutOffices};', 'about offices export');
+  about = mustReplace(
+    about,
+    'function U(){',
+    'function Q(){return(0,A.jsxs)(`section`,{className:`section-pad relative overflow-hidden`,children:[(0,A.jsx)(`div`,{className:`pointer-events-none absolute inset-0`,"aria-hidden":!0,style:{background:`radial-gradient(60% 50% at 15% 0%, rgba(26,130,255,0.12), transparent 70%)`}}),(0,A.jsxs)(`div`,{className:`relative mx-auto grid max-w-6xl gap-6`,children:[(0,A.jsxs)(`div`,{className:`glass relative overflow-hidden p-8 md:p-12`,children:[(0,A.jsx)(`div`,{className:`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-coral to-electric`,"aria-hidden":!0}),(0,A.jsx)(`h2`,{className:`max-w-4xl font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`We Start With the Business Problem. Then Build the AI.`}),(0,A.jsx)(`span`,{className:`mt-5 block h-0.5 w-28 rounded-full bg-electric`,"aria-hidden":!0}),(0,A.jsx)(`p`,{className:`mt-6 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Successful AI implementation requires more than choosing the right technology. It requires understanding how a business operates, where its challenges lie, and what a successful solution should achieve.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`At DigiWorks AI, we begin by examining your existing workflows, systems, data, and operational requirements. Our team identifies where AI can drive meaningful improvements, then recommends a technical approach.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`From custom AI agents and intelligent automation to integrated software solutions, we build technology that works within your operations, supports your teams, and is designed for practical, long-term use.`})]}),(0,A.jsxs)(`div`,{className:`glass relative grid gap-8 overflow-hidden p-8 md:p-12 lg:grid-cols-2 lg:items-center`,children:[(0,A.jsxs)(`div`,{children:[(0,A.jsxs)(`span`,{className:`chip`,children:[(0,A.jsx)(`span`,{className:`h-1.5 w-1.5 animate-pulse rounded-full bg-coral`}),`Since 2017`]}),(0,A.jsx)(`h2`,{className:`mt-5 font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`Who We Are`})]}),(0,A.jsxs)(`div`,{children:[(0,A.jsx)(`p`,{className:`text-base leading-relaxed text-dusk/75 md:text-lg`,children:`DigiWorks AI is an AI development company headquartered in Austin, Texas, with an office in London, United Kingdom.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Our software development experience dates back to 2017. Today, our work spans AI development, machine learning, intelligent automation, and custom software engineering.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`With over 150 production AI deployments across more than seven industry sectors, we bring together technical capabilities and business understanding to develop solutions tailored to each organization\'s requirements.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`We work closely with clients from initial discovery and solution design through development and deployment, with a focus on creating systems that businesses can confidently put to work.`})]})]})]})]})}function U(){',
+    'about story section',
+  );
+  about = mustReplace(
+    about,
+    'function Q(){',
+    'function X(){return(0,A.jsxs)(`section`,{className:`section-pad relative overflow-hidden`,children:[(0,A.jsx)(`div`,{className:`pointer-events-none absolute inset-0`,"aria-hidden":!0,style:{background:`radial-gradient(70% 90% at 82% 30%, rgba(48,142,255,0.12), transparent 60%), radial-gradient(60% 80% at 0% 100%, rgba(124,58,237,0.12), transparent 60%)`}}),(0,A.jsxs)(`div`,{className:`relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]`,children:[(0,A.jsxs)(`div`,{className:`relative`,children:[(0,A.jsx)(m,{children:(0,A.jsxs)(`span`,{className:`chip`,children:[(0,A.jsx)(`span`,{className:`h-1.5 w-1.5 animate-pulse rounded-full bg-coral`}),`Why we exist`]})}),(0,A.jsx)(m,{delay:.08,children:(0,A.jsx)(`span`,{className:`mt-6 block font-display text-6xl leading-none text-electric/30`,"aria-hidden":!0,children:`“`})}),(0,A.jsx)(m,{delay:.1,children:(0,A.jsx)(`p`,{className:`-mt-4 font-display text-2xl font-extrabold leading-snug text-dusk sm:text-3xl md:text-4xl`,children:a.lead})}),(0,A.jsx)(m,{delay:.18,children:(0,A.jsx)(`p`,{className:`mt-6 max-w-2xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:a.body})}),(0,A.jsx)(m,{delay:.24,children:(0,A.jsxs)(`div`,{className:`mt-7 flex items-center gap-3`,children:[(0,A.jsx)(`span`,{className:`h-px w-10 bg-gradient-to-r from-electric to-transparent`,"aria-hidden":!0}),(0,A.jsxs)(`p`,{className:`font-display text-sm font-bold text-dusk`,children:[a.name,(0,A.jsxs)(`span`,{className:`font-normal text-dusk/55`,children:[` — `,a.role]})]})]})})]}),(0,A.jsx)(m,{children:(0,A.jsxs)(`div`,{className:`relative mx-auto w-full max-w-sm`,children:[(0,A.jsx)(`div`,{className:`absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-electric/30 via-coral/20 to-violet/30 blur-2xl`,"aria-hidden":!0}),(0,A.jsxs)(`div`,{className:`relative overflow-hidden rounded-[1.75rem] border border-white/10`,children:[(0,A.jsx)(`img`,{src:a.img,alt:a.name,loading:`lazy`,className:`block aspect-[4/5] w-full object-cover object-top`}),(0,A.jsx)(`div`,{className:`pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a121e]/70 via-transparent to-transparent`,"aria-hidden":!0}),(0,A.jsxs)(`div`,{className:`absolute bottom-5 left-5`,children:[(0,A.jsx)(`p`,{className:`font-display text-lg font-bold text-white`,children:a.name}),(0,A.jsx)(`p`,{className:`text-sm font-semibold text-gradient`,children:a.role})]})]})]})})]})]})}function Q(){',
+    'about quote image right',
+  );
+  about = mustReplace(about, '`One team.`', '`One Team.`', 'about offices lead');
+  about = mustReplace(
+    about,
+    '(0,A.jsx)(O,{})',
+    "(0,A.jsx)(O,{title:`Trusted by Teams Who Build What's Next`,sub:`Discover what clients have shared about working with DigiWorks AI, from technical development and project collaboration to communication and delivery.`})",
+    'about reviews heading',
+  );
+  about = mustReplace(
+    about,
+    '(0,A.jsx)(k,{title:`Kickstart Your AI Project`})',
+    "(0,A.jsx)(k,{title:`Let's Turn Your AI Idea Into a Working Solution`,sub:`Have a business challenge that AI could help solve? Our team can help you evaluate the opportunity, explore technical options, and determine a practical path forward.`})",
+    'about kickstart',
+  );
 
   let team = buffers[FILES.team];
   team = mustReplace(team, 'The minds engineering what comes next', teamCopy.h1, 'team h1');
@@ -876,9 +1061,27 @@ function sync() {
   );
   contact = mustReplace(
     contact,
-    "Whatever you're building, there's a DigiWorks team for it.",
-    contactCopy.capabilitiesSub,
-    'contact capabilities sub',
+    ",(0,y.jsxs)(`section`,{className:`section-pad relative !pt-0`,children:[(0,y.jsx)(g,{variant:`streams`,opacity:.26}),(0,y.jsx)(l,{variant:`blue`}),(0,y.jsxs)(`div`,{className:`relative mx-auto max-w-7xl`,children:[(0,y.jsx)(f,{kicker:`Capabilities`,title:`We're available worldwide to support you better`,sub:`Whatever you're building, there's a DigiWorks team for it.`}),(0,y.jsx)(`div`,{className:`mt-10 flex flex-wrap justify-center gap-3`,children:s.map(e=>(0,y.jsx)(`a`,{href:`/services/${e.slug}`,className:`rounded-full border border-dusk/12 bg-dusk/[0.03] px-4 py-2 text-xs text-dusk/70 transition-all duration-300 hover:border-violet/50 hover:bg-violet/10 hover:text-dusk`,children:e.name},e.slug))})]})]})",
+    '',
+    'contact capabilities section',
+  );
+  contact = mustReplace(
+    contact,
+    'function O({label:e,children:t}){return(0,y.jsxs)(`label`,{className:`block`,children:[(0,y.jsx)(`span`,{className:`mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-dusk/65`,children:e}),t]})}',
+    'function O({label:e,children:t}){return(0,y.jsxs)(`label`,{className:`block`,children:[(0,y.jsxs)(`span`,{className:`mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-dusk/65`,children:[e,` `,(0,y.jsx)(`span`,{className:`text-coral`,"aria-hidden":!0,children:`*`})]}),t]})}',
+    'contact field asterisks',
+  );
+  contact = mustReplace(
+    contact,
+    'u as f}from"./app-digi.js";',
+    'u as f,s as contactTicker}from"./app-digi.js";import{aboutOffices}from"./About-LPiP26so.js";',
+    'contact about section imports',
+  );
+  contact = mustReplace(
+    contact,
+    '(0,y.jsx)(`div`,{className:`relative mx-auto max-w-7xl pb-24`,children:(0,y.jsx)(w,{})})',
+    '(0,y.jsxs)(`div`,{className:`-mx-5 mt-12 sm:-mx-8`,children:[(0,y.jsx)(contactTicker,{items:[`Health Insurance Portability and Accountability Act (HIPAA) Compliant`,`General Data Protection Regulation (GDPR) Compliant`,`ISO/IEC 42001:2023 Certified`,`ISO/IEC 27001:2022 Certified`,`SOC 2 Type II Certified`]}),(0,y.jsx)(aboutOffices,{})]})',
+    'contact after-form section',
   );
   contact = mustReplace(
     contact,
@@ -938,7 +1141,19 @@ function sync() {
   );
 
   home = patchHomeHero(home);
+  home = patchHomeExpertise(home);
+  home = patchHomeSectors(home);
+  home = mustReplace(home, '(0,L.jsx)(te,{}),', '', 'home remove featured capabilities');
+  home = mustReplace(home, '(0,L.jsx)(ne,{}),', '', 'home remove solutions');
+  home = mustReplace(home, '(0,L.jsx)(V,{}),', '', 'home hide roi calculator');
+  home = mustReplace(
+    home,
+    '(0,L.jsx)(z,{}),(0,L.jsx)(X,{minHeight:`100vh`,children:(0,L.jsx)(I.Suspense,{fallback:null,children:(0,L.jsx)(Y,{})})})',
+    '(0,L.jsx)(X,{minHeight:`100vh`,children:(0,L.jsx)(I.Suspense,{fallback:null,children:(0,L.jsx)(Y,{})})}),(0,L.jsx)(z,{})',
+    'home ways to work after how it works',
+  );
   ({ app, about, contact, home } = patchCompanyFacts({ app, about, contact, home }));
+  app = patchServicesMegaMenu(app);
 
   const out = {
     [FILES.home]: home,
@@ -1053,6 +1268,20 @@ function sync() {
       ',{slug:`person-care`,name:`Person Care`,tagline:`About 25–35% Less Admin Work`,category:`Digital Health Platform`,group:`Healthcare`,cover:`/case/person-care/person-care-01.webp`,accent:`from-coral to-electric`,brandBlue:`#f47b20`,brandNavy:`#1a2744`,layout:`metrics`}';
     data = data.slice(0, at) + entry + data.slice(at);
   }
+  if (!data.includes('slug:`heyeve`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`heyeve`,name:`HeyEve`,tagline:`50% Less Grading Time`,category:`Legal Technology`,group:`Legal`,cover:`/case/heyeve/heyeve-01.webp`,accent:`from-violet to-electric`,brandBlue:`#7c3aed`,brandNavy:`#1a1230`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+  }
+  if (!data.includes('slug:`kallidus`')) {
+    const at = data.indexOf(dataMarker);
+    if (at < 0) throw new Error('SPA copy sync: case study catalog end missing');
+    const entry =
+      ',{slug:`kallidus`,name:`Kallidus`,tagline:`40% Faster Onboarding`,category:`HR Tech`,group:`HR`,cover:`/case/kallidus/kallidus-01.webp`,accent:`from-electric to-violet`,brandBlue:`#7c3aed`,brandNavy:`#1a1230`,layout:`metrics`}';
+    data = data.slice(0, at) + entry + data.slice(at);
+  }
   writeFileSync(dataPath, data);
 
   writeFileSync(
@@ -1070,6 +1299,14 @@ function sync() {
   writeFileSync(
     join(destDir, 'person-care-body.js'),
     `export const html = ${JSON.stringify(personCareSectionsHtml())};\n`,
+  );
+  writeFileSync(
+    join(destDir, 'heyeve-body.js'),
+    `export const html = ${JSON.stringify(heyeveSectionsHtml())};\n`,
+  );
+  writeFileSync(
+    join(destDir, 'kallidus-body.js'),
+    `export const html = ${JSON.stringify(kallidusSectionsHtml())};\n`,
   );
 
   const detailPath = join(destDir, 'CaseStudyDetail-r_3xQvln.js');
@@ -1143,6 +1380,42 @@ function sync() {
     detailFile = detailFile.replace(personFrom, personTo);
     writeFileSync(detailPath, detailFile);
   }
+  if (!detailFile.includes('heyeve-body.js')) {
+    detailFile = readFileSync(detailPath, 'utf8');
+    const importMark = 'import{html as PERSON_CARE_HTML}from"./person-care-body.js";';
+    const importAt = detailFile.indexOf(importMark);
+    if (importAt < 0) throw new Error('SPA copy sync: Person Care import anchor missing');
+    const importEnd = importAt + importMark.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as HEYEVE_HTML}from"./heyeve-body.js";' +
+      detailFile.slice(importEnd);
+    const heyeveFrom =
+      'if(t.slug===`person-care`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:PERSON_CARE_HTML}});let i=h(t)';
+    const heyeveTo =
+      'if(t.slug===`person-care`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:PERSON_CARE_HTML}});if(t.slug===`heyeve`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:HEYEVE_HTML}});let i=h(t)';
+    if (!detailFile.includes(heyeveFrom)) throw new Error('SPA copy sync: HeyEve branch anchor missing');
+    detailFile = detailFile.replace(heyeveFrom, heyeveTo);
+    writeFileSync(detailPath, detailFile);
+  }
+  if (!detailFile.includes('kallidus-body.js')) {
+    detailFile = readFileSync(detailPath, 'utf8');
+    const importMark = 'import{html as HEYEVE_HTML}from"./heyeve-body.js";';
+    const importAt = detailFile.indexOf(importMark);
+    if (importAt < 0) throw new Error('SPA copy sync: HeyEve import anchor missing');
+    const importEnd = importAt + importMark.length;
+    detailFile =
+      detailFile.slice(0, importEnd) +
+      'import{html as KALLIDUS_HTML}from"./kallidus-body.js";' +
+      detailFile.slice(importEnd);
+    const kallidusFrom =
+      'if(t.slug===`heyeve`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:HEYEVE_HTML}});let i=h(t)';
+    const kallidusTo =
+      'if(t.slug===`heyeve`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:HEYEVE_HTML}});if(t.slug===`kallidus`)return(0,S.jsx)(`div`,{dangerouslySetInnerHTML:{__html:KALLIDUS_HTML}});let i=h(t)';
+    if (!detailFile.includes(kallidusFrom)) throw new Error('SPA copy sync: Kallidus branch anchor missing');
+    detailFile = detailFile.replace(kallidusFrom, kallidusTo);
+    writeFileSync(detailPath, detailFile);
+  }
   detailFile = readFileSync(detailPath, 'utf8');
   const exploreTo = `let n=s.filter(t=>t.slug!==e&&[${visibleJs}].includes(t.slug)).slice(0,3);`;
   const exploreRe = /let n=s\.filter\(t=>t\.slug!==e(?:&&\[[^\]]*\]\.includes\(t\.slug\))?\)\.slice\(0,3\);/;
@@ -1183,6 +1456,18 @@ function sync() {
           alt: 'Person Care',
           title: 'Person Care',
           desc: 'About 25–35% Less Admin Work',
+        },
+        heyeve: {
+          img: '/case/heyeve/heyeve-01.webp',
+          alt: 'HeyEve',
+          title: 'HeyEve',
+          desc: '50% Less Grading Time',
+        },
+        kallidus: {
+          img: '/case/kallidus/kallidus-01.webp',
+          alt: 'Kallidus',
+          title: 'Kallidus',
+          desc: '40% Faster Onboarding',
         },
       };
       const items = site.visibleCaseStudies
@@ -1241,17 +1526,32 @@ function sync() {
   let cardJs = readFileSync(cardPath, 'utf8');
   const webFrom = 's={"thrive-city":`web`,"draft-day":`web`,"milestone-truck":`web`}';
   const webTo =
-    's={"thrive-city":`web`,"draft-day":`web`,"milestone-truck":`web`,checkmate:`web`,"lead-scout":`web`,"orange-ruler":`web`,"person-care":`web`}';
-  if (!cardJs.includes(webTo)) {
-    if (!cardJs.includes(webFrom)) throw new Error('SPA copy sync: CaseCard web-frame map missing');
-    cardJs = cardJs.replace(webFrom, webTo);
+    's={"thrive-city":`web`,"draft-day":`web`,"milestone-truck":`web`,checkmate:`web`,"lead-scout":`web`,"orange-ruler":`web`,"person-care":`web`,heyeve:`web`,kallidus:`web`}';
+  if (!cardJs.includes('kallidus:`web`')) {
+    const heyeveWeb = 'heyeve:`web`}';
+    if (cardJs.includes(heyeveWeb)) cardJs = cardJs.replace(heyeveWeb, 'heyeve:`web`,kallidus:`web`}');
+  }
+  if (!cardJs.includes('heyeve:`web`')) {
+    const personWeb = '"person-care":`web`}';
+    if (cardJs.includes(personWeb)) cardJs = cardJs.replace(personWeb, '"person-care":`web`,heyeve:`web`}');
+    else if (cardJs.includes(webFrom)) cardJs = cardJs.replace(webFrom, webTo);
+    else throw new Error('SPA copy sync: CaseCard web-frame map missing');
   }
   const imgFrom = '"addiction-world":`/case/addiction-world/aw-customer-interface-splash.webp`}';
   const imgTo =
-    '"addiction-world":`/case/addiction-world/aw-customer-interface-splash.webp`,checkmate:`/case/checkmate/checkmate-01.webp`,"lead-scout":`/case/lead-scout/lead-scout-01.webp`,"orange-ruler":`/case/orange-ruler/orange-ruler-01.webp`,"person-care":`/case/person-care/person-care-01.webp`}';
-  if (!cardJs.includes('checkmate:`/case/checkmate/checkmate-01.webp`')) {
-    if (!cardJs.includes(imgFrom)) throw new Error('SPA copy sync: CaseCard image map missing');
-    cardJs = cardJs.replace(imgFrom, imgTo);
+    '"addiction-world":`/case/addiction-world/aw-customer-interface-splash.webp`,checkmate:`/case/checkmate/checkmate-01.webp`,"lead-scout":`/case/lead-scout/lead-scout-01.webp`,"orange-ruler":`/case/orange-ruler/orange-ruler-01.webp`,"person-care":`/case/person-care/person-care-01.webp`,heyeve:`/case/heyeve/heyeve-01.webp`,kallidus:`/case/kallidus/kallidus-01.webp`}';
+  if (!cardJs.includes('kallidus:`/case/kallidus/kallidus-01.webp`')) {
+    const heyeveImg = 'heyeve:`/case/heyeve/heyeve-01.webp`}';
+    if (cardJs.includes(heyeveImg)) {
+      cardJs = cardJs.replace(heyeveImg, 'heyeve:`/case/heyeve/heyeve-01.webp`,kallidus:`/case/kallidus/kallidus-01.webp`}');
+    }
+  }
+  if (!cardJs.includes('heyeve:`/case/heyeve/heyeve-01.webp`')) {
+    const personImg = '"person-care":`/case/person-care/person-care-01.webp`}';
+    if (cardJs.includes(personImg)) {
+      cardJs = cardJs.replace(personImg, '"person-care":`/case/person-care/person-care-01.webp`,heyeve:`/case/heyeve/heyeve-01.webp`}');
+    } else if (cardJs.includes(imgFrom)) cardJs = cardJs.replace(imgFrom, imgTo);
+    else throw new Error('SPA copy sync: CaseCard image map missing');
   }
   writeFileSync(cardPath, cardJs);
 
@@ -1279,6 +1579,8 @@ function sync() {
   const staleApp = join(destDir, 'app-D-hvFJBY.js');
   if (existsSync(staleApp)) {
     let stale = readFileSync(staleApp, 'utf8');
+    const hadNewsletter = stale.includes(',(0,D.jsx)(ot,{})');
+    stale = stale.replaceAll(',(0,D.jsx)(ot,{})', '');
     if (stale.includes('city:`Dubai`')) {
       const patched = patchCompanyFacts({
         app: stale,
@@ -1289,6 +1591,8 @@ function sync() {
         home: 'children:`5`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`global offices`})',
       });
       stale = patched.app;
+      writeFileSync(staleApp, stale);
+    } else if (hadNewsletter) {
       writeFileSync(staleApp, stale);
     }
   }

@@ -8,6 +8,9 @@ import { applyCtas } from './applyCtas';
 import { fileHrefs, injectBodyLinks, mustReplace, replaceFaqBlock, replaceOnce } from './ssrCopy';
 import { visibleListingCards } from './visibleCaseStudies';
 import { homeHeroSectionHtml } from './homeHero';
+import { homeIndustrySectionHtml } from './homeIndustrySection';
+import { homeExpertiseSectionHtml } from './homeExpertiseSection';
+import { homeSectorPillsHtml } from './homeSectorsPills';
 
 export { homeCopy };
 
@@ -107,27 +110,6 @@ export function applyHomeCopy(html: string): string {
     'Automates repetitive workflows using AI models that improve speed, accuracy, and operational consistency.',
     aiAutomationCopy.offerings[0].desc,
   );
-  out = mustReplace(
-    out,
-    'We create intelligent ecosystems that combine automation, analytics, and decision intelligence to help enterprises streamline operations, enhance productivity, and accelerate digital transformation across industries.',
-    'DigiWorks AI ships production AI from Austin HQ: agents, models, and automation US teams can run after we leave.',
-  );
-  out = mustReplace(
-    out,
-    'We design adaptive machine learning systems that analyze complex data, uncover insights, and continuously improve performance to empower enterprises with predictive, data-driven decision capabilities.',
-    'Machine learning work here is a named model with an owner, not a lab demo. See Machine Learning for the practice URL.',
-  );
-  out = mustReplace(
-    out,
-    'We design secure, scalable cloud architectures and data ecosystems that empower enterprises to manage, analyze, and deploy intelligence seamlessly across platforms and business environments.',
-    'Cloud and data work sits in your accounts. Cloud Architecture and Data and Cloud are the billed URLs when that is the job.',
-  );
-  out = mustReplace(
-    out,
-    'We streamline enterprise operations through intelligent automation systems that reduce manual effort, improve workflow efficiency, and accelerate performance with AI-powered precision and reliability.',
-    'Automation is a named workflow with a desk that already owns it. Intelligent Automation is the outcome URL; integration stays on Automation and Integration.',
-  );
-
   out = injectBodyLinks(out, homeCopy.bodyLinks);
   const gridClass = '<div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">';
   const gridAt = out.indexOf(gridClass);
@@ -138,5 +120,90 @@ export function applyHomeCopy(html: string): string {
   const heroStart = out.indexOf('<section class="relative flex min-h-screen items-center overflow-hidden');
   const heroNext = out.indexOf('<section class="relative px-5 py-10 sm:px-8" aria-label="Client brands">', heroStart);
   if (heroStart < 0 || heroNext < 0) throw new Error('SSR copy: home hero section missing');
-  return out.slice(0, heroStart) + homeHeroSectionHtml() + out.slice(heroNext);
+  out = out.slice(0, heroStart) + homeHeroSectionHtml() + out.slice(heroNext);
+
+  const countersStart = out.indexOf('<section class="relative px-5 sm:px-8"><div class="glass-strong glare hud');
+  const countersEnd =
+    countersStart < 0 ? -1 : out.indexOf('</section>', countersStart) + '</section>'.length;
+  if (countersStart < 0 || countersEnd < '</section>'.length) {
+    throw new Error('SSR copy: home counters section missing');
+  }
+  out = out.slice(0, countersStart) + homeIndustrySectionHtml() + out.slice(countersEnd);
+
+  const expertiseStart = out.indexOf(
+    '<section class="section-pad relative overflow-hidden"><canvas class="pointer-events-none absolute inset-0 h-full w-full " style="opacity:0.5"',
+  );
+  const expertiseMarker = out.indexOf('>Our Expertise</span>', expertiseStart);
+  const expertiseEnd =
+    expertiseMarker < 0
+      ? -1
+      : out.indexOf(
+          '</section>',
+          out.indexOf(
+            'We streamline enterprise operations through intelligent automation systems that reduce manual effort',
+            expertiseMarker,
+          ),
+        ) + '</section>'.length;
+  if (expertiseStart < 0 || expertiseMarker < 0 || expertiseEnd < '</section>'.length) {
+    throw new Error('SSR copy: home expertise section missing');
+  }
+  out = out.slice(0, expertiseStart) + homeExpertiseSectionHtml() + out.slice(expertiseEnd);
+
+  out = removeHomeSection(out, '>Featured Capabilities</span>', 'featured capabilities');
+  out = removeHomeSection(out, 'Solutions we ship around production', 'solutions');
+  out = removeHomeSection(out, 'aria-label="ROI calculator"', 'roi calculator');
+  out = patchHomeSectorPills(out);
+  return moveWaysAfterHowItWorks(out);
+}
+
+function patchHomeSectorPills(html: string): string {
+  const wrapOpen = '<div class="flex flex-wrap gap-3">';
+  const sectorH2 = 'AI for <span class="text-gradient">every sector</span>';
+  const sectorAt = html.indexOf(sectorH2);
+  if (sectorAt < 0) throw new Error('SSR copy: home sectors heading missing');
+  const wrapAt = html.indexOf(wrapOpen, sectorAt);
+  if (wrapAt < 0) throw new Error('SSR copy: home sectors pills missing');
+  const wrapEnd = html.indexOf('</div><p class="text-sm text-dusk/60">', wrapAt);
+  if (wrapEnd < 0) throw new Error('SSR copy: home sectors pills end missing');
+  let out =
+    html.slice(0, wrapAt + wrapOpen.length) + homeSectorPillsHtml() + html.slice(wrapEnd);
+
+  out = mustReplace(
+    out,
+    'text-gradient">7+</p><p class="text-xs text-dusk/60">sectors served</p>',
+    'text-gradient">15</p><p class="text-xs text-dusk/60">sectors served</p>',
+  );
+
+  out = mustReplace(
+    out,
+    'mt-4 max-w-md text-dusk/70',
+    'mt-4 max-w-xl text-dusk/70 leading-relaxed',
+  );
+  return out;
+}
+
+function moveWaysAfterHowItWorks(html: string): string {
+  const engNeedle = '<section class="section-pad relative" aria-label="Engagement models">';
+  const engStart = html.indexOf(engNeedle);
+  if (engStart < 0) throw new Error('SSR copy: engagement section missing');
+  const engEnd = html.indexOf('</section>', engStart) + '</section>'.length;
+  if (engEnd < '</section>'.length) throw new Error('SSR copy: engagement section end missing');
+  const engHtml = html.slice(engStart, engEnd);
+  let out = html.slice(0, engStart) + html.slice(engEnd);
+
+  const howPlaceholder = '<div style="min-height:100vh"></div>';
+  const howAt = out.indexOf(howPlaceholder);
+  if (howAt < 0) throw new Error('SSR copy: how it works placeholder missing');
+  return out.slice(0, howAt + howPlaceholder.length) + engHtml + out.slice(howAt + howPlaceholder.length);
+}
+
+function removeHomeSection(html: string, needle: string, label: string): string {
+  const i = html.indexOf(needle);
+  if (i < 0) throw new Error(`SSR copy: home ${label} section missing`);
+  const start = html.lastIndexOf('<section', i);
+  const end = html.indexOf('</section>', i) + '</section>'.length;
+  if (start < 0 || end < '</section>'.length) {
+    throw new Error(`SSR copy: home ${label} section bounds`);
+  }
+  return html.slice(0, start) + html.slice(end);
 }

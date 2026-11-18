@@ -25,7 +25,9 @@ export function isOwnerSkipIndex(canonicalPath: string): boolean {
     p !== '/case-studies/checkmate' &&
     p !== '/case-studies/lead-scout' &&
     p !== '/case-studies/orange-ruler' &&
-    p !== '/case-studies/person-care'
+    p !== '/case-studies/person-care' &&
+    p !== '/case-studies/heyeve' &&
+    p !== '/case-studies/kallidus'
   ) {
     return true;
   }

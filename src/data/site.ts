@@ -25,7 +25,7 @@ export const site = {
    * Case-study cards and in-page links. Add a slug to show that study again.
    * Older studies stay noindex and out of the sitemap until their pages are rewritten.
    */
-  visibleCaseStudies: ['checkmate', 'lead-scout', 'orange-ruler', 'person-care'],
+  visibleCaseStudies: ['checkmate', 'lead-scout', 'orange-ruler', 'person-care', 'heyeve', 'kallidus'],
   email: '',
   phone: '+1-737-394-5488',
   phoneDisplay: '+1 737 394 5488',
@@ -51,10 +51,10 @@ export const site = {
     embedOnboard: '1-2 weeks',
   },
   heroCounters: [
-    { value: 150, suffix: '+', label: 'Production AI deployments' },
-    { value: 7, suffix: '+', label: 'Sectors served' },
-    { value: 2, suffix: '', label: 'Offices in the USA and UK' },
-    { value: 8, suffix: '–20 weeks', label: 'To production AI' },
+    { value: 150, suffix: '+', label: 'Production AI Deployments' },
+    { value: 7, suffix: '+', label: 'Industry Sectors Served' },
+    { value: 2, suffix: '', label: 'Offices Across the USA & UK' },
+    { value: 8, suffix: '–20 weeks', label: 'Typical Initial Production Timeline' },
   ],
   offices: [
     {

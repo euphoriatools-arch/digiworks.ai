@@ -24,7 +24,9 @@ function isSkipped(url) {
     url !== '/case-studies/checkmate.html' &&
     url !== '/case-studies/lead-scout.html' &&
     url !== '/case-studies/orange-ruler.html' &&
-    url !== '/case-studies/person-care.html'
+    url !== '/case-studies/person-care.html' &&
+    url !== '/case-studies/heyeve.html' &&
+    url !== '/case-studies/kallidus.html'
   ) {
     return true;
   }

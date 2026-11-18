@@ -8,7 +8,6 @@ export const contactCopy: CopyPage & {
   formCta: string;
   formMicro: string;
   officesSub: string;
-  capabilitiesSub: string;
   bodyLinks: BodyLink[];
 } = {
   title: 'Contact DigiWorks AI | Book a Discovery Call Today',
@@ -22,13 +21,10 @@ export const contactCopy: CopyPage & {
   formCta: 'Book a Free Discovery Call',
   formMicro: 'Free discovery session - Reply within 1 business day',
   officesSub: 'Austin and London. One team, two offices.',
-  capabilitiesSub: 'Whatever you are building, start on the Enterprise AI blog or AI Readiness Assessment.',
   bodyLinks: [
     { phrase: '1 business day', href: '/about' },
     { phrase: '8–20 weeks', href: '/hire/dedicated-ai-pods' },
     { phrase: 'production AI', href: '/services/artificial-intelligence' },
-    { phrase: 'Enterprise AI blog', href: '/blog' },
-    { phrase: 'AI Readiness Assessment', href: '/ai-readiness' },
     { phrase: 'Privacy policy', href: '/privacy-policy' },
     { phrase: 'terms of use', href: '/terms-of-use' },
   ],

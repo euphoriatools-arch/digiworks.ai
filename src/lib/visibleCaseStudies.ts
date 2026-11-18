@@ -13,6 +13,8 @@ const CARD_IMAGE: Record<string, string> = {
   'lead-scout': '/case/lead-scout/lead-scout-01.webp',
   'orange-ruler': '/case/orange-ruler/orange-ruler-01.webp',
   'person-care': '/case/person-care/person-care-01.webp',
+  heyeve: '/case/heyeve/heyeve-01.webp',
+  kallidus: '/case/kallidus/kallidus-01.webp',
   checkmate: '/case/checkmate/checkmate-01.webp',
 };
 
@@ -62,6 +64,7 @@ function exploreCard(study: ListedStudy): string {
 export function visibleExploreHtml(currentSlug: string): string {
   const cards = visibleStudies()
     .filter((study) => study.slug !== currentSlug)
+    .slice(0, 3)
     .map(exploreCard)
     .join('');
   return `<section class="relative w-full py-16"><div class="relative mx-auto w-full max-w-6xl px-6 sm:px-10"><div class="mx-auto max-w-3xl text-center"><h2 class="cm-h2 mt-5 font-display font-extrabold leading-[1.08] text-white">Keep exploring</h2></div><div class="mt-12 grid gap-6 md:grid-cols-3">${cards}</div></div></section>`;

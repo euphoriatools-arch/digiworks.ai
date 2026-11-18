@@ -23,12 +23,12 @@ export const homeCopy: CopyPage & {
   hero:
     'DigiWorks AI is an Austin AI development company that builds agents, generative AI, predictive models, and automation for US businesses.',
   featuredSub: 'Four services we are asked for first, with 150+ production AI deployments.',
-  casesSub: 'Checkmate, Lead Scout, Orange Ruler, and Person Care, from 150+ production AI deployments, not invented metrics.',
+  casesSub: 'Checkmate, Lead Scout, Orange Ruler, Person Care, HeyEve, and Kallidus, from 150+ production AI deployments, not invented metrics.',
   roiCopy:
     'Move the sliders for a directional estimate. Typical DigiWorks production delivery is 8–20 weeks. We confirm the real number in discovery first.',
   blogSub: 'Engineering notes from production LLM and ML work, plus how US teams ship and operate systems.',
   sectorsSub:
-    '150+ production AI deployments across healthcare, fintech, retail, manufacturing, and more, from Austin HQ offices.',
+    'DigiWorks AI ships production AI for the sectors US teams actually run, from care and finance to retail, plants, logistics, property, and education. We start with the workflow, the system of record, and the owner who will live with the result after launch. Typical first production sits inside 8–20 weeks once scope is agreed. Austin HQ and London keep delivery close to US and UK buyers. If your sector is not listed yet, we still adapt the same build path to your operating environment.',
   bodyLinks: [
     { phrase: 'generative AI', href: '/services/generative-ai-development' },
     { phrase: 'predictive models', href: '/services/predictive-modeling' },
