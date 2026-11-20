@@ -63,7 +63,7 @@ for (const name of readdirSync(copyDir)) {
 const lines = [
   '# DigiWorks AI — Phase 6 page summaries',
   '',
-  'Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2017. 150+ production AI deployments, 7+ sectors, 2 offices: USA and UK.',
+  'Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2019. 150+ production AI deployments, 15+ industries, 2 offices: USA and UK.',
   '',
   'Skipped pages (team, case studies, individual blog posts) are omitted here until the owner updates them.',
   '',

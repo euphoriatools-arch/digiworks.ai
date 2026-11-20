@@ -5,7 +5,7 @@ export const machineLearningCopy: ServicePageCopy = {
   name: 'Machine Learning',
   title: 'Machine Learning Development Services | DigiWorks AI',
   description:
-    'Machine learning development services: models trained on your data and run in production. Austin HQ. Work spans 7+ sectors we serve.',
+    'Machine learning development services: models trained on your data and run in production. Austin HQ. Work spans 15+ industries we serve.',
   h1: 'Machine Learning Development Services',
   h1Lead: 'Machine',
   h1Gradient: 'Learning Development Services',
@@ -63,7 +63,7 @@ export const machineLearningCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a product UI with no model contract, a forecasting story with no model, or an MLOps practice standup. A notebook that never left a laptop is not a practice yet, and we will say so. DigiWorks AI keeps Predictive Modeling as the forecast-as-model URL. Book a free discovery call if the prediction is already named. Work spans 7+ sectors.',
+      a: 'You need a product UI with no model contract, a forecasting story with no model, or an MLOps practice standup. A notebook that never left a laptop is not a practice yet, and we will say so. DigiWorks AI keeps Predictive Modeling as the forecast-as-model URL. Book a free discovery call if the prediction is already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you support models after launch?',

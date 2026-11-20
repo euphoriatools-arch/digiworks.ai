@@ -63,7 +63,7 @@ export const aiAutomationCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a process built, a single API, a multi-agent fleet, or a slide with no metric owner. DigiWorks AI will say that before you sign. Book a free discovery call if the department metric is already named. Work spans 7+ sectors when the stop rule is real. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
+      a: 'You need a process built, a single API, a multi-agent fleet, or a slide with no metric owner. DigiWorks AI will say that before you sign. Book a free discovery call if the department metric is already named. Work spans 15+ industries when the stop rule is real. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
     },
     {
       q: 'Do you stay with the metric after launch?',

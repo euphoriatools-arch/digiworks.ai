@@ -1,4 +1,4 @@
-import { site } from '../data/site.ts';
+import { homeCopy } from '../data/copy/home.ts';
 
 const starSvg = `<svg class="dw-ix-star" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.4l2.35 4.76 5.25.76-3.8 3.7.9 5.24L10 13.5l-4.7 2.46.9-5.24-3.8-3.7 5.25-.76L10 1.4z"/></svg>`;
 
@@ -56,17 +56,12 @@ const awards: Award[] = [
   },
 ];
 
-const years = Math.max(1, new Date().getFullYear() - Number(site.foundingYear));
-
 const stats = [
-  { value: site.verified.deployments, label: 'Production AI deployments' },
-  { value: site.verified.sectors, label: 'Industry sectors served' },
-  { value: site.verified.offices, label: 'Offices across the USA & UK' },
-  { value: `${years}+`, label: 'Years of experience' },
+  { value: '150+', label: 'Deployments' },
+  { value: '15+', label: 'Industries' },
+  { value: '2', label: 'Offices Across the USA & UK' },
+  { value: '7+', label: 'Years of Experience' },
 ];
-
-const yearWord =
-  years === 9 ? 'Nine' : years === 8 ? 'Eight' : years === 10 ? 'Ten' : `${years}`;
 
 const css = `
 .dw-ix{position:relative;overflow:hidden;isolation:isolate;padding:4.5rem 1.25rem;color:#eef0f4;background:transparent}
@@ -100,7 +95,8 @@ const css = `
 .dw-ix-foot{margin-top:1.4rem;font-size:.92rem;line-height:1.55;color:rgba(238,240,244,.48);max-width:34rem}
 .dw-ix-right{padding-top:.25rem}
 .dw-ix-kicker{margin:0;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(238,240,244,.48)}
-.dw-ix-title{margin:1rem 0 0;font-family:Unbounded,"Unbounded Fallback",sans-serif;font-size:clamp(1.9rem,3.4vw,2.85rem);font-weight:500;line-height:1.12;color:rgba(238,240,244,.72);max-width:16ch}
+.dw-ix-title{margin:1rem 0 0;font-family:Unbounded,"Unbounded Fallback",sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:500;line-height:1.15;color:rgba(238,240,244,.72);max-width:18rem}
+.dw-ix-lead{margin:1.15rem 0 0;max-width:34rem;font-size:1rem;line-height:1.65;color:rgba(238,240,244,.62)}
 .dw-ix-title strong{font-weight:800;color:#eef0f4}
 .dw-ix-rule{margin-top:1.35rem;height:2px;width:7rem;border-radius:999px;background:linear-gradient(90deg,#5ca6ff,#1a82ff,#0052b3)}
 .dw-ix-stats{margin-top:2.1rem;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(238,240,244,.14)}
@@ -122,7 +118,7 @@ function awardCard(a: Award): string {
 }
 
 /** Inner HTML for the homepage industry section (style + body). */
-export const homeIndustryInnerHtml = `<style>${css.replace(/\s+/g, ' ').trim()}</style><div class="dw-ix-wrap"><div><div class="dw-ix-grid">${awards.map(awardCard).join('')}</div><p class="dw-ix-foot">Recognized globally for our industry-leading development expertise and innovative solutions.</p></div><div class="dw-ix-right"><p class="dw-ix-kicker">${yearWord} years of delivery, not just promises</p><h2 class="dw-ix-title">Industry Expertise <strong>That Shortens the Learning Curve</strong></h2><div class="dw-ix-rule" aria-hidden="true"></div><div class="dw-ix-stats">${stats
+export const homeIndustryInnerHtml = `<style>${css.replace(/\s+/g, ' ').trim()}</style><div class="dw-ix-wrap"><div><div class="dw-ix-grid">${awards.map(awardCard).join('')}</div><p class="dw-ix-foot">Recognized globally for our industry-leading development expertise and innovative solutions.</p></div><div class="dw-ix-right"><p class="dw-ix-kicker">${homeCopy.kicker}</p><h2 class="dw-ix-title">Industry Experience <strong>That Helps Us Get It Right, Faster</strong></h2><p class="dw-ix-lead">Years of hands-on delivery have given our team the technical depth and industry understanding to solve complex business challenges and turn ambitious ideas into working digital products.</p><div class="dw-ix-rule" aria-hidden="true"></div><div class="dw-ix-stats">${stats
   .map(
     (s) =>
       `<div class="dw-ix-stat"><p class="dw-ix-num"><span>${s.value}</span></p><p class="dw-ix-label">${s.label}</p></div>`,

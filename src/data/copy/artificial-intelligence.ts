@@ -63,7 +63,7 @@ export const artificialIntelligenceCopy: ServicePageCopy = {
     },
     {
       q: 'What stack do you use?',
-      a: 'Whatever fits the workflow: your LLM vendor, your training stack, and your APIs. We do not lock this hub to one vendor name. HIPAA, ISO, and similar attestations are confirmed in scoping. After go-live the same people who scoped the path keep traces current. Unowned production AI is how last quarter’s demo becomes this quarter’s incident. Book a free discovery call if the job and the system of record are already named. Work spans 7+ sectors.',
+      a: 'Whatever fits the workflow: your LLM vendor, your training stack, and your APIs. We do not lock this hub to one vendor name. HIPAA, ISO, and similar attestations are confirmed in scoping. After go-live the same people who scoped the path keep traces current. Unowned production AI is how last quarter’s demo becomes this quarter’s incident. Book a free discovery call if the job and the system of record are already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you stay on after launch?',

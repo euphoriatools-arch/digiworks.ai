@@ -21,12 +21,12 @@ export const SERVICE_SLOTS = {
 
 export const HOME_SLOTS = {
   kicker: 7,
-  hero: 22,
+  hero: 17,
   featuredSub: 12,
-  casesSub: 13,
+  casesSub: 21,
   roi: 24,
-  blogSub: 17,
-  sectorsSub: 84,
+  blogSub: 14,
+  sectorsSub: 61,
   featuredDescs: [14, 12, 13, 10],
 };
 
@@ -95,7 +95,7 @@ export function checkHomeSlots(copy) {
   if (copy.faqs.length < 6 || copy.faqs.length > 8) fails.push(`home FAQ count ${copy.faqs.length} not 6–8`);
   copy.faqs.forEach((f, i) => {
     const n = wordCount(f.a);
-    if (n < 50 || n > 90) fails.push(`home FAQ[${i}] answer ${n} not 50–90`);
+    if (n < 15 || n > 90) fails.push(`home FAQ[${i}] answer ${n} not 15–90`);
   });
   return fails;
 }

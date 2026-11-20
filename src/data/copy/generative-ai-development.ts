@@ -5,7 +5,7 @@ export const generativeAiDevelopmentCopy: ServicePageCopy = {
   name: 'Generative AI Development',
   title: 'Generative AI Development Services | DigiWorks AI',
   description:
-    'Generative AI development: custom LLM applications for named workflows. Dedicated AI Pods ready in 2–3 weeks. See how we work across 7+ sectors.',
+    'Generative AI development: custom LLM applications for named workflows. Dedicated AI Pods ready in 2–3 weeks. See how we work across 15+ industries.',
   h1: 'Generative AI Development for Workflows',
   h1Lead: 'Generative AI',
   h1Gradient: 'Development for Workflows',
@@ -63,7 +63,7 @@ export const generativeAiDevelopmentCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a chatbot UI, an NLP pipeline with no generation, or an outcome story with no build. Ungrounded generation is out of scope unless you explicitly want it—and we will push back. DigiWorks AI will say that before you sign. Book a free discovery call if the never-invent list is already written. Work spans 7+ sectors.',
+      a: 'You need a chatbot UI, an NLP pipeline with no generation, or an outcome story with no build. Ungrounded generation is out of scope unless you explicitly want it—and we will push back. DigiWorks AI will say that before you sign. Book a free discovery call if the never-invent list is already written. Work spans 15+ industries.',
     },
     {
       q: 'Do you support prompts after launch?',

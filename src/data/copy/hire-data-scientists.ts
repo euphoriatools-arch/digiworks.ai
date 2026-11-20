@@ -63,7 +63,7 @@ export const hireDataScientistsCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an ML seat, a full pod, a platform rebuild, or a scientist for a question nobody can describe. DigiWorks AI will say that before you sign. Book a free discovery call if the question is already chosen. Work spans 7+ sectors when the owner will use the finding. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
+      a: 'You need an ML seat, a full pod, a platform rebuild, or a scientist for a question nobody can describe. DigiWorks AI will say that before you sign. Book a free discovery call if the question is already chosen. Work spans 15+ industries when the owner will use the finding. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
     },
     {
       q: 'Can we change the analysis seat after start?',

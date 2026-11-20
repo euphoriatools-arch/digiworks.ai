@@ -64,7 +64,7 @@ export const aiForRetailCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no merchant, a chatbot with no store work, or a chain-wide rebuild with no first catalog. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still reviews the SKU the model cannot price.',
+      a: 'You need a model with no merchant, a chatbot with no store work, or a chain-wide rebuild with no first catalog. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still reviews the SKU the model cannot price.',
     },
     {
       q: 'Do you stay with the desk after launch?',

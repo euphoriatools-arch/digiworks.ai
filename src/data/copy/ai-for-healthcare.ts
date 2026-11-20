@@ -64,7 +64,7 @@ export const aiForHealthcareCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no clinical lead, a policy binder, a copy of the chart you cannot share, or a hospital-wide rebuild with no first workflow. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still reviews the hard cases.',
+      a: 'You need a model with no clinical lead, a policy binder, a copy of the chart you cannot share, or a hospital-wide rebuild with no first workflow. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still reviews the hard cases.',
     },
     {
       q: 'Do you stay with the care team after launch?',

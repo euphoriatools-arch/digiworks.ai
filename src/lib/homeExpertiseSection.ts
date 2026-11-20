@@ -10,58 +10,58 @@ type ExpertiseCard = {
 
 const cards: ExpertiseCard[] = [
   {
-    title: 'Artificial Intelligence',
-    desc: 'Agents, generative systems, and decision models that ship into production workflows.',
-    href: '/services/artificial-intelligence.html',
+    title: 'Generative AI',
+    desc: 'Generative AI solutions built for content, knowledge, search, and intelligent business workflows.',
+    href: '/services/generative-ai-development.html',
     img: '/photos/photo-1639322537228-f710d846310a.webp',
-    imgAlt: 'Abstract 3D render representing artificial intelligence',
+    imgAlt: 'Abstract visual for generative AI',
     accent: 'from-electric to-cyan',
     glyph: 'M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M6 6h12v12H6zM9 9h6v6H9z',
   },
   {
-    title: 'Machine Learning',
-    desc: 'Named models with owners, evaluation, and a path from training to live traffic.',
-    href: '/services/machine-learning.html',
+    title: 'Artificial Intelligence & ML',
+    desc: 'AI and machine learning systems designed to improve decisions, efficiency, and business performance.',
+    href: '/services/artificial-intelligence.html',
     img: '/photos/photo-1633356122544-f134324a6cee.webp',
     imgAlt: 'Abstract data structure symbolizing machine learning',
     accent: 'from-violet to-electric',
     glyph: 'M3 17l5-5 4 4 9-9M14 7h7v7',
   },
   {
-    title: 'Automation & Integration',
-    desc: 'Connect the systems you already run and remove the copy-paste work between them.',
-    href: '/services/automation-and-integration.html',
-    img: '/photos/photo-1535378917042-10a22c95931a.webp',
-    imgAlt: 'Automation and systems integration',
-    accent: 'from-cyan to-electric',
-    glyph: 'M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1',
-  },
-  {
-    title: 'Data and Cloud',
-    desc: 'Pipelines, warehouses, and cloud architecture that keep AI fed and operable.',
-    href: '/services/data-and-cloud.html',
+    title: 'Data Engineering',
+    desc: 'Reliable data pipelines and infrastructure that keep your data accessible, scalable, and AI-ready.',
+    href: '/services/data-engineering.html',
     img: '/photos/photo-1451187580459-43490279c0fa.webp',
-    imgAlt: 'Earth from space representing cloud and data systems',
+    imgAlt: 'Earth from space representing data infrastructure',
     accent: 'from-electric to-violet',
     glyph: 'M6 16a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1A4 4 0 0 1 18 16H6z',
   },
   {
-    title: 'Security & Compliance',
-    desc: 'Access control, logging, and compliance paths aligned to how your systems actually run.',
-    href: '/services/security-and-compliance.html',
-    img: '/photos/photo-1550751827-4bd374c3f58b.webp',
-    imgAlt: 'Cybersecurity and compliance visual',
-    accent: 'from-coral to-violet',
-    glyph: 'M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-4z',
+    title: 'Software Development',
+    desc: 'Scalable software solutions built around your workflows, users, and long-term business needs.',
+    href: '/services/mobile-app-development.html',
+    img: '/photos/photo-1535378917042-10a22c95931a.webp',
+    imgAlt: 'Software product interface',
+    accent: 'from-cyan to-electric',
+    glyph: 'M4 6h16v12H4zM8 10h8M8 14h5',
   },
   {
-    title: 'AI Training & Support',
-    desc: 'Enable your teams to operate, evaluate, and improve the AI you put into production.',
-    href: '/services/ai-training-and-support.html',
+    title: 'Hire Developers',
+    desc: 'Experienced developers who integrate with your team and help accelerate product delivery.',
+    href: '/hire/hire-ai-engineers.html',
     img: '/photos/photo-1522071820081-009f0129c71c.webp',
-    imgAlt: 'Team collaborating on AI training and support',
-    accent: 'from-cyan to-coral',
+    imgAlt: 'Developers collaborating on a product',
+    accent: 'from-coral to-violet',
     glyph: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+  },
+  {
+    title: 'AI Automation',
+    desc: 'AI-powered automation that connects your systems, streamlines workflows, and reduces repetitive work.',
+    href: '/solutions/ai-automation.html',
+    img: '/photos/photo-1550751827-4bd374c3f58b.webp',
+    imgAlt: 'Connected systems representing AI automation',
+    accent: 'from-cyan to-coral',
+    glyph: 'M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1',
   },
 ];
 
@@ -102,7 +102,7 @@ function cardHtml(c: ExpertiseCard): string {
   return `<a class="dw-ex-card" href="${c.href}"><div class="dw-ex-media"><img src="${c.img}" alt="${c.imgAlt}" width="1200" height="675" loading="lazy"><div class="dw-ex-media-shade" aria-hidden="true"></div><span class="dw-ex-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="${c.glyph}"></path></svg></span></div><div class="dw-ex-body"><h3>${c.title}</h3><p>${c.desc}</p><span class="dw-ex-link">Explore service →</span></div></a>`;
 }
 
-export const homeExpertiseInnerHtml = `<style>${css.replace(/\s+/g, ' ').trim()}</style><div class="dw-ex-wrap"><div class="dw-ex-head"><span class="dw-ex-chip"><i aria-hidden="true"></i>Our Expertise</span><h2 class="dw-ex-title">Our Expertise as an AI &amp; ML Development Company</h2><p class="dw-ex-sub">Building intelligent systems that transform data into action.</p></div><div class="dw-ex-grid">${cards.map(cardHtml).join('')}</div><div class="dw-ex-cta"><a class="dw-ex-btn" href="/services/artificial-intelligence.html">All Services <span aria-hidden="true">→</span></a></div></div>`;
+export const homeExpertiseInnerHtml = `<style>${css.replace(/\s+/g, ' ').trim()}</style><div class="dw-ex-wrap"><div class="dw-ex-head"><span class="dw-ex-chip"><i aria-hidden="true"></i>Our Expertise</span><h2 class="dw-ex-title">Our AI &amp; ML Development Expertise for Real-World Impact</h2><p class="dw-ex-sub">Building intelligent systems that turn complex data into measurable business outcomes.</p></div><div class="dw-ex-grid">${cards.map(cardHtml).join('')}</div><div class="dw-ex-cta"><a class="dw-ex-btn" href="/services/artificial-intelligence.html">Explore All Services <span aria-hidden="true">→</span></a></div></div>`;
 
 export function homeExpertiseSectionHtml(): string {
   return `<section class="dw-ex" aria-label="Our Expertise">${homeExpertiseInnerHtml}</section>`;

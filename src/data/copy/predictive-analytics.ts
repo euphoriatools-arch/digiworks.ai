@@ -63,7 +63,7 @@ export const predictiveAnalyticsCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model built, an ML practice stood up, a retrain org, or a dashboard with no owner. DigiWorks AI will say that before you sign. Book a free discovery call if the number is already named. Work spans 7+ sectors when the owner will act. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
+      a: 'You need a model built, an ML practice stood up, a retrain org, or a dashboard with no owner. DigiWorks AI will say that before you sign. Book a free discovery call if the number is already named. Work spans 15+ industries when the owner will act. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
     },
     {
       q: 'Do you stay with the view after launch?',

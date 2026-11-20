@@ -63,7 +63,7 @@ export const intelligentAutomationCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a single API wire, a multi-agent fleet, a streaming-only bus, or an outcomes slide with no process owner. DigiWorks AI will say that before you sign. Book a free discovery call if the process is already named. Work spans 7+ sectors when the queue and the stop rule are real.',
+      a: 'You need a single API wire, a multi-agent fleet, a streaming-only bus, or an outcomes slide with no process owner. DigiWorks AI will say that before you sign. Book a free discovery call if the process is already named. Work spans 15+ industries when the queue and the stop rule are real.',
     },
     {
       q: 'Do you support the process after launch?',

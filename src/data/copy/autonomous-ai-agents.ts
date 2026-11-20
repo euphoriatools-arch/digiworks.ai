@@ -63,7 +63,7 @@ export const autonomousAiAgentsCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a single short agent, a chat-only product, or process automation with no agent plan. Unbounded fleets are out of scope until we name who may call which tool. DigiWorks AI will say that before you sign. Book a free discovery call if the steps are already named. Work spans 7+ sectors when the tools and the pause policy are real.',
+      a: 'You need a single short agent, a chat-only product, or process automation with no agent plan. Unbounded fleets are out of scope until we name who may call which tool. DigiWorks AI will say that before you sign. Book a free discovery call if the steps are already named. Work spans 15+ industries when the tools and the pause policy are real.',
     },
     {
       q: 'Do you support the fleet after launch?',

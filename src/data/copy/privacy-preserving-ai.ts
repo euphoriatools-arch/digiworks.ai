@@ -63,7 +63,7 @@ export const privacyPreservingAiCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a policy program, app-path guards, a paid attack, or a warehouse copy you are happy to move. Training without a data owner is theater. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 7+ sectors when the owner is named.',
+      a: 'You need a policy program, app-path guards, a paid attack, or a warehouse copy you are happy to move. Training without a data owner is theater. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 15+ industries when the owner is named.',
     },
     {
       q: 'Do you support private training after launch?',

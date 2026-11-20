@@ -39,10 +39,10 @@ export const site = {
   appleTouchIcon: '/mark5e1f.png?v=2',
   ogImage: '/og-image.png',
   manifest: '/site.webmanifest',
-  foundingYear: '2017',
+  foundingYear: '2019',
   verified: {
     deployments: '150+',
-    sectors: '7+',
+    sectors: '15+',
     offices: '2',
     newsletterReaders: '2,000+',
     productionWeeks: '8-20 weeks',
@@ -52,7 +52,7 @@ export const site = {
   },
   heroCounters: [
     { value: 150, suffix: '+', label: 'Production AI Deployments' },
-    { value: 7, suffix: '+', label: 'Industry Sectors Served' },
+    { value: 15, suffix: '+', label: 'Industries' },
     { value: 2, suffix: '', label: 'Offices Across the USA & UK' },
     { value: 8, suffix: '–20 weeks', label: 'Typical Initial Production Timeline' },
   ],

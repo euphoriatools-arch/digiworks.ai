@@ -64,7 +64,7 @@ export const aiForLogisticsCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no dispatcher, a streaming-only bus, a robot fleet, or a network-wide rebuild with no first lane. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still places the load the model cannot.',
+      a: 'You need a model with no dispatcher, a streaming-only bus, a robot fleet, or a network-wide rebuild with no first lane. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still places the load the model cannot.',
     },
     {
       q: 'Do you stay with the network after launch?',

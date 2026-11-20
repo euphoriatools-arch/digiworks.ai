@@ -63,7 +63,7 @@ export const securityAndComplianceCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need app-path guards, a paid attack, privacy-preserving training as the whole job, or 24/7 monitoring of the estate. A program with no owner is a binder. DigiWorks AI will say that before you sign. Book a free discovery call if the systems are already named. Work spans 7+ sectors.',
+      a: 'You need app-path guards, a paid attack, privacy-preserving training as the whole job, or 24/7 monitoring of the estate. A program with no owner is a binder. DigiWorks AI will say that before you sign. Book a free discovery call if the systems are already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you support the program after launch?',

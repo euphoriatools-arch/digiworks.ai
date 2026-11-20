@@ -64,7 +64,7 @@ export const aiForEducationCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a class with no teacher, a chatbot with no advising work, or a campus-wide rebuild with no first course. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still reviews the case the model cannot grade.',
+      a: 'You need a class with no teacher, a chatbot with no advising work, or a campus-wide rebuild with no first course. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still reviews the case the model cannot grade.',
     },
     {
       q: 'Do you stay with the school after launch?',

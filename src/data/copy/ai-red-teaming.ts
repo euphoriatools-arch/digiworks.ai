@@ -63,7 +63,7 @@ export const aiRedTeamingCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a policy program, app-path engineering, privacy-preserving training, or 24/7 monitoring. An attack with no stop list is not an engagement we will run. DigiWorks AI will say that before you sign. Book a free discovery call if the path is already named. Work spans 7+ sectors when the owner is named.',
+      a: 'You need a policy program, app-path engineering, privacy-preserving training, or 24/7 monitoring. An attack with no stop list is not an engagement we will run. DigiWorks AI will say that before you sign. Book a free discovery call if the path is already named. Work spans 15+ industries when the owner is named.',
     },
     {
       q: 'Do you fix what you find?',

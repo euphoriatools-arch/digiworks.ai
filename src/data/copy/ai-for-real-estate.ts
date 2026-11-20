@@ -64,7 +64,7 @@ export const aiForRealEstateCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no broker, a chatbot with no listing work, or a portfolio-wide rebuild with no first book. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still prices the listing the model cannot.',
+      a: 'You need a model with no broker, a chatbot with no listing work, or a portfolio-wide rebuild with no first book. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still prices the listing the model cannot.',
     },
     {
       q: 'Do you stay with the desk after launch?',

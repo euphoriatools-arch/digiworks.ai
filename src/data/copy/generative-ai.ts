@@ -63,7 +63,7 @@ export const generativeAiCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an LLM app built, a support channel, an NLP pipeline, or a desk with no signer. DigiWorks AI will say that before you sign. Book a free discovery call if the job is already named. Work spans 7+ sectors when the sign-off is real. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
+      a: 'You need an LLM app built, a support channel, an NLP pipeline, or a desk with no signer. DigiWorks AI will say that before you sign. Book a free discovery call if the job is already named. Work spans 15+ industries when the sign-off is real. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
     },
     {
       q: 'Do you stay with the desk after launch?',

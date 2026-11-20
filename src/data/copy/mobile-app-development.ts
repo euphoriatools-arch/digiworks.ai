@@ -63,7 +63,7 @@ export const mobileAppDevelopmentCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an agent, a web-only product, a chatbot with no store listing, or an app with no owner for updates. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 7+ sectors when the app owner is real.',
+      a: 'You need an agent, a web-only product, a chatbot with no store listing, or an app with no owner for updates. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 15+ industries when the app owner is real.',
     },
     {
       q: 'Do you support the app after launch?',

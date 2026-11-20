@@ -63,7 +63,7 @@ export const nlpCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a chatbot UI, omnichannel program strategy, generative drafting as the product, or form geometry. Packets without language work belong on IDP. DigiWorks AI will say that before you sign. Book a free discovery call if the labels are already named. Work spans 7+ sectors when the text store is in reach.',
+      a: 'You need a chatbot UI, omnichannel program strategy, generative drafting as the product, or form geometry. Packets without language work belong on IDP. DigiWorks AI will say that before you sign. Book a free discovery call if the labels are already named. Work spans 15+ industries when the text store is in reach.',
     },
     {
       q: 'Do you support the pipeline after launch?',

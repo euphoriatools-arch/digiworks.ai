@@ -67,7 +67,7 @@ export const mlDevelopmentCopy: ServicePageCopy = {
     },
     {
       q: 'Do you support the model after launch?',
-      a: 'Yes. After the first production score, drift and late labels are the operating reality. We watch this model, not an unnamed science department. New features are change requests. Typical first production period sits inside the 8–20 week window. Work spans 7+ sectors when the table and the consumer are named.',
+      a: 'Yes. After the first production score, drift and late labels are the operating reality. We watch this model, not an unnamed science department. New features are change requests. Typical first production period sits inside the 8–20 week window. Work spans 15+ industries when the table and the consumer are named.',
     },
   ],
   relatedServices: [

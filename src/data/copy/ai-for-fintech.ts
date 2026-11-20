@@ -64,7 +64,7 @@ export const aiForFintechCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no risk lead, a policy binder, a paid attack, or a bank-wide rebuild with no first workflow. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still reviews the unclear alerts.',
+      a: 'You need a model with no risk lead, a policy binder, a paid attack, or a bank-wide rebuild with no first workflow. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still reviews the unclear alerts.',
     },
     {
       q: 'Do you stay with the desk after launch?',

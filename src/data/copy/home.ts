@@ -11,62 +11,59 @@ export const homeCopy: CopyPage & {
   sectorsSub: string;
   bodyLinks: { phrase: string; href: string }[];
 } = {
-  title: 'Enterprise AI & ML Development Company | DigiWorks AI',
+  title: 'AI Development Company for US Businesses | DigiWorks',
   description:
-    'DigiWorks AI builds production AI in 8–20 weeks: agents, generative AI, predictive modeling, and automation for US businesses. Book a free discovery call.',
-  kicker: 'Austin HQ · Production AI for US Businesses',
+    'DigiWorks AI is an AI development company helping US businesses build production AI, automation, machine learning, and AI agents that deliver results.',
+  kicker: 'Seven years of building, delivering, and improving',
   h1Lines: [
     { words: ['The', 'AI'] },
     { words: ['Development', 'Company'], className: 'text-gradient' },
     { words: ['For', 'US', 'Businesses'], className: 'text-gradient-hot' },
   ],
   hero:
-    'DigiWorks AI is an Austin AI development company that builds agents, generative AI, predictive models, and automation for US businesses.',
+    'We build intelligent, scalable AI solutions that help US businesses automate operations, improve efficiency, and accelerate growth.',
   featuredSub: 'Four services we are asked for first, with 150+ production AI deployments.',
-  casesSub: 'Checkmate, Lead Scout, Orange Ruler, Person Care, HeyEve, and Kallidus, from 150+ production AI deployments, not invented metrics.',
+  casesSub:
+    'See how DigiWorks AI turns real business challenges into scalable digital products across sales, healthcare, education, HR, operations, and customer experience.',
   roiCopy:
     'Move the sliders for a directional estimate. Typical DigiWorks production delivery is 8–20 weeks. We confirm the real number in discovery first.',
-  blogSub: 'Engineering notes from production LLM and ML work, plus how US teams ship and operate systems.',
+  blogSub:
+    'Engineering notes on LLMs, machine learning, evaluation, automation, and the systems behind production AI.',
   sectorsSub:
-    'DigiWorks AI ships production AI for the sectors US teams actually run, from care and finance to retail, plants, logistics, property, and education. We start with the workflow, the system of record, and the owner who will live with the result after launch. Typical first production sits inside 8–20 weeks once scope is agreed. Austin HQ and London keep delivery close to US and UK buyers. If your sector is not listed yet, we still adapt the same build path to your operating environment.',
+    'Every industry operates differently. The workflows, data, systems, regulations, and customer expectations are not the same, so the technology should not be either. DigiWorks AI develops practical AI solutions around how your business actually operates. From healthcare and fintech to retail, manufacturing, logistics, education, and beyond, we help teams automate complex work, uncover better insights, and make faster, more informed decisions.',
   bodyLinks: [
-    { phrase: 'generative AI', href: '/services/generative-ai-development' },
-    { phrase: 'predictive models', href: '/services/predictive-modeling' },
-    { phrase: 'automation for US businesses', href: '/services/automation-and-integration' },
-    { phrase: 'About page', href: '/about' },
-    { phrase: 'Contact page', href: '/contact' },
-    { phrase: 'AI readiness assessment', href: '/ai-readiness' },
-    { phrase: 'privacy policy', href: '/privacy-policy' },
-    { phrase: 'terms of use', href: '/terms-of-use' },
+    { phrase: 'machine learning systems', href: '/services/machine-learning' },
+    { phrase: 'AI automation', href: '/solutions/ai-automation' },
+    { phrase: 'existing systems', href: '/services/automation-and-integration' },
   ],
   faqs: [
     {
-      q: 'What does an AI development company in the USA actually deliver?',
-      a: 'Production systems, not slide decks. DigiWorks AI is an AI development company in Austin that designs, builds, and scales agents, generative AI, predictive analytics, and intelligent automation, plus the web, mobile, and cloud software around them. Typical delivery is 8–20 weeks after scope is agreed. We have shipped 150+ production AI deployments across 7+ sectors. Home owns the company story. Scoped builds start on artificial intelligence development services when the job is already named. Book a free discovery call if you can name the system of record.',
+      q: 'What AI development services does DigiWorks AI offer?',
+      a: 'We build custom AI agents, generative AI applications, machine learning systems, AI automation, data solutions, and intelligent software tailored to real business workflows.',
     },
     {
-      q: 'How do you determine if AI fits my business needs?',
-      a: 'A discovery session covers the workflow, data you already have, and what done means. If a model or agent will not move a number you care about, we say so before a build. We also say when the work belongs on a hire page, a solutions outcome page, or a child service URL instead of a vague program. Dedicated AI Pods ready in 2–3 weeks are for problems already named. We do not invent ROI on this page. You leave with a clear yes, no, or not yet.',
+      q: 'How do you identify the right AI solution for my business?',
+      a: 'We start with your business goals, workflows, data, and existing systems. From there, we identify where AI can create practical value and recommend the right technical approach.',
     },
     {
-      q: 'Do you work with existing systems or build from scratch?',
-      a: 'Both. We connect to CRMs, ERPs, and internal APIs when that is the shortest path, and we build new services when the current stack cannot host the work. Closed access stops the work in discovery. Copy-paste between tools is usually an integration or agent engagement, not a new dashboard. Solutions pages stay outcomes; service pages stay the build. US teams get Austin hours. Typical windows stay 8–20 weeks once access and owners are real. About page, Contact page, and AI readiness assessment have their own URLs.',
+      q: 'Can you integrate AI with our existing systems?',
+      a: 'Yes. We can connect AI with your APIs, databases, CRMs, internal platforms, cloud infrastructure, and other business software so it works within the tools your team already uses.',
     },
     {
-      q: 'How long does it take to build an AI solution?',
-      a: 'Typical production delivery is 8–20 weeks after scope is agreed. Shorter if the problem is narrow; longer if data or integrations are not ready. Dedicated AI Pods ready in 2–3 weeks are for problems already named. Embedded engineers onboard in 1–2 weeks. We do not quote a weekend cutover for a multi-system estate. Discovery is where the date becomes honest. 150+ production AI deployments is company-wide proof, not a promise that your path is simple.',
+      q: 'How long does it take to develop an AI solution?',
+      a: 'Timelines depend on complexity, data readiness, integrations, and technical requirements. A focused solution may take several weeks, while larger production systems can require a longer development cycle.',
     },
     {
-      q: 'How do you handle data privacy and security?',
-      a: 'Access control, logging, and data-handling follow what you specify for the system. Named certifications (HIPAA, ISO, and similar) are confirmed in scoping—not assumed on this page. Application-path guards live on AI Application Security. Policy programs live on Security and Compliance. We work in the accounts and vendors you already run. If you cannot grant access, we stop. Austin HQ, an office in London, US buyers. Book a free discovery session to walk the data path. See the privacy policy and terms of use.',
+      q: 'How do you approach AI security and data privacy?',
+      a: 'We consider security from the start, including access controls, data handling, system permissions, logging, human oversight, and deployment requirements based on your environment.',
     },
     {
-      q: 'What does it cost to work with DigiWorks?',
-      a: 'Pricing follows the engagement: a scoped project, a dedicated pod (ready in 2–3 weeks), or embedded engineers (onboard in 1–2 weeks). We give a number after discovery, not a public rate card. Cost drivers are tool count, data readiness, and how many teams must approve a write. The home ROI slider is directional only. Unowned production AI is how last quarter’s demo becomes this quarter’s incident. Name the operator before you ask for a quote.',
+      q: 'How much does custom AI development cost?',
+      a: 'Cost depends on the scope, integrations, data requirements, features, and delivery model. We review your needs first and recommend an approach that matches both the technical requirements and business goals.',
     },
     {
-      q: 'What happens after the AI solution goes live?',
-      a: 'Monitoring, fixes, and model or prompt updates as live traffic changes. Launch is the first production version, not the last. Child URLs stay in force: an agent is not a chatbot, and a custom ML application is not the ML practice page. Support is scoped to what you bought. DigiWorks AI will not staff an unnamed department. Typical first production period sits with the 8–20 week delivery, then continues as the path changes.',
+      q: 'What support do you provide after launch?',
+      a: 'We can continue supporting your solution with monitoring, performance optimization, updates, new integrations, and ongoing improvements as your data, users, and business requirements evolve.',
     },
   ],
 };

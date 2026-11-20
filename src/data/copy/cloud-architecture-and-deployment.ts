@@ -63,7 +63,7 @@ export const cloudArchitectureCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You already have a live AI app that needs CI/CD, a lakehouse program, or an MLOps practice standup. A first architecture without an app owner is a drawing. DigiWorks AI will say that before you sign. Book a free discovery call if the account is already named. Work spans 7+ sectors.',
+      a: 'You already have a live AI app that needs CI/CD, a lakehouse program, or an MLOps practice standup. A first architecture without an app owner is a drawing. DigiWorks AI will say that before you sign. Book a free discovery call if the account is already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you stay after the first deploy?',

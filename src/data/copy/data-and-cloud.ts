@@ -63,7 +63,7 @@ export const dataAndCloudCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a single pipeline, a streaming-only bus, app CI/CD, or a blank-account architecture engagement. Pipelines without a platform owner are warehouse theater. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 7+ sectors when the consumer is named.',
+      a: 'You need a single pipeline, a streaming-only bus, app CI/CD, or a blank-account architecture engagement. Pipelines without a platform owner are warehouse theater. DigiWorks AI will say that before you sign. Book a free discovery call if the stores are already named. Work spans 15+ industries when the consumer is named.',
     },
     {
       q: 'Do you support the platform after launch?',

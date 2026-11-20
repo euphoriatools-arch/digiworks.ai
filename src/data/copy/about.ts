@@ -23,7 +23,7 @@ export const aboutCopy: CopyPage & {
   decade:
     '150+ production AI deployments mean your system is built on shipped work, not a slide deck or a weekend demo.',
   growth:
-    '150+ production AI deployments across 7+ sectors, from Austin HQ and London, with typical first production inside 8–20 weeks for named work.',
+    '150+ production AI deployments across 15+ industries, from Austin HQ and London, with typical first production inside 8–20 weeks for named work.',
   bodyLinks: [
     { phrase: 'production-ready AI solutions', href: '/services/artificial-intelligence' },
     { phrase: 'intelligent automation', href: '/services/intelligent-automation' },
@@ -48,7 +48,7 @@ export const aboutCopy: CopyPage & {
     },
     {
       q: 'Which industries does DigiWorks AI work with?',
-      a: "DigiWorks AI has experience delivering production AI solutions across more than seven industry sectors. Our capabilities support businesses looking to automate repetitive workflows, improve information processing, introduce intelligent customer interactions, and develop custom AI applications. Rather than applying the same solution to every industry, we evaluate each organization's processes, technical environment, and business requirements to determine the most suitable approach.",
+      a: "DigiWorks AI has experience delivering production AI solutions across 15+ industries. Our capabilities support businesses looking to automate repetitive workflows, improve information processing, introduce intelligent customer interactions, and develop custom AI applications. Rather than applying the same solution to every industry, we evaluate each organization's processes, technical environment, and business requirements to determine the most suitable approach.",
     },
     {
       q: 'What happens after an AI solution is deployed?',

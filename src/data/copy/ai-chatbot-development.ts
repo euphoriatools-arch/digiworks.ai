@@ -63,7 +63,7 @@ export const aiChatbotDevelopmentCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an agent that completes back-office work, an NLP pipeline with no chat UI, or an omnichannel program with no product owner. A bot that never hands off is rarely honest. DigiWorks AI will say that before you sign. Book a free discovery call if the never-do list is already written. Work spans 7+ sectors.',
+      a: 'You need an agent that completes back-office work, an NLP pipeline with no chat UI, or an omnichannel program with no product owner. A bot that never hands off is rarely honest. DigiWorks AI will say that before you sign. Book a free discovery call if the never-do list is already written. Work spans 15+ industries.',
     },
     {
       q: 'Do you support the bot after launch?',

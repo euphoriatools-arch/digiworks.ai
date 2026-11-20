@@ -63,7 +63,7 @@ export const hireNlpEngineersCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a chatbot product, a full pod, a practice-page build with no owner, or a seat for text nobody can share. DigiWorks AI will say that before you sign. Book a free discovery call if the text path is already chosen. Work spans 7+ sectors when the owner will review the wording. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
+      a: 'You need a chatbot product, a full pod, a practice-page build with no owner, or a seat for text nobody can share. DigiWorks AI will say that before you sign. Book a free discovery call if the text path is already chosen. Work spans 15+ industries when the owner will review the wording. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
     },
     {
       q: 'Can we change the language seat after start?',

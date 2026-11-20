@@ -63,7 +63,7 @@ export const automationAndIntegrationCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need automation outcomes without wiring, department-wide process automation, or a single agent with no integration story. Missing webhooks are a cost driver. We will not pretend a nightly CSV is real-time if you need streaming. DigiWorks AI will say that before you sign. Book a free discovery call if the systems are already named. Work spans 7+ sectors.',
+      a: 'You need automation outcomes without wiring, department-wide process automation, or a single agent with no integration story. Missing webhooks are a cost driver. We will not pretend a nightly CSV is real-time if you need streaming. DigiWorks AI will say that before you sign. Book a free discovery call if the systems are already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you support mappings after launch?',

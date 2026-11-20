@@ -5,7 +5,7 @@ export const dataEngineeringCopy: ServicePageCopy = {
   name: 'Data Engineering',
   title: 'Data Engineering Services for Production AI | DigiWorks AI',
   description:
-    'Data engineering for production AI: pipelines and tables models can trust. Work spans 7+ sectors. Austin. Start with a free discovery session.',
+    'Data engineering for production AI: pipelines and tables models can trust. Work spans 15+ industries. Austin. Start with a free discovery session.',
   h1: 'Data Engineering Services for AI Pipelines',
   h1Lead: 'Data Engineering Services',
   h1Gradient: 'for AI Pipelines',

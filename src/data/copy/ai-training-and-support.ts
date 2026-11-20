@@ -63,7 +63,7 @@ export const aiTrainingAndSupportCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model built, a chatbot shipped, a pod embedded, or a class with no named roster. Training without an owner after week one is theater. DigiWorks AI will say that before you sign. Book a free discovery call if the people and the path are already named. Work spans 7+ sectors when the roster is real.',
+      a: 'You need a model built, a chatbot shipped, a pod embedded, or a class with no named roster. Training without an owner after week one is theater. DigiWorks AI will say that before you sign. Book a free discovery call if the people and the path are already named. Work spans 15+ industries when the roster is real.',
     },
     {
       q: 'Do you support teams after the class?',

@@ -203,7 +203,7 @@ function patchCompanyFacts({ app, about, contact, home }) {
   app = mustReplace(
     app,
     '{year:`2017`,title:`It begins in Karachi`,desc:`DigiWorks is founded on one conviction: most projects fail in the gap between what clients ask for and what their business actually needs. Closing that gap is the whole idea.`}',
-    '{year:`2017`,title:`Building software since 2017`,desc:`DigiWorks is founded on one conviction: most projects fail in the gap between what clients ask for and what their business actually needs. Closing that gap is the whole idea.`}',
+    '{year:`2019`,title:`Building software since 2019`,desc:`DigiWorks is founded on one conviction: most projects fail in the gap between what clients ask for and what their business actually needs. Closing that gap is the whole idea.`}',
     'about timeline start',
   );
   app = mustReplace(
@@ -213,7 +213,13 @@ function patchCompanyFacts({ app, about, contact, home }) {
     'about timeline offices',
   );
   app = mustReplace(app, 'Our Global Offices', 'Our Offices', 'footer offices heading');
-  app = mustReplace(app, '· Since 2025', '· Since 2017', 'footer since');
+  app = mustReplace(
+    app,
+    'children:`Our Offices`})]}),(0,D.jsx)(m,{to:`/contact`,className:`text-xs font-semibold text-cyan/70 transition-colors hover:text-cyan`,children:`View all →`})',
+    'children:`Our Offices`}),(0,D.jsx)(`p`,{className:`mt-2 max-w-xl text-sm leading-relaxed text-dusk/60`,children:`With teams in the US and UK, DigiWorks AI stays close to clients across key markets while supporting projects globally.`})]}),(0,D.jsx)(m,{to:`/contact`,className:`text-xs font-semibold text-cyan/70 transition-colors hover:text-cyan`,children:`View all →`})',
+    'footer offices intro',
+  );
+  app = mustReplace(app, '· Since 2025', '· Since 2019', 'footer since');
   app = mustReplace(
     app,
     'grid gap-4 sm:grid-cols-2 lg:grid-cols-5',
@@ -227,7 +233,12 @@ function patchCompanyFacts({ app, about, contact, home }) {
     'office counter',
   );
   app = mustReplace(app, 'label:`Production AI deployments`', 'label:`Production AI Deployments`', 'counter deployments');
-  app = mustReplace(app, 'label:`Sectors served`', 'label:`Industry Sectors Served`', 'counter sectors');
+  app = mustReplace(
+    app,
+    '{value:7,suffix:`+`,label:`Sectors served`}',
+    '{value:15,suffix:`+`,label:`Industries`}',
+    'counter sectors',
+  );
   app = mustReplace(app, 'label:`To production AI`', 'label:`Typical Initial Production Timeline`', 'counter timeline');
 
   about = mustReplace(
@@ -286,7 +297,7 @@ function patchCompanyFacts({ app, about, contact, home }) {
   home = mustReplace(
     home,
     'children:`5`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`global offices`})',
-    'children:`2`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`offices in the USA and UK`})',
+    'children:`2`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`Offices Across the US and UK`})',
     'home office counter',
   );
 
@@ -304,7 +315,7 @@ function patchHomeSectors(source) {
   home = mustReplace(
     home,
     'children:`7+`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`sectors served`})',
-    'children:`15`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`sectors served`})',
+    'children:`15+`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`Industries`})',
     'home sectors counter',
   );
   home = mustReplace(
@@ -313,6 +324,32 @@ function patchHomeSectors(source) {
     `children:${homeSectorPillsSpaArrayLiteral()}.map((e,t)=>(0,L.jsx)(o.div,{initial:{opacity:0,scale:.8},whileInView:{opacity:1,scale:1},viewport:{once:!0},transition:{delay:t*.06},children:(0,L.jsx)(c,{to:e.to,className:\`block rounded-full border border-dusk/15 bg-dusk/[0.04] px-5 py-3 text-sm text-dusk/70 transition-all duration-300 hover:scale-105 hover:border-cyan/50 hover:bg-cyan/10 hover:text-dusk hover:shadow-[0_0_28px_rgba(92,166,255,0.3)]\`,children:e.name})},e.name))`,
     'home sectors pills',
   );
+  home = mustReplace(
+    home,
+    'children:`150+`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`deployments`})',
+    'children:`150+`}),(0,L.jsx)(`p`,{className:`text-xs text-dusk/60`,children:`Deployments`})',
+    'home deployments label',
+  );
+  home = mustReplace(home, 'Don’t see your sector?', 'Don’t see your industry?', 'home industry fallback');
+  home = mustReplace(
+    home,
+    'sub:`Pick the engagement model that fits where you are; switch as your roadmap grows.`',
+    'sub:`Choose the engagement model that fits your goals, timeline, and team.`',
+    'home engagement sub',
+  );
+  home = mustReplace(
+    home,
+    'R=[{name:`Project Delivery`,tag:`Fixed scope`,desc:`A defined AI solution, scoped, built, and shipped end-to-end. Best when the problem is clear and the outcome is measurable.`,points:[`8–20 week delivery`,`Outcome-based milestones`,`Post-launch optimization`],to:`/services/artificial-intelligence`},{name:`Dedicated AI Pod`,tag:`Most popular`,hot:!0,desc:`A complete cross-functional team, engineers, data scientists, and leads, working exclusively on your roadmap.`,points:[`Full team in 2–3 weeks`,`End-to-end ownership`,`Predictable release cadence`],to:`/hire/dedicated-ai-pods`},{name:`Embedded Talent`,tag:`Staff augmentation`,desc:`Senior AI, ML, and data engineers who join your team on demand and ship inside your processes from week one.`,points:[`Onboard in 1–2 weeks`,`Your management, our talent`,`Scale up or down anytime`],to:`/hire/hire-ai-engineers`}]',
+    'R=[{name:`Build and Launch Your AI Solution`,tag:`Project Delivery`,desc:`Bring us the challenge. We handle strategy, development, integration, testing, and launch.`,points:[`Defined scope and milestones`,`Full delivery ownership`,`Launch and optimization support`],cta:`Start Your AI Project →`,to:`/contact`},{name:`Scale Faster With a Dedicated AI Team`,tag:`Dedicated AI Team`,desc:`Get a focused team of AI, ML, data, and software specialists working directly on your roadmap.`,points:[`Cross-functional expertise`,`Dedicated delivery capacity`,`Continuous releases and improvement`],cta:`Build Your Dedicated Team →`,to:`/hire/dedicated-ai-pods`},{name:`Add the Expertise Your Team Needs`,tag:`Embedded Experts`,desc:`Bring experienced AI, ML, data, and software specialists into your existing team and delivery process.`,points:[`Skills matched to your needs`,`Fast team integration`,`Flexible scaling as priorities change`],cta:`Hire AI Experts →`,to:`/hire/hire-ai-engineers`}]',
+    'home engagement cards',
+  );
+  home = mustReplace(
+    home,
+    'children:[`Learn more `,(0,L.jsx)(`span`,{"aria-hidden":!0,children:`→`})]',
+    'children:[e.cta]',
+    'home engagement cta',
+  );
+  home = mustReplace(home, '`View All Case Studies `', '`Explore All Case Studies `', 'home case studies cta');
   return home;
 }
 
@@ -443,7 +480,7 @@ function sync() {
     'Solutions we ship around production AI',
     'home solutions title',
   );
-  home = mustReplace(home, 'Innovate, transform & achieve real results', 'Work already in production', 'home cases title');
+  home = mustReplace(home, 'Innovate, transform & achieve real results', 'Real Products. Real Business Impact.', 'home cases title');
   home = mustReplace(
     home,
     'Real-world impact through solutions designed for measurable performance and long-term value.',
@@ -459,7 +496,7 @@ function sync() {
   home = mustReplace(
     home,
     'Fueling growth through innovation and creativity',
-    'From the DigiWorks AI blog',
+    'Insights From Production AI Work',
     'home blog title',
   );
   home = mustReplace(
@@ -471,7 +508,7 @@ function sync() {
   home = mustReplace(
     home,
     'children:[`Intelligence for `,(0,L.jsx)(`span`,{className:`text-gradient`,children:`every sector`})',
-    'children:[`AI for `,(0,L.jsx)(`span`,{className:`text-gradient`,children:`every sector`})',
+    'children:[`AI Built for `,(0,L.jsx)(`span`,{className:`text-gradient`,children:`Every Industry`})',
     'home sectors h2',
   );
   home = mustReplace(
@@ -480,7 +517,7 @@ function sync() {
     homeCopy.sectorsSub,
     'home sectors sub',
   );
-  home = mustReplace(home, '(0,L.jsx)(M,{faqs:f})', '(0,L.jsx)(M,{faqs:f,title:`AI development FAQs`})', 'home faq title');
+  home = mustReplace(home, '(0,L.jsx)(M,{faqs:f})', '(0,L.jsx)(M,{faqs:f,title:`AI Development Questions, Answered`})', 'home faq title');
   home = mustReplace(
     home,
     'children:[`Discover `,(0,L.jsx)(`span`,{"aria-hidden":!0,children:`→`})]})',
@@ -511,9 +548,54 @@ function sync() {
   app = mustReplace(
     app,
     "Tell us what you're building. We'll map the fastest path from idea to production AI, typically in 8 to 20 weeks.",
-    "Tell us about your business, the challenge you're facing, and what you're looking to build. We'll help you explore the right approach to move from your initial idea to a practical AI solution.",
+    "Tell us what you want to improve, automate, or build. We'll help shape the right AI approach and turn your idea into a practical solution ready for real business use.",
     'footer cta body',
   );
+  app = mustReplace(
+    app,
+    'text:`Ready to engineer what comes next?`',
+    'text:`Ready to Build What Comes Next?`',
+    'footer cta heading',
+  );
+  app = mustReplace(
+    app,
+    '`Start the conversation `',
+    '`Start the Conversation `',
+    'footer form button',
+  );
+  app = mustReplace(
+    app,
+    'No spam, no obligation. Your details go straight to our solutions team.',
+    'We reply within 1 business day. By submitting, you agree to our Privacy Policy.',
+    'footer form note',
+  );
+  app = mustReplace(
+    app,
+    'From the start, DigiWorks AI has been professional and responsive. Aly has been nothing short of incredible to work with.',
+    'From the start, DigiWorks AI has been professional and responsive. My team has had an incredible experience working with them.',
+    'review jason',
+  );
+  app = mustReplace(
+    app,
+    'DigiWorks AI is one of the few companies I fully trust for my projects. Recently, they worked on my new app project and offered complimentary marketing for the first 6 months!',
+    'DigiWorks AI is one of the few companies I fully trust for my projects. They recently worked on my new app project and went above and beyond to support its launch.',
+    'review niklas',
+  );
+  app = mustReplace(app, 'name:`Niklas Nadal`', 'name:`Niklas Nodal`', 'review niklas name');
+  app = mustReplace(app, 'name:`Dr. Marcus Vance`', 'name:`Dr. Marcus Vince`', 'review marcus name');
+  app = mustReplace(
+    app,
+    'Working with DigiWorks was very quick and very easy. Aly was very accommodating, the team knew exactly what they were talking about and how to improve my app.',
+    'Working with DigiWorks was quick and easy. The team understood what they were doing and knew how to improve my app.',
+    'review mark',
+  );
+  app = mustReplace(
+    app,
+    'Simply amazing. I was in touch with at least four of their representatives and each and every one made sure I was at peace with the development of my mobile app.',
+    'Simply amazing. I worked with several members of their team, and each one made sure I felt confident throughout the development of my mobile app.',
+    'review travers',
+  );
+  app = mustReplace(app, 'name:`Travers Maheu`', 'name:`Travers Matheu`', 'review travers name');
   const hideOnHome =
     '.filter(t=>!(window.location.pathname===`/`&&(t.to===`/team`||t.to===`/ai-readiness`)))';
   app = mustReplace(
@@ -877,7 +959,7 @@ function sync() {
   sections = mustReplace(
     sections,
     'function S(){let e=[...s,...s],t=[...s.slice(3),...s.slice(0,3)];',
-    'function S({title:n=`Trusted by teams who ship`,sub:r=`Real reviews from Bark, Trustpilot, and Clutch. Hover to pause.`}={}){let e=[...s,...s],t=[...s.slice(3),...s.slice(0,3)];',
+    'function S({title:n=`Trusted by Teams That Build With Us`,sub:r=`Verified client feedback from Bark, Trustpilot, and Clutch.`}={}){let e=[...s,...s],t=[...s.slice(3),...s.slice(0,3)];',
     'reviews props',
   );
   sections = mustReplace(
@@ -969,7 +1051,7 @@ function sync() {
   about = mustReplace(
     about,
     'function U(){',
-    'function Q(){return(0,A.jsxs)(`section`,{className:`section-pad relative overflow-hidden`,children:[(0,A.jsx)(`div`,{className:`pointer-events-none absolute inset-0`,"aria-hidden":!0,style:{background:`radial-gradient(60% 50% at 15% 0%, rgba(26,130,255,0.12), transparent 70%)`}}),(0,A.jsxs)(`div`,{className:`relative mx-auto grid max-w-6xl gap-6`,children:[(0,A.jsxs)(`div`,{className:`glass relative overflow-hidden p-8 md:p-12`,children:[(0,A.jsx)(`div`,{className:`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-coral to-electric`,"aria-hidden":!0}),(0,A.jsx)(`h2`,{className:`max-w-4xl font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`We Start With the Business Problem. Then Build the AI.`}),(0,A.jsx)(`span`,{className:`mt-5 block h-0.5 w-28 rounded-full bg-electric`,"aria-hidden":!0}),(0,A.jsx)(`p`,{className:`mt-6 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Successful AI implementation requires more than choosing the right technology. It requires understanding how a business operates, where its challenges lie, and what a successful solution should achieve.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`At DigiWorks AI, we begin by examining your existing workflows, systems, data, and operational requirements. Our team identifies where AI can drive meaningful improvements, then recommends a technical approach.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`From custom AI agents and intelligent automation to integrated software solutions, we build technology that works within your operations, supports your teams, and is designed for practical, long-term use.`})]}),(0,A.jsxs)(`div`,{className:`glass relative grid gap-8 overflow-hidden p-8 md:p-12 lg:grid-cols-2 lg:items-center`,children:[(0,A.jsxs)(`div`,{children:[(0,A.jsxs)(`span`,{className:`chip`,children:[(0,A.jsx)(`span`,{className:`h-1.5 w-1.5 animate-pulse rounded-full bg-coral`}),`Since 2017`]}),(0,A.jsx)(`h2`,{className:`mt-5 font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`Who We Are`})]}),(0,A.jsxs)(`div`,{children:[(0,A.jsx)(`p`,{className:`text-base leading-relaxed text-dusk/75 md:text-lg`,children:`DigiWorks AI is an AI development company headquartered in Austin, Texas, with an office in London, United Kingdom.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Our software development experience dates back to 2017. Today, our work spans AI development, machine learning, intelligent automation, and custom software engineering.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`With over 150 production AI deployments across more than seven industry sectors, we bring together technical capabilities and business understanding to develop solutions tailored to each organization\'s requirements.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`We work closely with clients from initial discovery and solution design through development and deployment, with a focus on creating systems that businesses can confidently put to work.`})]})]})]})]})}function U(){',
+    'function Q(){return(0,A.jsxs)(`section`,{className:`section-pad relative overflow-hidden`,children:[(0,A.jsx)(`div`,{className:`pointer-events-none absolute inset-0`,"aria-hidden":!0,style:{background:`radial-gradient(60% 50% at 15% 0%, rgba(26,130,255,0.12), transparent 70%)`}}),(0,A.jsxs)(`div`,{className:`relative mx-auto grid max-w-6xl gap-6`,children:[(0,A.jsxs)(`div`,{className:`glass relative overflow-hidden p-8 md:p-12`,children:[(0,A.jsx)(`div`,{className:`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-coral to-electric`,"aria-hidden":!0}),(0,A.jsx)(`h2`,{className:`max-w-4xl font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`We Start With the Business Problem. Then Build the AI.`}),(0,A.jsx)(`span`,{className:`mt-5 block h-0.5 w-28 rounded-full bg-electric`,"aria-hidden":!0}),(0,A.jsx)(`p`,{className:`mt-6 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Successful AI implementation requires more than choosing the right technology. It requires understanding how a business operates, where its challenges lie, and what a successful solution should achieve.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`At DigiWorks AI, we begin by examining your existing workflows, systems, data, and operational requirements. Our team identifies where AI can drive meaningful improvements, then recommends a technical approach.`}),(0,A.jsx)(`p`,{className:`mt-4 max-w-3xl text-base leading-relaxed text-dusk/75 md:text-lg`,children:`From custom AI agents and intelligent automation to integrated software solutions, we build technology that works within your operations, supports your teams, and is designed for practical, long-term use.`})]}),(0,A.jsxs)(`div`,{className:`glass relative grid gap-8 overflow-hidden p-8 md:p-12 lg:grid-cols-2 lg:items-center`,children:[(0,A.jsxs)(`div`,{children:[(0,A.jsxs)(`span`,{className:`chip`,children:[(0,A.jsx)(`span`,{className:`h-1.5 w-1.5 animate-pulse rounded-full bg-coral`}),`Since 2019`]}),(0,A.jsx)(`h2`,{className:`mt-5 font-display text-3xl font-bold leading-tight text-dusk sm:text-4xl`,children:`Who We Are`})]}),(0,A.jsxs)(`div`,{children:[(0,A.jsx)(`p`,{className:`text-base leading-relaxed text-dusk/75 md:text-lg`,children:`DigiWorks AI is an AI development company headquartered in Austin, Texas, with an office in London, United Kingdom.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`Our software development experience dates back to 2019. Today, our work spans AI development, machine learning, intelligent automation, and custom software engineering.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`With over 150 production AI deployments across 15+ industries, we bring together technical capabilities and business understanding to develop solutions tailored to each organization\'s requirements.`}),(0,A.jsx)(`p`,{className:`mt-4 text-base leading-relaxed text-dusk/75 md:text-lg`,children:`We work closely with clients from initial discovery and solution design through development and deployment, with a focus on creating systems that businesses can confidently put to work.`})]})]})]})]})}function U(){',
     'about story section',
   );
   about = mustReplace(
@@ -1184,7 +1266,7 @@ function sync() {
     agentCopy.hero,
     agentCopy.title,
     ...agentCopy.faqs.flatMap((f) => [f.q, f.a]),
-    'AI development FAQs',
+    'AI Development Questions, Answered',
     agentCopy.faqTitle,
     'Book a Call',
     'Book a Free Discovery Call',
@@ -1561,7 +1643,7 @@ function sync() {
     const fridayFrom =
       'DigiWorks is headquartered in Austin, Texas, with engineering teams in Karachi, Dubai and Guangzhou, and that spread is exactly why five days is possible. When the US team signs off a screen at the end of the day, the next shift is already at their desks, so your build moves while you sleep. ';
     const fridayTo =
-      'DigiWorks AI is headquartered in Austin, Texas, with an office in London, United Kingdom, and has been building software since 2017. ';
+      'DigiWorks AI is headquartered in Austin, Texas, with an office in London, United Kingdom, and has been building software since 2019. ';
     if (friday.includes(fridayFrom)) friday = friday.replace(fridayFrom, fridayTo);
     writeFileSync(fridayPath, friday);
   }
@@ -1570,7 +1652,7 @@ function sync() {
     const extraPath = join(destDir, file);
     if (!existsSync(extraPath)) continue;
     let extra = readFileSync(extraPath, 'utf8');
-    extra = extra.replaceAll('· Since 2025', '· Since 2017');
+    extra = extra.replaceAll('· Since 2025', '· Since 2019');
     extra = extra.replaceAll('{iso:`CA`,dial:`+1`,country:`Canada`,label:`CA +1`,flag:`ca`},', '');
     extra = extra.replaceAll('{iso:`CA`,dial:`+1`,country:`Canada`,label:`🇨🇦 +1`},', '');
     writeFileSync(extraPath, extra);

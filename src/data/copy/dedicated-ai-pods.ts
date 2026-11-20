@@ -63,7 +63,7 @@ export const dedicatedAiPodsCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need one engineer, a fixed project with no owner, or a team for work nobody can describe. DigiWorks AI will say that before you sign. Book a free discovery call if the work is already chosen. Work spans 7+ sectors when the owner will run the cadence. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
+      a: 'You need one engineer, a fixed project with no owner, or a team for work nobody can describe. DigiWorks AI will say that before you sign. Book a free discovery call if the work is already chosen. Work spans 15+ industries when the owner will run the cadence. Austin-based DigiWorks AI keeps that first window inside 8–20 weeks.',
     },
     {
       q: 'Can we change the roster after start?',

@@ -63,7 +63,7 @@ export const mlopsSetupCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need one live score, a data platform, or app CI/CD. A standup with no owner is a diagram. DigiWorks AI will say that before you sign. Book a free discovery call if the models are already named. Work spans 7+ sectors when the practice owner is named today in writing.',
+      a: 'You need one live score, a data platform, or app CI/CD. A standup with no owner is a diagram. DigiWorks AI will say that before you sign. Book a free discovery call if the models are already named. Work spans 15+ industries when the practice owner is named today in writing.',
     },
     {
       q: 'Do you support the practice after launch?',

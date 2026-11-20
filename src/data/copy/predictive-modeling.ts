@@ -63,7 +63,7 @@ export const predictiveModelingCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need analytics storytelling with no model, the full ML practice, or a product UI around a model. Predictive modeling services are useless if nobody will act on the number. DigiWorks AI will say that before you sign. Book a free discovery call if the decision is already named. Work spans 7+ sectors.',
+      a: 'You need analytics storytelling with no model, the full ML practice, or a product UI around a model. Predictive modeling services are useless if nobody will act on the number. DigiWorks AI will say that before you sign. Book a free discovery call if the decision is already named. Work spans 15+ industries.',
     },
     {
       q: 'Do you support the model after launch?',

@@ -63,7 +63,7 @@ export const realTimeDataStreamingCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a nightly job, a lakehouse program, or app runtime. Streaming without a consumer is bus theater. DigiWorks AI will say that before you sign. Book a free discovery call if the producers are already named. Work spans 7+ sectors when the consumer is real and named today for this stream.',
+      a: 'You need a nightly job, a lakehouse program, or app runtime. Streaming without a consumer is bus theater. DigiWorks AI will say that before you sign. Book a free discovery call if the producers are already named. Work spans 15+ industries when the consumer is real and named today for this stream.',
     },
     {
       q: 'Do you support streams after launch?',

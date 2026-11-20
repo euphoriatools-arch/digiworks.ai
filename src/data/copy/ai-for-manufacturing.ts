@@ -64,7 +64,7 @@ export const aiForManufacturingCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need a model with no plant lead, a vision project with no miss rule, or a factory-wide rebuild with no first cell. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 7+ sectors when a person still stops a defect the camera cannot call.',
+      a: 'You need a model with no plant lead, a vision project with no miss rule, or a factory-wide rebuild with no first cell. DigiWorks AI will say that before you sign. Book a free discovery call if the workflow is already chosen. Work spans 15+ industries when a person still stops a defect the camera cannot call.',
     },
     {
       q: 'Do you stay with the line after launch?',

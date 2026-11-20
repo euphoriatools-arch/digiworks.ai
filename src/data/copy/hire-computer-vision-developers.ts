@@ -63,7 +63,7 @@ export const hireComputerVisionCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an outcomes page, a full pod, a practice-page build with no owner, or a seat for frames nobody can share. DigiWorks AI will say that before you sign. Book a free discovery call if the frames are already chosen. Work spans 7+ sectors when the owner will stop a miss. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
+      a: 'You need an outcomes page, a full pod, a practice-page build with no owner, or a seat for frames nobody can share. DigiWorks AI will say that before you sign. Book a free discovery call if the frames are already chosen. Work spans 15+ industries when the owner will stop a miss. Austin-based DigiWorks AI keeps first production inside 8–20 weeks.',
     },
     {
       q: 'Can we change the vision seat after start?',

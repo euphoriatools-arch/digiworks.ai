@@ -67,7 +67,7 @@ export const idpCopy: ServicePageCopy = {
     },
     {
       q: 'Do you support extractors after launch?',
-      a: 'Yes. After the first production queue, new templates and late packets are the operating reality. We watch this extractor, not an unnamed document department. New packet types are change requests. Typical first production period sits inside the 8–20 week window. Austin-based. Work spans 7+ sectors when the files and the posting system are named.',
+      a: 'Yes. After the first production queue, new templates and late packets are the operating reality. We watch this extractor, not an unnamed document department. New packet types are change requests. Typical first production period sits inside the 8–20 week window. Austin-based. Work spans 15+ industries when the files and the posting system are named.',
     },
   ],
   relatedServices: [

@@ -63,7 +63,7 @@ export const computerVisionCopy: ServicePageCopy = {
     },
     {
       q: 'When is this the wrong fit?',
-      a: 'You need an ML practice stood up, a department process built, a robot fleet, or a job with no miss owner. DigiWorks AI will say that before you sign. Book a free discovery call if the line is already named. Work spans 7+ sectors when the miss rule is real.',
+      a: 'You need an ML practice stood up, a department process built, a robot fleet, or a job with no miss owner. DigiWorks AI will say that before you sign. Book a free discovery call if the line is already named. Work spans 15+ industries when the miss rule is real.',
     },
     {
       q: 'Do you stay with the line after launch?',
