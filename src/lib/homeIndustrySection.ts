@@ -95,7 +95,7 @@ const css = `
 .dw-ix-foot{margin-top:1.4rem;font-size:.92rem;line-height:1.55;color:rgba(238,240,244,.48);max-width:34rem}
 .dw-ix-right{padding-top:.25rem}
 .dw-ix-kicker{margin:0;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(238,240,244,.48)}
-.dw-ix-title{margin:1rem 0 0;font-family:Unbounded,"Unbounded Fallback",sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:500;line-height:1.15;color:rgba(238,240,244,.72);max-width:18rem}
+.dw-ix-title{margin:1rem 0 0;font-family:Unbounded,"Unbounded Fallback",sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:500;line-height:1.15;color:rgba(238,240,244,.72)}
 .dw-ix-lead{margin:1.15rem 0 0;max-width:34rem;font-size:1rem;line-height:1.65;color:rgba(238,240,244,.62)}
 .dw-ix-title strong{font-weight:800;color:#eef0f4}
 .dw-ix-rule{margin-top:1.35rem;height:2px;width:7rem;border-radius:999px;background:linear-gradient(90deg,#5ca6ff,#1a82ff,#0052b3)}

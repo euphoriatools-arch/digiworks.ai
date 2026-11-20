@@ -1308,7 +1308,7 @@ function sync() {
   ];
   // These bundle filenames stay stable, and Vercel marks them immutable for a year.
   // Bump the query whenever homepage copy changes so returning browsers fetch the new file.
-  const assetVersion = 'digi3';
+  const assetVersion = 'digi4';
   for (const name of Object.keys(out)) {
     out[name] = out[name]
       .replaceAll('?v=digi2', `?v=${assetVersion}`)
@@ -1319,6 +1319,14 @@ function sync() {
       .replaceAll(
         '"assets/ScrollStory3D-C7dPzY7F.js"',
         `"assets/ScrollStory3D-C7dPzY7F.js?v=${assetVersion}"`,
+      )
+      .replaceAll(
+        'from"./sections-BJjI_WFB.js"',
+        `from"./sections-BJjI_WFB.js?v=${assetVersion}"`,
+      )
+      .replaceAll(
+        '"assets/sections-BJjI_WFB.js"',
+        `"assets/sections-BJjI_WFB.js?v=${assetVersion}"`,
       );
   }
 
