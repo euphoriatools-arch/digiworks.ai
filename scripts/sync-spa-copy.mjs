@@ -1306,6 +1306,22 @@ function sync() {
     aiRedTeamingCopy.title,
     ...aiRedTeamingCopy.faqs.flatMap((f) => [f.q, f.a]),
   ];
+  // These bundle filenames stay stable, and Vercel marks them immutable for a year.
+  // Bump the query whenever homepage copy changes so returning browsers fetch the new file.
+  const assetVersion = 'digi3';
+  for (const name of Object.keys(out)) {
+    out[name] = out[name]
+      .replaceAll('?v=digi2', `?v=${assetVersion}`)
+      .replaceAll(
+        'import(`./ScrollStory3D-C7dPzY7F.js`)',
+        `import(\`./ScrollStory3D-C7dPzY7F.js?v=${assetVersion}\`)`,
+      )
+      .replaceAll(
+        '"assets/ScrollStory3D-C7dPzY7F.js"',
+        `"assets/ScrollStory3D-C7dPzY7F.js?v=${assetVersion}"`,
+      );
+  }
+
   const blob = Object.values(out).join('\n');
   for (const s of required) {
     if (!blob.includes(s)) {
