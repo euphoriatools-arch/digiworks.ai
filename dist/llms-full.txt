@@ -1,6 +1,6 @@
 # DigiWorks AI — Phase 6 page summaries
 
-Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2017. 150+ production AI deployments, 7+ sectors, 2 offices: USA and UK.
+Austin HQ and London. Production AI for US businesses: agents, generative AI, predictive modeling, and automation. Typical first production 8–20 weeks. Building software since 2019. 150+ production AI deployments, 15+ industries, 2 offices: USA and UK.
 
 Skipped pages (team, case studies, individual blog posts) are omitted here until the owner updates them.
 
@@ -142,11 +142,11 @@ Enterprise data and cloud services: platforms and stores models can trust. Not a
 
 ## Data Engineering Services for Production AI | DigiWorks AI
 https://digiworksai.com/services/data-engineering.html
-Data engineering for production AI: pipelines and tables models can trust. Work spans 7+ sectors. Austin. Start with a free discovery session.
+Data engineering for production AI: pipelines and tables models can trust. Work spans 15+ industries. Austin. Start with a free discovery session.
 
 ## Generative AI Development Services | DigiWorks AI
 https://digiworksai.com/services/generative-ai-development.html
-Generative AI development: custom LLM applications for named workflows. Dedicated AI Pods ready in 2–3 weeks. See how we work across 7+ sectors.
+Generative AI development: custom LLM applications for named workflows. Dedicated AI Pods ready in 2–3 weeks. See how we work across 15+ industries.
 
 ## Intelligent Automation Services for Teams | DigiWorks AI
 https://digiworksai.com/services/intelligent-automation.html
@@ -162,7 +162,7 @@ Machine learning development that ships a model staff can call. Typical 8–20 w
 
 ## Machine Learning Development Services | DigiWorks AI
 https://digiworksai.com/services/machine-learning.html
-Machine learning development services: models trained on your data and run in production. Austin HQ. Work spans 7+ sectors we serve.
+Machine learning development services: models trained on your data and run in production. Austin HQ. Work spans 15+ industries we serve.
 
 ## MLOps Setup and Consulting for Teams | DigiWorks AI
 https://digiworksai.com/services/mlops-setup.html

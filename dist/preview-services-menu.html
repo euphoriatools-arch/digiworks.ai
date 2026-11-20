@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Services mega menu — design preview</title>
+  <style>
+    :root {
+      --void: #060a14;
+      --dusk: #eef0f4;
+      --muted: rgba(238, 240, 244, 0.68);
+      --line: rgba(238, 240, 244, 0.12);
+      --electric: #1a82ff;
+      --cyan: #5ca6ff;
+      --coral: #ff5a4f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--dusk);
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      background:
+        radial-gradient(55% 42% at 50% -8%, rgba(26, 130, 255, 0.2), transparent 58%),
+        linear-gradient(180deg, #07101f, var(--void) 50%, #05080f);
+    }
+    .banner {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem 0;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .banner b { color: var(--dusk); font-weight: 600; }
+
+    .site-header {
+      position: relative;
+      z-index: 40;
+      padding: 0.75rem 1.25rem 0;
+      overflow: visible;
+    }
+    .bar {
+      position: relative;
+      margin: 0 auto;
+      max-width: 72rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--line);
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+      overflow: visible;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .logo img { height: 2.05rem; width: auto; max-width: 9rem; display: block; object-fit: contain; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.05rem;
+      flex: 1;
+      justify-content: center;
+      min-width: 0;
+    }
+    .nav > a,
+    .svc-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: rgba(238, 240, 244, 0.7);
+      font: inherit;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav > a:hover { color: var(--dusk); }
+    .svc-btn { display: inline-flex; align-items: center; gap: 0.3rem; }
+    .svc-btn svg { transition: transform 0.2s ease; }
+    .svc.open .svc-btn {
+      background: rgba(255, 90, 79, 0.1);
+      color: var(--dusk);
+    }
+    .svc.open .svc-btn svg { transform: rotate(180deg); }
+    .case {
+      margin-left: 0.15rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #ff5a4f, #7c5cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .actions { display: flex; align-items: center; gap: 0.55rem; flex-shrink: 0; }
+    .call {
+      display: inline-flex; align-items: center;
+      padding: 0.5rem 0.95rem; border-radius: 999px;
+      border: 1px solid rgba(76, 158, 255, 0.2);
+      background: rgba(12, 20, 36, 0.7); color: #fff;
+      font-size: 0.84rem; font-weight: 600; text-decoration: none;
+    }
+    .book {
+      display: inline-flex; padding: 0.52rem 1rem; border-radius: 999px;
+      color: #fff; font-size: 0.84rem; font-weight: 700; text-decoration: none;
+      background: linear-gradient(135deg, #5ca6ff, #1a82ff 55%, #0052b3);
+      box-shadow: 0 10px 28px rgba(26, 130, 255, 0.28);
+    }
+
+    .svc { position: static; }
+    .mega {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 0.55rem);
+      z-index: 60;
+      border-radius: 1.35rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(9, 7, 11, 0.98);
+      backdrop-filter: blur(28px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 24px 64px rgba(0, 0, 0, 0.65);
+      overflow: hidden;
+      min-height: 23rem;
+    }
+    .bar.is-open .mega {
+      display: grid;
+      grid-template-columns: 16.5rem minmax(0, 1fr);
+    }
+    .glow-a, .glow-b {
+      position: absolute; width: 11rem; height: 11rem; border-radius: 999px;
+      pointer-events: none; filter: blur(70px);
+    }
+    .glow-a { left: -2.5rem; top: -2.5rem; background: rgba(26, 130, 255, 0.16); }
+    .glow-b { right: -2.5rem; bottom: -2.5rem; background: rgba(255, 90, 79, 0.14); }
+
+    /* LEFT = main services */
+    .mains-pane {
+      position: relative; z-index: 1;
+      padding: 1.35rem 0.85rem 0.85rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex; flex-direction: column; gap: 0.18rem;
+    }
+    .main-item {
+      width: 100%; appearance: none; border: 0; background: transparent;
+      color: rgba(238, 240, 244, 0.78); text-align: left;
+      font: inherit; font-size: 0.9rem; font-weight: 600;
+      padding: 0.85rem 0.9rem; border-radius: 0.85rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 0.45rem;
+    }
+    .main-item span { line-height: 1.25; }
+    .main-item svg { width: 0.85rem; height: 0.85rem; opacity: 0.4; flex-shrink: 0; }
+    .main-item:hover,
+    .main-item[aria-current="true"] {
+      background: rgba(255, 90, 79, 0.1);
+      color: var(--dusk);
+    }
+    .main-item[aria-current="true"] svg { opacity: 1; color: var(--cyan); }
+
+    /* RIGHT = sub-services */
+    .subs-pane {
+      position: relative; z-index: 1;
+      padding: 1.5rem 1.35rem 1.4rem;
+    }
+    .subs-title {
+      margin: 0 0 0.85rem;
+      font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em;
+    }
+    .subs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.15rem 0.85rem;
+    }
+    .sub-link {
+      display: block;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.65rem;
+      color: rgba(238, 240, 244, 0.76);
+      text-decoration: none;
+      font-size: 0.875rem;
+      line-height: 1.35;
+    }
+    .sub-link:hover {
+      background: rgba(255, 90, 79, 0.07);
+      color: var(--dusk);
+    }
+    .sub-link.is-hub { font-weight: 600; color: #5ca6ff; }
+    .sub-link.is-hub:hover {
+      background: rgba(26, 130, 255, 0.12);
+      color: #9ec9ff;
+    }
+
+    .hero {
+      max-width: 38rem;
+      margin: 9rem auto 0;
+      padding: 0 1.25rem 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0.85rem auto 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 820px) {
+      .bar.is-open .mega { grid-template-columns: 1fr; min-height: 0; }
+      .mains-pane { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .subs-grid { grid-template-columns: 1fr; }
+      .actions .call { display: none; }
+      .nav > a:nth-of-type(n+3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <p class="banner"><b>Design preview only</b> — live header pe abhi nahi. <b>Services</b> open rakha hai. Left = 5 main services. Un pe hover → right pe uski saari sub-services.</p>
+
+  <header class="site-header">
+    <div class="bar is-open" id="bar">
+      <a class="logo" href="/" aria-label="DigiWorks AI, home">
+        <img src="/logo-white.png" alt="DigiWorks AI" width="160" height="36" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <div class="svc open" id="svc">
+          <button class="svc-btn" type="button" aria-expanded="true" aria-controls="mega" id="svcBtn">
+            Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+        </div>
+        <a href="#">Solutions</a>
+        <a href="#">Industries</a>
+        <a href="#">Hire Developers</a>
+        <a href="#">Company</a>
+        <a class="case" href="#">Case Studies</a>
+      </nav>
+
+      <div class="actions">
+        <a class="call" href="tel:+17373945488">+1 737 394 5488</a>
+        <a class="book" href="#">Book a Call</a>
+      </div>
+
+      <div class="mega" id="mega" role="region" aria-label="Services menu">
+        <div class="glow-a" aria-hidden="true"></div>
+        <div class="glow-b" aria-hidden="true"></div>
+
+        <div class="mains-pane" role="tablist" aria-label="Main services" id="mains"></div>
+
+        <div class="subs-pane">
+          <h2 class="subs-title" id="subsTitle">Generative AI</h2>
+          <div class="subs-grid" id="subsGrid"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Services mega menu — v3</h1>
+    <p>Hover each main service on the left. The right panel updates with that category’s full sub-service list.</p>
+  </section>
+
+  <script>
+    const MENU = [
+      {
+        id: "gen-ai",
+        label: "Generative AI",
+        items: [
+          "Generative AI",
+          "RAG Development Services",
+          "Generative AI Integration",
+          "AI Chatbot Development",
+          "Generative AI Consulting",
+          "LLM Application Development",
+          "AI Agent Development",
+          "AI Copilot Development",
+        ],
+      },
+      {
+        id: "ai-ml",
+        label: "Artificial Intelligence & ML",
+        items: [
+          "Artificial Intelligence & ML",
+          "MLOps Consulting",
+          "AI Automation Services",
+          "Machine Learning Consulting",
+          "Healthcare AI Consulting",
+          "Predictive Analytics Services",
+          "Computer Vision Development",
+          "Machine Learning Development",
+        ],
+      },
+      {
+        id: "data",
+        label: "Data Engineering",
+        items: [
+          "Data Engineering",
+          "Data Management Services",
+          "Data Integration Consulting",
+          "Cloud Migration Services",
+          "BI Consulting",
+          "Data Pipeline & ETL Development",
+          "Data Warehouse Engineering",
+          "Data Migration Services",
+          "Data Analytics Consulting",
+        ],
+      },
+      {
+        id: "software",
+        label: "Software Development",
+        items: [
+          "Software Development",
+          "Custom Software Development Services",
+          "DevOps Consulting Services",
+          "Software Modernization Services",
+          "Cloud Application Development",
+          "SaaS Development",
+          "Healthcare Software Development",
+          "QA Automation Services",
+          "Mobile App Development",
+          "Taxi App Development",
+          "Fitness App Development",
+          "API Development & Integration",
+        ],
+      },
+      {
+        id: "hire",
+        label: "Hire Developers",
+        items: [
+          "Hire Developers",
+          "Hire Dedicated Developers",
+          "Hire Angular Developers",
+          "Hire Laravel Developers",
+          "Hire Golang Developers",
+          "Hire Vue.js Developers",
+          "Hire Cloud Developers",
+          "IT Staff Augmentation",
+          "Hire Generative AI Engineers",
+          "Hire Machine Learning Engineers",
+          "Hire Python Developers",
+          "Hire Node.js Developers",
+          "Hire Data Engineers",
+          "Hire DevOps Engineers",
+          "Hire Data Scientists",
+          "Hire React Developers",
+        ],
+      },
+    ];
+
+    const mainsEl = document.getElementById("mains");
+    const gridEl = document.getElementById("subsGrid");
+    const titleEl = document.getElementById("subsTitle");
+    const svc = document.getElementById("svc");
+    const svcBtn = document.getElementById("svcBtn");
+    const bar = document.getElementById("bar");
+
+    function renderSubs(group) {
+      titleEl.textContent = group.label;
+      gridEl.replaceChildren(
+        ...group.items.map((name, i) => {
+          const a = document.createElement("a");
+          a.href = "#";
+          a.className = "sub-link" + (i === 0 ? " is-hub" : "");
+          a.textContent = name;
+          a.addEventListener("click", (e) => e.preventDefault());
+          return a;
+        }),
+      );
+    }
+
+    function setActive(id) {
+      const group = MENU.find((g) => g.id === id);
+      mainsEl.querySelectorAll(".main-item").forEach((btn) => {
+        const on = btn.dataset.id === id;
+        if (on) btn.setAttribute("aria-current", "true");
+        else btn.removeAttribute("aria-current");
+      });
+      renderSubs(group);
+    }
+
+    MENU.forEach((group) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "main-item";
+      btn.dataset.id = group.id;
+      btn.setAttribute("role", "tab");
+      btn.innerHTML =
+        "<span>" +
+        group.label +
+        '</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7.5 5 12.5 10 7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      btn.addEventListener("mouseenter", () => setActive(group.id));
+      btn.addEventListener("focus", () => setActive(group.id));
+      btn.addEventListener("click", () => setActive(group.id));
+      mainsEl.appendChild(btn);
+    });
+
+    setActive("gen-ai");
+
+    function setOpen(open) {
+      svc.classList.toggle("open", open);
+      bar.classList.toggle("is-open", open);
+      svcBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    svcBtn.addEventListener("click", () => setOpen(!bar.classList.contains("is-open")));
+    svcBtn.addEventListener("mouseenter", () => setOpen(true));
+  </script>
+</body>
+</html>
