@@ -254,7 +254,7 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
         <div class="grid-floor absolute inset-x-[-30%] bottom-[-70%] h-[200%] rotate-180 opacity-70"></div>
       </div>
       <div class="dw-hero-grid relative z-10 mx-auto grid max-w-7xl items-center gap-10">
-        <div>
+        <div class="dw-hero-copy">
           <nav class="mb-6 flex flex-wrap items-center gap-2 text-xs text-dusk/55" aria-label="Breadcrumb">
             <a href="/">Home</a><span>/</span><span>Services</span><span>/</span><span>Generative AI</span>
           </nav>
@@ -268,12 +268,9 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
             <a class="btn-ghost" href="#services">Explore our services</a>
           </div>
         </div>
-        <div class="glass relative hidden h-80 overflow-hidden rounded-3xl lg:block" aria-hidden="true">
-          <div class="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-cyan/40 bg-electric/20"></div>
-          <span class="absolute left-[16%] top-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Mail</span>
-          <span class="absolute right-[16%] top-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Docs</span>
-          <span class="absolute left-[16%] bottom-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Data</span>
-          <span class="absolute right-[16%] bottom-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Review</span>
+        <div class="dw-hero-visual hud relative w-full overflow-hidden rounded-3xl border border-white/10">
+          <img src="/photos/hero-generative-ai-1920.webp" alt="Abstract visualization of generative AI" class="absolute inset-0 h-full w-full object-cover" width="1920" height="1080" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-electric/30 via-transparent to-violet/20"></div>
         </div>
       </div>
     </section>
@@ -628,9 +625,10 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
   .dw-item:hover .dw-drop, .dw-item:focus-within .dw-drop { visibility: visible; opacity: 1; }
   .dw-svc button.is-on { background: rgba(48, 142, 255, 0.12); color: #eef0f4; }
   .dw-flow, .dw-hero-grid { display: grid; gap: 2rem; }
+  .dw-hero-visual { aspect-ratio: 16 / 9; }
   @media (min-width: 1024px) {
     .dw-flow { grid-template-columns: repeat(4, 1fr); }
-    .dw-hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+    .dw-hero-grid { grid-template-columns: 1.05fr 0.95fr; }
   }
   .gai summary { list-style: none; }
   .gai summary::-webkit-details-marker { display: none; }
