@@ -1,0 +1,652 @@
+---
+import { generativeAiDevelopmentCopy as copy } from '../data/copy/generative-ai-development';
+
+const serviceGroups = [
+  {
+    label: 'Generative AI',
+    items: [
+      ['Generative AI', '/solutions/generative-ai'],
+      ['RAG Development Services', '/contact'],
+      ['Generative AI Integration', '/services/generative-ai-development'],
+      ['AI Chatbot Development', '/services/ai-chatbot-development'],
+      ['Generative AI Consulting', '/contact'],
+      ['LLM Application Development', '/services/generative-ai-development'],
+      ['AI Agent Development', '/services/ai-agent-development'],
+      ['AI Copilot Development', '/contact'],
+    ],
+  },
+  {
+    label: 'Artificial Intelligence & ML',
+    items: [
+      ['Artificial Intelligence & ML', '/services/artificial-intelligence'],
+      ['MLOps Consulting', '/services/mlops-setup'],
+      ['AI Automation Services', '/solutions/ai-automation'],
+      ['Machine Learning Consulting', '/services/machine-learning'],
+      ['Healthcare AI Consulting', '/industries/ai-for-healthcare'],
+      ['Predictive Analytics Services', '/solutions/predictive-analytics'],
+      ['Computer Vision Development', '/solutions/computer-vision-image-recognition'],
+      ['Machine Learning Development', '/services/machine-learning-development'],
+    ],
+  },
+  {
+    label: 'Data Engineering',
+    items: [
+      ['Data Engineering', '/services/data-engineering'],
+      ['Data Management Services', '/services/data-and-cloud'],
+      ['Data Integration Consulting', '/services/automation-and-integration'],
+      ['Cloud Migration Services', '/services/cloud-architecture-and-deployment'],
+      ['BI Consulting', '/contact'],
+      ['Data Pipeline & ETL Development', '/services/data-engineering'],
+      ['Data Warehouse Engineering', '/services/data-and-cloud'],
+      ['Data Analytics Consulting', '/services/data-and-cloud'],
+    ],
+  },
+  {
+    label: 'Software Development',
+    items: [
+      ['Software Development', '/services/mobile-app-development'],
+      ['Custom Software Development Services', '/contact'],
+      ['DevOps Consulting Services', '/services/cloud-and-devops'],
+      ['Cloud Application Development', '/services/cloud-architecture-and-deployment'],
+      ['Mobile App Development', '/services/mobile-app-development'],
+      ['API Development & Integration', '/services/automation-and-integration'],
+    ],
+  },
+  {
+    label: 'Hire Developers',
+    items: [
+      ['Hire Developers', '/hire/hire-ai-engineers'],
+      ['Hire Dedicated Developers', '/hire/dedicated-ai-pods'],
+      ['Hire Generative AI Engineers', '/hire/hire-ai-engineers'],
+      ['Hire Machine Learning Engineers', '/hire/hire-ml-engineers'],
+      ['Hire Data Scientists', '/hire/hire-data-scientists'],
+      ['Hire React Developers', '/contact'],
+    ],
+  },
+];
+
+const menus = [
+  {
+    label: 'Solutions',
+    items: [
+      ['AI Automation', '/solutions/ai-automation'],
+      ['Predictive Analytics', '/solutions/predictive-analytics'],
+      ['Conversational AI', '/solutions/conversational-ai'],
+      ['Generative AI', '/solutions/generative-ai'],
+      ['AI in Cybersecurity', '/solutions/ai-for-cybersecurity'],
+      ['Image Intelligence', '/solutions/computer-vision-image-recognition'],
+    ],
+  },
+  {
+    label: 'Industries',
+    items: [
+      ['Healthcare', '/industries/ai-for-healthcare'],
+      ['Fintech', '/industries/ai-for-fintech'],
+      ['Retail & E-commerce', '/industries/ai-for-retail-and-ecommerce'],
+      ['Manufacturing', '/industries/ai-for-manufacturing'],
+      ['Logistics & Supply Chain', '/industries/ai-for-logistics-and-supply-chain'],
+      ['Real Estate', '/industries/ai-for-real-estate'],
+      ['Education', '/industries/ai-for-education'],
+    ],
+  },
+  {
+    label: 'Hire Developers',
+    items: [
+      ['Hire AI Engineers', '/hire/hire-ai-engineers'],
+      ['Hire ML Engineers', '/hire/hire-ml-engineers'],
+      ['Hire Data Scientists', '/hire/hire-data-scientists'],
+      ['Hire NLP Engineers', '/hire/hire-nlp-engineers'],
+      ['Hire Computer Vision Developers', '/hire/hire-computer-vision-developers'],
+      ['Dedicated AI Pods', '/hire/dedicated-ai-pods'],
+    ],
+  },
+  {
+    label: 'Company',
+    items: [
+      ['About Us', '/about'],
+      ['Meet the Team', '/team'],
+      ['Case Studies', '/case-studies'],
+      ['Blog', '/blog'],
+      ['AI Readiness Score', '/ai-readiness'],
+      ['Contact Us', '/contact'],
+    ],
+  },
+];
+
+const services = [
+  {
+    title: 'AI Chatbot Development',
+    href: '/services/ai-chatbot-development',
+    text: 'Create assistants that answer customer questions using approved information, identify when a person should take over, and connect with existing support tools.',
+  },
+  {
+    title: 'AI Agent Development',
+    href: '/services/ai-agent-development',
+    text: 'Build agents that coordinate multi-step tasks across approved APIs. Set tool permissions, checkpoints and human approval for consequential actions.',
+  },
+  {
+    title: 'RAG Development Services',
+    href: '/contact',
+    text: 'Connect language models to authorized documents and databases using retrieval-augmented generation. Design indexing, permission-aware retrieval, citations and tests for grounded answers.',
+  },
+  {
+    title: 'Generative AI Consulting',
+    href: '/contact',
+    text: 'Identify viable use cases, assess data readiness, compare model options and establish an implementation roadmap before a production build.',
+  },
+  {
+    title: 'AI Copilot Development',
+    href: '/contact',
+    text: 'Embed contextual AI assistance in everyday software. Support employees with drafting, search and structured recommendations while allowing them to review or reject generated content.',
+  },
+  {
+    title: 'Generative AI Integration',
+    href: '/services/automation-and-integration',
+    text: 'Add AI functionality to existing applications through APIs, identify providers and workflow systems, and plan authentication, error handling and data boundaries.',
+  },
+  {
+    title: 'LLM Application Development',
+    href: '#process',
+    text: 'Develop applications around large language models, from document assistants to AI-powered product features. Select models, manage prompts and monitor usage costs.',
+  },
+];
+
+const industries = [
+  ['Technology & SaaS', 'AI features, support assistants and product knowledge.'],
+  ['Healthcare', 'Administrative document workflows and internal knowledge, subject to privacy requirements.'],
+  ['Financial services', 'Research assistance, document review and internal policy search with appropriate controls.'],
+  ['Retail & e-commerce', 'Catalog assistance, product discovery and customer support.'],
+  ['Manufacturing', 'Technical manuals, troubleshooting guidance and operational knowledge.'],
+  ['Professional services', 'Research, proposal drafting and document review with expert oversight.'],
+];
+
+const steps = [
+  ['01', 'Discovery & feasibility', 'Identify the workflow, users, constraints and baseline metrics. Agree on acceptance criteria and assess whether generative AI is appropriate.', 'Output: use-case brief and scope'],
+  ['02', 'Data & architecture', 'Review data access, quality and retention. Compare models, retrieval and integration options, then define security and deployment boundaries.', 'Output: architecture and evaluation plan'],
+  ['03', 'Prototype & evaluation', 'Build a narrow proof of concept using representative inputs. Test quality, safety, cost and latency before expanding scope.', 'Output: pilot and evaluation results'],
+  ['04', 'Engineering & integration', 'Implement application logic, APIs, access controls, test suites and operational safeguards. Validate with actual users and staged rollout criteria.', 'Output: tested application'],
+  ['05', 'Deployment & improvement', 'Plan monitoring, incident handling, documentation and handoff. Review quality, usage and costs against agreed goals after deployment.', 'Output: deployment and support plan'],
+];
+
+const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-dusk placeholder-dusk/40 outline-none transition-all duration-300 focus:border-coral/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_3px_rgba(26,130,255,0.15)]';
+---
+
+<div class="gai relative min-h-screen overflow-x-clip">
+  <header class="fixed inset-x-0 top-0 z-50">
+      <div class="mx-auto mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[#0c1424]/70 px-4 py-2.5 backdrop-blur-xl sm:mx-5 xl:mx-auto">
+      <a class="shrink-0" href="/" aria-label="DigiWorks AI, home">
+        <img src="/logo-white.png" alt="DigiWorks AI" class="h-9 w-auto" width="280" height="46" />
+      </a>
+      <nav class="hidden items-center lg:flex" aria-label="Primary">
+        <div class="dw-svc relative" data-svc>
+          <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70" aria-haspopup="true">
+            Services
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="dw-mega">
+            <div class="grid overflow-hidden rounded-3xl border border-white/10 bg-[#09070b]/95 shadow-[0_24px_64px_rgba(0,0,0,0.65)]" style="grid-template-columns:16.5rem minmax(0,1fr);min-height:22rem">
+              <div class="flex flex-col gap-1 border-r border-white/10 bg-white/[0.03] px-3 pb-3 pt-6">
+                {serviceGroups.map((group, index) => (
+                  <button type="button" data-group={index} class:list={['flex items-center justify-between rounded-xl px-3 py-3 text-left text-sm font-semibold', index === 0 ? 'is-on' : 'text-dusk/75']}>
+                    {group.label}
+                  </button>
+                ))}
+              </div>
+              <div class="px-5 pb-5 pt-6">
+                {serviceGroups.map((group, index) => (
+                  <div data-panel={index} hidden={index !== 0}>
+                    <p class="mb-3 text-lg font-bold text-dusk">{group.label}</p>
+                    <div class="grid gap-1 sm:grid-cols-2">
+                      {group.items.map(([label, href], itemIndex) => (
+                        <a href={href} class:list={['block rounded-lg px-3 py-2.5 text-sm', itemIndex === 0 ? 'font-semibold text-cyan' : 'text-dusk/75']}>{label}</a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        {menus.map((menu) => (
+          <div class="dw-item relative">
+            <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70" aria-haspopup="true">
+              {menu.label}
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            </button>
+            <div class="dw-drop absolute left-0 top-full z-50 mt-3 w-72 rounded-2xl border border-white/10 bg-[#09070b]/95 p-2 shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+              {menu.items.map(([label, href]) => (
+                <a class="block rounded-lg px-3 py-2.5 text-sm text-dusk/75" href={href}>{label}</a>
+              ))}
+            </div>
+          </div>
+        ))}
+        <a class="ml-1 rounded-full px-3 py-2 text-sm font-semibold" href="/case-studies"><span class="text-gradient">Case Studies</span></a>
+      </nav>
+      <div class="ml-3 hidden shrink-0 items-center gap-4 lg:flex">
+        <a href="tel:+17373945488" class="flex items-center gap-2 rounded-full border border-[#4c9eff]/20 bg-[#0c1424]/70 px-5 py-2 text-sm font-semibold text-white" aria-label="Call us at +1 737 394 5488">
+          <span class="hidden xl:inline">+1 737 394 5488</span>
+        </a>
+        <a class="btn-primary whitespace-nowrap !px-5" href="#inquiry">Book a Call</a>
+      </div>
+      <button id="dw-menu-btn" type="button" aria-label="Menu" class="flex h-11 w-11 items-center justify-center rounded-xl border border-dusk/15 lg:hidden">
+        <span class="block h-0.5 w-5 bg-white"></span>
+      </button>
+    </div>
+    <div id="dw-mobile" hidden class="mx-5 mt-2 rounded-2xl border border-white/10 bg-[#0c1424] p-4 lg:hidden">
+      {menus.map((menu) => (
+        <div class="mb-3">
+          <p class="px-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan">{menu.label}</p>
+          {menu.items.map(([label, href]) => <a class="block rounded-lg px-2 py-2 text-sm text-dusk/80" href={href}>{label}</a>)}
+        </div>
+      ))}
+      <a class="btn-primary mt-2 w-full" href="#inquiry">Book a Call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="relative overflow-hidden px-5 pb-24 pt-40 sm:px-8 md:pb-32 md:pt-48">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -left-32 top-10 h-96 w-96 rounded-full bg-electric/15 blur-[120px]"></div>
+        <div class="absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-cyan/10 blur-[110px]"></div>
+        <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-violet/10 blur-[100px]"></div>
+      </div>
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[300px]" aria-hidden="true">
+        <div class="grid-floor absolute inset-x-[-30%] bottom-[-70%] h-[200%] rotate-180 opacity-70"></div>
+      </div>
+      <div class="dw-hero-grid relative z-10 mx-auto grid max-w-7xl items-center gap-10">
+        <div>
+          <nav class="mb-6 flex flex-wrap items-center gap-2 text-xs text-dusk/55" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><span>Services</span><span>/</span><span>Generative AI</span>
+          </nav>
+          <span class="chip"><span class="h-1.5 w-1.5 rounded-full bg-coral"></span>Custom AI engineering for US businesses</span>
+          <h1 class="mt-6 font-display text-3xl font-bold leading-[1.18] text-dusk sm:text-4xl md:text-5xl">
+            <span class="text-dusk">Generative AI </span><span class="text-gradient">{copy.h1Gradient}</span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-base leading-relaxed text-dusk/70 md:text-lg">{copy.hero} Work runs from initial strategy through integration and deployment.</p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a class="btn-primary" href="#inquiry">Discuss your AI project <span aria-hidden="true">→</span></a>
+            <a class="btn-ghost" href="#services">Explore our services</a>
+          </div>
+        </div>
+        <div class="glass relative hidden h-80 overflow-hidden rounded-3xl lg:block" aria-hidden="true">
+          <div class="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-cyan/40 bg-electric/20"></div>
+          <span class="absolute left-[16%] top-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Mail</span>
+          <span class="absolute right-[16%] top-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Docs</span>
+          <span class="absolute left-[16%] bottom-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Data</span>
+          <span class="absolute right-[16%] bottom-[22%] rounded-xl border border-white/15 bg-white/[0.04] px-3 py-2 text-xs text-dusk/70">Review</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative">
+      <div class="mx-auto max-w-7xl">
+        <span class="chip">Engineered around your needs</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">From AI strategy to a working application</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Define the business outcome, connect the right data and evaluate performance before scaling.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Business-first discovery</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Start with a measurable problem and a realistic scope.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Integrated engineering</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Plan data, models, APIs and the user experience together.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Responsible deployment</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Design review, monitoring and access controls from the outset.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative !pt-0">
+      <div class="mx-auto max-w-3xl">
+        <span class="chip">Understand the approach</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">What is generative AI development?</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">Generative AI development is the process of building software that uses AI models to create new content or responses from user input and relevant context. It combines model selection, data preparation, application engineering, testing and deployment. Most business applications use existing foundation models rather than training a new model from scratch.</p>
+        <p class="mt-4 text-base leading-relaxed text-dusk/70">For a US business, a useful implementation starts with a specific operational or product need: an assistant that helps support teams resolve inquiries, a search experience for internal knowledge, or an application that processes documents for human review. The architecture should reflect accuracy requirements, data sensitivity, expected usage and budget.</p>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative" id="services">
+      <div class="relative mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="chip">Our generative AI services</span>
+          <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">End-to-end generative AI development services</h2>
+          <p class="mt-5 text-base leading-relaxed text-dusk/70">Choose a focused service or combine capabilities into a custom implementation. Each service addresses a distinct stage or application of AI engineering.</p>
+        </div>
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          {services.map((item) => (
+            <article class="glass rounded-3xl p-8">
+              <h3 class="font-display text-xl font-bold text-dusk"><a href={item.href}>{item.title}</a></h3>
+              <p class="mt-3 text-sm leading-relaxed text-dusk/70">{item.text}</p>
+              <a class="mt-5 inline-flex text-sm font-semibold text-cyan" href={item.href}>Explore {item.title} →</a>
+            </article>
+          ))}
+          <article class="dw-ink rounded-3xl p-8">
+            <h3 class="font-display text-xl font-bold text-dusk">Not sure which service fits?</h3>
+            <p class="mt-3 text-sm leading-relaxed text-dusk/70">Tell us what you want to achieve. We can discuss the right combination of consulting, AI development and integration.</p>
+            <a class="btn-primary mt-6" href="#inquiry">Talk to our team</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad aurora relative">
+      <div class="relative mx-auto max-w-7xl">
+        <span class="chip">Built for business workflows</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Custom generative AI solutions for your business</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Match the solution to a real workflow and define how success will be evaluated before committing to a production build.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Customer experience</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Assist support teams with draft responses, relevant knowledge and escalation. Track resolution time, answer accuracy and customer satisfaction.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Enterprise knowledge</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Help employees locate relevant policies, manuals and product documentation. Evaluate citation accuracy, permission enforcement and time to answer.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Document workflows</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Summarize, classify or extract information from contracts, invoices and reports. Use validation and reviewer feedback to measure usable output.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">AI-enabled products</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Introduce contextual search, writing assistance and other AI features into SaaS products. Measure adoption, task success, latency and cost per interaction.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative">
+      <div class="mx-auto max-w-7xl">
+        <span class="chip">Illustrative use case — not a client case study</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">How an enterprise knowledge assistant works</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Consider a support team that searches scattered product documentation. A RAG assistant can retrieve approved passages, provide a draft response with sources and escalate ambiguous questions for review.</p>
+        <div class="dw-flow mt-12">
+          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">User request</strong><span class="mt-2 block text-sm text-dusk/55">Identity + policy</span></div>
+          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Retrieve</strong><span class="mt-2 block text-sm text-dusk/55">Approved sources</span></div>
+          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Generate</strong><span class="mt-2 block text-sm text-dusk/55">Model + context</span></div>
+          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Review</strong><span class="mt-2 block text-sm text-dusk/55">Citations + controls</span></div>
+        </div>
+        <p class="mt-4 rounded-full border border-cyan/30 px-4 py-2 text-center text-sm font-semibold text-dusk">Evaluation and feedback loop</p>
+        <p class="mt-4 text-sm leading-relaxed text-dusk/55">Example acceptance criteria: correct citation references, appropriate handling of unknown questions, no retrieval outside user permissions, acceptable response latency and a sustainable cost per request. These are proposed evaluation measures, not achieved client results.</p>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative">
+      <div class="mx-auto max-w-7xl">
+        <span class="chip">Industry applications</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Generative AI for US industries</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Adapt applications to the workflows, data policies and operating requirements of your business. The following examples are potential applications, not claims of completed projects.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {industries.map(([title, text]) => (
+            <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">{title}</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">{text}</p></article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad aurora relative">
+      <div class="relative mx-auto max-w-3xl">
+        <span class="chip">Model-agnostic architecture</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Generative AI technology stack</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">Choose tools according to task quality, privacy, latency, deployment constraints and total cost. Examples of technologies to evaluate include:</p>
+        <div class="mt-8 space-y-4">
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Foundation models</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">OpenAI models, Claude, Gemini and open-weight models such as Llama. Compare output quality, usage terms and hosting options.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Data and retrieval</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Embedding models, vector search such as pgvector or Pinecone, document processing and permission-aware indexing.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Application and orchestration</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Python, TypeScript, APIs, structured outputs, workflow orchestration and integrations with existing systems.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Cloud and observability</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">AWS, Azure or Google Cloud where appropriate, plus evaluation tooling, logging and usage monitoring.</p></article>
+        </div>
+        <p class="mt-4 text-sm text-dusk/55">Technology examples do not imply vendor partnerships or certifications.</p>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative" id="process">
+      <div class="mx-auto max-w-3xl">
+        <span class="chip">Clear deliverables at every stage</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Our generative AI development process</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">Reduce uncertainty with staged decisions and defined acceptance criteria. The proposed approach is tailored to project scope and business risk.</p>
+        <ol class="mt-12 space-y-4">
+          {steps.map(([num, title, text, output]) => (
+            <li class="glass flex gap-4 rounded-3xl p-6">
+              <span class="font-display text-sm font-bold text-cyan">{num}</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-dusk">{title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-dusk/70">{text}</p>
+                <p class="mt-2 text-sm text-cyan">{output}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-pad aurora relative">
+      <div class="relative mx-auto max-w-3xl">
+        <span class="chip">Security and governance</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Build responsible AI into the architecture</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">AI outputs can be incorrect and systems can expose data if controls are inadequate. Design safeguards around the application's actual risk profile.</p>
+        <div class="mt-8 space-y-4">
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Data protection</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Map data flows and retention, apply least-privilege access, evaluate provider terms and define encryption requirements.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Output quality</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Test representative and adversarial inputs, track unsupported answers and include human review for high-impact decisions.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Operational control</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Define tool permissions, audit trails, cost limits, alerts and incident procedures. Review applicable privacy or sector requirements with qualified specialists.</p></article>
+        </div>
+        <p class="mt-4 text-sm text-dusk/55">Compliance depends on the complete implementation and operating environment. No blanket compliance certification is implied.</p>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="chip">Project evidence</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Evaluate the work behind the technology</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">When selecting a generative AI development partner, ask for a demonstration using representative data, an explanation of architecture trade-offs and evidence of quality testing. Explore our case studies where relevant, or discuss the illustrative workflow above.</p>
+        <a class="btn-primary mt-8" href="/case-studies">View case studies <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light relative !pt-0">
+      <div class="mx-auto max-w-7xl">
+        <span class="chip">A practical development partner</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Why choose DigiWorks AI for generative AI development?</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">We focus on the connection between your business goal and the technical implementation. The proposed engagement approach emphasizes scope clarity, reviewable deliverables and maintainable software.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">One connected roadmap</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Align consulting, software development and data engineering with an agreed outcome.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Decisions you can review</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Evaluate model, hosting and integration trade-offs rather than selecting tools by popularity.</p></article>
+          <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">Quality over hype</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Define acceptance criteria and evaluate real workflows before expanding deployment.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad aurora relative">
+      <div class="relative mx-auto max-w-3xl">
+        <span class="chip">Plan your investment</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">How to scope a generative AI project</h2>
+        <p class="mt-5 text-base leading-relaxed text-dusk/70">Project cost depends on use-case complexity, data readiness, integrations, model usage, security and long-term support. Discuss the engagement that fits your current stage.</p>
+        <div class="mt-8 space-y-4">
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Discovery and roadmap</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams validating a use case and assessing feasibility.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Proof of concept</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams testing a narrowly scoped workflow with defined evaluation criteria.</p></article>
+          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Production development</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams ready to integrate, test and launch a maintainable AI application.</p></article>
+        </div>
+        <a class="btn-primary mt-8" href="#inquiry">Request a project discussion</a>
+      </div>
+    </section>
+
+    <section class="section-pad aurora relative" id="faq">
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -left-32 top-10 h-96 w-96 rounded-full bg-electric/15 blur-[120px]"></div>
+        <div class="absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-cyan/10 blur-[110px]"></div>
+      </div>
+      <div class="relative mx-auto max-w-3xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="chip"><span class="h-1.5 w-1.5 rounded-full bg-coral"></span>FAQ</span>
+          <h2 class="mt-5 font-display text-2xl font-bold leading-snug text-dusk sm:text-3xl md:text-4xl"><span class="text-gradient">{copy.faqTitle}</span></h2>
+          <div class="mx-auto mt-5 h-[3px] w-24 rounded-full bg-gradient-to-r from-cyan via-electric to-violet" aria-hidden="true"></div>
+          <p class="mt-5 text-base leading-relaxed text-dusk/75">Explore practical questions about planning and building AI applications.</p>
+        </div>
+        <div class="mt-12 space-y-4">
+          {copy.faqs.map((item, index) => (
+            <details class="glass group relative overflow-hidden rounded-3xl">
+              <div class="g-border absolute inset-0 rounded-3xl" aria-hidden="true"></div>
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left">
+                <span class="flex items-baseline gap-4">
+                  <span class="font-display text-xs font-bold text-coral/70">{String(index + 1).padStart(2, '0')}</span>
+                  <span class="font-display text-base font-bold text-dusk md:text-lg">{item.q}</span>
+                </span>
+                <span class="dw-plus flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-coral to-violet text-white">+</span>
+              </summary>
+              <p class="px-6 pb-6 pl-[4.2rem] text-sm leading-relaxed text-dusk/70 md:text-base">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden px-5 py-16 sm:px-8" id="inquiry">
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -left-32 top-10 h-96 w-96 rounded-full bg-coral/15 blur-[120px]"></div>
+        <div class="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-violet/15 blur-[110px]"></div>
+      </div>
+      <div class="relative mx-auto max-w-7xl">
+        <div class="glass-strong hud relative overflow-hidden rounded-[2.5rem] p-8 md:p-14">
+          <div class="relative grid gap-12 lg:grid-cols-2">
+            <div>
+              <span class="chip"><span class="h-1.5 w-1.5 rounded-full bg-coral"></span>Let's build</span>
+              <h2 class="mt-5 font-display text-3xl font-extrabold leading-[1.1] text-dusk sm:text-4xl">Build the right AI solution <span class="text-gradient">for your business.</span></h2>
+              <p class="mt-4 max-w-md text-[15px] leading-relaxed text-dusk/70">Share your goals, existing systems and requirements. We can discuss a practical development path, project scope and next steps.</p>
+              <a href="tel:+17373945488" class="mt-8 flex items-center gap-3 text-sm text-dusk/80">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl border border-dusk/15 bg-dusk/[0.05] text-coral">☎</span>
+                +1 737 394 5488
+              </a>
+            </div>
+            <form class="space-y-3 lg:border-l lg:border-white/10 lg:pl-12" action="/contact" method="get">
+              <div class="grid gap-3 sm:grid-cols-2">
+                <input class={field} name="name" required placeholder="Full name" aria-label="Full name" autocomplete="name" />
+                <input class={field} name="email" type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email" />
+              </div>
+              <input class={field} name="company" placeholder="Company" aria-label="Company" autocomplete="organization" />
+              <textarea class={`${field} resize-none`} name="message" required rows="4" placeholder="What are you building? Tell us about your project…" aria-label="Project details"></textarea>
+              <button class="btn-primary w-full !py-4 !text-base" type="submit">Start the conversation <span aria-hidden="true">→</span></button>
+              <p class="text-center text-[11px] text-dusk/45">We reply within 1 business day. By submitting you agree to our <a class="underline underline-offset-2 hover:text-dusk/70" href="/privacy-policy">Privacy Policy</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative mt-24 overflow-hidden">
+    <div class="h-px bg-gradient-to-r from-transparent via-coral/60 to-transparent" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <img src="/logo-white.png" alt="DigiWorks AI" class="h-10 w-auto" width="280" height="46" />
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-dusk/70">DigiWorks AI helps businesses design, develop, and deploy AI solutions that address real operational challenges. Through AI engineering, intelligent automation, and custom software development, we turn complex business requirements into practical technology solutions.</p>
+        </div>
+        <div>
+          <h3 class="mb-4 font-display text-xs font-bold uppercase tracking-[0.22em] text-cyan">Company</h3>
+          <ul class="space-y-2.5">
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/about"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>About Us</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/team"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Meet the Team</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/case-studies"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Case Studies</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/blog"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Blog</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/ai-readiness"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>AI Readiness Score</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/contact"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-4 font-display text-xs font-bold uppercase tracking-[0.22em] text-cyan">Services</h3>
+          <ul class="space-y-2.5">
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/artificial-intelligence"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Artificial Intelligence</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/machine-learning"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Machine Learning</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/automation-and-integration"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Automation &amp; Integration</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/data-and-cloud"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Data and Cloud</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/security-and-compliance"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Security &amp; Compliance</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/services/ai-training-and-support"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>AI Training &amp; Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-4 font-display text-xs font-bold uppercase tracking-[0.22em] text-cyan">Solutions</h3>
+          <ul class="space-y-2.5">
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/ai-automation"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>AI Automation</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/predictive-analytics"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Predictive Analytics</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/conversational-ai"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Conversational AI</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/generative-ai"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Generative AI</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/ai-for-cybersecurity"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>AI in Cybersecurity</a></li>
+            <li><a class="group inline-flex items-center gap-2 text-sm text-dusk/70 hover:text-dusk" href="/solutions/computer-vision-image-recognition"><span class="h-px w-0 bg-gradient-to-r from-coral to-violet transition-all duration-300 group-hover:w-3"></span>Image Intelligence</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-14 border-t border-dusk/10 pt-10">
+        <div class="mb-6 flex items-center justify-between">
+          <div>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-dusk/35">Presence</p>
+            <h3 class="mt-1 font-display text-lg font-bold text-dusk">Our Offices</h3>
+          </div>
+          <a class="text-xs font-semibold text-cyan/70 hover:text-cyan" href="/contact">View all →</a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="group relative overflow-hidden rounded-2xl border border-white/[0.09]">
+            <div class="h-36 w-full bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=600&q=70&auto=format&fit=crop')"></div>
+            <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/30 to-black/70"></div>
+            <span class="absolute left-3 top-3 rounded-full bg-coral/80 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-widest text-white">HQ</span>
+            <span class="absolute right-3 top-3 text-xl leading-none">🇺🇸</span>
+            <div class="p-4">
+              <h4 class="font-display text-base font-bold text-dusk">Austin</h4>
+              <p class="mt-0.5 text-[11px] font-medium text-dusk/45">United States</p>
+              <p class="mt-2 text-[11px] leading-relaxed text-dusk/55">716 Congress Ave #200, Austin, TX 78701, USA</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=716%20Congress%20Ave%20%23200%2C%20Austin%2C%20TX%2078701%2C%20USA" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-cyan/80 hover:text-cyan">View on Map</a>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl border border-white/[0.09]">
+            <div class="h-36 w-full bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=70&auto=format&fit=crop')"></div>
+            <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/30 to-black/70"></div>
+            <span class="absolute right-3 top-3 text-xl leading-none">🇬🇧</span>
+            <div class="p-4">
+              <h4 class="font-display text-base font-bold text-dusk">London</h4>
+              <p class="mt-0.5 text-[11px] font-medium text-dusk/45">United Kingdom</p>
+              <p class="mt-2 text-[11px] leading-relaxed text-dusk/55">London, United Kingdom</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=London%2C%20United%20Kingdom" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center gap-1.5 text-[11px] font-semibold text-cyan/80 hover:text-cyan">View on Map</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-dusk/10 pt-7 sm:flex-row">
+        <p class="text-xs text-dusk/55">© DigiWorks AI 2026. All rights reserved. · Since 2019</p>
+        <div class="flex gap-5 text-xs">
+          <a class="text-dusk/55 hover:text-cyan" href="/terms-of-use">Terms of Use</a>
+          <a class="text-dusk/55 hover:text-cyan" href="/privacy-policy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script is:inline>
+  const mobile = document.getElementById('dw-mobile');
+  document.getElementById('dw-menu-btn')?.addEventListener('click', () => {
+    if (mobile.hasAttribute('hidden')) mobile.removeAttribute('hidden');
+    else mobile.setAttribute('hidden', '');
+  });
+  document.querySelectorAll('[data-group]').forEach((button) => {
+    const show = () => {
+      const root = button.closest('[data-svc]');
+      root.querySelectorAll('[data-group]').forEach((item) => item.classList.toggle('is-on', item === button));
+      root.querySelectorAll('[data-panel]').forEach((panel) => {
+        panel.hidden = panel.dataset.panel !== button.dataset.group;
+      });
+    };
+    button.addEventListener('mouseenter', show);
+    button.addEventListener('focus', show);
+  });
+</script>
+
+<style is:global>
+  .dw-mega, .dw-drop { visibility: hidden; opacity: 0; transition: opacity 160ms ease; }
+  .dw-mega { position: fixed; top: 5.25rem; left: max(0.75rem, calc(50vw - 36rem)); width: min(72rem, calc(100vw - 1.5rem)); z-index: 80; }
+  .dw-svc:hover .dw-mega, .dw-svc:focus-within .dw-mega,
+  .dw-item:hover .dw-drop, .dw-item:focus-within .dw-drop { visibility: visible; opacity: 1; }
+  .dw-svc button.is-on { background: rgba(48, 142, 255, 0.12); color: #eef0f4; }
+  .dw-flow, .dw-hero-grid { display: grid; gap: 2rem; }
+  @media (min-width: 1024px) {
+    .dw-flow { grid-template-columns: repeat(4, 1fr); }
+    .dw-hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  }
+  .gai summary { list-style: none; }
+  .gai summary::-webkit-details-marker { display: none; }
+  details[open] .dw-plus { transform: rotate(45deg); }
+  .dw-plus { transition: transform 0.3s; }
+  .dw-light { background: #fff; color: #122033; }
+  .dw-light :is(h2, h3, .text-dusk, strong) { color: #102033; }
+  .dw-light :is(.text-dusk\/70, .text-dusk\/55, .text-dusk\/45) { color: #526277; }
+  .dw-light .chip { color: #1a4fd8; background: #eef4ff; border-color: transparent; }
+  .dw-light .glass {
+    background: #fff;
+    border: 1px solid #e3ebf4;
+    box-shadow: 0 12px 32px rgba(16, 32, 51, 0.06);
+    backdrop-filter: none;
+  }
+  .dw-ink { background: #0a121e; }
+  .dw-ink h3 { color: #fff; }
+  .dw-ink p { color: rgba(238, 240, 244, 0.75); }
+</style>

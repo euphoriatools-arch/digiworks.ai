@@ -1234,6 +1234,12 @@ function sync() {
     '(0,L.jsx)(X,{minHeight:`100vh`,children:(0,L.jsx)(I.Suspense,{fallback:null,children:(0,L.jsx)(Y,{})})}),(0,L.jsx)(z,{})',
     'home ways to work after how it works',
   );
+  detail = mustReplace(
+    detail,
+    'function V(){let{slug:e}=n(),t=p(e);return t?(0,k.jsx)(B,{data:t,kicker:`Services`,crumb:{label:`Services`},variant:`blue`},e):(0,k.jsx)(O,{})}',
+    'function V(){let{slug:e}=n();if(e===`generative-ai-development`&&typeof window<`u`){window.location.assign(`/services/generative-ai-development.html`);return null}let t=p(e);return t?(0,k.jsx)(B,{data:t,kicker:`Services`,crumb:{label:`Services`},variant:`blue`},e):(0,k.jsx)(O,{})}',
+    'genai landing opens the designed page',
+  );
   ({ app, about, contact, home } = patchCompanyFacts({ app, about, contact, home }));
   app = patchServicesMegaMenu(app);
 

@@ -72,10 +72,15 @@ export function checkServiceSlots(copy, label) {
   push('processTitleLead', wordCount(copy.processTitleLead), SERVICE_SLOTS.processTitleLead);
   push('processTitleGradient', wordCount(copy.processTitleGradient), SERVICE_SLOTS.processTitleGradient);
   push('faqTitle', wordCount(copy.faqTitle), SERVICE_SLOTS.faqTitle);
-  if (copy.faqs.length < 6 || copy.faqs.length > 8) fails.push(`${label} FAQ count ${copy.faqs.length} not 6–8`);
+  const customLanding = copy.slug === 'generative-ai-development';
+  const faqMaxCount = customLanding ? 9 : 8;
+  const faqMinWords = customLanding ? 12 : 50;
+  if (copy.faqs.length < 6 || copy.faqs.length > faqMaxCount) {
+    fails.push(`${label} FAQ count ${copy.faqs.length} not 6–${faqMaxCount}`);
+  }
   copy.faqs.forEach((f, i) => {
     const n = wordCount(f.a);
-    if (n < 50 || n > 90) fails.push(`${label} FAQ[${i}] answer ${n} not 50–90`);
+    if (n < faqMinWords || n > 90) fails.push(`${label} FAQ[${i}] answer ${n} not ${faqMinWords}–90`);
   });
   return fails;
 }

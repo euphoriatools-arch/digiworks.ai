@@ -3,14 +3,14 @@ import type { ServicePageCopy } from './types';
 export const generativeAiDevelopmentCopy: ServicePageCopy = {
   slug: 'generative-ai-development',
   name: 'Generative AI Development',
-  title: 'Generative AI Development Services | DigiWorks AI',
+  title: 'Generative AI Development Services in USA | DigiWorks AI',
   description:
-    'Generative AI development: custom LLM applications for named workflows. Dedicated AI Pods ready in 2–3 weeks. See how we work across 15+ industries.',
-  h1: 'Generative AI Development for Workflows',
+    'Partner with DigiWorks AI for generative AI development services in the US, including custom AI solutions, agents, chatbots, RAG, LLM apps and consulting.',
+  h1: 'Generative AI Development Services',
   h1Lead: 'Generative AI',
-  h1Gradient: 'Development for Workflows',
+  h1Gradient: 'Development Services',
   hero:
-    'Generative AI development from DigiWorks AI drafts, summarizes, and generates inside systems US teams already run, with retrieval you can audit.',
+    'Build AI applications that fit your business. DigiWorks AI helps US organizations turn complex workflows into tailored generative AI solutions.',
   offeringsTitle: 'Custom LLM apps we ship',
   offeringsTitleLead: 'Custom LLM apps',
   offeringsTitleGradient: 'we ship',
@@ -27,7 +27,7 @@ export const generativeAiDevelopmentCopy: ServicePageCopy = {
   processTitle: 'A process engineered for outcomes',
   processTitleLead: 'A process engineered',
   processTitleGradient: 'for outcomes',
-  faqTitle: 'GenAI FAQs',
+  faqTitle: 'Frequently asked questions',
   edge: [
     { title: 'Build URL', desc: 'Use-cases stay on the generative solutions page.' },
     { title: 'Not a chatbot', desc: 'Chat UIs stay on AI chatbot development.' },
@@ -46,28 +46,40 @@ export const generativeAiDevelopmentCopy: ServicePageCopy = {
   ],
   faqs: [
     {
-      q: 'What is generative AI development here?',
-      a: 'Custom LLM applications for a named workflow: draft, rewrite, summarize, or generate inside systems you already run, with retrieval you can audit. DigiWorks AI builds that for US teams from Austin. Typical production delivery is 8–20 weeks. This URL owns generative AI development. The solutions page is use-cases, not this build. Chat products are AI Chatbot Development. If you cannot name the workflow, the source of truth, and what the model must never invent, this is the wrong fit. Book a free discovery session with both owners in the room.',
+      q: 'What are generative AI development services?',
+      a: 'They are engineering and consulting services for creating applications that generate text, code, images or other outputs using AI models. They typically cover use-case discovery, model selection, integration, testing and deployment.',
     },
     {
-      q: 'How is this different from generative AI solutions?',
-      a: 'Generative AI solutions own use-cases. This page owns the development company primary: custom LLM applications. Chat UIs are AI Chatbot Development. NLP classify-and-route with no generation stays on NLP. DigiWorks AI will not hide an outcome story inside a build statement of work. Typical windows stay 8–20 weeks after the workflow and source of truth are named. 150+ production AI deployments still need never-invent rules in week one.',
+      q: 'How much does a generative AI development project cost?',
+      a: 'Pricing depends on workflow scope, data access, model usage, integrations, security requirements and support. A prototype generally has a smaller scope than a production application, and discovery establishes a tailored estimate.',
     },
     {
-      q: 'Do you invent productivity percentages?',
-      a: 'No. If the model may invent prices, medical advice, or legal clauses, that must be written as a never-invent rule in week one. Empty retrieval must not look like a confident answer. Cost drivers are retrieval quality, review gates, and how many systems receive the draft. Austin HQ. Dedicated AI Pods ready in 2–3 weeks apply when the workflow is already named. Application security for the LLM path is a sibling URL when tools can dump stores.',
+      q: 'How long does generative AI development take?',
+      a: 'A narrowly scoped pilot may take weeks, whereas complex production deployments can take months. Data readiness, integration complexity, review and acceptance requirements determine the schedule.',
     },
     {
-      q: 'What systems do drafts land in?',
-      a: 'Tools operations already use. Closed APIs stop the work in discovery. A spreadsheet-only landing zone is usually the wrong operational fit. We log prompts, retrieval, and outputs so audit has a path to read. This is not a SOC. Typical first production period sits inside 8–20 weeks. Named certifications are confirmed in scoping, not assumed here.',
+      q: 'Do we need to train a large language model from scratch?',
+      a: 'Usually not. Existing foundation models can often meet requirements with prompt design, retrieval or selective fine-tuning. Training from scratch is resource-intensive and should be justified by a specific need.',
     },
     {
-      q: 'When is this the wrong fit?',
-      a: 'You need a chatbot UI, an NLP pipeline with no generation, or an outcome story with no build. Ungrounded generation is out of scope unless you explicitly want it—and we will push back. DigiWorks AI will say that before you sign. Book a free discovery call if the never-invent list is already written. Work spans 15+ industries.',
+      q: 'What is RAG, and when should we use it?',
+      a: 'Retrieval-augmented generation supplies relevant current information to a model at request time. It is useful when answers need to reference current or private business knowledge, but retrieval and citations still require testing.',
     },
     {
-      q: 'Do you support prompts after launch?',
-      a: 'Yes. After go-live, unowned prompts rot. We keep prompts and sources current as the workflow changes. New sources are change requests. Support is scoped to this application, not an unnamed content department. Typical first production period sits with the 8–20 week delivery, then continues as records change. US teams get Austin hours.',
+      q: 'Can generative AI integrate with existing CRM and ERP systems?',
+      a: 'Yes, provided suitable APIs, authentication and permission controls exist. Integration design should account for read and write access, rate limits, failures and human review.',
+    },
+    {
+      q: 'How do you protect sensitive business data?',
+      a: 'A project should define data flows, access permissions, encryption, retention, vendor terms and monitoring before deployment. Regulated workloads require additional assessment and applicable agreements.',
+    },
+    {
+      q: 'How can we measure return on investment?',
+      a: 'Start with a baseline such as resolution time, manual processing error or cost per task. Compare pilot results with the baseline while accounting for model usage, review time, quality and maintenance costs.',
+    },
+    {
+      q: 'Can you improve an existing AI application?',
+      a: 'An assessment can identify problems with retrieval, prompts, integrations, evaluation, latency or operating cost. Improvements should be tested against representative workflows before rollout.',
     },
   ],
   relatedServices: [
@@ -86,8 +98,7 @@ export const generativeAiDevelopmentCopy: ServicePageCopy = {
     { href: '/industries/ai-for-fintech', label: 'AI for Fintech' },
   ],
   bodyLinks: [
-    { phrase: 'chat UIs stay on AI chatbot development', href: '/services/ai-chatbot-development' },
-    { phrase: 'Guards live on AI Application Security', href: '/services/ai-security' },
-    { phrase: 'Outcome stories stay on Generative AI solutions', href: '/solutions/generative-ai' },
+    { phrase: 'AI Chatbot Development', href: '/services/ai-chatbot-development' },
+    { phrase: 'AI Agent Development', href: '/services/ai-agent-development' },
   ],
 };
