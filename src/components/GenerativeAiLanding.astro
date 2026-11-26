@@ -113,59 +113,164 @@ const menus = [
   },
 ];
 
+const serviceIcon = {
+  chat: '<path d="M6.5 7.2A2.2 2.2 0 0 1 8.7 5h6.6a2.2 2.2 0 0 1 2.2 2.2v4.6a2.2 2.2 0 0 1-2.2 2.2H12l-3 2.2v-2.2H8.7a2.2 2.2 0 0 1-2.2-2.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.2 9.1h5.6M9.2 11.5h3.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  robot: '<rect x="7" y="8.2" width="10" height="7.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="10.2" cy="12" r=".8" fill="currentColor"/><circle cx="13.8" cy="12" r=".8" fill="currentColor"/><path d="M12 5.2v3M9.2 15.8v1.6M14.8 15.8v1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="4.6" r=".9" fill="currentColor"/>',
+  layers: '<path d="M12 4.8 4.8 8.4 12 12l7.2-3.6L12 4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m4.8 12 7.2 3.6L19.2 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m4.8 15.4 7.2 3.6 7.2-3.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  bulb: '<path d="M9.2 16.6h5.6M10 18.8h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M12 4.4a4.5 4.5 0 0 0-2.5 8.3c.4.4.6.8.6 1.3v.8h3.8v-.8c0-.5.2-.9.6-1.3A4.5 4.5 0 0 0 12 4.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  screen: '<rect x="4" y="5" width="16" height="10.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 19.2h6M12 15.5v3.7M8.6 10.2 11 12.6l4.3-4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+  plug: '<path d="M9 4.2v3.6M15 4.2v3.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.6 7.8h8.8v3a4.4 4.4 0 0 1-8.8 0z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 15.2V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  code: '<path d="M9 8 5.2 12 9 16M15 8l3.8 4L15 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+};
+
 const services = [
   {
     title: 'AI Chatbot Development',
     href: '/services/ai-chatbot-development',
+    icon: 'chat',
     text: 'Create assistants that answer customer questions using approved information, identify when a person should take over, and connect with existing support tools.',
   },
   {
     title: 'AI Agent Development',
     href: '/services/ai-agent-development',
+    icon: 'robot',
     text: 'Build agents that coordinate multi-step tasks across approved APIs. Set tool permissions, checkpoints and human approval for consequential actions.',
   },
   {
     title: 'RAG Development Services',
     href: '/contact',
+    icon: 'layers',
     text: 'Connect language models to authorized documents and databases using retrieval-augmented generation. Design indexing, permission-aware retrieval, citations and tests for grounded answers.',
   },
   {
     title: 'Generative AI Consulting',
     href: '/contact',
+    icon: 'bulb',
     text: 'Identify viable use cases, assess data readiness, compare model options and establish an implementation roadmap before a production build.',
   },
   {
     title: 'AI Copilot Development',
     href: '/contact',
+    icon: 'screen',
     text: 'Embed contextual AI assistance in everyday software. Support employees with drafting, search and structured recommendations while allowing them to review or reject generated content.',
   },
   {
     title: 'Generative AI Integration',
     href: '/services/automation-and-integration',
+    icon: 'plug',
     text: 'Add AI functionality to existing applications through APIs, identify providers and workflow systems, and plan authentication, error handling and data boundaries.',
   },
   {
     title: 'LLM Application Development',
     href: '#process',
+    icon: 'code',
     text: 'Develop applications around large language models, from document assistants to AI-powered product features. Select models, manage prompts and monitor usage costs.',
   },
 ];
 
+const icon = {
+  megaphone: '<path d="M5 10v4h2.2L13 18V6L7.2 10H5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M16 9.2a3.4 3.4 0 0 1 0 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8.2 14.2v1.8a1.4 1.4 0 0 0 1 1.3L11.2 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  cart: '<path d="M4 6h2.2l1.2 9h9.4l1.6-6.2H8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="18.2" r="1.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.2" cy="18.2" r="1.2" fill="none" stroke="currentColor" stroke-width="1.7"/>',
+  stethoscope: '<path d="M8 4.2v6.1a3 3 0 0 0 6 0V7.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6.4 4.2h3.2M12.4 4.2h3.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14 10.4v1.3a3.3 3.3 0 0 0 3.3 3.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="18.6" cy="15" r="1.7" fill="none" stroke="currentColor" stroke-width="1.7"/>',
+  crane: '<path d="M8 20V5.5M8 7.5h10.5M16.8 7.5v4.2M5.5 20H11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 5.5 5.2 8.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M15.6 11.7h2.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  bill: '<rect x="3.2" y="6.5" width="17.6" height="11" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 9.1v5.8M10.5 10.3c.3-.6 2.7-.7 3.1.5.3.8-.3 1.2-1.6 1.5s-1.9.8-1.5 1.6c.4.7 2.5.8 3.1.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+  car: '<path d="M4 14.5 6.1 9.8A1.6 1.6 0 0 1 7.6 9h8.8a1.6 1.6 0 0 1 1.5.8l2.1 4.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 14.5h16v3.2H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.4" cy="17.7" r="1.15" fill="currentColor"/><circle cx="16.6" cy="17.7" r="1.15" fill="currentColor"/>',
+};
+
 const industries = [
-  ['Technology & SaaS', 'AI features, support assistants and product knowledge.'],
-  ['Healthcare', 'Administrative document workflows and internal knowledge, subject to privacy requirements.'],
-  ['Financial services', 'Research assistance, document review and internal policy search with appropriate controls.'],
-  ['Retail & e-commerce', 'Catalog assistance, product discovery and customer support.'],
-  ['Manufacturing', 'Technical manuals, troubleshooting guidance and operational knowledge.'],
-  ['Professional services', 'Research, proposal drafting and document review with expert oversight.'],
+  {
+    title: 'Marketing & Advertising',
+    icon: 'megaphone',
+    text: 'Transform marketing workflows with generative AI solutions that create personalized campaigns, accelerate content production, and uncover actionable customer insights. AI-powered applications help marketing teams maintain brand consistency, reduce repetitive creative tasks, and deliver relevant messaging across digital channels.',
+    points: ['Personalized campaign generation', 'AI-powered marketing content creation', 'Advertising copy generation', 'Automated email personalization', 'Customer sentiment analysis and summarization', 'Creative workflow automation', 'Audience insight generation', 'Conversational marketing assistants'],
+  },
+  {
+    title: 'E-commerce & Retail',
+    icon: 'cart',
+    text: 'Create more personalized shopping experiences with generative AI applications that improve product discovery, simplify catalog management, and support customer interactions. Intelligent shopping assistants and automated content workflows help retailers scale their digital operations and respond to evolving customer needs.',
+    points: ['Conversational shopping assistants', 'Product description generation', 'Personalized product discovery', 'AI-powered customer support', 'Personalized product recommendations', 'Cart recovery message generation', 'Customer review summarization', 'Automated product catalog content'],
+  },
+  {
+    title: 'Healthcare & Wellness',
+    icon: 'stethoscope',
+    text: 'Support healthcare and wellness operations with generative AI solutions that simplify administrative workflows, assist with clinical documentation, and improve access to relevant information. Applications can incorporate secure data handling, role-based access controls, and human oversight to address applicable healthcare privacy requirements.',
+    points: ['Virtual healthcare assistants', 'Clinical documentation assistance', 'Medical document summarization', 'Personalized patient communication', 'Healthcare knowledge assistants', 'Insurance claims documentation', 'Personalized wellness content', 'Administrative workflow automation'],
+  },
+  {
+    title: 'Logistics & Supply Chain',
+    icon: 'crane',
+    text: 'Streamline complex logistics operations with generative AI applications that process shipment documents, summarize operational data, and improve communication across supply chain networks. Intelligent knowledge assistants help teams access relevant information, understand delivery exceptions, and coordinate operational workflows.',
+    points: ['Intelligent logistics document processing', 'Shipment status summarization', 'Supply chain knowledge assistants', 'Automated freight report generation', 'Supplier communication automation', 'Inventory report summarization', 'Delivery exception analysis', 'Logistics workflow assistance'],
+  },
+  {
+    title: 'Fintech & Financial Services',
+    icon: 'bill',
+    text: 'Modernize financial operations with generative AI development solutions that support document analysis, customer engagement, regulatory research, and information-intensive workflows. Applications can incorporate controlled data access, audit trails, output validation, and human review to support responsible financial operations.',
+    points: ['AI-powered financial assistants', 'Financial document analysis', 'Regulatory knowledge retrieval', 'Compliance documentation assistance', 'Automated financial report generation', 'Conversational customer onboarding', 'Contract and policy analysis', 'Transaction investigation assistance'],
+  },
+  {
+    title: 'Automotive',
+    icon: 'car',
+    text: 'Enhance automotive sales, service, and support operations with generative AI applications that simplify technical information retrieval, personalize customer interactions, and automate documentation workflows. Intelligent assistants help dealerships, manufacturers, and service providers access relevant knowledge and manage customer requests more efficiently.',
+    points: ['Conversational vehicle shopping assistants', 'Personalized automotive sales content', 'Automotive knowledge assistants', 'Automated service documentation', 'Intelligent customer support', 'Warranty claim summarization', 'Technical manual knowledge retrieval', 'Personalized sales follow-ups'],
+  },
 ];
 
 const steps = [
-  ['01', 'Discovery & feasibility', 'Identify the workflow, users, constraints and baseline metrics. Agree on acceptance criteria and assess whether generative AI is appropriate.', 'Output: use-case brief and scope'],
-  ['02', 'Data & architecture', 'Review data access, quality and retention. Compare models, retrieval and integration options, then define security and deployment boundaries.', 'Output: architecture and evaluation plan'],
-  ['03', 'Prototype & evaluation', 'Build a narrow proof of concept using representative inputs. Test quality, safety, cost and latency before expanding scope.', 'Output: pilot and evaluation results'],
-  ['04', 'Engineering & integration', 'Implement application logic, APIs, access controls, test suites and operational safeguards. Validate with actual users and staged rollout criteria.', 'Output: tested application'],
-  ['05', 'Deployment & improvement', 'Plan monitoring, incident handling, documentation and handoff. Review quality, usage and costs against agreed goals after deployment.', 'Output: deployment and support plan'],
+  { num: '01', title: 'Discovery & feasibility', text: 'Identify the workflow, users, constraints and baseline metrics. Agree on acceptance criteria and assess whether generative AI is appropriate.', output: 'Output: use-case brief and scope', above: true },
+  { num: '02', title: 'Data & architecture', text: 'Review data access, quality and retention. Compare models, retrieval and integration options, then define security and deployment boundaries.', output: 'Output: architecture and evaluation plan', above: false },
+  { num: '03', title: 'Prototype & evaluation', text: 'Build a narrow proof of concept using representative inputs. Test quality, safety, cost and latency before expanding scope.', output: 'Output: pilot and evaluation results', above: true },
+  { num: '04', title: 'Engineering & integration', text: 'Implement application logic, APIs, access controls, test suites and operational safeguards. Validate with actual users and staged rollout criteria.', output: 'Output: tested application', above: false },
+  { num: '05', title: 'Deployment & improvement', text: 'Plan monitoring, incident handling, documentation and handoff. Review quality, usage and costs against agreed goals after deployment.', output: 'Output: deployment and support plan', above: true },
+];
+
+const logo = {
+  tf: '/stack/tensorflow.png',
+  torch: '/stack/pytorch.png',
+  keras: '/stack/keras.png',
+  sklearn: '/stack/sklearn.png',
+  lgbm: '/stack/lightgbm.png',
+  aws: '/stack/aws.png',
+  azure: '/stack/azure.webp',
+  vertex: '/stack/vertex.webp',
+  gpt: '/stack/openai.png',
+  hf: '/stack/huggingface.png',
+  spacy: '/stack/spacy.png',
+  nltk: '/stack/nltk.webp',
+  rasa: '/stack/rasa.webp',
+  cv: '/stack/opencv.png',
+  mp: '/stack/mediapipe.webp',
+  det: '/stack/detectron.webp',
+  yolo: '/stack/yolo.png',
+  claude: '/stack/claude.png',
+  pplx: '/stack/perplexity.png',
+  sd: '/stack/stable.webp',
+  dalle: '/stack/openai.png',
+  llama: '/stack/llama.webp',
+  diff: '/stack/huggingface.png',
+  chain: '/stack/langchain.webp',
+  graph: '/stack/langgraph.webp',
+  grok: '/stack/grok.png',
+  mlflow: '/stack/mlflow.webp',
+  kubeflow: '/stack/kubeflow.webp',
+  wb: '/stack/wb.webp',
+  docker: '/stack/docker.png',
+  k8s: '/stack/kubernetes.png',
+  pine: '/stack/pinecone.webp',
+  weave: '/stack/weaviate.webp',
+  faiss: '/stack/faiss.webp',
+  milvus: '/stack/milvus.webp',
+  chroma: '/stack/chroma.webp',
+};
+
+const stack = [
+  ['AI Frameworks', [['TensorFlow', 'tf'], ['PyTorch', 'torch'], ['Keras', 'keras'], ['Scikit-Learn', 'sklearn'], ['LightGBM', 'lgbm']]],
+  ['Cloud AI', [['AWS SageMaker', 'aws'], ['Azure AI', 'azure'], ['Google Vertex AI', 'vertex']]],
+  ['NLP & LLMs', [['OpenAI GPT', 'gpt'], ['HuggingFace', 'hf'], ['spaCy', 'spacy'], ['NLTK', 'nltk'], ['Rasa NLP', 'rasa']]],
+  ['Computer Vision', [['OpenCV', 'cv'], ['MediaPipe', 'mp'], ['Detectron2', 'det'], ['YOLO', 'yolo']]],
+  ['Generation AI', [['ChatGPT', 'gpt'], ['Claude', 'claude'], ['Perplexity', 'pplx'], ['Stable Diffusion', 'sd'], ['DALL.E', 'dalle'], ['Meta Llama', 'llama'], ['Diffusers', 'diff'], ['LangChain', 'chain'], ['LangGraph', 'graph'], ['Grok', 'grok']]],
+  ['MLOps', [['MLflow', 'mlflow'], ['Kubeflow', 'kubeflow'], ['W&B', 'wb'], ['Docker', 'docker'], ['Kubernetes', 'k8s']]],
+  ['Vector Databases', [['Pinecone', 'pine'], ['Weaviate', 'weave'], ['FAISS', 'faiss'], ['Milvus', 'milvus'], ['ChromaDB', 'chroma']]],
 ];
 
 const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-dusk placeholder-dusk/40 outline-none transition-all duration-300 focus:border-coral/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_3px_rgba(26,130,255,0.15)]';
@@ -173,13 +278,13 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
 
 <div class="gai relative min-h-screen overflow-x-clip">
   <header class="fixed inset-x-0 top-0 z-50">
-      <div class="mx-auto mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[#0c1424]/70 px-4 py-2.5 backdrop-blur-xl sm:mx-5 xl:mx-auto">
-      <a class="shrink-0" href="/" aria-label="DigiWorks AI, home">
+      <div id="dw-bar" class="mx-auto mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-transparent bg-transparent px-4 py-2.5 transition-all duration-500 sm:mx-5 xl:mx-auto">
+      <a class="group flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.03]" href="/" aria-label="DigiWorks AI, home">
         <img src="/logo-white.png" alt="DigiWorks AI" class="h-9 w-auto" width="280" height="46" />
       </a>
       <nav class="hidden items-center lg:flex" aria-label="Primary">
         <div class="dw-svc relative" data-svc>
-          <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70" aria-haspopup="true">
+          <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70 transition-colors hover:text-dusk xl:px-3.5" aria-haspopup="true">
             Services
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
           </button>
@@ -209,7 +314,7 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
         </div>
         {menus.map((menu) => (
           <div class="dw-item relative">
-            <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70" aria-haspopup="true">
+            <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70 transition-colors hover:text-dusk xl:px-3.5" aria-haspopup="true">
               {menu.label}
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
             </button>
@@ -220,16 +325,21 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
             </div>
           </div>
         ))}
-        <a class="ml-1 rounded-full px-3 py-2 text-sm font-semibold" href="/case-studies"><span class="text-gradient">Case Studies</span></a>
+        <a class="ml-1 flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-dusk/80 transition-colors hover:text-dusk xl:px-3.5" href="/case-studies"><span class="bg-gradient-to-r from-coral to-violet bg-clip-text text-transparent">Case Studies</span></a>
       </nav>
-      <div class="ml-3 hidden shrink-0 items-center gap-4 lg:flex">
-        <a href="tel:+17373945488" class="flex items-center gap-2 rounded-full border border-[#4c9eff]/20 bg-[#0c1424]/70 px-5 py-2 text-sm font-semibold text-white" aria-label="Call us at +1 737 394 5488">
+      <div class="ml-3 hidden shrink-0 items-center gap-4 lg:flex xl:ml-5">
+        <a href="tel:+17373945488" class="ember-trace flex items-center justify-center gap-2 rounded-full border border-[#4c9eff]/20 bg-[#0c1424]/70 px-5 py-2 text-center text-sm font-semibold text-white transition-all duration-300 hover:bg-[#0c1424]/90 hover:shadow-[0_0_14px_rgba(76,158,255,0.22)]" aria-label="Call us at +1 737 394 5488">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0 stroke-current" fill="none" stroke-width="2" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>
           <span class="hidden xl:inline">+1 737 394 5488</span>
         </a>
-        <a class="btn-primary whitespace-nowrap !px-5" href="#inquiry">Book a Call</a>
+        <a class="btn-primary whitespace-nowrap !px-5" href="/contact">Book a Call</a>
       </div>
-      <button id="dw-menu-btn" type="button" aria-label="Menu" class="flex h-11 w-11 items-center justify-center rounded-xl border border-dusk/15 lg:hidden">
-        <span class="block h-0.5 w-5 bg-white"></span>
+      <button id="dw-menu-btn" type="button" aria-label="Menu" aria-expanded="false" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-dusk/15 bg-panel/80 lg:hidden">
+        <span class="space-y-1.5">
+          <span class="block h-0.5 w-5 bg-white"></span>
+          <span class="block h-0.5 w-5 bg-white"></span>
+          <span class="block h-0.5 w-5 bg-white"></span>
+        </span>
       </button>
     </div>
     <div id="dw-mobile" hidden class="mx-5 mt-2 rounded-2xl border border-white/10 bg-[#0c1424] p-4 lg:hidden">
@@ -239,7 +349,7 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
           {menu.items.map(([label, href]) => <a class="block rounded-lg px-2 py-2 text-sm text-dusk/80" href={href}>{label}</a>)}
         </div>
       ))}
-      <a class="btn-primary mt-2 w-full" href="#inquiry">Book a Call</a>
+      <a class="btn-primary mt-2 w-full" href="/contact">Book a Call</a>
     </div>
   </header>
 
@@ -307,6 +417,7 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
         <div class="mt-14 grid gap-6 md:grid-cols-2">
           {services.map((item) => (
             <article class="glass rounded-3xl p-8">
+              <svg class="dw-svc-icon" viewBox="0 0 24 24" aria-hidden="true" set:html={serviceIcon[item.icon]} />
               <h3 class="font-display text-xl font-bold text-dusk"><a href={item.href}>{item.title}</a></h3>
               <p class="mt-3 text-sm leading-relaxed text-dusk/70">{item.text}</p>
               <a class="mt-5 inline-flex text-sm font-semibold text-cyan" href={item.href}>Explore {item.title} →</a>
@@ -337,17 +448,23 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
 
     <section class="section-pad dw-light relative">
       <div class="mx-auto max-w-7xl">
-        <span class="chip">Illustrative use case — not a client case study</span>
-        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">How an enterprise knowledge assistant works</h2>
-        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Consider a support team that searches scattered product documentation. A RAG assistant can retrieve approved passages, provide a draft response with sources and escalate ambiguous questions for review.</p>
-        <div class="dw-flow mt-12">
-          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">User request</strong><span class="mt-2 block text-sm text-dusk/55">Identity + policy</span></div>
-          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Retrieve</strong><span class="mt-2 block text-sm text-dusk/55">Approved sources</span></div>
-          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Generate</strong><span class="mt-2 block text-sm text-dusk/55">Model + context</span></div>
-          <div class="glass rounded-3xl p-6"><strong class="font-display text-dusk">Review</strong><span class="mt-2 block text-sm text-dusk/55">Citations + controls</span></div>
+        <p class="dw-kicker">Illustrative use case — not a client case study</p>
+        <h2 class="mt-4 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-[2.6rem]">How an enterprise knowledge assistant works</h2>
+        <p class="mt-4 max-w-5xl text-base leading-relaxed text-dusk/70">Consider a support team that searches scattered product documentation. A RAG assistant can retrieve approved passages, provide a draft response with sources and escalate ambiguous questions for review.</p>
+        <div class="dw-flow-panel">
+          <div class="dw-flow">
+            <div class="dw-flow-step"><strong>User request</strong><span>Identity + policy</span></div>
+            <span class="dw-flow-arrow" aria-hidden="true"></span>
+            <div class="dw-flow-step"><strong>Retrieve</strong><span>Approved sources</span></div>
+            <span class="dw-flow-arrow" aria-hidden="true"></span>
+            <div class="dw-flow-step"><strong>Generate</strong><span>Model + context</span></div>
+            <span class="dw-flow-arrow" aria-hidden="true"></span>
+            <div class="dw-flow-step"><strong>Review</strong><span>Citations + controls</span></div>
+          </div>
+          <div class="dw-flow-loop" aria-hidden="true"></div>
+          <p class="dw-flow-caption">Evaluation and feedback loop</p>
         </div>
-        <p class="mt-4 rounded-full border border-cyan/30 px-4 py-2 text-center text-sm font-semibold text-dusk">Evaluation and feedback loop</p>
-        <p class="mt-4 text-sm leading-relaxed text-dusk/55">Example acceptance criteria: correct citation references, appropriate handling of unknown questions, no retrieval outside user permissions, acceptable response latency and a sustainable cost per request. These are proposed evaluation measures, not achieved client results.</p>
+        <p class="mt-6 max-w-5xl text-sm leading-relaxed text-dusk/55">Example acceptance criteria: correct citation references, appropriate handling of unanswered questions, no retrieval outside user permissions, acceptable response latency and a sustainable cost per request. These are proposed evaluation measures, not achieved client results.</p>
       </div>
     </section>
 
@@ -356,46 +473,68 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
         <span class="chip">Industry applications</span>
         <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Generative AI for US industries</h2>
         <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Adapt applications to the workflows, data policies and operating requirements of your business. The following examples are potential applications, not claims of completed projects.</p>
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map(([title, text]) => (
-            <article class="glass rounded-3xl p-7"><h3 class="font-display text-lg font-bold text-dusk">{title}</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">{text}</p></article>
-          ))}
+        <div class="dw-ind" id="dw-ind">
+          <div class="dw-ind-nav">
+            {industries.map((item, index) => (
+              <button type="button" class:list={['dw-ind-tab', index === 0 && 'is-on']} data-ind={index} aria-pressed={index === 0 ? 'true' : 'false'}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" set:html={icon[item.icon]} />
+                <span>{item.title}</span>
+              </button>
+            ))}
+          </div>
+          <div class="dw-ind-stage">
+            {industries.map((item, index) => (
+              <div class:list={['dw-ind-panel', index === 0 && 'is-on']} data-ind={index}>
+                <p>{item.text}</p>
+                <ul>
+                  {item.points.map((point) => <li>{point}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-pad aurora relative">
-      <div class="relative mx-auto max-w-3xl">
-        <span class="chip">Model-agnostic architecture</span>
-        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Generative AI technology stack</h2>
-        <p class="mt-5 text-base leading-relaxed text-dusk/70">Choose tools according to task quality, privacy, latency, deployment constraints and total cost. Examples of technologies to evaluate include:</p>
-        <div class="mt-8 space-y-4">
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Foundation models</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">OpenAI models, Claude, Gemini and open-weight models such as Llama. Compare output quality, usage terms and hosting options.</p></article>
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Data and retrieval</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Embedding models, vector search such as pgvector or Pinecone, document processing and permission-aware indexing.</p></article>
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Application and orchestration</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">Python, TypeScript, APIs, structured outputs, workflow orchestration and integrations with existing systems.</p></article>
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Cloud and observability</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">AWS, Azure or Google Cloud where appropriate, plus evaluation tooling, logging and usage monitoring.</p></article>
-        </div>
-        <p class="mt-4 text-sm text-dusk/55">Technology examples do not imply vendor partnerships or certifications.</p>
-      </div>
-    </section>
-
-    <section class="section-pad dw-light relative" id="process">
-      <div class="mx-auto max-w-3xl">
-        <span class="chip">Clear deliverables at every stage</span>
-        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Our generative AI development process</h2>
-        <p class="mt-5 text-base leading-relaxed text-dusk/70">Reduce uncertainty with staged decisions and defined acceptance criteria. The proposed approach is tailored to project scope and business risk.</p>
-        <ol class="mt-12 space-y-4">
-          {steps.map(([num, title, text, output]) => (
-            <li class="glass flex gap-4 rounded-3xl p-6">
-              <span class="font-display text-sm font-bold text-cyan">{num}</span>
-              <div>
-                <h3 class="font-display text-lg font-bold text-dusk">{title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-dusk/70">{text}</p>
-                <p class="mt-2 text-sm text-cyan">{output}</p>
+    <section class="section-pad aurora relative" id="process">
+      <div class="relative mx-auto max-w-6xl">
+        <div class="flex justify-center"><span class="chip">Clear deliverables at every stage</span></div>
+        <h2 class="dw-proc-title">Our generative AI development process</h2>
+        <p class="dw-proc-lead">Reduce uncertainty with staged decisions and defined acceptance criteria. The proposed approach is tailored to project scope and business risk.</p>
+        <ol class="dw-proc">
+          {steps.map((step) => (
+            <li class:list={['dw-proc-step', step.above ? 'is-above' : 'is-below']}>
+              <span class="dw-proc-num">{step.num}</span>
+              <span class="dw-proc-line" aria-hidden="true"></span>
+              <div class="dw-proc-copy">
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+                <p class="dw-proc-out">{step.output}</p>
               </div>
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+
+    <section class="section-pad dw-light dw-stack-sec relative">
+      <div class="mx-auto max-w-7xl">
+        <span class="chip">Model-agnostic architecture</span>
+        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Generative AI technology stack</h2>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Choose tools according to task quality, privacy, latency, deployment constraints and total cost. Examples of technologies to evaluate include:</p>
+        <div class="dw-stack">
+          {stack.map(([label, tools]) => (
+            <div class="dw-stack-row">
+              <div class="dw-stack-label">{label}</div>
+              <div class="dw-stack-tools">
+                {tools.map(([name, key]) => (
+                  <span class="dw-stack-chip"><img src={logo[key]} alt="" width="24" height="24" /><span>{name}</span></span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-5 text-sm text-dusk/55">Technology examples do not imply vendor partnerships or certifications.</p>
       </div>
     </section>
 
@@ -414,15 +553,6 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
     </section>
 
     <section class="section-pad dw-light relative">
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="chip">Project evidence</span>
-        <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Evaluate the work behind the technology</h2>
-        <p class="mt-5 text-base leading-relaxed text-dusk/70">When selecting a generative AI development partner, ask for a demonstration using representative data, an explanation of architecture trade-offs and evidence of quality testing. Explore our case studies where relevant, or discuss the illustrative workflow above.</p>
-        <a class="btn-primary mt-8" href="/case-studies">View case studies <span aria-hidden="true">→</span></a>
-      </div>
-    </section>
-
-    <section class="section-pad dw-light relative !pt-0">
       <div class="mx-auto max-w-7xl">
         <span class="chip">A practical development partner</span>
         <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">Why choose DigiWorks AI for generative AI development?</h2>
@@ -436,16 +566,33 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
     </section>
 
     <section class="section-pad aurora relative">
-      <div class="relative mx-auto max-w-3xl">
+      <div class="relative mx-auto max-w-7xl">
         <span class="chip">Plan your investment</span>
         <h2 class="mt-5 font-display text-2xl font-bold text-dusk sm:text-3xl md:text-4xl">How to scope a generative AI project</h2>
-        <p class="mt-5 text-base leading-relaxed text-dusk/70">Project cost depends on use-case complexity, data readiness, integrations, model usage, security and long-term support. Discuss the engagement that fits your current stage.</p>
-        <div class="mt-8 space-y-4">
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Discovery and roadmap</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams validating a use case and assessing feasibility.</p></article>
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Proof of concept</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams testing a narrowly scoped workflow with defined evaluation criteria.</p></article>
-          <article class="glass rounded-3xl p-6"><h3 class="font-display text-lg font-bold text-dusk">Production development</h3><p class="mt-2 text-sm leading-relaxed text-dusk/70">For teams ready to integrate, test and launch a maintainable AI application.</p></article>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-dusk/70">Project cost depends on use-case complexity, data readiness, integrations, model usage, security and long-term support. Discuss the engagement that fits your current stage.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            ['Discovery and roadmap', 'For teams validating a use case and assessing feasibility.'],
+            ['Proof of concept', 'For teams testing a narrowly scoped workflow with defined evaluation criteria.'],
+            ['Production development', 'For teams ready to integrate, test and launch a maintainable AI application.'],
+          ].map(([title, text], index) => (
+            <article class="group relative h-full">
+              <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style="background:radial-gradient(420px circle at 50% 50%, rgba(0,82,179,0.28), transparent 65%)"></div>
+              <div class="glass glare hud relative h-full overflow-hidden p-7">
+                <div class="g-border absolute inset-0 rounded-3xl" aria-hidden="true"></div>
+                <div class="flex items-start justify-between">
+                  <span class="bg-gradient-to-br from-cyan to-violet bg-clip-text font-display text-3xl font-extrabold text-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100">{String(index + 1).padStart(2, '0')}</span>
+                  <span class="flex h-8 w-8 items-center justify-center rounded-full border border-dusk/10 text-xs text-dusk/45 transition-all duration-300 group-hover:rotate-45 group-hover:border-coral/60 group-hover:text-coral" aria-hidden="true">↗</span>
+                </div>
+                <h3 class="mt-3 font-display text-lg font-bold text-dusk md:text-xl">{title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-dusk/70">{text}</p>
+              </div>
+            </article>
+          ))}
         </div>
-        <a class="btn-primary mt-8" href="#inquiry">Request a project discussion</a>
+        <div class="mt-8 flex justify-center">
+          <a class="btn-primary" href="#inquiry">Request a project discussion</a>
+        </div>
       </div>
     </section>
 
@@ -475,6 +622,20 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
               <p class="px-6 pb-6 pl-[4.2rem] text-sm leading-relaxed text-dusk/70 md:text-base">{item.a}</p>
             </details>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden px-5 py-28 sm:px-8">
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-80" aria-hidden="true">
+        <div class="grid-floor absolute inset-x-[-30%] bottom-[-60%] h-[180%] rotate-180"></div>
+      </div>
+      <div class="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[800px] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/20 blur-[140px]"></div>
+      <div class="relative mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl font-extrabold leading-snug text-dusk sm:text-4xl lg:text-5xl"><span class="text-gradient-hot">Explore AI directly with DigiWorks</span></h2>
+        <p class="mx-auto mt-6 max-w-xl text-dusk/75 md:text-lg">No worries, you can't break anything. Our experts are ready to power your AI journey.</p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a class="btn-primary !px-9 !py-4 !text-base" href="#inquiry">Get a Quote <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -601,9 +762,29 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
 
 <script is:inline>
   const mobile = document.getElementById('dw-mobile');
-  document.getElementById('dw-menu-btn')?.addEventListener('click', () => {
-    if (mobile.hasAttribute('hidden')) mobile.removeAttribute('hidden');
+  const menuBtn = document.getElementById('dw-menu-btn');
+  menuBtn?.addEventListener('click', () => {
+    const open = mobile.hasAttribute('hidden');
+    if (open) mobile.removeAttribute('hidden');
     else mobile.setAttribute('hidden', '');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  const bar = document.getElementById('dw-bar');
+  const syncBar = () => bar?.classList.toggle('is-stuck', (window.scrollY || 0) > 24);
+  syncBar();
+  window.addEventListener('scroll', syncBar, { passive: true });
+  const industries = document.getElementById('dw-ind');
+  industries?.querySelectorAll('.dw-ind-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      industries.querySelectorAll('.dw-ind-tab').forEach((item) => {
+        const on = item === tab;
+        item.classList.toggle('is-on', on);
+        item.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      industries.querySelectorAll('.dw-ind-panel').forEach((panel) => {
+        panel.classList.toggle('is-on', panel.dataset.ind === tab.dataset.ind);
+      });
+    });
   });
   document.querySelectorAll('[data-group]').forEach((button) => {
     const show = () => {
@@ -620,21 +801,55 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
 
 <style is:global>
   .dw-mega, .dw-drop { visibility: hidden; opacity: 0; transition: opacity 160ms ease; }
+  #dw-bar.is-stuck { margin: 0; max-width: 100%; width: 100%; border-radius: 0; border-color: rgb(238 240 244 / 0.1); background: rgb(18 26 44 / 0.85); box-shadow: 0 8px 32px rgba(60, 0, 0, 0.1); backdrop-filter: blur(40px); }
   .dw-mega { position: fixed; top: 5.25rem; left: max(0.75rem, calc(50vw - 36rem)); width: min(72rem, calc(100vw - 1.5rem)); z-index: 80; }
   .dw-svc:hover .dw-mega, .dw-svc:focus-within .dw-mega,
   .dw-item:hover .dw-drop, .dw-item:focus-within .dw-drop { visibility: visible; opacity: 1; }
   .dw-svc button.is-on { background: rgba(48, 142, 255, 0.12); color: #eef0f4; }
-  .dw-flow, .dw-hero-grid { display: grid; gap: 2rem; }
+  .dw-hero-grid { display: grid; gap: 2rem; }
   .dw-hero-visual { aspect-ratio: 16 / 9; }
+  .dw-kicker { margin: 0; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1d4ed8; }
+  .dw-flow-panel { margin-top: 2.25rem; background: #0c1730; border-radius: 1.75rem; padding: 2.75rem 1.75rem 1.6rem; }
+  .dw-flow { display: flex; flex-direction: column; gap: 0.35rem; }
+  .dw-flow-step { border: 1.5px solid #4c8dff; border-radius: 0.9rem; background: #12243f; text-align: center; padding: 1.65rem 0.75rem 1.5rem; }
+  .dw-light .dw-flow-step strong { display: block; color: #fff; font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+  .dw-light .dw-flow-step span { display: block; margin-top: 0.15rem; color: rgba(226, 236, 248, 0.78); font-size: 0.92rem; }
+  .dw-flow-arrow { display: block; width: 2px; height: 1.15rem; margin: 0.15rem auto; background: #3ddec8; position: relative; }
+  .dw-flow-arrow::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 7px; height: 7px; border-right: 2px solid #3ddec8; border-bottom: 2px solid #3ddec8; transform: translate(-50%, 2px) rotate(45deg); }
+  .dw-flow-loop { display: none; }
+  .dw-flow-caption { margin: 0.9rem 0 0; text-align: center; color: rgba(226, 236, 248, 0.82); font-size: 0.95rem; }
   @media (min-width: 1024px) {
-    .dw-flow { grid-template-columns: repeat(4, 1fr); }
     .dw-hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+    .dw-flow-panel { padding: 3.25rem 2.25rem 1.85rem; }
+    .dw-flow-step { padding: 1.85rem 0.9rem 1.7rem; }
+    .dw-flow { display: grid; grid-template-columns: 1fr 2.5rem 1fr 2.5rem 1fr 2.5rem 1fr; align-items: stretch; column-gap: 0.75rem; }
+    .dw-flow-arrow { width: auto; height: 2px; margin: 0; align-self: center; }
+    .dw-flow-arrow::after { left: auto; bottom: auto; right: 0; top: 50%; border-bottom: 0; border-top: 2px solid #3ddec8; transform: translate(1px, -50%) rotate(45deg); }
+    .dw-flow-loop { display: block; height: 2.65rem; margin-left: calc((100% - 12rem) / 8); margin-right: calc((100% - 12rem) / 8); border-left: 2px solid #3ddec8; border-right: 2px solid #3ddec8; border-bottom: 2px solid #3ddec8; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
   }
   .gai summary { list-style: none; }
   .gai summary::-webkit-details-marker { display: none; }
   details[open] .dw-plus { transform: rotate(45deg); }
   .dw-plus { transition: transform 0.3s; }
+  .dw-ind { display: grid; grid-template-columns: 1fr; margin-top: 2.5rem; overflow: hidden; border: 1px solid #e6edf5; border-radius: 1.25rem; background: #fff; }
+  .dw-ind-tab { display: flex; width: 100%; align-items: center; gap: 0.85rem; padding: 1.05rem 1.2rem; color: #122033; font-weight: 600; text-align: left; cursor: pointer; background: transparent; border: 0; border-left: 3px solid transparent; }
+  .dw-ind-tab svg { width: 22px; height: 22px; flex: none; }
+  .dw-ind-tab:hover { background: #f6f8fb; }
+  .dw-ind-tab.is-on, .dw-ind-tab.is-on:hover { background: #e8f1ff; color: #1d4ed8; border-left-color: #2563eb; }
+  .dw-ind-panel { display: none; padding: 1.2rem 1.3rem 1.45rem; }
+  .dw-ind-panel.is-on { display: block; }
+  .dw-ind-panel p { margin: 0; color: #3c4c5e; font-size: 1rem; line-height: 1.65; }
+  .dw-ind-panel ul { margin: 1rem 0 0; padding-left: 1.2rem; color: #3c4c5e; list-style: disc; }
+  .dw-ind-panel li { display: list-item; list-style: disc; }
+  .dw-ind-panel li::marker { color: #3c4c5e; }
+  .dw-ind-panel li + li { margin-top: 0.4rem; }
+  @media (min-width: 900px) {
+    .dw-ind { grid-template-columns: minmax(260px, 340px) 1fr; }
+    .dw-ind-stage { border-left: 1px solid #e6edf5; display: grid; align-items: center; }
+    .dw-ind-panel { grid-area: 1 / 1; padding: 1.8rem 2.4rem; }
+  }
   .dw-light { background: #fff; color: #122033; }
+  .dw-light strong.dw-ind-em { color: #1d4ed8; font-weight: 700; }
   .dw-light :is(h2, h3, .text-dusk, strong) { color: #102033; }
   .dw-light :is(.text-dusk\/70, .text-dusk\/55, .text-dusk\/45) { color: #526277; }
   .dw-light .chip { color: #1a4fd8; background: #eef4ff; border-color: transparent; }
@@ -644,7 +859,42 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
     box-shadow: 0 12px 32px rgba(16, 32, 51, 0.06);
     backdrop-filter: none;
   }
+  .dw-svc-icon { width: 2.5rem; height: 2.5rem; margin-bottom: 1.1rem; color: #2563eb; }
+  .dw-proc-title { margin: 1.1rem auto 0; max-width: 16em; text-align: center; color: #fff; font-size: clamp(1.8rem, 3.2vw, 2.7rem); font-weight: 700; line-height: 1.2; }
+  .dw-proc-lead { margin: 1rem auto 0; max-width: 42rem; text-align: center; color: rgba(255, 255, 255, 0.75); font-size: 1rem; line-height: 1.6; }
+  .dw-proc { position: relative; display: flex; flex-direction: column; gap: 1.75rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+  .dw-proc-step { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+  .dw-proc-num { position: static; display: grid; width: 2.6rem; height: 2rem; place-items: center; background: #2f6bff; color: #fff; font-weight: 700; }
+  .dw-proc-line { display: block; width: 100%; height: 3px; margin: 0.7rem 0 0.9rem; background: #2f6bff; }
+  .dw-proc-copy h3 { margin: 0; color: #fff; font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+  .dw-proc-copy p { margin: 0.5rem 0 0; color: rgba(255, 255, 255, 0.78); font-size: 0.95rem; line-height: 1.55; }
+  .dw-proc-copy .dw-proc-out { color: #5eb6ff; }
+  @media (min-width: 1000px) {
+    .dw-proc { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; min-height: 34rem; margin-top: 4.5rem; }
+    .dw-proc::before { content: ""; position: absolute; top: 50%; left: 4%; right: 4%; height: 3px; background: #2f6bff; }
+    .dw-proc-line { display: none; }
+    .dw-proc-step { position: relative; min-height: 34rem; align-items: center; text-align: center; }
+    .dw-proc-num { position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%); }
+    .dw-proc-copy { position: absolute; left: 0.35rem; right: 0.35rem; }
+    .dw-proc-copy h3, .dw-proc-copy p { font-size: 0.86rem; }
+    .dw-proc-copy h3 { font-size: 1rem; }
+    .is-above .dw-proc-copy { bottom: calc(50% + 1.8rem); }
+    .is-below .dw-proc-copy { top: calc(50% + 1.8rem); }
+  }
+  .dw-light.dw-stack-sec { background: #f4f7fb; }
+  .dw-stack { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 2.25rem; }
+  .dw-stack-row { display: grid; grid-template-columns: 1fr; gap: 0.7rem; align-items: center; padding: 0.7rem; background: #fff; border: 1px solid #e6eef6; border-radius: 0.85rem; }
+  .dw-stack-label { display: flex; align-items: center; justify-content: center; align-self: center; min-height: 3.4rem; padding: 0.85rem 1rem; border-radius: 0.55rem; background: #2f6bff; color: #fff; font-weight: 700; text-align: center; }
+  .dw-stack-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; padding: 0.2rem 0.35rem; }
+  .dw-stack-chip { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.38rem 0.85rem 0.38rem 0.45rem; border: 1px solid #d5e0ec; border-radius: 999px; background: #fff; color: #1b2a3a; font-size: 0.95rem; line-height: 1; }
+  .dw-stack-chip img { width: 1.35rem; height: 1.35rem; flex: none; object-fit: contain; }
+  @media (min-width: 800px) {
+    .dw-stack-row { grid-template-columns: 230px 1fr; }
+    .dw-stack-label { min-height: 4.6rem; }
+  }
   .dw-ink { background: #0a121e; }
-  .dw-ink h3 { color: #fff; }
-  .dw-ink p { color: rgba(238, 240, 244, 0.75); }
+  .dw-light .dw-ink h3,
+  .dw-light .dw-ink h3 a,
+  .dw-light .dw-ink .text-dusk { color: #fff; }
+  .dw-light .dw-ink p { color: rgba(255, 255, 255, 0.78); }
 </style>
