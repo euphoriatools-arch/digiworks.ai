@@ -358,11 +358,17 @@ function patchServicesMegaMenu(app) {
   if (!app.includes('function dwSvcMenu(')) {
     app = app.replace('function Ue(){', `${menuFn}function Ue(){`);
   }
-  return mustReplace(
+  app = mustReplace(
     app,
     'J.map((n,r)=>(0,D.jsxs)(`div`,{className:`relative`,onMouseEnter:()=>t(r),children:[',
     'J.map((n,r)=>n.label===`Services`?dwSvcMenu(e,t,r):(0,D.jsxs)(`div`,{className:`relative`,onMouseEnter:()=>t(r),children:[',
     'services mega menu',
+  );
+  return mustReplace(
+    app,
+    '{label:`Solutions`,cols:2,items:H.map(e=>({to:`/solutions/${e.slug}`,label:e.name}))}',
+    '{label:`Solutions`,cols:2,items:H.map(e=>({to:e.slug===`generative-ai`?`/services/generative-ai-development`:`/solutions/${e.slug}`,label:e.name}))}',
+    'solutions generative ai link',
   );
 }
 

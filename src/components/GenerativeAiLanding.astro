@@ -1,117 +1,6 @@
 ---
 import { generativeAiDevelopmentCopy as copy } from '../data/copy/generative-ai-development';
-
-const serviceGroups = [
-  {
-    label: 'Generative AI',
-    items: [
-      ['Generative AI', '/solutions/generative-ai'],
-      ['RAG Development Services', '/contact'],
-      ['Generative AI Integration', '/services/generative-ai-development'],
-      ['AI Chatbot Development', '/services/ai-chatbot-development'],
-      ['Generative AI Consulting', '/contact'],
-      ['LLM Application Development', '/services/generative-ai-development'],
-      ['AI Agent Development', '/services/ai-agent-development'],
-      ['AI Copilot Development', '/contact'],
-    ],
-  },
-  {
-    label: 'Artificial Intelligence & ML',
-    items: [
-      ['Artificial Intelligence & ML', '/services/artificial-intelligence'],
-      ['MLOps Consulting', '/services/mlops-setup'],
-      ['AI Automation Services', '/solutions/ai-automation'],
-      ['Machine Learning Consulting', '/services/machine-learning'],
-      ['Healthcare AI Consulting', '/industries/ai-for-healthcare'],
-      ['Predictive Analytics Services', '/solutions/predictive-analytics'],
-      ['Computer Vision Development', '/solutions/computer-vision-image-recognition'],
-      ['Machine Learning Development', '/services/machine-learning-development'],
-    ],
-  },
-  {
-    label: 'Data Engineering',
-    items: [
-      ['Data Engineering', '/services/data-engineering'],
-      ['Data Management Services', '/services/data-and-cloud'],
-      ['Data Integration Consulting', '/services/automation-and-integration'],
-      ['Cloud Migration Services', '/services/cloud-architecture-and-deployment'],
-      ['BI Consulting', '/contact'],
-      ['Data Pipeline & ETL Development', '/services/data-engineering'],
-      ['Data Warehouse Engineering', '/services/data-and-cloud'],
-      ['Data Analytics Consulting', '/services/data-and-cloud'],
-    ],
-  },
-  {
-    label: 'Software Development',
-    items: [
-      ['Software Development', '/services/mobile-app-development'],
-      ['Custom Software Development Services', '/contact'],
-      ['DevOps Consulting Services', '/services/cloud-and-devops'],
-      ['Cloud Application Development', '/services/cloud-architecture-and-deployment'],
-      ['Mobile App Development', '/services/mobile-app-development'],
-      ['API Development & Integration', '/services/automation-and-integration'],
-    ],
-  },
-  {
-    label: 'Hire Developers',
-    items: [
-      ['Hire Developers', '/hire/hire-ai-engineers'],
-      ['Hire Dedicated Developers', '/hire/dedicated-ai-pods'],
-      ['Hire Generative AI Engineers', '/hire/hire-ai-engineers'],
-      ['Hire Machine Learning Engineers', '/hire/hire-ml-engineers'],
-      ['Hire Data Scientists', '/hire/hire-data-scientists'],
-      ['Hire React Developers', '/contact'],
-    ],
-  },
-];
-
-const menus = [
-  {
-    label: 'Solutions',
-    items: [
-      ['AI Automation', '/solutions/ai-automation'],
-      ['Predictive Analytics', '/solutions/predictive-analytics'],
-      ['Conversational AI', '/solutions/conversational-ai'],
-      ['Generative AI', '/solutions/generative-ai'],
-      ['AI in Cybersecurity', '/solutions/ai-for-cybersecurity'],
-      ['Image Intelligence', '/solutions/computer-vision-image-recognition'],
-    ],
-  },
-  {
-    label: 'Industries',
-    items: [
-      ['Healthcare', '/industries/ai-for-healthcare'],
-      ['Fintech', '/industries/ai-for-fintech'],
-      ['Retail & E-commerce', '/industries/ai-for-retail-and-ecommerce'],
-      ['Manufacturing', '/industries/ai-for-manufacturing'],
-      ['Logistics & Supply Chain', '/industries/ai-for-logistics-and-supply-chain'],
-      ['Real Estate', '/industries/ai-for-real-estate'],
-      ['Education', '/industries/ai-for-education'],
-    ],
-  },
-  {
-    label: 'Hire Developers',
-    items: [
-      ['Hire AI Engineers', '/hire/hire-ai-engineers'],
-      ['Hire ML Engineers', '/hire/hire-ml-engineers'],
-      ['Hire Data Scientists', '/hire/hire-data-scientists'],
-      ['Hire NLP Engineers', '/hire/hire-nlp-engineers'],
-      ['Hire Computer Vision Developers', '/hire/hire-computer-vision-developers'],
-      ['Dedicated AI Pods', '/hire/dedicated-ai-pods'],
-    ],
-  },
-  {
-    label: 'Company',
-    items: [
-      ['About Us', '/about'],
-      ['Meet the Team', '/team'],
-      ['Case Studies', '/case-studies'],
-      ['Blog', '/blog'],
-      ['AI Readiness Score', '/ai-readiness'],
-      ['Contact Us', '/contact'],
-    ],
-  },
-];
+import Header from './Header.astro';
 
 const serviceIcon = {
   chat: '<path d="M6.5 7.2A2.2 2.2 0 0 1 8.7 5h6.6a2.2 2.2 0 0 1 2.2 2.2v4.6a2.2 2.2 0 0 1-2.2 2.2H12l-3 2.2v-2.2H8.7a2.2 2.2 0 0 1-2.2-2.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.2 9.1h5.6M9.2 11.5h3.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
@@ -276,83 +165,8 @@ const stack = [
 const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-dusk placeholder-dusk/40 outline-none transition-all duration-300 focus:border-coral/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_3px_rgba(26,130,255,0.15)]';
 ---
 
+<Header />
 <div class="gai relative min-h-screen overflow-x-clip">
-  <header class="fixed inset-x-0 top-0 z-50">
-      <div id="dw-bar" class="mx-auto mt-3 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-transparent bg-transparent px-4 py-2.5 transition-all duration-500 sm:mx-5 xl:mx-auto">
-      <a class="group flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.03]" href="/" aria-label="DigiWorks AI, home">
-        <img src="/logo-white.png" alt="DigiWorks AI" class="h-9 w-auto" width="280" height="46" />
-      </a>
-      <nav class="hidden items-center lg:flex" aria-label="Primary">
-        <div class="dw-svc relative" data-svc>
-          <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70 transition-colors hover:text-dusk xl:px-3.5" aria-haspopup="true">
-            Services
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-          </button>
-          <div class="dw-mega">
-            <div class="grid overflow-hidden rounded-3xl border border-white/10 bg-[#09070b]/95 shadow-[0_24px_64px_rgba(0,0,0,0.65)]" style="grid-template-columns:16.5rem minmax(0,1fr);min-height:22rem">
-              <div class="flex flex-col gap-1 border-r border-white/10 bg-white/[0.03] px-3 pb-3 pt-6">
-                {serviceGroups.map((group, index) => (
-                  <button type="button" data-group={index} class:list={['flex items-center justify-between rounded-xl px-3 py-3 text-left text-sm font-semibold', index === 0 ? 'is-on' : 'text-dusk/75']}>
-                    {group.label}
-                  </button>
-                ))}
-              </div>
-              <div class="px-5 pb-5 pt-6">
-                {serviceGroups.map((group, index) => (
-                  <div data-panel={index} hidden={index !== 0}>
-                    <p class="mb-3 text-lg font-bold text-dusk">{group.label}</p>
-                    <div class="grid gap-1 sm:grid-cols-2">
-                      {group.items.map(([label, href], itemIndex) => (
-                        <a href={href} class:list={['block rounded-lg px-3 py-2.5 text-sm', itemIndex === 0 ? 'font-semibold text-cyan' : 'text-dusk/75']}>{label}</a>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        {menus.map((menu) => (
-          <div class="dw-item relative">
-            <button type="button" class="flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-dusk/70 transition-colors hover:text-dusk xl:px-3.5" aria-haspopup="true">
-              {menu.label}
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="dw-drop absolute left-0 top-full z-50 mt-3 w-72 rounded-2xl border border-white/10 bg-[#09070b]/95 p-2 shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
-              {menu.items.map(([label, href]) => (
-                <a class="block rounded-lg px-3 py-2.5 text-sm text-dusk/75" href={href}>{label}</a>
-              ))}
-            </div>
-          </div>
-        ))}
-        <a class="ml-1 flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-dusk/80 transition-colors hover:text-dusk xl:px-3.5" href="/case-studies"><span class="bg-gradient-to-r from-coral to-violet bg-clip-text text-transparent">Case Studies</span></a>
-      </nav>
-      <div class="ml-3 hidden shrink-0 items-center gap-4 lg:flex xl:ml-5">
-        <a href="tel:+17373945488" class="ember-trace flex items-center justify-center gap-2 rounded-full border border-[#4c9eff]/20 bg-[#0c1424]/70 px-5 py-2 text-center text-sm font-semibold text-white transition-all duration-300 hover:bg-[#0c1424]/90 hover:shadow-[0_0_14px_rgba(76,158,255,0.22)]" aria-label="Call us at +1 737 394 5488">
-          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0 stroke-current" fill="none" stroke-width="2" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>
-          <span class="hidden xl:inline">+1 737 394 5488</span>
-        </a>
-        <a class="btn-primary whitespace-nowrap !px-5" href="/contact">Book a Call</a>
-      </div>
-      <button id="dw-menu-btn" type="button" aria-label="Menu" aria-expanded="false" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-dusk/15 bg-panel/80 lg:hidden">
-        <span class="space-y-1.5">
-          <span class="block h-0.5 w-5 bg-white"></span>
-          <span class="block h-0.5 w-5 bg-white"></span>
-          <span class="block h-0.5 w-5 bg-white"></span>
-        </span>
-      </button>
-    </div>
-    <div id="dw-mobile" hidden class="mx-5 mt-2 rounded-2xl border border-white/10 bg-[#0c1424] p-4 lg:hidden">
-      {menus.map((menu) => (
-        <div class="mb-3">
-          <p class="px-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan">{menu.label}</p>
-          {menu.items.map(([label, href]) => <a class="block rounded-lg px-2 py-2 text-sm text-dusk/80" href={href}>{label}</a>)}
-        </div>
-      ))}
-      <a class="btn-primary mt-2 w-full" href="/contact">Book a Call</a>
-    </div>
-  </header>
-
   <main id="main">
     <section class="relative overflow-hidden px-5 pb-24 pt-40 sm:px-8 md:pb-32 md:pt-48">
       <div class="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -761,18 +575,6 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
 </div>
 
 <script is:inline>
-  const mobile = document.getElementById('dw-mobile');
-  const menuBtn = document.getElementById('dw-menu-btn');
-  menuBtn?.addEventListener('click', () => {
-    const open = mobile.hasAttribute('hidden');
-    if (open) mobile.removeAttribute('hidden');
-    else mobile.setAttribute('hidden', '');
-    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  const bar = document.getElementById('dw-bar');
-  const syncBar = () => bar?.classList.toggle('is-stuck', (window.scrollY || 0) > 24);
-  syncBar();
-  window.addEventListener('scroll', syncBar, { passive: true });
   const industries = document.getElementById('dw-ind');
   industries?.querySelectorAll('.dw-ind-tab').forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -786,26 +588,9 @@ const field = 'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-
       });
     });
   });
-  document.querySelectorAll('[data-group]').forEach((button) => {
-    const show = () => {
-      const root = button.closest('[data-svc]');
-      root.querySelectorAll('[data-group]').forEach((item) => item.classList.toggle('is-on', item === button));
-      root.querySelectorAll('[data-panel]').forEach((panel) => {
-        panel.hidden = panel.dataset.panel !== button.dataset.group;
-      });
-    };
-    button.addEventListener('mouseenter', show);
-    button.addEventListener('focus', show);
-  });
 </script>
 
 <style is:global>
-  .dw-mega, .dw-drop { visibility: hidden; opacity: 0; transition: opacity 160ms ease; }
-  #dw-bar.is-stuck { margin: 0; max-width: 100%; width: 100%; border-radius: 0; border-color: rgb(238 240 244 / 0.1); background: rgb(18 26 44 / 0.85); box-shadow: 0 8px 32px rgba(60, 0, 0, 0.1); backdrop-filter: blur(40px); }
-  .dw-mega { position: fixed; top: 5.25rem; left: max(0.75rem, calc(50vw - 36rem)); width: min(72rem, calc(100vw - 1.5rem)); z-index: 80; }
-  .dw-svc:hover .dw-mega, .dw-svc:focus-within .dw-mega,
-  .dw-item:hover .dw-drop, .dw-item:focus-within .dw-drop { visibility: visible; opacity: 1; }
-  .dw-svc button.is-on { background: rgba(48, 142, 255, 0.12); color: #eef0f4; }
   .dw-hero-grid { display: grid; gap: 2rem; }
   .dw-hero-visual { aspect-ratio: 16 / 9; }
   .dw-kicker { margin: 0; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1d4ed8; }
